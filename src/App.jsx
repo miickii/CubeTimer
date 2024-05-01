@@ -315,7 +315,6 @@ const App = () => {
   const [showHistory, setShowHistory] = useState(false);
   const timerRef = useRef(null);
   const stopwatch = useStopwatch();
-  console.log(scrambles.length)
 
   const handleTouchStart = () => {
     setTimerDown(true);
@@ -369,6 +368,7 @@ const App = () => {
               <li>Average of 100: {calculateStats(times).average100}</li>
               <li>Best Time: {calculateStats(times).bestTime}s</li>
               <li>Worst Time: {calculateStats(times).worstTime}s</li>
+              <li>Nr times: {times.length}</li>
             </ul>
           ) : <p>No times recorded.</p>}
         </div>

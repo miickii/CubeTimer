@@ -21,22 +21,22 @@ export default defineConfig({
         name: "CubeTimer",
         icons: [
           {
-            src: '/logo192.jpg', // Path and file names as per your project structure
+            src: 'logo192.jpg', // Path and file names as per your project structure
             sizes: '192x192',
             type: 'image/jpeg'
           },
           {
-            src: '/logo256.jpg',
+            src: 'logo256.jpg',
             sizes: '256x256',
             type: 'image/jpeg'
           },
           {
-            src: '/logo384.jpg',
+            src: 'logo384.jpg',
             sizes: '384x384',
             type: 'image/jpeg'
           },
           {
-            src: '/logo512.jpg',
+            src: 'logo512.jpg',
             sizes: '512x512',
             type: 'image/jpeg'
           }

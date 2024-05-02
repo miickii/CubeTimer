@@ -5,8 +5,3 @@
 body, html {
     touch-action: manipulation; /* This can help improve touch responsiveness and prevent default touch behaviors like scrolling and zooming */
 }
-
-.height-viewport {
-    height: 100vh; /* Fallback for browsers */
-    height: -webkit-fill-available; /* Specific for Safari and other browsers that support it */
-}

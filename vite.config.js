@@ -15,7 +15,7 @@ export default defineConfig({
         background_color: '#f69435',
         display: 'standalone',
         scope: '/',
-        start_url: '/',
+        start_url: '/CubeTimer/',
         short_name: "CubeTimer",
         description: "Timer for cubing",
         name: "CubeTimer",

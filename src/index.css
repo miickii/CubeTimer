@@ -8,8 +8,45 @@ body {
 body, html {
     user-select: none;
     touch-action: manipulation; /* This can help improve touch responsiveness and prevent default touch behaviors like scrolling and zooming */
+    overflow: hidden; /* Prevents scrolling in all directions */
+    position: fixed;
 }
 
 .select-text {
     user-select: text; /* Allows text selection */
+}
+
+.top-shadow {
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+input[type=checkbox] {
+    appearance: none; /* Hides the default checkbox */
+    width: 50px; /* Width of the checkbox */
+    height: 25px; /* Height of the checkbox */
+    background-color: #ddd; /* Background color when unchecked */
+    border-radius: 50px; /* Makes it rounded */
+    position: relative;
+    cursor: pointer; /* Hand cursor on hover */
+    transition: background-color 0.2s; /* Smooth transition for background color */
+}
+
+input[type=checkbox]:before {
+    content: ""; /* Necessary for generating the pseudo-element */
+    position: absolute;
+    left: 2px; /* Small space from the left */
+    top: 2px; /* Small space from the top */
+    height: 21px; /* Height of the circle inside */
+    width: 21px; /* Width of the circle inside */
+    background-color: white; /* Color of the circle */
+    border-radius: 50%; /* Makes the circle perfectly round */
+    transition: transform 0.2s; /* Smooth transition for moving the circle */
+}
+
+input[type=checkbox]:checked {
+    background-color: #f69435; /* Change background when checked */
+}
+
+input[type=checkbox]:checked:before {
+    transform: translateX(25px); /* Move the circle to the right */
 }

@@ -1,6 +1,8 @@
 import React from 'react';
+import { useSettings } from '../SettingsContext';
 
 const Stats = ({ solves }) => {
+    const { settings } = useSettings();
     function removeMinMax(times) {
         let newTimes = [...times]
         const min = Math.min(...newTimes);
@@ -33,11 +35,14 @@ const Stats = ({ solves }) => {
     return (
         <div className="flex flex-col items-center justify-center w-full">
             <div className="text-xl font-semibold mt-4 mb-8">
-                <p className="mb-2">Solves: {times.length}</p>
-                <p className="mb-2">Best Time: {bestTime}</p>
-                <p className="mb-2">Worst Time: {worstTime}</p>
-                <p className="mb-2">Average of Five: {average5}</p>
-                <p>Average of Twelve: {average12}</p>
+                <p>Total Solves: {times.length}</p>
+                <p>Best Time: {bestTime}</p>
+                <p>Worst Time: {worstTime}</p>
+                <p>Average of 5: {average5}</p>
+                <p>Average of 12: {average12}</p>
+                {settings.averages.avg25 && <p>Average of 25: {average25}</p>}
+                {settings.averages.avg50 && <p>Average of 50: {average50}</p>}
+                {settings.averages.avg100 && <p>Average of 100: {average100}</p>}
             </div>
         </div>
     );

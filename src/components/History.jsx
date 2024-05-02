@@ -79,11 +79,11 @@ const History = ({ solves }) => {
     };
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-gray-50">
             <div className="w-full flex flex-col items-start">
                 {solves.map((solve, index) => (
                     <div key={index} className='w-full' onTouchStart={handleTouchStart} onTouchEnd={(e) => handleShowScramble(e, index)}>
-                        <div className={`flex items-center w-full p-4 border-b border-gray-300 ${bestIndex === index ? "bg-green-200" : worstIndex === index ? "bg-red-200" : "bg-[#f69435]"}`}>
+                        <div className={`flex items-center w-full p-4 ${bestIndex === index ? "bg-accent1" : worstIndex === index ? "bg-[#F71735]" : "bg-lightPrimary"}`}>
                             <div className="mr-2 text-gray-800 text-lg font-medium">
                                 # {index + 1}
                             </div>
@@ -97,7 +97,7 @@ const History = ({ solves }) => {
                                 variants={containerVariants}
                                 initial="closed"
                                 animate={showScramble === index ? "open" : "closed"}
-                                className='bg-gray-200 flex items-center'
+                                className='bg-white flex items-center'
                             >
                                 <motion.div 
                                     variants={scrambleVariants}

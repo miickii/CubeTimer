@@ -4,19 +4,23 @@ import Solve from './components/Solve';
 import History from './components/History';
 import Stats from './components/Stats';
 import { FaHistory, FaPlayCircle, FaChartBar } from 'react-icons/fa';
+import { FiSettings } from 'react-icons/fi';
 import { MdMenu, MdClose } from 'react-icons/md';
 import { useSwipeable } from 'react-swipeable';
+import SettingsModal from './components/SettingsModal';
+import { useSettings } from './SettingsContext';
 
 const App = () => {
+  const { settings, setSubset } = useSettings();
   const [menuOpen, setMenuOpen] = useState(false);
   const [subsetMenuOpen, setSubsetMenuOpen] = useState(false);
-  const [subset, setSubset] = useState("3x3x3");
   const [activeTab, setActiveTab] = useState('solve');
   const [lastTab, setLastTab] = useState(null);
   const [title, setTitle] = useState('CubeTimer');
   const [times, setTimes] = useState([]);
   const [timer, setTimer] = useState(0); // Timer state is now here
   const [timerRunning, setTimerRunning] = useState(false);
+  const [settingsOpen, setSettingsOpen] = useState(false);
 
   const resetTimer = () => setTimer(0); // Reset timer function
 
@@ -48,8 +52,7 @@ const App = () => {
   const changeTab = (tab) => {
     if (!timerRunning) {
       setLastTab(activeTab);
-      setActiveTab(tab);
-      setMenuOpen(false);
+      setActiveTab(tab); // Change the tab immediately
     }
   }
   
@@ -77,8 +80,19 @@ const App = () => {
   };
 
   const menuVariants = {
-    hidden: {
-      scale: 0.95,
+    hiddenLeft: {
+      scale: 0,
+      y: -70,
+      x: -70,
+      opacity: 0,
+      transition: {
+        duration: 0.2
+      }
+    },
+    hiddenRight: {
+      scale: 0,
+      y: -90,
+      x: 50,
       opacity: 0,
       transition: {
         duration: 0.2
@@ -87,6 +101,8 @@ const App = () => {
     visible: {
       scale: 1,
       opacity: 1,
+      y: 0,
+      x: 0,
       transition: {
         type: "spring",
         stiffness: 260,
@@ -103,27 +119,32 @@ const App = () => {
   const tabs = ['history', 'solve', 'stats'];
 
   const handleSwipe = useSwipeable({
-    onSwipedLeft: () => {
-      const currentIndex = tabs.indexOf(activeTab);
-      if (currentIndex < 2) {
-        const nextIndex = (currentIndex + 1) % tabs.length;
-        changeTab(tabs[nextIndex])
+    onSwipedLeft: (eventData) => {
+      if (eventData.deltaX < -60) { // Check that the swipe length exceeds 60 pixels
+        const currentIndex = tabs.indexOf(activeTab);
+        if (currentIndex < tabs.length - 1) {
+          const nextIndex = currentIndex + 1;
+          changeTab(tabs[nextIndex]);
+        }
       }
     },
-    onSwipedRight: () => {
-      const currentIndex = tabs.indexOf(activeTab);
-      if (currentIndex > 0) {
-        const nextIndex = (currentIndex - 1 + tabs.length) % tabs.length;
-        changeTab(tabs[nextIndex])
+    onSwipedRight: (eventData) => {
+      if (eventData.deltaX > 60) { // Check that the swipe length exceeds 60 pixels
+        const currentIndex = tabs.indexOf(activeTab);
+        if (currentIndex > 0) {
+          const nextIndex = currentIndex - 1;
+          changeTab(tabs[nextIndex]);
+        }
       }
-    }
+    },
+    trackMouse: true // Optional: allows swipe tracking with mouse movements on desktop
   });
 
   return (
     <div className="relative bg-[#f69435] flex flex-col h-dvh" {...handleSwipe}>
-      <div className="relative bg-[#f69435] text-white h-14 flex-shrink-0 flex justify-center items-center">
+      <div className="relative bg-[#f69435] text-white h-16 flex-shrink-0 flex justify-center items-center">
           {activeTab === 'solve' && <>
-            <button className="absolute top-[10px] left-4 bg-white text-[#f69435] p-2 rounded-full shadow flex items-center justify-center" onTouchEnd={() => {
+            <button className="absolute top-[14px] left-4 bg-white text-black p-2 rounded-full shadow flex items-center justify-center" onTouchEnd={() => {
                 if (!timerRunning) {
                   setMenuOpen(!menuOpen);
                 }
@@ -137,39 +158,49 @@ const App = () => {
             </button>
             <AnimatePresence>
               {menuOpen && (
-                <div className='fixed top-0 left-0 h-full w-full' onTouchEnd={() => setMenuOpen(!menuOpen)}>
+                <div className='fixed inset-0 bg-black bg-opacity-25' onTouchEnd={() => setMenuOpen(!menuOpen)}>
                   <motion.div
-                    className="absolute top-[50px] left-4 px-4 py-2 bg-white rounded shadow-lg"
-                    initial="hidden"
+                    className="absolute top-[54px] left-4 bg-white rounded shadow-lg"
+                    initial="hiddenLeft"
                     animate="visible"
-                    exit="hidden"
+                    exit="hiddenLeft"
                     variants={menuVariants}
                   >
-                    <div className='flex flex-col'>
-                      <button className="p-2 text-lg font-bold border-b border-gray-500 text-[#f69435]" onTouchEnd={deleteLastTime}>Delete Last Time</button>
-                      <button className="p-2 text-lg font-bold text-[#f69435]" onTouchEnd={resetTimes}>Reset Times</button>
+                    <div className='flex flex-col '>
+                        <button className="p-2 w-full text-start border-b border-gray-300 text-gray-600" onTouchEnd={deleteLastTime}>
+                            Delete Last Time
+                        </button>
+                        <button className="p-2 w-full text-start border-b border-gray-300 text-gray-600" onTouchEnd={resetTimes}>
+                            Reset Times
+                        </button>
+                        <button className="flex p-2 items-center text-gray-600" onTouchEnd={() => setSettingsOpen(true)}>
+                            <FiSettings className="mr-2" size={20} /> Settings
+                        </button>
                     </div>
                   </motion.div>
                 </div>
               )}
+
+              {settingsOpen && <SettingsModal onClose={() => setSettingsOpen(false)}/>}
             </AnimatePresence>
 
+
             {/* Subset Menu */}
-            <button className="absolute top-[14px] right-4 text-white text-lg" onTouchEnd={() => {
+            <button className="absolute top-[18px] right-4 text-black text-lg" onTouchEnd={() => {
               if (!timerRunning) {
                 setSubsetMenuOpen(!subsetMenuOpen);
               }
             }}>
-              {subset}
+              {settings.subset}
             </button>
             <AnimatePresence>
               {subsetMenuOpen && (
                 <div className='fixed top-0 left-0 h-full w-full' onTouchEnd={() => setSubsetMenuOpen(!subsetMenuOpen)}>
                   <motion.div
                     className="absolute top-[50px] right-4 px-4 py-2 bg-white rounded shadow-lg"
-                    initial="hidden"
+                    initial="hiddenRight"
                     animate="visible"
-                    exit="hidden"
+                    exit="hiddenRight"
                     variants={menuVariants}
                   >
                     <div className='flex flex-col'>
@@ -182,9 +213,9 @@ const App = () => {
               )}
             </AnimatePresence>
           </>}
-          <h1 className="text-2xl font-bold">{title}</h1>
+          <h1 className="text-2xl text-black font-bold">{title}</h1>
       </div>
-      <div className="flex-grow w-full overflow-auto">
+      <div className="flex-grow w-screen overflow-auto bg-lightPrimary">
         <AnimatePresence>
           {activeTab === 'history' && (
             <motion.div
@@ -205,7 +236,7 @@ const App = () => {
               transition={{ duration: 0.3 }}
               className='h-full'
             >
-              <Solve onTimerStop={handleTimerStop} onTimerStart={handleTimerStart} timer={timer} setTimer={setTimer} subset={subset} />
+              <Solve onTimerStop={handleTimerStop} onTimerStart={handleTimerStart} timer={timer} setTimer={setTimer} />
             </motion.div>
           )}
           {activeTab === 'stats' && (
@@ -221,16 +252,16 @@ const App = () => {
           )}
         </AnimatePresence>
       </div>
-      <div className="flex justify-around items-center bg-[#f69435] shadow-lg py-4 pb-4 text-white">
-        <button onTouchEnd={() => changeTab('history')} className="flex flex-col items-center justify-center text-sm">
+      <div className="flex justify-around items-center bg-[#f69435] top-shadow py-4 pb-4 text-white">
+        <button onTouchEnd={() => changeTab('history')} className={`flex flex-col items-center justify-center text-sm ${activeTab === 'history' ? 'text-black' : 'text-gray-100'}`}>
           <FaHistory size={24} className="mb-1" />
           History
         </button>
-        <button onTouchEnd={() => changeTab('solve')} className="flex flex-col items-center justify-center text-sm">
+        <button onTouchEnd={() => changeTab('solve')} className={`flex flex-col items-center justify-center text-sm ${activeTab === 'solve' ? 'text-black' : 'text-gray-100'}`}>
           <FaPlayCircle size={24} className="mb-1" />
           Solve
         </button>
-        <button onTouchEnd={() => changeTab('stats')} className="flex flex-col items-center justify-center text-sm">
+        <button onTouchEnd={() => changeTab('stats')} className={`flex flex-col items-center justify-center text-sm ${activeTab === 'stats' ? 'text-black' : 'text-gray-100'}`}>
           <FaChartBar size={24} className="mb-1" />
           Stats
         </button>

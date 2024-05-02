@@ -221,7 +221,7 @@ const App = () => {
           )}
         </AnimatePresence>
       </div>
-      <div className="flex justify-around items-center bg-[#f69435] shadow-lg py-2 text-white">
+      <div className="flex justify-around items-center bg-[#f69435] shadow-lg py-2 pb-2 text-white">
         <button onTouchEnd={() => changeTab('history')} className="flex flex-col items-center justify-center text-sm">
           <FaHistory size={24} className="mb-1" />
           History

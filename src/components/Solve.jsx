@@ -898,7 +898,7 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer, subset }) => {
         setTimerDown(false);
     
         // Check if the touch has moved significantly
-        if (Math.abs(touchStartPos.x - touchEndX) < 10 && Math.abs(touchStartPos.y - touchEndY) < 10) {
+        if (Math.abs(touchStartPos.x - touchEndX) < 50 && Math.abs(touchStartPos.y - touchEndY) < 50) {
           // Proceed with starting/stopping the timer
             if (!isActive && !isInspecting) {
                 startInspection();

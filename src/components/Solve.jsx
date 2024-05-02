@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useStopwatch } from "react-use-precision-timer";
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 const zblsScrambles = [
     "F' R' D' L2 F2 D' F2 D F2 L2 F2 U F2 R2 D R' F R U B2 R' U",
@@ -791,6 +791,15 @@ const buttonVariants = {
     exit: { y: 50, opacity: 0, transition: { duration: 0.3 } }
 };
 
+const scrambleVariants = {
+    hidden: { opacity: 0 },
+    visible: { 
+        opacity: 1,
+        transition: { duration: 0.2 }
+    },
+    exit: { opacity: 0, transition: { duration: 0.4 } }
+};
+
 const Solve = ({ onTimerStop, onTimerStart, timer, setTimer, subset }) => {
     const [scramble, setScramble] = useState(zblsScrambles[Math.floor(Math.random() * zblsScrambles.length)]);
     const [prevScramble, setPrevScramble] = useState(null);
@@ -934,36 +943,40 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer, subset }) => {
             onTouchEnd={handleTouchEnd}
             className="w-full h-full"
         >
-            <div className='flex flex-col items-center h-2/5'>
-                {!isActive && <>
-                    <div className="text-xl mt-4 px-5">{scramble}</div>
-                    <button
-                        onClick={handleNewScramble}
-                        onTouchStart={(e) => e.stopPropagation()}
-                        onTouchEnd={handleNewScramble}
-                        className="mt-4 px-4 py-2 bg-[#f69435] text-white rounded shadow"
-                    >
-                        New Scramble
-                    </button>
-                </>}
+            <div className='h-2/5'>
+                <AnimatePresence>
+                    {!isActive && <motion.div variants={scrambleVariants} initial="hidden" animate="visible" exit="exit" className='flex flex-col items-center'>
+                        <div className="text-xl mt-4 px-5">{scramble}</div>
+                        <button
+                            onClick={handleNewScramble}
+                            onTouchStart={(e) => e.stopPropagation()}
+                            onTouchEnd={handleNewScramble}
+                            className="mt-4 px-4 py-2 bg-[#f69435] text-white rounded shadow"
+                        >
+                            New Scramble
+                        </button>
+                    </motion.div>}
+                </AnimatePresence>
             </div>
             
             <div className={`text-4xl font-mono ${timerDown ? 'text-green-500' : 'text-black'} select-none h-3/5 flex flex-col items-center`}>
                 <div className='mb-10'>
                     {timer}s
                 </div>
-                {isInspecting && (
-                    <motion.button
-                        onTouchEnd={cancelInspection}
-                        className="mt-20 px-4 py-2 text-lg bg-[#f69435] text-white rounded shadow"
-                        variants={buttonVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                    >
-                        Cancel Inspection
-                    </motion.button>
-                )}
+                <AnimatePresence>
+                    {isInspecting && (
+                        <motion.button
+                            onTouchEnd={cancelInspection}
+                            className="mt-20 px-4 py-2 text-lg bg-[#f69435] text-white rounded shadow"
+                            variants={buttonVariants}
+                            initial="hidden"
+                            animate="visible"
+                            exit="exit"
+                        >
+                            Cancel Inspection
+                        </motion.button>
+                    )}
+                </AnimatePresence>
             </div>
         </div>
     );

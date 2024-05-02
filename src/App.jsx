@@ -123,8 +123,11 @@ const App = () => {
     <div className="relative bg-white flex flex-col h-dvh" {...handleSwipe}>
       <div className="relative bg-[#f69435] text-white h-14 flex-shrink-0 flex justify-center items-center">
           {activeTab === 'solve' && <>
-            <button className="absolute top-[10px] left-4 bg-white text-[#f69435] p-2 rounded-full shadow flex items-center justify-center"
-              onTouchEnd={() => setMenuOpen(!menuOpen)}>
+            <button className="absolute top-[10px] left-4 bg-white text-[#f69435] p-2 rounded-full shadow flex items-center justify-center" onTouchEnd={() => {
+                if (!timerRunning) {
+                  setMenuOpen(!menuOpen);
+                }
+            }}>
               <motion.div
                 variants={iconVariants}
                 animate={menuOpen ? "rotated" : "normal"}
@@ -152,8 +155,11 @@ const App = () => {
             </AnimatePresence>
 
             {/* Subset Menu */}
-            <button className="absolute top-[14px] right-4 text-white text-lg"
-              onTouchEnd={() => setSubsetMenuOpen(!subsetMenuOpen)}>
+            <button className="absolute top-[14px] right-4 text-white text-lg" onTouchEnd={() => {
+              if (!timerRunning) {
+                setSubsetMenuOpen(!subsetMenuOpen);
+              }
+            }}>
               {subset}
             </button>
             <AnimatePresence>

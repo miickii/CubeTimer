@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background-color: #f69435;
+}
 body, html {
     touch-action: manipulation; /* This can help improve touch responsiveness and prevent default touch behaviors like scrolling and zooming */
 }

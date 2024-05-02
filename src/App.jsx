@@ -120,7 +120,7 @@ const App = () => {
   });
 
   return (
-    <div className="relative bg-white flex flex-col h-dvh" {...handleSwipe}>
+    <div className="relative bg-[#f69435] flex flex-col h-dvh" {...handleSwipe}>
       <div className="relative bg-[#f69435] text-white h-14 flex-shrink-0 flex justify-center items-center">
           {activeTab === 'solve' && <>
             <button className="absolute top-[10px] left-4 bg-white text-[#f69435] p-2 rounded-full shadow flex items-center justify-center" onTouchEnd={() => {

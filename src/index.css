@@ -6,5 +6,10 @@ body {
     background-color: #f69435;
 }
 body, html {
+    user-select: none;
     touch-action: manipulation; /* This can help improve touch responsiveness and prevent default touch behaviors like scrolling and zooming */
+}
+
+.select-text {
+    user-select: text; /* Allows text selection */
 }

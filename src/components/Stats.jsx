@@ -3,7 +3,6 @@ import React from 'react';
 const Stats = ({ solves }) => {
     function removeMinMax(times) {
         let newTimes = [...times]
-        console.log(newTimes)
         const min = Math.min(...newTimes);
         const minIndex = newTimes.indexOf(min);
         newTimes.splice(minIndex, 1);
@@ -11,7 +10,6 @@ const Stats = ({ solves }) => {
         const max = Math.max(...newTimes);
         const maxIndex = newTimes.indexOf(max);
         newTimes.splice(maxIndex, 1);
-        console.log(newTimes)
         return newTimes;
     }
     const calculateAverage = (times, number) => {
@@ -34,11 +32,11 @@ const Stats = ({ solves }) => {
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
-            <div className="text-lg mt-4">
-                <p>Solves: {times.length}</p>
-                <p>Best Time: {bestTime}</p>
-                <p>Worst Time: {worstTime}</p>
-                <p>Average of Five: {average5}</p>
+            <div className="text-xl font-semibold mt-4 mb-8">
+                <p className="mb-2">Solves: {times.length}</p>
+                <p className="mb-2">Best Time: {bestTime}</p>
+                <p className="mb-2">Worst Time: {worstTime}</p>
+                <p className="mb-2">Average of Five: {average5}</p>
                 <p>Average of Twelve: {average12}</p>
             </div>
         </div>

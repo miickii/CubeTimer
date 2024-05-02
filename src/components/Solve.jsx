@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useStopwatch } from "react-use-precision-timer";
+import { motion } from 'framer-motion';
 
 const zblsScrambles = [
     "F' R' D' L2 F2 D' F2 D F2 L2 F2 U F2 R2 D R' F R U B2 R' U",
@@ -780,12 +781,23 @@ const zbllScrambles = [
     "L U L' R2 D' R2 D' F2 U L2 U L2 D2 F2 U' F2 L' D L2 U L' F2 U'"
 ]
 
-const Solve = ({ onTimerStop, timer, setTimer, subset }) => {
+const buttonVariants = {
+    hidden: { y: 200, opacity: 0 },
+    visible: { 
+        y: 0, 
+        opacity: 1,
+        transition: { type: 'spring', stiffness: 120, damping: 20 }
+    },
+    exit: { y: 50, opacity: 0, transition: { duration: 0.3 } }
+};
+
+const Solve = ({ onTimerStop, onTimerStart, timer, setTimer, subset }) => {
     const [scramble, setScramble] = useState(zblsScrambles[Math.floor(Math.random() * zblsScrambles.length)]);
     const [prevScramble, setPrevScramble] = useState(null);
     const [isActive, setIsActive] = useState(false);
     const [timerDown, setTimerDown] = useState(false);
     const [touchStartPos, setTouchStartPos] = useState({ x: null, y: null });
+    const [isInspecting, setIsInspecting] = useState(false);
     const timerRef = useRef(null);
     const stopwatch = useStopwatch();
 
@@ -831,24 +843,39 @@ const Solve = ({ onTimerStop, timer, setTimer, subset }) => {
         randomScramble();
     };
 
-    const toggleTimer = () => {
-        if (isActive) {
-          setIsActive(false);
-          clearInterval(timerRef.current);
-          stopwatch.stop();
+    const startTimer = () => {
+        setIsInspecting(false); 
+        clearInterval(timerRef.current);
+        stopwatch.stop();
+        stopwatch.start();
+        setIsActive(true);
+        setPrevScramble(scramble);
+        setScramble("");
+        timerRef.current = setInterval(() => {
+        const milliseconds = stopwatch.getElapsedStartedTime();
+        setTimer((milliseconds / 1000).toFixed(2));
+        }, 1);
+        onTimerStart();
+    };
 
-          onTimerStop(parseFloat(timer), prevScramble);
-          randomScramble();
-        } else {
-          stopwatch.start();
-          setIsActive(true);
-          setPrevScramble(scramble);
-          setScramble("");
-          timerRef.current = setInterval(() => {
-            const milliseconds = stopwatch.getElapsedStartedTime();
-            setTimer((milliseconds / 1000).toFixed(2));
-          }, 1);
-        }
+    const startInspection = () => {
+        setIsActive(true);
+        setIsInspecting(true);
+        stopwatch.start();
+        timerRef.current = setInterval(() => {
+        const milliseconds = stopwatch.getElapsedStartedTime();
+        setTimer(15-Math.round(milliseconds / 1000));
+        }, 1);
+        onTimerStart();
+    };
+
+    const stopTimer = () => {
+        setIsActive(false);
+        clearInterval(timerRef.current);
+        stopwatch.stop();
+
+        onTimerStop(parseFloat(timer), prevScramble);
+        randomScramble();
     }
     
     const handleTouchStart = (e) => {
@@ -864,13 +891,42 @@ const Solve = ({ onTimerStop, timer, setTimer, subset }) => {
         // Check if the touch has moved significantly
         if (Math.abs(touchStartPos.x - touchEndX) < 10 && Math.abs(touchStartPos.y - touchEndY) < 10) {
           // Proceed with starting/stopping the timer
-          toggleTimer(); // This function should handle the logic to start/stop the timer
+            if (!isActive && !isInspecting) {
+                startInspection();
+            } else if (isInspecting) {
+                startTimer();
+            } else if (isActive) {
+                stopTimer();
+            }
         }
+    };
+
+    const cancelInspection = (e) => {
+        e.stopPropagation();
+        setIsActive(false);
+        setIsInspecting(false); 
+        stopwatch.stop();
+        clearInterval(timerRef.current);
+        setTimer(0);
+        setTimerDown(false);
+        onTimerStop(null, null);
     };
 
     useEffect(() => {
         randomScramble();
     }, [subset]); 
+
+    useEffect(() => {
+        if (timer < 0) {
+            setIsActive(false);
+            setIsInspecting(false); 
+            stopwatch.stop();
+            clearInterval(timerRef.current);
+            setTimer(0);
+            setTimerDown(false);
+            onTimerStop(null, null);
+        }
+    }, [timer])
 
     return (
         <div 
@@ -879,7 +935,7 @@ const Solve = ({ onTimerStop, timer, setTimer, subset }) => {
             className="w-full h-full"
         >
             <div className='flex flex-col items-center h-2/5'>
-                {scramble && <>
+                {!isActive && <>
                     <div className="text-xl mt-4 px-5">{scramble}</div>
                     <button
                         onClick={handleNewScramble}
@@ -892,8 +948,22 @@ const Solve = ({ onTimerStop, timer, setTimer, subset }) => {
                 </>}
             </div>
             
-            <div className={`text-4xl font-mono ${timerDown ? 'text-green-500' : 'text-black'} select-none h-3/5 flex justify-center`}>
-                {timer}s
+            <div className={`text-4xl font-mono ${timerDown ? 'text-green-500' : 'text-black'} select-none h-3/5 flex flex-col items-center`}>
+                <div className='mb-10'>
+                    {timer}s
+                </div>
+                {isInspecting && (
+                    <motion.button
+                        onTouchEnd={cancelInspection}
+                        className="mt-20 px-4 py-2 text-lg bg-[#f69435] text-white rounded shadow"
+                        variants={buttonVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="exit"
+                    >
+                        Cancel Inspection
+                    </motion.button>
+                )}
             </div>
         </div>
     );

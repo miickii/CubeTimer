@@ -16,6 +16,7 @@ const App = () => {
   const [title, setTitle] = useState('CubeTimer');
   const [times, setTimes] = useState([]);
   const [timer, setTimer] = useState(0); // Timer state is now here
+  const [timerRunning, setTimerRunning] = useState(false);
 
   const resetTimer = () => setTimer(0); // Reset timer function
 
@@ -34,13 +35,22 @@ const App = () => {
   };
 
   const handleTimerStop = (time, scramble) => {
-    setTimes(prev => [...prev, {time: time, scramble: scramble}]);
+    setTimerRunning(false);
+    if (time !== null) {
+      setTimes(prev => [...prev, {time: time, scramble: scramble}]);
+    }
+  }
+
+  const handleTimerStart = () => {
+    setTimerRunning(true);
   }
 
   const changeTab = (tab) => {
-    setLastTab(activeTab);
-    setActiveTab(tab);
-    setMenuOpen(false);
+    if (!timerRunning) {
+      setLastTab(activeTab);
+      setActiveTab(tab);
+      setMenuOpen(false);
+    }
   }
   
   useEffect(() => {
@@ -110,7 +120,7 @@ const App = () => {
   });
 
   return (
-    <div className="h-screen bg-white flex flex-col" {...handleSwipe}>
+    <div className="h-screen bg-white flex flex-col pb-safe" {...handleSwipe}>
       <div className="relative bg-[#f69435] text-white h-14 flex-shrink-0 flex justify-center items-center">
           {activeTab === 'solve' && <>
             <button className="absolute top-[10px] left-4 bg-white text-[#f69435] p-2 rounded-full shadow flex items-center justify-center"
@@ -189,7 +199,7 @@ const App = () => {
               transition={{ duration: 0.3 }}
               className='h-full'
             >
-              <Solve onTimerStop={handleTimerStop} timer={timer} setTimer={setTimer} subset={subset} />
+              <Solve onTimerStop={handleTimerStop} onTimerStart={handleTimerStart} timer={timer} setTimer={setTimer} subset={subset} />
             </motion.div>
           )}
           {activeTab === 'stats' && (
@@ -220,37 +230,6 @@ const App = () => {
         </button>
       </div>
     </div>
-    // <div className="w-full h-screen flex flex-col justify-center items-center bg-gray-100 p-4">
-    //   <button onClick={() => setShowHistory(!showHistory)} className="absolute bottom-4 right-4 bg-[#f69435] text-white px-4 py-2 rounded-lg shadow">
-    //     {showHistory ? 'Hide History' : 'Show History'}
-    //   </button>
-    //   {showHistory && (
-    //     <div className="absolute bottom-16 left-4 right-4 bg-white p-4 rounded-lg shadow-lg">
-    //       <h2 className="text-lg font-semibold">History & Statistics</h2>
-    //       {times.length > 0 ? (
-    //         <ul>
-    //           <li>Average of 5: {calculateStats(times).average5}</li>
-    //           <li>Average of 12: {calculateStats(times).average12}</li>
-    //           <li>Average of 50: {calculateStats(times).average50}</li>
-    //           <li>Average of 100: {calculateStats(times).average100}</li>
-    //           <li>Best Time: {calculateStats(times).bestTime}s</li>
-    //           <li>Worst Time: {calculateStats(times).worstTime}s</li>
-    //           <li>Nr times: {times.length}</li>
-    //         </ul>
-    //       ) : <p>No times recorded.</p>}
-    //     </div>
-    //   )}
-    //   <div className="text-xl mt-4 px-5">{scramble}</div>
-    //   <div 
-    //     onTouchStart={handleTouchStart}
-    //     onTouchEnd={handleTouchEnd}
-    //     className="flex flex-col justify-center items-center w-full h-full"
-    //   >
-    //     <div className={`text-4xl font-mono ${timerDown ? 'text-green-500' : 'text-black'} select-none`}>
-    //       {timer}s
-    //     </div>
-    //   </div>
-    // </div>
   );
 };
 

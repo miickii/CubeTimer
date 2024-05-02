@@ -951,7 +951,7 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer, subset }) => {
                             onClick={handleNewScramble}
                             onTouchStart={(e) => e.stopPropagation()}
                             onTouchEnd={handleNewScramble}
-                            className="mt-4 px-4 py-2 bg-[#f69435] text-white rounded shadow"
+                            className="mt-4 px-4 py-2 bg-white text-[#f69435] rounded shadow"
                         >
                             New Scramble
                         </button>
@@ -967,7 +967,7 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer, subset }) => {
                     {isInspecting && (
                         <motion.button
                             onTouchEnd={cancelInspection}
-                            className="mt-20 px-4 py-2 text-lg bg-[#f69435] text-white rounded shadow"
+                            className="mt-20 px-4 py-2 text-lg text-[#f69435] bg-white rounded shadow"
                             variants={buttonVariants}
                             initial="hidden"
                             animate="visible"

@@ -1,0 +1,291 @@
+{
+    "Ua": [
+        {
+            "scrambles": [
+                "R U L' U R2 B2 U2 R2 U R2 U B2 R U2 R U L R' U",
+                "F' R B D R2 U' B2 L2 F2 U' R2 F2 R2 B' L2 R' D2 U B' U' R' D2",
+                "R F' D2 L2 F2 U2 L2 D2 U' R2 U B2 R U2 R F U R' U"
+            ],
+            "solutions": [
+                "U2 R2 U' R' U' R U R U R U' R",
+                "R U' R U R U R U' R' U' R2",
+                "M2 U M U2 M' U M2",
+                "U2 M2 U M' U2 M U M2",
+                "U2 R U R' U R' U' R2 U' R' U R' U R",
+                "U' R2 U' S' U2 S U' R2"
+            ]
+        }
+    ],
+    "Ub": [
+        {
+            "scrambles": [
+                "B' L B2 D' U B2 D U' L' B' F U' B2 U' B2 F'",
+                "L D' L' B D F2 D L2 B2 F2 R2 U' F2 U' B' R2 D B2 F2 U' L' D L'",
+                "F' L D U F2 U R2 B2 L2 D' F2 D' U' L' U2 B2 L' R F'"
+            ],
+            "solutions": [
+                "R' U R' U' R' U' R' U R U R2",
+                "U2 M2 U' M U2 M' U' M2",
+                "M2 U' M' U2 M U' M2"
+            ]
+        }
+    ],
+    "H": [
+        {
+            "scrambles": [
+                "F' U F' L2 D' B2 U R2 U' F2 R2 D' L2 B' U' B' F2 R2",
+                "B' L' U D B2 R2 D U B2 L2 D2 F2 L B' F2 D L2 B2 F2 R2 U'",
+                "R D F' D B2 U B2 L2 R2 F2 D' R U2 B2 D B D L' R D2"
+            ],
+            "solutions": [
+                "M2 U' M2 U2 M2 U' M2",
+                "M2 U M2 U2 M2 U M2"
+            ]
+        }
+    ],
+    "Z": [
+        {
+            "scrambles": [
+                "L B L' U' B2 F2 D R2 D' B2 F2 L2 U2 L U' B' R' U L' R",
+                "R U R' L2 R2 D2 B2 L2 U F2 U' F2 U' L D' L D B2 L2 R2 U'",
+                "F U' R' U2 L2 D F2 D' L2 U' F2 L2 F2 R U F' U2 L2 U L2 U'"
+            ],
+            "solutions": [
+                "M' U' M2 U' M2 U' M' U2 M2",
+                "U M' U M2 U M2 U M' U2 M2",
+                "U M2 U' M2 U' M' U2 M2 U2 M'",
+                "M2 U M2 U M' U2 M2 U2 M'"
+            ]
+        }
+    ],
+    "Aa": [
+        {
+            "scrambles": [
+                "L' F' U D L2 B2 U F2 D U2 L2 F2 U2 B' R' B2 R' D2 U L U L2",
+                "B' L' U R2 U B2 U' R2 U' L2 D2 F2 D2 L' U F U' B U F' U'",
+                "L' U R D L2 U B2 U' L2 D2 R2 F2 R U' R2 D L R2"
+            ],
+            "solutions": [
+                "l' U R' D2 R U' R' D2 R2 x'",
+                "U x' R2 D2 R' U' R D2 R' U R' x"
+            ]
+        }
+    ],
+    "Ab": [
+        {
+            "scrambles": [
+                "R B U' L2 D' R2 D L2 D' R2 D U R' F R B' R' F'",
+                "F U F' U2 L2 U B2 D R2 D' B2 U F' U' F U' L2 U F2",
+                "B L' F L2 U R2 B2 D B2 D' R2 B' L F U2 F' U' F' L2"
+            ],
+            "solutions": [
+                "x R2 D2 R U R' D2 R U' R x'",
+                "U x' R U' R D2 R' U R D2 R2 x"
+            ]
+        }
+    ],
+    "E": [
+        {
+            "scrambles": [
+                "B' U F' U2 F R2 U2 B U2 B' R2 B' U F U' B U B F'",
+                "B U R' L2 U' B2 U L2 D' R2 U F2 U' R' U R D R' U2 B'",
+                "B' R D2 R2 B2 U2 R2 D2 L2 B2 D2 F' L B L' B2 F2 D2 F R'"
+            ],
+            "solutions": [
+                "x' R U' R' D R U R' D' R U R' D R U' R' D' x"
+            ]
+        }
+    ],
+    "Ga": [
+        {
+            "scrambles": [
+                "F' L F L2 U B2 U B2 U' B2 U' L2 F' L' B F2 U2 B' F' U2 y",
+                "F' R U D2 L2 B D2 B' L2 D2 B L2 B' U' R' D B L2 B' D' F y",
+                "R F' L' U2 B2 D F2 D' B2 D F2 D' U' B' U' B2 L' B' L2 F R' y"
+            ],
+            "solutions": [
+                "R2 u R' U R' U' R u' R2 y' R' U R",
+                "R2 U R' U R' U' R U' R2 D U' R' U R D'"
+            ]
+        }
+    ],
+    "Gb": [
+        {
+            "scrambles": [
+                "F L B F D2 F' L2 U2 F D2 B' R2 F' U' F U' F' L' U2 F' U'",
+                "R' F R2 D B2 U' B2 R2 U2 R2 U2 B R B' D' R2 U' F' U'",
+                "B' L U' R2 U2 L2 D R2 B2 D U' B2 U R D B' D B2 R' B' L U"
+            ],
+            "solutions": [
+                "U F' U' F R2 u R' U R U' R u' R2",
+                "R' U' R y R2 u R' U R U' R u' R2",
+                "R' U' R U D' R2 U R' U R U' R U' R2 D"
+            ]
+        }
+    ],
+    "Gc": [
+        {
+            "scrambles": [
+                "B' R' U F' U2 B L2 B' R2 B L2 B2 D2 R' B' L' B' U' L' U y'",
+                "F' D' B L2 B' L2 B D2 F' D2 B R2 D F2 U' B2 L2 F U F' y'",
+                "F R U B2 L2 D' F2 D2 F2 D' L2 B2 R2 B' R B U2 R U2 F' y'"
+            ],
+            "solutions": [
+                "R2 u' R U' R U R' u R2 y R U' R'",
+                "R2 u' R U' R U R' D x' U2 r U' r'",
+                "U2 R2 F2 R U2 R U2 R' F R U R' U' R' F R2",
+                "R2 U' R U' R U R' U R2 D' U R U' R' D"
+            ]
+        }
+    ],
+    "Gd": [
+        {
+            "scrambles": [
+                "F U L' B2 U L2 U' R2 U L2 U2 B2 L2 F' D2 L D L U L y",
+                "B U' L D2 R2 U' B2 F2 D L2 U2 R' F U2 F' D B L2 F2 y",
+                "F' L' U' L2 B D2 R2 F R2 B' D2 U B L' B' L' F U L' y"
+            ],
+            "solutions": [
+                "R U R' y' R2 u' R U' R' U R' u R2",
+                "R U R' U' D R2 U' R U' R' U R' U R2 D'"
+            ]
+        }
+    ],
+    "Ra": [
+        {
+            "scrambles": [
+                "F U F L2 F2 U' F2 U L2 U' F2 D U2 F' D' F U2 L2 U L2 U'",
+                "B U L D L2 B2 U' B2 U B2 F2 D2 U' R D' R2 U' F2 D2 U' B",
+                "L' B U2 B2 U R2 U2 R2 U B2 U B' U L D L' B L D' U'"
+            ],
+            "solutions": [
+                "R U R' F' R U2 R' U2 R' F R U R U2 R'",
+                "R U' R' U' R U R D R' U' R D' R' U2 R'",
+                "U' L U2 L' U2 L F' L' U' L U L F L2"
+            ]
+        }
+    ],
+    "Rb": [
+        {
+            "scrambles": [
+                "F U' L' D2 F2 D B2 D' R2 U R2 U' L U R' D2 U B2 R U F'",
+                "R' F L U F2 D F2 U' L2 B2 U R2 B2 L U' R' F L' R U L R",
+                "B D B' R2 D' B2 U' L2 B2 R2 B2 F2 U' B' F2 D' B' U' F2"
+            ],
+            "solutions": [
+                "R' U2 R U2 R' F R U R' U' R' F' R2",
+                "R' U2 R' D' R U' R' D R U R U' R' U' R"
+            ]
+        }
+    ],
+    "Ja": [
+        {
+            "scrambles": [
+                "B D' R' B2 F2 D F2 D2 U L2 D U2 L2 B' U R' U R2 U2 B2",
+                "F U' B U2 F2 U B2 U F2 U' B2 U2 F' U B' U' F' U F U'",
+                "B' L' B' L2 F U2 R2 U2 B' U2 F R2 D2 R D R2 D' B' F D2 F"
+            ],
+            "solutions": [
+                "R' U L' U2 R U' R' U2 R L",
+                "U2 L' U R' z R2 U R' U' R2 U D",
+                "U x R2 F R F' R U2 r' U r U2 x'",
+                "U' L' U' L F L' U' L U L F' L2 U L"
+            ]
+        }
+    ],
+    "Jb": [
+        {
+            "scrambles": [
+                "F' U F' U' F2 D R2 D' R2 U R2 B U' B' R2 U'",
+                "R' F B2 D B2 U B2 L2 U' L2 B2 R' D' R2 U' F' R U R' U'",
+                "R' B' L2 B2 U' B2 D L2 U' F2 U B F2 U' B' D' B R U"
+            ],
+            "solutions": [
+                "R U R' F' R U R' U' R' F R2 U' R' U'"
+            ]
+        }
+    ],
+    "Na": [
+        {
+            "scrambles": [
+                "R' U B R B2 L R F2 R' B2 F2 R2 B' U' R2 B2 L' B2 U2 R'",
+                "R' D R' U R2 D B2 D' B2 D2 F2 L' U' L D F2 U'",
+                "L U' L' F2 R2 U' B2 D' F2 D B2 F2 L U L' R2 F2"
+            ],
+            "solutions": [
+                "R U R' U R U R' F' R U R' U' R' F R2 U' R' U2 R U' R'",
+                "z D R' U R2 D' R U' D R' U R2 D' R U' z'",
+                "z U R' D R2 U' R D' U R' D R2 U' R D' z'"
+            ]
+        }
+    ],
+    "Nb": [
+        {
+            "scrambles": [
+                "R' B D' R2 U2 F R2 F' U2 B R2 B2 R2 U B' D B U2 B U' R U",
+                "F L' B' U2 R U2 B2 F2 L D2 L' F2 L2 F' L B' L2 U",
+                "F' U R D' B2 D L2 U' L2 U R2 U L U' R U2 L' F U'"
+            ],
+            "solutions": [
+                "z D' R U' R2 D R' U D' R U' R2 D R' U z'",
+                "R' U R U' R' F' U' F R U R' F R' F' R U' R",
+                "R' U R U' R' F' U' F R U R' U' R U' f R f'",
+                "z U' R D' R2 U R' D U' R D' R2 U R' D z'"
+            ]
+        }
+    ],
+    "Y": [
+        {
+            "scrambles": [
+                "R' F R L2 F2 L2 F2 U L2 U L2 U' F2 L' F' L' B' U2 B F2",
+                "L' U' R U' B2 D B2 U' B2 D L2 D2 B2 L' U L2 R' U' L2 U' L2 U'",
+                "R' F' R2 U R2 D' F2 D F2 U' F D' F U F' D R"
+            ],
+            "solutions": [
+                "F R U' R' U' R U R' F' R U R' U' R' F R F'",
+                "F R' F R2 U' R' U' R U R' F' R U R' U' F'"
+            ]
+        }
+    ],
+    "F": [
+        {
+            "scrambles": [
+                "F' L' D' B2 D2 R' F2 L D2 L' D2 R2 U' F2 D' B2 L' F2 U' F' U2",
+                "R' F' L D2 R2 B2 U B2 D' R2 F2 U' R F R' D' F2 R U' L'",
+                "L' B D L2 F2 D F2 D2 L2 B2 U B L2 F U' F' U' L'"
+            ],
+            "solutions": [
+                "R' U' F' R U R' U' R' F R2 U' R' U' R U R' U R",
+                "U R' U2 R' d' R' F' R2 U' R' U R' F R U' F"
+            ]
+        }
+    ],
+    "T": [
+        {
+            "scrambles": [
+                "B U L' D2 R2 U' B2 D2 L2 U' F2 U L' F2 D U2 R D' B' F2",
+                "R F' L B U2 F' U2 R2 B' D2 F D2 F' L' R2 F R'",
+                "B' U B L2 D L2 U B2 R2 U F2 R2 F U' F' L2 B2 L2 B2"
+            ],
+            "solutions": [
+                "R U R' U' R' F R2 U' R' U' R U R' F'"
+            ]
+        }
+    ],
+    "V": [
+        {
+            "scrambles": [
+                "L' D L' D B2 D2 B2 D B2 R2 B2 L2 U' L' D' L F2 y'",
+                "L' D' F' D2 B' R2 B D2 U2 F2 D U' F' U F2 U2 F L y'",
+                "R B' U D F2 R2 D B2 U R2 D2 F2 L2 B R B' R2 U R2 B R2 y'"
+            ],
+            "solutions": [
+                "R' U R' d' R' F' R2 U' R' U R' F R F",
+                "z D' R2 D R2 U R' D' R U' R U R' D R U' z'",
+                "U2 L' U L' U' y' R' F' R2 U' R' U R' F R F",
+                "R' U R U' x' U R U2 R' U' R U' R' U2 R U R' U' x",
+                "R' U R' U' R D' R' D R' U D' R2 U' R2 D R2"
+            ]
+        }
+    ]
+}

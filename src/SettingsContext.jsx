@@ -1,4 +1,5 @@
 import React, { useContext, useState, createContext } from 'react';
+import algsets from './data/algsets.js';
 
 const zblsScrambles = [
     "F' R' D' L2 F2 D' F2 D F2 L2 F2 U F2 R2 D R' F R U B2 R' U",
@@ -795,8 +796,15 @@ export const SettingsProvider = ({ children }) => {
             avg100: false
         },
         scramble: "D U' B' U' F' U B2 F2 U2 L' R D2 R' L R D2 U2 F2",
-        subset: "3x3x3"
+        currSolutions: null,
+        prevSolutions: null,
+        showPrevSolutions: true,
+        algset: "3x3x3",
+        subsets: [],
+        algsetData: algsets
     });
+
+    const aufChange = {"U U": "U2", "U U'": "", "U U2": "U'", "U' U": "", "U' U'": "U2", "U' U2": "U", "U2 U": "U'", "U2 U'": "U", "U2 U2": ""};
 
     const toggleSetting = (setting) => {
         setSettings(prevSettings => ({
@@ -815,11 +823,37 @@ export const SettingsProvider = ({ children }) => {
         }));
     };
 
-    const setScramble = (newScramble) => {
+    const setScramble = (scrambleData) => {
         setSettings(prevSettings => ({
             ...prevSettings,
-            scramble: newScramble
+            scramble: scrambleData.scramble,
+            currSolutions: scrambleData.solutions,
+            prevSolutions: prevSettings.currSolutions
         }));
+    };
+
+    const setAlgset = (algset) => {
+        setSettings(prevSettings => ({
+            ...prevSettings,
+            algset,
+            subsets: []
+        }));
+        setScramble(getRandomScramble(algset, []))
+    };
+
+    const toggleSubset = (subset) => {
+        const newSubsets = settings.subsets.includes(subset) 
+                ? settings.subsets.filter(s => s !== subset)
+                : [...settings.subsets, subset];
+
+        setSettings(prevSettings => {
+            return {
+                ...prevSettings,
+                subsets: newSubsets
+            };
+        });
+
+        setScramble(getRandomScramble(settings.algset, newSubsets))
     };
 
     function generateScramble() {
@@ -845,28 +879,75 @@ export const SettingsProvider = ({ children }) => {
         return generatedScramble.join(' ');
     }
 
-    const randomScramble = (currSubset=settings.subset) => {
-        switch (currSubset) {
-            case '3x3x3':
-                return generateScramble();
-            case 'ZBLL':
-                return zbllScrambles[Math.floor(Math.random() * zbllScrambles.length)];
-            case 'ZBLS':
-                return zblsScrambles[Math.floor(Math.random() * zblsScrambles.length)];
+    const addAufScramble = (scramble, aufIndex) => {
+        const aufs = ["", "U'", "U2", "U"];
+        let moves = scramble.split(" ");
+        let lastMove = moves.pop();
+
+        if (aufs.includes(lastMove)) {
+            lastMove = aufChange[lastMove + " " + aufs[aufIndex]];
+            moves.push(lastMove);
+        } else {
+            moves.push(lastMove);
+            moves.push(aufs[aufIndex]);
         }
+        
+        return moves.join(" ");
+    }
+
+    const addAufSolutions = (solutions, aufIndex) => {
+        const invAufs = ["", "U", "U2", "U'"];
+        let newSolutions = [];
+
+        for (let solution of solutions) {
+            let moves = solution.split(" ");
+            let firstMove = moves.shift();
+
+            if (invAufs.includes(firstMove)) {
+                firstMove = aufChange[invAufs[aufIndex] + " " + firstMove];
+                moves.unshift(firstMove);
+            } else {
+                moves.unshift(firstMove);
+                moves.unshift(invAufs[aufIndex]);
+            }
+
+            newSolutions.push(moves.join(" "));
+        }
+
+        return newSolutions;
+    }
+
+    const getRandomScramble = (algset = settings.algset, selectedSubsets = settings.subsets) => {
+        if (!algset) return { scramble: "", solutions: [] };
+    
+        if (algset === "3x3x3") {
+            return { scramble: generateScramble(), solutions: [] };
+        }
+    
+        if (selectedSubsets.length === 0) {
+            selectedSubsets = Object.keys(settings.algsetData[algset]); // Use all subsets if none selected
+        }
+    
+        const randomSubset = selectedSubsets[Math.floor(Math.random() * selectedSubsets.length)];
+        const num_cases = settings.algsetData[algset][randomSubset].length;
+        const randomCase = settings.algsetData[algset][randomSubset][Math.floor(Math.random() * num_cases)];
+    
+        let scramble = randomCase.scrambles[Math.floor(Math.random() * randomCase.scrambles.length)];
+        let solutions = randomCase.solutions.map((solution) => solution);
+        const aufIndex = Math.floor(Math.random() * 4);
+
+        scramble = addAufScramble(scramble, aufIndex);
+        solutions = addAufSolutions(solutions, aufIndex);
+
+        return {
+            scramble: scramble,
+            solutions: solutions
+        };
     };
 
     const updateScramble = () => {
-        setScramble(randomScramble());
+        setScramble(getRandomScramble());
     }
-
-    const setSubset = (newSubset) => {
-        setSettings(prevSettings => ({
-            ...prevSettings,
-            subset: newSubset
-        }));
-        setScramble(randomScramble(newSubset));
-    };
 
     return (
         <SettingsContext.Provider value={{
@@ -874,7 +955,8 @@ export const SettingsProvider = ({ children }) => {
             toggleSetting,
             toggleAverage,
             updateScramble,
-            setSubset
+            setAlgset,
+            toggleSubset
         }}>
             {children}
         </SettingsContext.Provider>

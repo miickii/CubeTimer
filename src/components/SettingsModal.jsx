@@ -39,6 +39,10 @@ const SettingsModal = ({ onClose }) => {
                         <input type="checkbox" checked={settings.displayMilliseconds} onChange={() => toggleSetting('displayMilliseconds')} />
                     </label>
                     <label className="flex items-center justify-between">
+                        <span>Show solutions to previous scramble</span>
+                        <input type="checkbox" checked={settings.showPrevSolutions} onChange={() => toggleSetting('showPrevSolutions')} />
+                    </label>
+                    <label className="flex items-center justify-between">
                         <span>Enable Sound</span>
                         <input type="checkbox" checked={settings.soundEnabled} onChange={() => toggleSetting('soundEnabled')} />
                     </label>

@@ -9,11 +9,12 @@ import { MdMenu, MdClose } from 'react-icons/md';
 import { useSwipeable } from 'react-swipeable';
 import SettingsModal from './components/SettingsModal';
 import { useSettings } from './SettingsContext';
+import AlgsetMenu from './components/AlgsetMenu';
 
 const App = () => {
-  const { settings, setSubset } = useSettings();
+  const { settings, setAlgset } = useSettings();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [subsetMenuOpen, setSubsetMenuOpen] = useState(false);
+  const [algsetMenuOpen, setAlgsetMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('solve');
   const [lastTab, setLastTab] = useState(null);
   const [title, setTitle] = useState('CubeTimer');
@@ -167,14 +168,14 @@ const App = () => {
                     variants={menuVariants}
                   >
                     <div className='flex flex-col '>
-                        <button className="p-2 w-full text-start border-b border-gray-300 text-gray-600" onTouchEnd={deleteLastTime}>
+                        <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={deleteLastTime}>
                             Delete Last Time
                         </button>
-                        <button className="p-2 w-full text-start border-b border-gray-300 text-gray-600" onTouchEnd={resetTimes}>
+                        <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={resetTimes}>
                             Reset Times
                         </button>
-                        <button className="flex p-2 items-center text-gray-600" onTouchEnd={() => setSettingsOpen(true)}>
-                            <FiSettings className="mr-2" size={20} /> Settings
+                        <button className="flex items-center justify-center py-2 text-lg font-semibold text-gray-800" onTouchEnd={() => setSettingsOpen(true)}>
+                            <FiSettings className="mr-1" size={20} /> Settings
                         </button>
                     </div>
                   </motion.div>
@@ -188,14 +189,14 @@ const App = () => {
             {/* Subset Menu */}
             <button className="absolute top-[18px] right-4 text-black text-lg" onTouchEnd={() => {
               if (!timerRunning) {
-                setSubsetMenuOpen(!subsetMenuOpen);
+                setAlgsetMenuOpen(!algsetMenuOpen);
               }
             }}>
-              {settings.subset}
+              {settings.algset}
             </button>
-            <AnimatePresence>
-              {subsetMenuOpen && (
-                <div className='fixed top-0 left-0 h-full w-full' onTouchEnd={() => setSubsetMenuOpen(!subsetMenuOpen)}>
+            {/* <AnimatePresence>
+              {algsetMenuOpen && (
+                <div className='fixed top-0 left-0 h-full w-full' onTouchEnd={() => setAlgsetMenuOpen(!algsetMenuOpen)}>
                   <motion.div
                     className="absolute top-[50px] right-4 px-4 py-2 bg-white rounded shadow-lg"
                     initial="hiddenRight"
@@ -204,14 +205,15 @@ const App = () => {
                     variants={menuVariants}
                   >
                     <div className='flex flex-col'>
-                      <button className="p-2 text-lg font-bold border-b border-gray-500 text-[#f69435]" onTouchEnd={() => setSubset("3x3x3")}>3x3x3</button>
-                      <button className="p-2 text-lg font-bold border-b border-gray-500 text-[#f69435]" onTouchEnd={() => setSubset("ZBLL")}>ZBLL</button>
-                      <button className="p-2 text-lg font-bold text-[#f69435]" onTouchEnd={() => setSubset("ZBLS")}>ZBLS</button>
+                      <button className="p-2 text-lg font-bold border-b border-gray-500 text-[#f69435]" onTouchEnd={() => setAlgset("3x3x3")}>3x3x3</button>
+                      <button className="p-2 text-lg font-bold border-b border-gray-500 text-[#f69435]" onTouchEnd={() => setAlgset("ZBLL")}>ZBLL</button>
+                      <button className="p-2 text-lg font-bold text-[#f69435]" onTouchEnd={() => setAlgset("ZBLS")}>ZBLS</button>
                     </div>
                   </motion.div>
                 </div>
               )}
-            </AnimatePresence>
+            </AnimatePresence> */}
+            <AlgsetMenu algsetMenuOpen={algsetMenuOpen} onClose={() => setAlgsetMenuOpen(!algsetMenuOpen)} />
           </>}
           <h1 className="text-2xl text-black font-bold">{title}</h1>
       </div>

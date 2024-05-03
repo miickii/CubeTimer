@@ -29,6 +29,8 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
     const [timerDown, setTimerDown] = useState(false);
     const [touchStartPos, setTouchStartPos] = useState({ x: null, y: null });
     const [isInspecting, setIsInspecting] = useState(false);
+    const [showSolutions, setShowSolutions] = useState(false);
+    const [localSolutions, setLocalSolutions] = useState([]);
     const timerRef = useRef(null);
     const stopwatch = useStopwatch();
 
@@ -57,6 +59,11 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
         }
     };
 
+    const handleUpdateScramble = () => {
+        setShowSolutions(false);
+        updateScramble();
+    }
+
     const stopTimer = () => {
         stopwatch.stop();
         setIsActive(false);
@@ -67,7 +74,7 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
             setTimerDown(false);
         } else {
             onTimerStop(parseFloat(timer), settings.scramble);
-            updateScramble();
+            handleUpdateScramble();
         }
         clearInterval(timerRef.current);
     }
@@ -108,6 +115,13 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
         }
     }, [timer])
 
+    useEffect(() => {
+        if (settings.showPrevSolutions) {
+            setLocalSolutions(settings.prevSolutions || []);
+        } else {
+            setLocalSolutions(settings.currSolutions || []);
+        }
+    }, [settings.currSolutions]);
 
     return (
         <div 
@@ -118,17 +132,31 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
             <div className='h-2/5'>
                 <AnimatePresence>
                     {!isActive && <motion.div variants={scrambleVariants} initial="hidden" animate="visible" exit="exit" className='flex flex-col items-center'>
-                        <div className="text-xl mt-4 px-5 h-12">{settings.scramble}</div>
+                        <div className="text-xl mt-6 mb-5 px-8 h-12">{settings.scramble}</div>
+                        {localSolutions.length > 0 && <>
+                            <button
+                                onTouchStart={(e) => e.stopPropagation()}
+                                onTouchEnd={(e) => {
+                                    e.stopPropagation();
+                                    setShowSolutions(!showSolutions);
+                                }}
+                            >
+                                {showSolutions ? "Hide solutions" : "Show solutions"}
+                            </button>
+                            {showSolutions && localSolutions.map((solution, index) => (
+                                <p key={index} className=''>{solution}</p>
+                            ))}
+                        </>}
                         <motion.button
                             onClick={(e) => {
                                 e.stopPropagation();
-                                updateScramble();
+                                handleUpdateScramble();
                             }}
                             whileTap={{ scale: 0.97 }}
                             onTouchStart={(e) => e.stopPropagation()}
                             onTouchEnd={(e) => {
                                 e.stopPropagation();
-                                updateScramble();
+                                handleUpdateScramble();
                             }}
                             className="mt-4 px-4 py-2 bg-accent1 text-black rounded shadow"
                         >

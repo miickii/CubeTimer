@@ -880,7 +880,7 @@ export const SettingsProvider = ({ children }) => {
     }
 
     const addAufScramble = (scramble, aufIndex) => {
-        const aufs = ["", "U'", "U2", "U"];
+        const aufs = ["U'", "U2", "U"];
         let moves = scramble.split(" ");
         let lastMove = moves.pop();
 
@@ -896,7 +896,7 @@ export const SettingsProvider = ({ children }) => {
     }
 
     const addAufSolutions = (solutions, aufIndex) => {
-        const invAufs = ["", "U", "U2", "U'"];
+        const invAufs = ["U", "U2", "U'"];
         let newSolutions = [];
 
         for (let solution of solutions) {
@@ -933,11 +933,13 @@ export const SettingsProvider = ({ children }) => {
         const randomCase = settings.algsetData[algset][randomSubset][Math.floor(Math.random() * num_cases)];
     
         let scramble = randomCase.scrambles[Math.floor(Math.random() * randomCase.scrambles.length)];
-        let solutions = randomCase.solutions.map((solution) => solution);
+        let solutions = randomCase.solutions;
         const aufIndex = Math.floor(Math.random() * 4);
 
-        scramble = addAufScramble(scramble, aufIndex);
-        solutions = addAufSolutions(solutions, aufIndex);
+        if (aufIndex < 3) {
+            scramble = addAufScramble(scramble, aufIndex);
+            solutions = addAufSolutions(solutions, aufIndex);
+        }
 
         return {
             scramble: scramble,

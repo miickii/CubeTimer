@@ -47,7 +47,6 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
     };
 
     const toggleInspection = () => {
-        console.log("toggled")
         if (settings.useInspection && !isInspecting) {
             setIsInspecting(true);
             startTimer(true); // Start the inspection timer

@@ -1041,9 +1041,9 @@ const algsets = {
         "1": [
             {
                 "scrambles": [
-                    "F U L' R U2 B2 L' B2 L U' R U' L U R F' R2 U' R'",
-                    "L' U F' R2 U2 B2 D F2 D R2 U' R2 U' F R2 F L2 F' U2 B' L' U2",
-                    "L' B' R U' B2 U B2 U B2 U2 B2 R2 U' R B2 L F' L' B' L F U'"
+                    "U R2 F2 D2 B2 D2 F2 U' B2 U' R' D' R' U2 R2 D R'",
+                    "U2 R U2 R' U2 F2 U2 R2 F2 R2 F U' B U2 F' U F2 B'",
+                    "U' F2 U F2 R2 U' F2 U2 R2 U' R' F2 R' F2 U R'"
                 ],
                 "solutions": [
                     "U R U' R'"
@@ -1051,9 +1051,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U' B U' F2 L2 U B2 D B2 U L F' L' B' R2 U2 F2 R U R'",
-                    "L' D F' R2 B2 U B2 D' R2 D F D' L2 F L' F' R' F R U F U'",
-                    "F' R' U R U F' D B2 D B' L B L2 U' L2 F2 U' B2 D R2 U D"
+                    "R2 U2 F R2 F' U2 R2 F' U' L' U L2 F' L' F' D F' U' F D' F'",
+                    "B2 L B2 U2 F2 L F2 L2 R B2 U' R D' U F2 R' D B U' B U' L",
+                    "F2 U2 L2 F2 L2 U2 L2 F2 R2 B' R' B L U' R' U2 L U"
                 ],
                 "solutions": [
                     "U R U R' U2 M' U R U' r'",
@@ -1063,9 +1063,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U R' F2 R F2 R' F2 R' F2 L R' D' F' D L' R2 F R' U2 y",
-                    "R' B' U B2 D B2 D' B2 R2 D' U2 R2 U2 F D' F L F2 D2 U' B' R",
-                    "B' R' F' R2 U R2 U R2 U' F R F R' F2 R2 F R B U'"
+                    "D F2 U' F2 U F2 R2 U R2 F' R' F' R U' F D' F' U",
+                    "U R2 U' B2 U2 B2 U R2 F U' R' B2 U2 B2 F' U' L' U2 L U R",
+                    "L2 F' U2 L2 D2 U2 F2 L2 B L' U' L2 R' F' D2 B U' R2 U' R' B' L'"
                 ],
                 "solutions": [
                     "M' U R U' r'",
@@ -1074,9 +1074,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' F R' B D2 B D2 B R2 F' U2 R2 B R' B U2 B' U R' U",
-                    "B' R' B' D2 B' U2 B' U2 F2 U2 B' D2 R' D' R D R B2 U2 B' U' F2",
-                    "F R D U2 L2 U2 L2 B2 D' B2 D' R2 D L' D R B R' D' L R F' y"
+                    "L' D2 L' B2 L B2 R' U2 R D2 U' L D' B D2 L D2 B2 R B D",
+                    "U2 B' R2 D2 L2 B' U2 B U2 F D R' U' L' R2 F' U2 L' D R U' F",
+                    "L2 R2 F L2 B' L2 D2 F' D2 F' R F D2 B2 L' R D2 L'"
                 ],
                 "solutions": [
                     "M U R U' R' U' M'",
@@ -1086,9 +1086,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' F' D R B2 R F2 R' B2 R F2 R2 D' B F L' B' L2 U2 y'",
-                    "F' L F D' R2 D' F2 U F2 L2 U2 L2 D2 R' U2 R' F' U' L' U' F",
-                    "F U F' U' F2 U' F2 L2 R2 D B' R D' L2 R F2 U' F U'"
+                    "R2 D B2 D2 R2 U F2 U R2 F D L U' L' D B2 U' L2 D' B",
+                    "L2 U F2 U2 F2 U' B2 D' B2 U' L B L2 B' F2 D' R' F2 R D L'",
+                    "U2 R2 D B2 D L2 U' B2 U' B2 L' U B' L' B' D' R D' R"
                 ],
                 "solutions": [
                     "U2 R' F R F' R U2 R'",
@@ -1100,9 +1100,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U F' R2 F2 L2 U' L2 U L2 F' U2 R' F' U R2 D B2 D' U'",
-                    "B' R' F R2 D B2 D L2 U' F2 D2 F' U B' L R2 F L' U2 F2 R2",
-                    "L' U F' L2 D' B2 D' B2 L2 D2 L2 D2 F L U' R U L B L' R' U'"
+                    "D L2 B2 U2 L2 U2 L2 D F2 L2 F L F D' B' L2 D2 U2 R2 F D",
+                    "B2 F2 R2 D' F2 R2 F2 D' F2 R' B' L B D' R2 F2 D B2 U L",
+                    "R2 U' B2 U R2 D2 L2 U' F2 D2 B' R B D2 U L2 D2 U'"
                 ],
                 "solutions": [
                     "R' F R2 U R' U' F'",
@@ -1111,9 +1111,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' D' L B2 D2 R2 D2 B' U2 F' R2 B D' U' F R' B' L D L D2 F",
-                    "R D B2 R2 F D2 R2 B' R2 D2 F' R U' R D' U B' R' B U'",
-                    "B' R U2 B2 U' F2 U L2 D' B2 F' R B L2 F' U2 R U' R'"
+                    "R2 U' R2 D L2 B D F2 L' F' D F2 D' F2 L2 U D2 R2 D L B D'",
+                    "F2 R2 F2 U2 B2 U' F2 D' F2 U2 L F' D B2 F R B' D L D' B",
+                    "F U2 B D2 B' U2 B D2 B' R' F L' R U L2 D F2 D' F2 L' U"
                 ],
                 "solutions": [
                     "R' U' F U R U' F'",
@@ -1123,9 +1123,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F L B' D R2 D F2 D' R2 D' B R' D2 R' D2 F L' R2 F U2",
-                    "B' U' R B2 R2 B2 U B2 U' B2 U' B2 R2 B' R' B' U B2 U' B' U2 y",
-                    "F R' B' U2 B2 R2 B2 D' U' R2 D U' B' D2 R U R' D2 R F' U' y'"
+                    "L2 B U2 F L2 F' U2 B2 R2 B2 D' R' D' R D' L B2 R2 U2 B L F",
+                    "B2 U' F2 U B2 U2 F2 U' R2 U' R' U B' R F' R B2 U' F U' B'",
+                    "D2 R2 U' L2 B2 R2 D2 L2 F2 U L' R U' B U F2 L2 B' R' F L' U'"
                 ],
                 "solutions": [
                     "M' U R U' r2 U2 R U R' U r",
@@ -1137,9 +1137,9 @@ const algsets = {
         "2": [
             {
                 "scrambles": [
-                    "F' R' U' F2 U L2 D R2 B2 U' F2 U' R' D L D F' L U2 F D U' y'",
-                    "R' B' D' F2 U F2 D R2 U2 R2 U' B U' L' U' L U R y'",
-                    "L U' R' F2 R2 U2 F2 D2 L B2 D2 L' U2 B' U2 R U2 R' B U' L' y'"
+                    "U F2 U R2 D B2 R2 U2 R2 U' B D2 F D2 B D'",
+                    "U' R2 D U2 B2 U' R2 B2 R2 U B' R2 B' R2 D' U2 R2 U",
+                    "U' F2 U2 B2 F2 R2 B2 R2 D R' B' D' L U2 L' R2 F D' F' D R'"
                 ],
                 "solutions": [
                     "y U' L' U L"
@@ -1147,9 +1147,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B L' F2 U' L2 U' L2 U2 F2 L B' U2 L' U' L B U B' y'",
-                    "F U F2 R' D2 L' U2 L2 F2 R' D R F2 L' D2 U2 R F U y",
-                    "R' D' F R2 D R2 D R2 U B2 D' U' F D2 U L D2 B2 F' R' F' U y"
+                    "L2 R2 F2 D' L2 R2 B2 U' B2 U L F R' U2 F R F L'",
+                    "R2 U2 R2 U' B2 D' F2 D2 L' F' L' D B' F' U2 B D B D B",
+                    "D' L2 U' F2 R2 D2 F2 U2 F2 R2 B D2 F' U2 F R' B R' F2 D F'"
                 ],
                 "solutions": [
                     "U R' D' r U' r' D R",
@@ -1158,9 +1158,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B U B' R2 F2 D L2 D' F2 R2 U' B' R B' R' F D2 F D2 F2",
-                    "B D' B U2 B2 L2 U B2 U B2 U' L2 B D B' U' R' F R F'",
-                    "F U' F' R2 F' R2 F R2 F L2 B2 R2 B' L B' U' L R' F R U2 F'"
+                    "R2 U2 F' D2 R2 F U2 R2 U2 F2 L' D2 L F L' D2 R' F' R F' L",
+                    "B2 U B2 U' B2 R2 B2 U' R2 U L' B' L B' R2 U2",
+                    "D R2 D' F2 U R2 U' F2 U L F L' F' R2 F D' U' D F"
                 ],
                 "solutions": [
                     "F R' F' R",
@@ -1169,9 +1169,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L B' U F' L F' L' F' U' R2 F' B L' B2 R2 D' R2 D B2 U'",
-                    "F U' L' D' U2 R2 D B2 U L2 F2 R2 B2 R D L' U2 F' D R F2 U2",
-                    "B D' L' R' U2 R D2 F2 R' F2 R' U2 R D' B' L' U2 L F' U2 F U2"
+                    "D F2 R2 D' F2 D2 U' B2 U' F' L R D2 B2 R B' L",
+                    "F2 R2 F2 R2 U R2 F2 U R2 U R F' R U2 R2 F2",
+                    "U L2 U2 F2 R2 B2 D L2 D R2 F U2 B R2 D2 F D2 L' R2 B' L F"
                 ],
                 "solutions": [
                     "U' R' D' r U r' D R",
@@ -1180,9 +1180,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R D' B2 D2 B L2 F2 L2 D2 F L2 F' L F' D2 B R F2 D' R2 U y",
-                    "R B' R B2 D' R2 U2 L2 D R2 U B2 U B' R2 B' D2 L B2 D2 R B y'",
-                    "B R' U' F' U2 F2 D2 B' R2 D2 R2 B D' R B2 R2 D' B R B2 F' U2"
+                    "B' F' D2 B U2 B' D2 B U2 L' U' L U B U' B F B' U B'",
+                    "D' B2 R2 D' F2 U' F2 R2 D2 L2 B' R' F R U2 B' F'",
+                    "L2 U R2 U L2 R2 D' U2 R2 B2 F R' B' R' D2 F' U2 B D'"
                 ],
                 "solutions": [
                     "U' r U' r' U r U r'",
@@ -1192,9 +1192,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' B' L' D L2 U L2 D F' R' D2 B' L2 F' U2 F' L2 F2 L2",
-                    "R D F' B' L2 D2 B' R2 B' D2 B L2 U' B D' U R' D2 F' L F D2",
-                    "L' B' D' B U' B' U D B2 L F R2 F L2 B2 D2 L2 F' R2 F'"
+                    "U R2 D2 F2 L2 D2 F2 L2 F2 D L B' L B D' F D R2 U' B' U F'",
+                    "R2 D' R2 U F2 U' F2 U2 F' U2 R U' R' F U' F' R' F D R",
+                    "D2 R' B2 R U2 B2 L U2 B2 F2 D' F L' R2 B2 U B R' F2 R U' R'"
                 ],
                 "solutions": [
                     "R U2 R D r' U' r D' R2"
@@ -1202,9 +1202,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F R' D' F2 L2 D F2 D' F2 U2 L2 U' R' F R D F2 U' R F' U'",
-                    "B D L B' D2 B2 U2 R2 F2 U2 F' U F' U' F R' D' R' D2 B2 y'",
-                    "L' U R' D2 L2 D2 R2 D F2 R2 U F D' L' F U R' U y'"
+                    "F' L2 R2 B U2 F' L2 D2 F' D2 R' D' B' R2 B2 F' D' B' D' L B L'",
+                    "L2 R2 D B2 R2 B2 L2 D F' U' L' B2 R B2 U F' L2 R2 F' D' L'",
+                    "F2 D2 B2 L2 D' F2 U B2 U R' F R' F2 U2 F2 D' F'"
                 ],
                 "solutions": [
                     "d' F R U R' F'",
@@ -1213,9 +1213,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B L' B' F2 U' F2 L2 D' F2 D R2 U' B L2 B L D' B2 L' R2 U",
-                    "F D' B' L2 U2 F' L2 F D2 U2 R F' R2 D' F2 U2 F2 U",
-                    "F' L' D2 B2 L2 F2 U2 B2 R2 F2 U' F' U' L2 U F L U2 F U'"
+                    "U2 R2 D2 B D2 B' R2 F2 L' F' R' F' R' D2 R' U B' R' U",
+                    "D2 B2 U L2 U B2 F2 D' R2 F U2 L2 R B L2 U F' U2 F2 R' D",
+                    "F' U2 L2 U2 L2 R2 B R2 F U L U' R2 B' D2 R U' F U R U F"
                 ],
                 "solutions": [
                     "r U r' U2 M' U M"
@@ -1225,9 +1225,9 @@ const algsets = {
         "3": [
             {
                 "scrambles": [
-                    "R D' F' B2 U L2 B2 L2 D2 L2 U' B2 L' D R F U' L' D2 R2 B' L y'",
-                    "R' U L R2 U' L2 U R2 U' L2 F2 L' F2 R U' L U2 L' U2 y'",
-                    "B' R D R2 D' F2 R2 U' R2 D R2 U R2 F R2 D R2 D' F' D' R B y'"
+                    "F R2 D2 F L2 F L2 F2 D2 F' D B D' U2 F' U2 F R2 U' B'",
+                    "R2 D L2 R2 D2 L2 D' R2 U2 B' R2 F' R B2 F' L2 F U' B' R' F",
+                    "R2 F2 L2 D' L2 U B2 F2 D' F' R2 U2 B' U' B2 F D B' D B'"
                 ],
                 "solutions": [
                     "y L' U' L"
@@ -1235,9 +1235,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D R D2 F2 L2 R2 D R2 F2 R2 U' B R B U' R' U2 F2 U' F2 R' y",
-                    "F' U L' R2 B2 D2 R2 U' L2 U' F' R2 B F2 R' B' D' L' R' F2 U' y",
-                    "B' D' B' R2 F2 D2 L2 F' D2 B' R2 B U R U' B' F' R B D y"
+                    "F2 L U2 R D2 L' B2 L D2 L D' B D U R' U' L U2 L",
+                    "U2 F2 R2 B2 L2 D2 L2 D' B2 R B F L' B D B2 F R U' B L B'",
+                    "U2 L2 F2 L2 F' L2 F' L2 U' L R' F' L' F2 R U2 F2 L F' L' U"
                 ],
                 "solutions": [
                     "y' S' R' U' R S"
@@ -1245,9 +1245,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' D R2 D B2 L U L' B D2 L B' U2 B L2 D2 R2 D2 F' L2",
-                    "L U' R' L2 D2 F' D2 F D2 F L2 F2 L' U' R U R B' R' U B U2",
-                    "F U' F' D' B2 D F2 D' B2 D F2 L2 U2 F' L U' F U' L U2 L U"
+                    "B2 D2 L2 B2 U2 R2 F2 U2 B U L' F' D U2 F2 D' F R' F2 R B'",
+                    "U F2 U B2 U' F2 U' B2 D' R' B U' B2 R F' R' B R2 U F D R'",
+                    "U F2 U F2 U F2 U2 F2 U B F2 L F2 U B L B' L' U' B'"
                 ],
                 "solutions": [
                     "R U' R' F' r U' r' F2"
@@ -1255,9 +1255,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L U F D2 B D2 B U2 R2 F' R2 U2 B2 U' L' R U R2 U2 R2 U' R' y",
-                    "B U B' U B2 U B2 U B2 F' U' F U' B' L' B L U' B2",
-                    "R' B' F2 B' R U2 B2 U2 F R' F2 U' R2 U L2 D2 R2 L2 B2"
+                    "R2 B' D2 F L2 U2 L D R U2 R' F' R' D2 B U D' R",
+                    "U2 R2 B2 D2 R' U2 R D2 B2 F L2 R2 F2 D L D' R U2 R' B' L F",
+                    "U2 B2 R2 B2 U2 R U2 R' U2 B' R' U F' U2 B F"
                 ],
                 "solutions": [
                     "U R2 D r' U' r D' R2"
@@ -1265,9 +1265,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F' D R2 B2 R2 D2 U B2 D2 F2 R2 U' B R D' L' R' F L' R' U",
-                    "L' B L' B2 F2 U L2 B2 D' F2 R2 F2 D' F' L D' B2 U2 R B2 L2 B'",
-                    "R F' U' B2 R2 F2 L2 R2 U F2 D2 F2 U L B' L2 R2 B' L F2 D2 U'"
+                    "U L2 U' R2 U' B2 R2 D' L R2 U B2 R2 F L B' F L B D",
+                    "B2 U' R2 U L2 U' F2 D2 L' U' F L F' U2 R2 F2 L' F U' F' L' D",
+                    "U' R2 B2 L2 F2 U' R2 D' U L2 R' U F R' B' F' U2 R2 U R U B'"
                 ],
                 "solutions": [
                     "F' r U' r' F2 R U' R'"
@@ -1275,9 +1275,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' R B D B2 D' B2 L2 D F2 U' R2 U B F2 R' B' L2 B2 F' U F",
-                    "B' D' L2 U2 F' L2 D2 R2 B2 L2 B' L B D F L D' L D' B2 y",
-                    "B' D R F U2 B' D2 B U2 R2 B R2 F' R B U' B2 D2 R' D R' B"
+                    "R2 B2 D U L2 B2 D2 R2 F2 D B' U' R' B' U R B R U' L' B L",
+                    "F2 D2 L2 B2 L2 D' B2 L2 D U F' D' L2 B D' F2 R' B R2 F R",
+                    "U2 B2 L2 U B2 U2 F2 U2 B L2 B' L R2 F' U R' F2 R U' L' D F'"
                 ],
                 "solutions": [
                     "U2 R' D' r U' r' D R2 U' R'"
@@ -1285,9 +1285,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U B' R2 B' L2 B' L2 B' U2 F' L2 B2 L B2 L U F' U R",
-                    "F U R' F D2 B' U2 L2 F' L2 F D2 U2 R D' F' D R U' F' R'",
-                    "B R' F L2 F2 R U2 F U2 F2 U' B R2 B2 U2 B2 R2 D F2 B2 U2 R2"
+                    "R U2 R' F2 L' B2 R D2 R' B' D2 L B2 F2 U' B' R' B R U' B",
+                    "R2 F' R2 B U2 B D2 B2 U2 R' D' F D U2 B2 L' F2 B R' B",
+                    "L2 F D2 U2 R2 F' R2 D2 U2 F' R' D B2 D F D' B2 F' R L B' L"
                 ],
                 "solutions": [
                     "U' R' F R U R U' R2 F' R"
@@ -1295,9 +1295,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R B' R U F2 U R2 D' L2 U R2 F2 U R' D B2 R2 U R B' U y",
-                    "R U' F U R2 D' L2 U B2 D' R2 U' B L' R D2 R' F L' R U",
-                    "F D B' L2 D F2 D' F2 D F2 L2 D2 R' F2 L D F R' B' U' B2 R y'"
+                    "R2 D L2 D' F2 U R2 U' F2 D' R' D2 L2 B' U B2 D' U2 R' L U' L'",
+                    "U' L2 U2 L2 F2 D' L2 D' R B' F2 U2 R' F U2 F2 D2 U2 F L U",
+                    "L2 D2 F D2 B' L2 F U2 R' D R' D' R F' U2 R B U"
                 ],
                 "solutions": [
                     "R' F R2 U' M' U2 r' U' F'"
@@ -1307,9 +1307,9 @@ const algsets = {
         "4": [
             {
                 "scrambles": [
-                    "L' B' L U' R2 F2 U L2 U' L2 U2 F2 U L' R' F2 U R2 U' B L U'",
-                    "F R B' R2 B' D2 L2 F D2 B' U2 F' U' B' U2 R U R2 U2 F' R'",
-                    "R F' U L2 F2 U2 L2 U L2 U F2 L2 F U' F' R' U2 R F R'"
+                    "U L2 D2 F2 D2 B2 U2 R2 F2 R F' D R' F D B F2 R2 U' B L U",
+                    "U2 L2 U F2 D' F2 U' L2 R' U' L' R' D' R U R2 U' R' D L",
+                    "F2 L2 R2 U' B2 L2 D' R2 D F2 L D2 U B2 U' R2 B2 L' U' L'"
                 ],
                 "solutions": [
                     "R U R'"
@@ -1317,9 +1317,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U' L D2 B2 U2 R2 F2 U2 B U2 F2 R' B2 D2 L' B' L F2 U L",
-                    "F' L' U' L2 U2 L2 U' L2 U' L' B U L U L' U' F U2 B' y",
-                    "F' L F' U2 R D2 R' U2 L D2 L2 F2 U F' U2 F2 R' F2 U' F R2 y"
+                    "R' B2 R' U2 R' U2 R B2 R2 U F R F' U2 R' U2",
+                    "U' F2 D' L2 U B2 U' L' D2 F R' D' F2 D F2 D' L' F' U'",
+                    "U2 L' D2 B2 R F2 D2 U2 R2 U' B' L B' L D' L' D' U2 L2 D L"
                 ],
                 "solutions": [
                     "R U R' U' F R U R' U' F'",
@@ -1329,9 +1329,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' U R L2 B F D2 L2 F' D2 F D2 L' D2 L2 F U' F D2 L' F'",
-                    "B R' B D2 B2 L' D2 R U2 R' B2 R F2 U F2 L2 F2 L B' U L R2",
-                    "B' L' U R' U' B' D2 L2 F' U R L' B2 D2 B' R2 L2 F U2 L2 B'"
+                    "U' B2 R2 F2 U2 B2 L' U2 F U2 L' D2 L' U L' B' U' L' B L'",
+                    "R2 U' F U F2 R' F2 L' F2 U2 F2 U2 F U2 R2 F' U2 F' L U' F'",
+                    "U R2 B2 D R2 F2 U R2 B2 D L' R2 F2 L' U B' U' F' U2 F U' B"
                 ],
                 "solutions": [
                     "R U R' F R U R' U' F'",
@@ -1340,9 +1340,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F L B2 D B2 R2 U2 B2 L2 D' F2 L' B D' B' R D2 B2 U2 F' R'",
-                    "B' L R2 F2 R L D R F' D' L2 B U' B2 U' L2 D L2 U' B2",
-                    "R F' D L2 F2 R2 U' F2 D' L2 F2 U B' U F2 L2 F U B' U R' U2"
+                    "B2 L2 U' B2 U L2 B2 U' L2 U' R B U' L2 U' F U' F' L2 B' R'",
+                    "F2 U2 R U2 R2 F2 R F2 L' F' U' L B' U' B F2 D' B' U L' B D",
+                    "B2 D2 B2 D R2 D U2 F2 D' B' R2 D' B2 U L' R2 F U2 L' B' D' R"
                 ],
                 "solutions": [
                     "U F U R U' R2 F' R",
@@ -1351,9 +1351,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F R' D' R2 B2 D L2 U' L2 B2 U R' B U B' U' F' U' R'",
-                    "R' F D' L2 U L2 D F2 D' F2 D F2 U' F R2 F U F' U R'",
-                    "L D F D' L2 R2 U' R2 D F2 R2 B2 U F' D' R' F L' F' U F' R y"
+                    "F2 B L2 B' U' B L2 D F2 L B2 D R2 B2 U L2 F2 U L D' B'",
+                    "R2 F2 R2 U F2 U' B2 F2 D2 F' D' F2 D' B' L' B' U B2 L B' L B'",
+                    "F2 U F2 U2 B2 U' R2 F2 U L2 B L2 F2 L' R2 B D' L B2 U R"
                 ],
                 "solutions": [
                     "U' F' U2 F U R U' R'",
@@ -1363,9 +1363,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F D F' U L2 B2 U2 F2 R2 D2 F2 U' F D B2 D2 R' F' R2 U2 R' U'",
-                    "L U' F' R2 B2 D B2 L2 U2 F2 U F2 L U R2 F U' B' U B U' y'",
-                    "L D F R2 D F2 R2 D2 R2 F2 D L2 B2 R' B U' L' B L2 R' U"
+                    "R2 D L2 D2 B2 F2 D' L2 U B' L' B' U' L2 B2 R D L U2 R F' L'",
+                    "R2 U R2 U R2 U2 R2 D' F2 U L' U2 F R U' L R' U' F2 D F'",
+                    "D' F2 U' F2 D2 B2 L2 U B U2 B L' D L' D2 R' D B U2 L B D'"
                 ],
                 "solutions": [
                     "R U' R2 F R F' R U2 R'",
@@ -1374,9 +1374,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L F U' R2 F2 L2 U2 L2 U' F2 U F D2 R' D2 F L' U2 F R U'",
-                    "R F' L U2 B2 L2 U B2 U L2 U2 B2 U' L F U2 R' F' U2 F U2",
-                    "L B D F L2 F2 R2 U2 L2 F R2 F D F' D2 L U' L U2 F L U2"
+                    "R2 U' L2 D B2 R2 D2 L2 D F2 L U2 F2 U2 L' F' D F2 U F D' F",
+                    "B2 U' R2 D2 R2 U F2 D' F D' F' D2 R' U2 L U L2 U R D' F",
+                    "U2 B U2 B' U2 R2 U2 R2 B R U2 B' D' B' R B R U F' R' F D"
                 ],
                 "solutions": [
                     "U2 r U' r' U' r U r'",
@@ -1385,9 +1385,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B L' B D' R2 D B2 R2 D L2 R2 F2 U F' R' F' L' R2 B2 U' R' U2",
-                    "L' B R D' B2 L2 D F2 U' L2 U2 R2 B' D' B' R2 D2 L U R' B U",
-                    "R U' R B2 D B2 R2 U' B2 D' L2 D L2 B' F2 R' F R B' U2 F2 U'"
+                    "U2 R2 B' L2 F' L2 U2 R2 D2 L' F' U' L U2 R F U' R F L",
+                    "U' L2 F2 L2 U' L2 U' L2 U2 R' F R U2 L' U F2 L2 U F'",
+                    "U2 R2 D' F2 U' F2 U R2 B2 L' D2 L B' U B' R U' L R2 F L' D"
                 ],
                 "solutions": [
                     "R' D' r U' r' D R2 U R'"
@@ -1397,9 +1397,9 @@ const algsets = {
         "5": [
             {
                 "scrambles": [
-                    "F' L F' U2 B2 U F2 U' B2 U F2 U L' F2 U F' U' F U",
-                    "L D' L U2 L2 D2 U R2 B2 U R2 F2 U R' D' R2 U' L U L R'",
-                    "F D B' F2 U2 B' F2 R2 F D' F2 R D R B R' B D'"
+                    "L2 U F2 D F2 D' F2 D F2 D' L' F2 L U' L2 U",
+                    "D' L2 D' B2 L2 D2 R2 U F2 U R' U2 R' U B' U R U' R' U' B",
+                    "D' B2 L2 D F2 U' F2 L2 F2 L F D' F' U' L U L' B2 F D F"
                 ],
                 "solutions": [
                     "U' R U R' U2 R U' R'"
@@ -1407,9 +1407,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U' B' U F2 R2 B2 L2 D F2 D2 B2 R2 B R' F L2 R U2 F2 y'",
-                    "L' U' B L2 D2 B R2 D2 B' L2 F L' B' L2 U2 L' F' U F L",
-                    "B L B F2 B' L2 B' R B' R D' B' L B2 R2 F2 D F2 D' L2 U L2"
+                    "D F' D' B2 R2 F B2 R' F' R2 U2 B2 U D2 F2 D R2 D2 F D' R'",
+                    "B R2 B R2 F' U2 L2 U2 B U2 L F2 R' B D' R' D' F2 U2 F U' R'",
+                    "F2 U2 L' U2 L' F2 L F2 L2 F U' L U F L2 U' L'"
                 ],
                 "solutions": [
                     "U' R U R' U R' F R F'"
@@ -1417,9 +1417,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U' R D' B2 D' B2 D' R2 D2 F2 L2 U2 L' R' F' R D L' U F R",
-                    "F D L' R2 D' R2 F2 R2 F2 U B2 R2 F' D U' L' D' F' U R2",
-                    "R' D' R U2 F2 L2 U' F2 U F2 U' L2 F' U' F' U R' D R F U F2"
+                    "R U2 L U2 R D2 L D2 U2 R D L' R B L B' R' B2 D' R U' L'",
+                    "B2 U' B2 D' U2 R2 D2 U L2 B2 L' B' D F2 D' L' D2 U2 R2 F R' D",
+                    "R2 U' F2 D B2 D' F2 R2 U R2 B R B2 R' B' U' R2 U' R U' R'"
                 ],
                 "solutions": [
                     "U2 R U' R' U2 R U' R' U R' F R F'",
@@ -1428,9 +1428,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' U' L' B2 L' U2 B2 L' D2 B2 D2 U2 R D' F2 L B' L B2 R' B U'",
-                    "B L F D R2 B2 F2 D' F2 U R2 U' F' L F' U L' F L2 U2 B' y",
-                    "B' R' F' U2 B2 F2 R2 D' R2 D' B2 D2 R B F' U R2 B' R2 B"
+                    "U D' R' B' L2 F L' B' L2 D B R' D2 R2 L2 F2 R' L' B D' R",
+                    "F2 R B2 D2 L D2 B2 R' F2 U' R2 F D R D' F' U R U",
+                    "R' U2 L' B2 L U2 R' U2 B2 L' D R D2 U B2 L2 F L' F L D L'"
                 ],
                 "solutions": [
                     "U' r U R' U' R2 r' U2 R'"
@@ -1438,9 +1438,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F R' D' L' F2 L' F2 L2 F2 L2 U2 F' D B D' L' D B' F2 R U' y",
-                    "F' D F U' D' F2 L' U' L' U L2 F' B2 L2 U' R2 F2 D' L2 D' R2 U",
-                    "B' D' B L2 D2 F D2 R2 B R2 B' L2 D U2 R' U R U B U2 y2"
+                    "B2 D2 L' F2 L D2 B2 L' B2 R' B L F' L' B L D U D' F",
+                    "U2 F2 L2 D2 L2 F U2 F L2 B2 L' R D' F D' F D2 L2 U L U R",
+                    "R2 U' F2 D2 L2 B2 D L2 D F2 R U' R U' R2 F' D U D' F"
                 ],
                 "solutions": [
                     "y' U r' U R U' R' U' r",
@@ -1449,9 +1449,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' U R' U2 B2 D' R2 D B2 R2 U R2 F' L2 F' L2 F2 R' U R2 U2",
-                    "R F U F' U2 F' U2 R2 F R2 U2 F2 U F' U2 R' F2 L F L' F",
-                    "B L' U B2 R2 D U' R2 U B2 F2 L B D2 B R2 B2 L' B' F U'"
+                    "D B2 L2 U L2 D' B2 U R2 U' R' U2 B U' B' R' U2",
+                    "D2 U' B2 D2 F2 R2 F2 D R2 U' R' D L' D F2 L' U2 F' U F D R",
+                    "B R2 B R2 F' R2 U2 L2 F U2 R B' D2 F' L2 U' L' U F2 L F' U'"
                 ],
                 "solutions": [
                     "U' F R U R' U' F' R U2 R'",
@@ -1460,9 +1460,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L D B' R2 D2 B' L2 U2 B2 U2 L F' L2 D2 F2 D' F2 U R2 L2 F2 U y'",
-                    "L' B L' R2 F D2 F' L2 R2 B2 U2 B' U2 L' B L U' B' U' R B' R' y",
-                    "L' B R' U2 D2 L F' L F2 R U2 L F2 B2 U' F2 U' F2 U L2"
+                    "D' U' B2 U' B2 L2 D F2 U2 B2 R F' R D B F R2 F R B",
+                    "D2 F2 R' F2 D2 L' R2 U2 L B L2 R' F2 R2 U' L2 U R' F2 L B' R'",
+                    "B2 R2 U2 B2 D' F2 D' L2 F2 D2 R U' R' F L' B D R2 D' B' L F'"
                 ],
                 "solutions": [
                     "R' D' R U R' D F R F'"
@@ -1470,9 +1470,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B U' L D2 R B2 R' D2 L2 F2 L' U2 L2 F' U B' F2 R' F2 R U2 F",
-                    "B U' F' U2 R U2 B2 L2 R B2 L' R2 U2 F U' F2 L' U F U' B' F",
-                    "F' D' L D2 F2 D' R2 B2 U R2 F2 U' B' L U B D L2 U2 F U'"
+                    "L2 R2 U' F2 D' F2 R2 U R' F' R2 F' L B' U' R' D2 F U' F' U L",
+                    "U F2 U L2 D2 B2 R2 U B2 L2 F D F L F' R' D2 L2 B L F' R",
+                    "F' U2 B D2 F2 D2 L2 B D2 F2 R B' D' F' D' F' L2 B2 F' B U' F"
                 ],
                 "solutions": [
                     "U' r U' r' U2 r U r' U' R U' R'"
@@ -1482,9 +1482,9 @@ const algsets = {
         "6": [
             {
                 "scrambles": [
-                    "L' U' R U' L2 U' B2 U F2 U' B2 U F2 L U R' U' L U' L y'",
-                    "F L' D' B2 U L2 R2 F2 D' L2 D F2 L2 F' D' F' U' R2 B2 L F' U2 y2",
-                    "L F R L2 D U L2 F2 U2 B2 R2 F2 D L F' U R2 F U' F R' F' y'"
+                    "F2 U' L2 U' F2 U F2 U B2 D2 F' D B' D F L2 F2 B'",
+                    "L2 F D2 F L2 R2 B U2 B2 R2 U' L2 F2 L B' L2 U' F' L' B U",
+                    "B2 U' R2 F2 L2 U2 R2 D' R2 U' B U' B D' B2 F2 R2"
                 ],
                 "solutions": [
                     "y F2 R U R' U' F2"
@@ -1492,9 +1492,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F D F D2 R2 F2 U2 F2 R2 D F2 U F D' R B2 F' R' B2 R B2",
-                    "L' B' R U R2 U F2 R2 U F2 U R2 F' R F' U2 R' B L2 F2 L' U' y'",
-                    "B D F U2 R2 U' R2 U' R2 U2 R2 U F' D' B' F' U R' F2 R F"
+                    "F L2 R2 F' R2 F L2 R2 F2 U' B' F D R B R' U B' D' B",
+                    "B2 L2 U2 L2 U' B2 R2 U2 R2 F' R F U R D U R2 B' L F' L' B",
+                    "B2 D2 R2 F' D2 U2 B L2 B' R B2 R' B' D B2 R' U L2 R D' R"
                 ],
                 "solutions": [
                     "y U L' U' L U' L F' L' F",
@@ -1503,9 +1503,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' U R' F' L2 B' R' U R U F2 D L2 F L2 F U2 R2 B' R2 L2 F",
-                    "B' U F' U2 L2 U2 R' U2 L' U2 R B F R B2 U F' L' F R'",
-                    "R' U' B' U' B2 L2 D R2 D' R2 F D' L2 F' U F U' B' R U2"
+                    "D2 R2 F2 U2 B' D2 B' L2 F U' F' D' B' L' D2 R' D2 L' B' D",
+                    "U2 B L2 D2 B F2 D2 B' L2 B2 U B L U2 L' R2 B' R' U B R' F",
+                    "R2 U' R' D' R F2 U' F2 B R2 U' F2 D' R2 F2 R2 F2 D B' R' D"
                 ],
                 "solutions": [
                     "U2 R' F' U' F U R2 U' R'",
@@ -1514,9 +1514,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' F L U B2 R2 U' R2 U' B2 L2 F2 D2 L' U L2 F2 U L F U' L",
-                    "B' D' L' F2 D F2 R' F2 B' R2 L2 F' R F D L2 U' L2 D2 R2 L2 B2 y'",
-                    "L D B F' U2 F R2 U2 F R2 F' U2 B' R' F D' L' R2 U' F' U' R'"
+                    "B' U2 F R2 B D2 B' D2 R2 F' U R' B' U B U' R2 F R2 F' U' R'",
+                    "U' B2 U' F2 U B2 R2 U R2 U' F' R2 F U' F' R' B' F' R2 B R U'",
+                    "U' B2 U B2 R2 U R2 B2 U' B R2 B R' U' R B' D' L' R L D B"
                 ],
                 "solutions": [
                     "U' R' F R F' R U2 R2 F R F'",
@@ -1525,9 +1525,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L F' L F' R2 F D2 B' D2 L2 F2 U2 F2 L' U2 L F R' U2 R2 U",
-                    "F' L U F2 U2 B2 R2 D' R2 B2 U2 L' F2 L U' F L' F2 U2",
-                    "B' D' F' D2 B' L2 U2 F L2 F' D2 B R D B' U2 B2 U R B' R B"
+                    "F2 U2 F2 U' L2 U' L2 U' L' D R' D B' D' R D' R' F' R F' L",
+                    "B2 R2 B' U2 B' U2 B2 R2 B' R U' L' R' B L B2",
+                    "B D2 U2 F' U2 F D2 B R B' U2 B R' B2 D' U D"
                 ],
                 "solutions": [
                     "U' r U' R' U R U r'"
@@ -1535,9 +1535,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R U L' R2 L U' R' B2 D' L F' L' D' F2 L2 F L2 F D2 B2 R2 U2 y",
-                    "F D' R U' R2 U R2 U' R2 U' R2 U' B U B' U' R' F' U' F D F' y",
-                    "B' R' F R' U2 L' U2 R D2 R' D2 F2 D' B R' D U F2 R2 D F' R' y"
+                    "F R2 B L2 B L2 B2 D2 B' D L' D' B2 L2 B R D2 F2 L F R",
+                    "R2 D B2 U' B2 R2 D' U' F2 R' F R U2 F U F U2",
+                    "R2 U' B' D L' U L2 U' D2 F' D2 L' F2 R D2 R' F2 L B2 L B' D'"
                 ],
                 "solutions": [
                     "U2 y' R' F' U' F U2 R",
@@ -1548,9 +1548,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' B' D U D' B L F' L2 U' L2 U' F' L2 F2 L2 U' F2 U' L2 U F2",
-                    "L F L D' L2 U' L2 D2 R2 F2 R' F2 R2 D' L' U' F' U' L' U'",
-                    "L' D B' L2 D2 R2 U2 R2 F2 R2 F2 R2 D2 B D' B D' F D B' L U'"
+                    "U2 B' U2 B2 F' L2 B D2 R2 F' R' F' R' D2 B' L2 U' F U B'",
+                    "D B2 F2 R2 B2 F2 D' R2 U' B' R D B2 L2 F' L2 B' R U L F' L",
+                    "D2 R2 F R2 L U R' L B2 U B2 D' L2 U R2 D2 F2 R2 B' U' L"
                 ],
                 "solutions": [
                     "R' D' F r U2 r' F D R"
@@ -1558,9 +1558,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' D F B2 D' L2 D' U2 B2 U L2 B R B' D B2 R' U B L2 D y",
-                    "R' F' D' U2 F2 D L2 D' R2 D' B2 R2 B D L' F L' B' R' B R2 U2",
-                    "B' L R2 L' F' U D2 B L' U B2 U2 B' U2 F L2 D2 B2 U2 F2"
+                    "D2 B D2 L2 B' L2 F U2 F2 L B' F U' B' F D' B L' B L' D F'",
+                    "U2 B U2 F2 U2 F D2 R2 U2 R D L2 U B L' U L' U B2 D B'",
+                    "F' U2 F L2 U2 L2 F L2 D F D' F U2 F2 L' B' D R' D' B L' F'"
                 ],
                 "solutions": [
                     "U M' U M U2 r U R' U M",
@@ -1572,9 +1572,9 @@ const algsets = {
         "7": [
             {
                 "scrambles": [
-                    "L B' L' D B2 D R2 U F2 U2 L2 U' L F R' F2 L' D R' D U2 y'",
-                    "R' U F U2 F2 U2 F' U2 F U2 F' U2 F2 L' U' L F R B U2 B' y",
-                    "B' L' D B2 L2 D2 F R2 B' L2 U2 B' F' D' L B L U F U' F L'"
+                    "D' F2 D2 F2 D' L2 U B2 U R2 B' F2 L B' L F2 U' L2 U F D F'",
+                    "F2 R2 F2 R2 U2 R2 B' R2 B2 U F U L' F L U F' L D F' D' B'",
+                    "U2 R2 B L2 B D2 L2 B2 L2 B2 D B R D R2 B' L B2 U2 R' U L"
                 ],
                 "solutions": [
                     "U' R U2 R' U2 R U' R'"
@@ -1582,9 +1582,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' F' U' B L2 B D2 B' D2 L2 U L' U F2 U F2 U2 B' L2 F y'",
-                    "B U' B' L2 F' R2 U2 L2 D2 B' R2 D2 R' U' R F R F' R U2",
-                    "F' U B' R2 D2 B' L2 B D2 F' D2 F' D2 R' B R' U2 L' U2 L U' F"
+                    "B' U2 R2 F' U2 B2 U2 F R' U' R2 D' R' D2 L B' D2 R F2 D R",
+                    "D R2 U' B2 U B2 U2 F2 L2 U L R B U2 B L R2 B U B' U R'",
+                    "U2 L' B2 R' D2 L2 U2 F2 R U F U' F' L2 U R' D2 U' L U' R"
                 ],
                 "solutions": [
                     "U' R U2 R' U R' F R F'"
@@ -1592,9 +1592,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F R' U F2 U' R2 U' R2 F2 U R2 D U' F' L2 B L2 F D' R' F' U",
-                    "R U' F B2 L2 D2 B R2 D2 B U2 B U2 R' F' L' F L' R B' U' R'",
-                    "F D' L' D U F2 L2 U R2 D B2 L' B L R2 U2 F R2 B' D' R2 U'"
+                    "R2 D2 B2 U2 R D2 R' U2 R' U' R' U2 L U F' L' F L F' U'",
+                    "D2 B2 D2 F' U2 F L2 B L2 F2 L F' R2 D' B F D' R U2 F D' R",
+                    "U2 R F2 R2 D2 L2 D2 R B' L2 R U' B U B2 L2 F2 R B R"
                 ],
                 "solutions": [
                     "R U R' U R U' R2 F R F'",
@@ -1603,9 +1603,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' L U F2 U' F2 R2 F2 U2 L2 U R2 U' R' B2 R' D2 B2 L U2 B U2",
-                    "F' L' F' B2 L B2 L F2 L U2 R' B L' F U B2 U' B' R B2 F' y",
-                    "B D F D' L2 D' B2 R2 U' F2 R2 F2 R' B' D B' F' L F L2 B'"
+                    "U2 R U2 R' U2 R U2 R' U2 R' F D' F D F2 R",
+                    "F' L2 F L2 F R2 B2 L2 B2 L' R' U' R' U R' F R L'",
+                    "F2 R2 F2 U F2 D' L2 D F2 U2 R' D2 B U B' L D L' U L D R'"
                 ],
                 "solutions": [
                     "F R' F' R U2 R U' R' U R U' R'",
@@ -1614,9 +1614,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B R F D F2 U' L2 F2 U L2 F2 D' F R2 B2 F R2 F R' U B' U' y'",
-                    "L R L' B U B' R U B2 U R2 U' R2 U' B2 R2 U",
-                    "B' U R U' R B' R2 L2 F R2 D' F D' B2 D' B2 D' B2 D2 R2 L2 F2"
+                    "U2 F2 L2 B2 L B2 L F2 R B' L2 R2 F D' F' L2 R B2 U' B'",
+                    "U2 L' U2 L U2 R U2 R' F2 U2 F U2 F' U2 F' U2",
+                    "U2 D B' U' D2 B U2 B2 L U' L2 D' L2 U' F2 R2 U L2 D2 L B D"
                 ],
                 "solutions": [
                     "R' D' R U2 R' D F R F'"
@@ -1624,9 +1624,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U' B' L U2 F2 R2 B2 U2 F2 L' B2 D2 U' B R' B2 L B R2 U2 R'",
-                    "B' R D L2 U2 R2 D B2 D U B2 L2 U2 R' F2 U' B2 D' U2 B' U F2",
-                    "F' D R2 F' U2 R2 F L2 B2 U' R' F' U L2 F U R2 B L2"
+                    "F2 L2 U' B2 D' B2 U2 B2 D' R' B' D2 L B' F U L U F'",
+                    "F2 R' D2 B2 F2 R F2 L' D2 B L2 B' L' F' D U2 F D' L' F L F",
+                    "D2 L' B2 D2 F2 R2 D2 R U L U' L B2 U R' D' F' U2 F D' R"
                 ],
                 "solutions": [
                     "U R U' R' U R' F R F' R U R'",
@@ -1636,9 +1636,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R U' R B2 D F2 R2 U' B2 U2 R2 F2 D2 B' D' B D L2 B' R2 U2",
-                    "F' D L F2 D2 L2 B2 D' R2 D B2 L2 D2 L' D' F D U2 L F L' D'",
-                    "R' U' L' U2 R2 D2 F' L2 D2 R2 D2 F U' L' F2 L2 U L' D2 B' L U y'"
+                    "U2 B R2 D2 F2 U2 R2 B2 U2 B' D B F L' F L' R2 B'",
+                    "D U' B2 D' F2 D B2 D' L F R' D F D' F2 L' F2 R F U",
+                    "L2 D2 R2 U R2 F2 D' F2 L2 D2 L' U2 B' U2 R2 D B D' B L D"
                 ],
                 "solutions": [
                     "R' D' r U2 r' D F R F'",
@@ -1648,9 +1648,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' R D' L2 U F2 U F2 R2 U' L2 F2 L2 B L B L U2 F2 D' B R2",
-                    "R D' L' B2 L2 B2 F2 L' B2 L D2 U' R' B2 D' B' D2 R' B F2 L2 R'",
-                    "L' D' L' R' L B R L U' L' D B U2 B2 D2 F2 R2 U2 R F2 D2 y"
+                    "D2 F2 U2 L2 D2 B' R2 F' R' D2 B U2 L B D2 R2 B",
+                    "U2 F U2 B2 D2 B D2 F R2 F2 R' B2 U2 B' U R' F R U' R' F' U",
+                    "U2 L2 F2 L2 B' U2 F' U2 F2 R' F' R B U' R U' L R' F' L' U'"
                 ],
                 "solutions": [
                     "M' U' M U2 r U' r'"
@@ -1660,9 +1660,9 @@ const algsets = {
         "8": [
             {
                 "scrambles": [
-                    "L D F U2 B L2 B L2 B2 D2 L2 B2 L U' L U' L' U L D L'",
-                    "R' F L' R2 D2 L2 D' L2 B2 D' B2 L2 R F D' F L' R F R U' y",
-                    "B' U' B U2 L2 F2 D' F2 L2 F2 D F2 U F' L2 F U' R' U R U y"
+                    "R2 F2 U' R2 U R2 U L2 D' B' D L2 F2 R' B' F R' F' B R U",
+                    "U2 L2 F' L2 F' L2 F2 U2 L2 D U F' U F2 U2 F D'",
+                    "R2 F2 U R2 U R2 U2 F2 R2 U' F R F' R2 B U2 B' U2 R"
                 ],
                 "solutions": [
                     "y' U R' U2 R U2 R' U R"
@@ -1670,9 +1670,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B D F L2 F2 D F2 D' L2 F2 U2 F2 U L F' U F' L' U2 F' D' B' y'",
-                    "R F' R' F2 U2 F' L2 R2 B2 F' R2 F R2 D L' R' F L B2 L2 R U' y'",
-                    "F' D' R' F' L2 U2 B2 R2 D2 F2 R2 U F U' B2 R U' R' U' R D F"
+                    "U2 R U2 R' U2 L' D2 U2 R B' U2 B R' F' U' F D2 U' L",
+                    "L2 R2 D' B2 D' B2 D' L2 R2 U F' L' R2 B R' B L U R' U F",
+                    "F' L2 F' R2 F L2 F' R2 F D' L U' F U2 F' U L' D F"
                 ],
                 "solutions": [
                     "U y L' U2 L U' L F' L' F",
@@ -1682,9 +1682,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L D' B D2 R U2 R U2 R' F2 R' D' L' D F2 D2 L' B' D L'",
-                    "B' L B2 R' L' U R B U L' F2 R' D2 R F2 U2 L' B2 y'",
-                    "L' B U' B2 U2 L2 B2 U' B2 L2 B U' F' U2 L2 F U L U'"
+                    "L' D' B' R2 D R L2 U' R' L2 D2 L2 U' R2 U L2 D R2 B D L",
+                    "L2 D' F2 D2 U' F2 L2 D' B R F R2 B2 R' B2 F' D' B U B' D B'",
+                    "D2 F2 D U' B2 L2 B2 U2 B L' D F2 D' U2 F' L2 U2 F U2 B' R D"
                 ],
                 "solutions": [
                     "B' R' U' R2 U R' B",
@@ -1693,9 +1693,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' B' L R2 F2 U B2 D' L2 F2 L2 D2 L' D' B2 L2 B L U' L F' U2",
-                    "B' D R D2 R2 B L2 F' L2 D2 U2 B' D' R' D U L' R B L D2 R y",
-                    "F' D' R F R2 D2 F2 U2 B2 R2 D2 B R' U2 L' U' R' B2 D' R' F"
+                    "U2 R2 D B2 D' R2 U' R2 B2 L' B L R' B R' U2 R B' R'",
+                    "R2 U R2 D B2 R2 D F2 L2 U B D2 B2 F2 U R' B U B R'",
+                    "L2 D' U2 B2 L2 B2 L2 U B2 D2 F' U2 R F2 D R D' F2 R' F D'"
                 ],
                 "solutions": [
                     "F R' F' R U' R U R' U' F' U' F",
@@ -1705,9 +1705,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F D R F' R2 B U2 B D2 U2 B2 D2 B R' B' U' R' U2 R2 D' R U",
-                    "F L' D F2 U' R2 F2 U' F2 D U L2 U2 L B2 D2 R2 U' L' F U",
-                    "R D' B U L2 U' F2 L2 D2 U' B2 R2 U' F R2 D2 B L2 F' D R U'"
+                    "U2 R2 F2 D B2 D' F2 D B2 D' R' B U' B' R' F' U2 L' U2 L U F",
+                    "B2 R2 D2 F2 L' U2 F2 L2 D' L' D' U' B U B D U' L D'",
+                    "R2 F' D' L2 U2 F2 L F U L D2 F2 D' L2 D2 B2 U' R2 D' B' D' F'"
                 ],
                 "solutions": [
                     "r' U2 R2 U R2 U r",
@@ -1716,9 +1716,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' U' L' B2 D2 L' D2 L2 R B2 L R2 U' F' U2 L F L2 F R F'",
-                    "R' U L F2 D R2 F2 L2 U B2 U' L F R U F' U F' U F U'",
-                    "L U' B U B2 U R2 D' F2 U B2 U' F' D B' L R' B' U' B R'"
+                    "B2 D2 L B2 U2 R2 B2 L2 B' L' F2 R' U' R2 U L' U2 B' R2 B' L' B",
+                    "D2 B2 D2 R2 U' L2 U R2 U' L2 R U R' D2 B2 D2 F' L' U2 L U' F",
+                    "U R2 U' F2 R2 U R2 F2 U R2 B' R2 U' F U L' B' U' B L B"
                 ],
                 "solutions": [
                     "U' r' F' r U r U' r2 F2 r F",
@@ -1727,9 +1727,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' L' F L2 F2 R2 F2 D2 B' D2 L2 U2 F' R' U' B U' B' R2 F' L F y",
-                    "L' D' U2 D L U' F R U R' L2 B2 D2 R2 B' D2 B' L2 F",
-                    "F' L' F U' B2 U2 R2 U B2 F2 D' L2 D' F L F2 R B R2 F' U2 B2 y"
+                    "D' B2 D' B2 L2 U' F2 U' L' U2 B' R F' U' R2 U' R2 F B L' D",
+                    "D F2 D U2 L2 D' F2 L2 U' L R' B L B' L F2 L2 D' R D' L",
+                    "D2 L2 F2 U F2 D2 U B2 R2 F L' R F2 D2 L B' R' D2 F'"
                 ],
                 "solutions": [
                     "U R U' R' d R' U R U' R' U R",
@@ -1739,9 +1739,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' B' D' F L2 R2 F' U2 B D2 U2 B' R' U' R' D B L R' F' R F'",
-                    "B R' D' L2 D' B2 D L2 R2 D' F2 D2 B' U2 L U' L2 B2 L R' U' B",
-                    "R' U' F D2 F L2 D2 B F2 R2 U2 B R B' U B' R' U B' R"
+                    "L2 F2 D2 U2 F L2 R2 U2 R' U B2 R' U B F D' L R' B' L D F'",
+                    "U2 B' D2 U2 F' D2 U2 F' U2 L' B2 U' B L2 D L' U' B D B' D' F",
+                    "L2 U2 L2 F2 L' F2 R' F2 U L U' F' R D' B L' B' D F'"
                 ],
                 "solutions": [
                     "r U r' U' R U' M' U r'"
@@ -1751,9 +1751,9 @@ const algsets = {
         "9": [
             {
                 "scrambles": [
-                    "L' U' L' B2 D B2 D' B2 L2 D' L2 B2 U' R' D' B2 D' L2 F2 U2 R' y",
-                    "B U B D' R2 U' B2 U' R2 U B2 U' F' U F U' R U' R D U' y",
-                    "R' D B U B2 L2 U' B2 U' B2 U2 L2 B D' R2 B' R' F R' B F' U' y"
+                    "F2 D' U' L2 U2 L2 F2 D F' U2 F' L F2 R F' L' U' F R' U",
+                    "U B2 D2 R2 U B2 F2 U2 L2 U' F U2 F2 R' D2 R F' L2 D2 L F' L D'",
+                    "U2 F' U2 F' U2 F2 L2 F' U2 F2 D F U2 F2 D' L2"
                 ],
                 "solutions": [
                     "y' U2 R' U R U R' U' R",
@@ -1763,9 +1763,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' F L B2 U L2 U L2 F2 U' F2 U2 R' B' R2 B' L' F D2 L U",
-                    "B R' U2 L F' U L2 F2 R' F U2 R2 B' D2 R2 U2 D2 F R2 y'",
-                    "L' B U B' D2 B2 D2 L2 U2 F' D2 R F R D' L2 R D' B L F2"
+                    "R2 D' L2 U F2 D L2 D U B2 L B' R B' R B' F L' B' D",
+                    "D' L2 B2 R2 U' B2 D R2 D' L2 F L D2 F D2 R D2 L2 R B L",
+                    "F2 L2 B L2 B' L2 F U2 F2 R' F2 L F' D' L2 D F2 R"
                 ],
                 "solutions": [
                     "F R U R' U' F' U' R' F R F'",
@@ -1774,9 +1774,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L U B' U' L2 U2 F2 U' F2 U' L2 U' B L2 B2 F' R' D R B2 L U2",
-                    "L B' R D2 L' F2 R' U2 L U2 R' F2 U R D B U' B' D B L2 y'",
-                    "R' U F' R2 D2 F2 R2 B' F2 L2 B D2 R2 U R U B U2 F2 L B' F2"
+                    "R2 U2 R2 B D2 B' U2 B D2 U B' R U L F2 R F' R F' L' U' R",
+                    "U2 B2 F2 D' F2 D B2 D B2 L2 F' U L' F' L U2 B2 U' R2 F' D F'",
+                    "D2 L2 D R2 U F2 D' L2 D2 U' R B R D U2 B D' R2 B"
                 ],
                 "solutions": [
                     "F R U R' U' F' R U' R'"
@@ -1784,9 +1784,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' F' L D' L2 D F2 U' F2 L2 U' L' U F U' B' U' B U' L y'",
-                    "F' L B' D' L2 B2 D L2 D' L2 D L2 U B F L U' L' U L",
-                    "L F U' F' D2 R2 F D2 F2 L2 U2 F2 L2 U B L2 F2 L2 U F2 U' L'"
+                    "R' D2 R U2 F2 R' F2 R U2 L' B U L' D2 B' R2 D B2 D L' B' L'",
+                    "F2 U R2 U R2 F2 L2 D2 R2 D B L' D R' F L' F U' R' F U F",
+                    "F2 U' L2 D' L2 D R2 D' R2 F L' U' R2 B2 R' U2 L U R' F U'"
                 ],
                 "solutions": [
                     "U' r U2 r' U' r U' r' U r U2 r'",
@@ -1795,9 +1795,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' D R' U' B2 U' F2 U B2 U F2 R F2 U2 F2 D' F U2 R U2 R'",
-                    "B' L' B L2 U L2 B2 U' B2 U B' L R2 D' R' D B2 R' B' U' y",
-                    "R' D' R' D R' U R F2 B D2 B L F' R2 F' R2 F2 L2 D2 F' R2 F' y"
+                    "F' L2 F D2 B U2 R2 B U2 B2 U' B L U2 L' D2 U L F U L'",
+                    "B2 U' F2 U R2 U F2 D R2 U' B R D2 L2 F' R2 D2 L' F' L F D'",
+                    "L2 U2 L2 D R2 D B2 D U B' D' R2 D2 L R' F' R U F' L' U'"
                 ],
                 "solutions": [
                     "U' R U' R' d R' U' R",
@@ -1806,9 +1806,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R D L' U' B' U' B2 L D' R D' F U2 R2 U' F2 D F2 L2 B2 L2 F2",
-                    "F D B2 U2 R B2 R' B2 F2 D2 F2 D' L2 R D2 L2 U2 R' F' U2 y",
-                    "R D U' B U2 B2 R B R' D' R' U2 B2 U B2 U B2 U2 B2 U2"
+                    "F U2 F2 R2 D2 L2 F2 R2 U' L' B2 R' U2 R' D R2 B F2 B' U' F'",
+                    "R2 D' R2 B2 L2 U' L2 D' R2 F R2 F' R2 D B2 U' B L F L' B' U'",
+                    "F U2 F2 R2 D2 L2 F2 R2 U' L' B2 R' U2 R' D R2 B' F2 B U' F'"
                 ],
                 "solutions": [
                     "R' F R2 U' R' U' r U2 r' U' F'"
@@ -1816,9 +1816,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L B' R L' R' U2 R2 U2 F2 L' B2 R U B U L2 B F2 D2 B D2 L'",
-                    "R' U' F' R2 F2 R2 F R2 B' D2 F2 D F2 R F D B U' F' U F",
-                    "F R B U2 B' R2 F2 R2 U2 L R' F' R' F L' R"
+                    "R2 U' L2 U R2 U' L2 U' L' B' R U' R' B U L U",
+                    "L2 B D2 B D2 B2 L2 F' U2 F' L R' F R F L'",
+                    "U2 L' D2 F2 L2 F2 R U2 B2 L' B L R' D2 B' R' U' B U L U F'"
                 ],
                 "solutions": [
                     "U r U R' U' M R U' R'",
@@ -1827,9 +1827,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B U R L2 U' B2 U' B2 U2 L2 U' B2 U2 R' F2 U' L U F L' B' F",
-                    "B U' F' B' D2 L2 D2 F2 R2 F R2 F L B2 F2 R' U2 F' L2 B U' y",
-                    "L' B L B2 U R2 U R2 U' R2 U B L U2 L' R U' L U' L' R'"
+                    "L2 U2 F L2 U2 B' F L2 B2 D R F' D' L2 D' U2 R2 U2 L B' L D",
+                    "R U2 L F2 L F2 L F2 R D' F' L' R2 U' F2 U2 F' D' L2 R' D' B",
+                    "D2 F2 L2 U L2 F2 D' B2 D' F D2 R B' D2 F2 L F L' B' L"
                 ],
                 "solutions": [
                     "U r U r' U2 M' U M R U' R'",
@@ -1843,9 +1843,9 @@ const algsets = {
         "10": [
             {
                 "scrambles": [
-                    "L' D' R2 D2 F U2 F' U2 F' D2 B D B' D' R2 B' D L y",
-                    "L B D' F2 D2 L2 D2 L D2 L D2 L F2 D B L R' D' L' R B2 L'",
-                    "F' L' B' U' B2 U2 R2 B2 R2 U R2 B2 R' U B U' B' R' B' L F"
+                    "U R2 B2 D' F2 D B2 D' F2 D2 R D' R F2 U B F2 B'",
+                    "B2 F2 L2 F2 D2 B2 R' U2 R' F2 D R' D2 L2 U L U' R F2 L D'",
+                    "D' F2 U2 L2 B2 U L2 F2 R2 F D R B2 F' D B2 U' F' U2 F R D"
                 ],
                 "solutions": [
                     "U' R U R' U R U R'"
@@ -1853,9 +1853,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L B U' B R U B R' U2 R U' L U2 B2 D2 F2 R U2 L D2 L'",
-                    "L U L' D' B2 U' R2 U' B2 D2 F2 L2 D B D' F R2 F' L' D' B' F2",
-                    "F' D L' B2 L2 D' F2 R2 U2 R2 U2 B2 U' R' U' B2 R U R2 U2 F' y'"
+                    "U L2 D2 R2 D B2 U2 L2 U2 F' R D L' D R U2 L2 B' D' L",
+                    "D L2 U L2 D2 L2 B2 D B2 L2 R' F' R2 U2 R2 F D R",
+                    "U2 R2 B2 R' U2 R' U2 R B2 R' U' R' F' U' F D' U R U' R' D R"
                 ],
                 "solutions": [
                     "U F R' F' R U2 R U' R'",
@@ -1864,9 +1864,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F R' U' R2 U' R2 U2 R2 U' F2 U F R' U R' U F' U F U R' y",
-                    "L U' F U2 B R2 D2 F' U2 L2 F D2 F' U' B U B' U' L U' B' L' y'",
-                    "R F R B2 U R2 U' R2 U' B2 U2 R2 U F' U2 L' U2 L F R F' R' y'"
+                    "R2 D B2 D B2 D B2 L2 D' R D L2 D F' R2 U R' B' F2 B L F'",
+                    "B2 L2 F2 R2 F2 U F2 U L2 R2 B' L' B' D2 U' R' F2 U2 L R' D' L'",
+                    "B' R2 F' D2 B D2 F R2 D2 U2 R' U' R F U' F D2 B2 U' B' U' B'"
                 ],
                 "solutions": [
                     "F R' F' R U R' F R F' R U R'",
@@ -1875,9 +1875,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U L' U2 L U' R' F R B' R2 B L2 B2 D2 B2 L' U2 L' B2 R B2",
-                    "R' B L F2 R2 U2 L2 R2 B2 L2 F R2 U2 L F R2 D F2 D L2 B2 R",
-                    "L B L' B R U' R2 L2 U2 L2 U R' F R2 D2 B2 U2 B D2 B' U2 F'"
+                    "R2 D2 L2 F' L2 D2 B2 L2 D2 L D R D R2 B2 L U2 R' B'",
+                    "U2 R2 B2 L D2 L' B2 U2 R2 U' B' R B D' F' U2 F2 L' F L D",
+                    "B2 U2 L2 U' F2 U B2 D' B2 D' F' D L2 U B2 D R U L' R' B' L"
                 ],
                 "solutions": [
                     "U2 R U' R' U r U' r' U' r U r'",
@@ -1886,9 +1886,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R U' L' U2 L2 U' R2 U L2 U' R B2 F R' F' R B2 U' L U'",
-                    "R' B' D B2 L2 F2 D U2 L2 B2 D U B U R D U' F R2 F' D' R",
-                    "R' B' U L2 D' U2 B2 U' L2 U2 R' D' B R' B2 F2 D' B2 U'"
+                    "F' D2 B L2 B' D2 F' U2 R2 F' D R2 D' F R' B' R2 B F R U'",
+                    "B2 L2 D' U' B2 U F2 L2 U' L B' U2 B2 U B2 L U R2 F' D'",
+                    "U' F2 L2 D2 B2 L2 F2 U2 L' B R' B L2 R' D U F' U' F D' L'"
                 ],
                 "solutions": [
                     "R U R2 F R F' R U R'",
@@ -1897,9 +1897,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' L' F' R2 B2 F2 D R2 U2 F2 D2 U' R B F' R2 D U B R2 D L'",
-                    "B' L F R2 F' L' F2 U2 F2 R2 F R' U2 B' R2 B2 U2 F2 U2 L2 F2 L2",
-                    "R' U' B' L2 F2 D2 B2 F2 D L2 F2 R2 U F' R' B2 U' B' U F'"
+                    "F2 D B2 D B2 D2 F2 R2 U' R U2 R2 U R2 U R F R U R' U' F'",
+                    "U' F2 U2 L2 U' F2 U' F2 U B L B' R U2 L U R' F' U' F",
+                    "F2 D R2 B2 D' F2 D' F2 L2 U L' D' B2 D2 L R2 F' L' F U'"
                 ],
                 "solutions": [
                     "U' R U R' U' r U' r' U' r U r'",
@@ -1908,9 +1908,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L D R' D2 L2 B L2 D2 R2 F2 R2 F' R B' U' R U B D' L' U",
-                    "F' U' F L2 B2 D' R2 U' B2 D2 L2 D2 L2 B L B' L D2 F2 D' U'",
-                    "L' U' B D L2 D' F2 D L2 D' U2 F2 U' L U L' U' F2 U2 B' L U2"
+                    "B2 F' L2 R2 F' L2 B F' U' B' R2 B2 D' R D2 L' D2 R' L' F D",
+                    "R2 U R2 U F2 U' R2 U' R2 U B F L F' L' B2 F2 B",
+                    "D' F2 L2 F2 D2 U' F2 L2 B2 F' L' F L' B2 R2 F2 R2 F' D' F'"
                 ],
                 "solutions": [
                     "U' r' D' r U' r' D r2 U' r' U' r U r'",
@@ -1921,9 +1921,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U' B' F2 D U R2 U B2 D U2 L B2 D2 R D' F2 D B F' U'",
-                    "R U' F' U F2 D R2 D' F2 U L2 U' B' U B L2 F2 U R' U' F'",
-                    "R' B' L2 B2 U2 L' U2 R B2 R' B2 L2 U F' U' B' F U' R2 U2 R'"
+                    "R2 B' R2 B U2 R2 B U2 B2 U2 R U F' U F L' R L B U",
+                    "U B2 U L2 D' F2 L2 U R U2 L2 F L D2 R2 B2 L2 F' L'",
+                    "U2 F2 U R2 U' L2 U R2 U2 F L' F' U L2 F U F U'"
                 ],
                 "solutions": [
                     "r U' r' U' r U r' U2 R' F R F'",
@@ -1935,9 +1935,9 @@ const algsets = {
         "11": [
             {
                 "scrambles": [
-                    "B' R' B R2 U2 B2 D' L2 B2 U B2 L2 F2 L B D' B2 U2 F' L2 B' F' y",
-                    "L B U2 F2 D' L2 F2 U2 F2 R2 U R' U2 L' B2 U R' B' L' F2 y",
-                    "R' D R B2 R2 U2 R B2 U2 L D2 R' B2 U' R D L2 U2 R U2 R2 y"
+                    "D L2 D2 F2 L2 B2 U R2 B2 F' L' U' L' D' L B' R' U' R B L D'",
+                    "U F2 U R2 D' L2 F2 U2 F2 D B' D2 F' D F2 D2 U B2 D' B'",
+                    "D' B2 D' F2 D' B2 L2 F2 U2 B2 R B' D B' L' F L2 U2 L2 F L D"
                 ],
                 "solutions": [
                     "y' R U2 R2 U' R2 U' R'",
@@ -1947,9 +1947,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F U' F' B' U' R B2 U F2 B U F2 U F2 L2 B2 D2 L2 U2",
-                    "L U' F U2 L2 B2 L2 U2 F' D2 U2 F' D2 U' F' L' F' R2 F R' U' R'",
-                    "L' F' U' F2 L2 F R2 B R2 U2 F U2 L2 U' L U R' D2 R"
+                    "B F2 L2 B R2 F' R2 D2 F2 L B2 U2 F' R F2 U B' R' U R B L'",
+                    "D' F2 U F2 L2 R2 D B2 D' L2 R F R U' F2 D",
+                    "R2 U2 B F' U2 B' F' R2 F' U' L F2 R D L2 B' L2 D' R' L' U' F'"
                 ],
                 "solutions": [
                     "F' U r' F2 r U2 F"
@@ -1957,9 +1957,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' U F R' F' B2 L2 D' F R' D' R' D' R2 U F2 U' L2 B2 R2 U'",
-                    "F R' B' R2 F' R2 B2 D2 B' U2 F L2 B' D R2 D B2 F' U B' R' U",
-                    "R' D F B F2 U2 B2 L2 B L2 F R B R2 U2 R2 B' U' B2 U2 R' D'"
+                    "R2 U2 F2 D' L2 D' B2 U' L2 D2 L U F U' L' U F U'",
+                    "B2 D R2 B2 D' L2 U B2 D2 R' D U2 R' B F L2 B U' F' L'",
+                    "F' L2 B2 D2 R2 F' R2 F R2 B L R' U' R' U' B2 L R L' B' L"
                 ],
                 "solutions": [
                     "U' R U R' U' R U' R' U' F' U' F",
@@ -1968,9 +1968,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U B' F2 U2 B' D2 B' L2 F2 D2 B2 R' U R2 U R2 U' B F' y'",
-                    "R B' U' R U2 R' B2 R' B2 R2 B R B U R2 U B R' B2 R'",
-                    "B' D' F' B2 D F2 D' F2 L2 U' L2 B2 R' D' R U F' D U' R' B U'"
+                    "F2 R' B D' L' U D R' D' R2 B D2 L2 U B2 U F2 U B R D",
+                    "F2 L2 U2 L2 U L2 U L2 F2 U2 F' U2 F L' F' L2 F' L2 F2 L U",
+                    "F' U2 B L2 B' U2 F' D2 U2 F L' B2 R F D2 U R' U B' R B'"
                 ],
                 "solutions": [
                     "R U2 R' U' r U' r' U2 r U r'",
@@ -1980,9 +1980,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' B D' L' F2 U2 L' R2 F2 L' B2 U' F' L' D2 L2 B' D' L2 U2 R2",
-                    "B' R B' F L2 B' F D2 F R2 B2 L' F D2 R' F' L' F U'",
-                    "B U L2 F2 R' F' R D2 F' L2 U2 B R2 B' U2 B' y"
+                    "D' F2 D R2 U' L2 R2 U' L D R D' L D R' F L' U' L F D'",
+                    "R2 U F2 U F2 D' B2 D' B2 U' B L2 D2 R F2 R F' U L' F L'",
+                    "D' F2 R2 D' B2 R2 F2 U2 L2 F2 R' F R F2 R' D' L' F2 R F' L D"
                 ],
                 "solutions": [
                     "R U R' U' R U' R' F' U' F"
@@ -1990,9 +1990,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D' B' R2 U B2 U' F2 R2 U2 F2 D2 F L' F2 L' B' D2 R' F D",
-                    "R' U' L U2 L2 B D2 B' L2 U' F' U' L' U R F' U F",
-                    "L U' R B U2 B L2 R2 F2 L2 F2 L' R' B R' U B2 U2 B' R' U'"
+                    "L' D R' F' B2 L2 U' R2 U L2 D2 F2 R2 D2 B2 L2 U2 L2 F R D' L",
+                    "U2 B2 L2 U' B2 U L2 B2 R2 B R' B2 R2 D L2 D2 R U2 F' R' D R",
+                    "D' L2 D' R2 F2 U' R2 D2 F U' L B R2 D L2 F R2 F L' B"
                 ],
                 "solutions": [
                     "F' L' U' L U' L' U L U' F",
@@ -2003,9 +2003,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' L' B R2 U2 B' U2 B' L2 U2 B R2 F R B' L2 B F2 R' F' D2 U' y'",
-                    "R' U' R D2 L2 D F2 L2 U2 F2 U L2 F' D2 U R' D' U' F' U2 R2",
-                    "F' R' D' R2 B2 U' L2 D B2 F2 U F2 R2 B' R B' F2 L' D2 L' B2 U'"
+                    "L2 B2 R2 D' B2 L2 U' F2 R2 F2 R F R' F2 U F' R' U R2 F R",
+                    "R2 D2 L2 B R2 U2 R2 D2 R2 B L B2 U' B2 L' B' L2 F",
+                    "L' U2 L F2 R' F2 R2 U' R' U' R U B U' B' U R'"
                 ],
                 "solutions": [
                     "U' R U2 R' U F' U' F"
@@ -2013,9 +2013,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U' F R2 F' B2 U L D2 B L' U R2 F' R2 B2 R2 F' R2 L2 B D2 y'",
-                    "B' U' L' B' D2 F U2 B U2 B2 R2 F R D2 L2 B' F2 U F L'",
-                    "R U' R L2 R2 U B2 D R2 D U2 F2 U B U2 R' B D2 F2 L F2"
+                    "R2 D2 L2 F2 U2 B R2 B' F' U2 L' U B U F L2 D2 B' F L B'",
+                    "R' D2 B2 D L F' R2 F2 D B2 D' F2 U2 R U2 R2 D2 B2 D2 L' D R'",
+                    "D2 F L2 F L2 D2 R2 B' D2 U L U' L F D2 R' U2 R' U' B"
                 ],
                 "solutions": [
                     "F R' F' R U' R U' R2 F R F'",
@@ -2027,9 +2027,9 @@ const algsets = {
         "12": [
             {
                 "scrambles": [
-                    "F L U' B L2 B' L2 D2 U2 B' U2 B D2 U L' F L' U2 L' U2 F2 U'",
-                    "R' F' L F2 L2 R2 U' L2 R2 F2 D' L' F' U L D L' U' F2 R U2",
-                    "B' U F' L2 U' B2 U2 L2 U' L2 U' B' F U B2 R U R' B2"
+                    "U F2 B2 L D L' F B2 D' B' R2 L2 D2 F D2 F' D2 R2 L2 B D F",
+                    "U2 R2 U L2 U2 L2 B2 D L2 D' L B2 U2 R2 U' R D F2 D' R'",
+                    "D2 U2 F' D2 B R2 B' D2 B' U2 L D L' F U' F2 L2 D2 R D' F'"
                 ],
                 "solutions": [
                     "R U' R' U R U' R' U2 R U' R'"
@@ -2037,9 +2037,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L U L B2 U' L2 U L2 U' B2 L2 U' L' U B' L B2 L B U2 B2 U2 y'",
-                    "L' U' F' D' L2 U L2 U' L2 U2 B2 R' U B L B' R B2 D U F y'",
-                    "L F' R L2 U2 L2 R2 D' F2 D F2 L2 U2 R' U' L U L F2 R2 F' L' y'"
+                    "B2 D B2 R2 U B2 D2 F2 D' F2 R' D R F' L F' D2 B2 F2 R U' R",
+                    "R F2 D2 L B2 D2 F2 U2 R B R B' U B' U' R' U' B' R' U",
+                    "U2 B' U2 F U2 B' R2 B2 F' R U F' R2 F' R2 F2 U' F' U R'"
                 ],
                 "solutions": [
                     "R d' R U2 R' U2 F'"
@@ -2047,9 +2047,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' R' U2 L2 B2 U F2 D' F2 U' R2 B2 L R U' L F2 D R2 D' F'",
-                    "F U B U2 F2 U2 L2 B' U2 B L2 F2 U2 L' F L F2 L2 B' U2 F y'",
-                    "B' D L' R2 D2 L2 D' L2 D' R2 B2 U2 B L B2 D' R U B R' B' R"
+                    "U B L' B' R L U2 L U2 D' F2 D F2 R2 F2 U' R U L'",
+                    "B2 D' L2 D R2 B2 D L2 F2 R2 F L' U2 L2 B2 L F U' R B' D' R'",
+                    "B2 D2 L2 F' L2 D2 B R2 B R' D U' F U R U' R' B' F' B D' R'"
                 ],
                 "solutions": [
                     "R U' r' U R U' R' U' r U2 R'"
@@ -2057,9 +2057,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F U B2 R2 F2 L2 D2 R2 U L2 D B R' B L2 R' F D F2 R' U'",
-                    "R' F L D2 F2 R2 D2 R F2 R' D2 L' B' R' F U' R U B U' R'",
-                    "L U B R2 B2 L2 B2 D' B2 U B' F' R2 U F' R D U B2 L"
+                    "F2 U F2 U' F2 D' B2 U2 L2 B' L2 B' L' B2 L' U B D L' F' L' F'",
+                    "L2 F2 R' B2 R' U2 L U2 B2 R2 U' F' D U2 F2 R' F2 R U' F D' F",
+                    "F2 D' U' B2 L2 B2 D' B2 D' F' L R U L R' F' L2 R' U2 R' D' L'"
                 ],
                 "solutions": [
                     "R U M' U' M U2 M' U' r'",
@@ -2068,9 +2068,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B L' D F2 U2 B2 R' F2 D2 L' B2 L2 F' R2 D' L' F' L' B2 U' L B",
-                    "F D R D2 R2 D' B2 D R2 F2 L2 F2 D F' R' B' R2 B U2 R2 U R' y",
-                    "R' U L U B2 U2 F2 U B2 F' D2 F D2 U' R F2 L' U'"
+                    "U' L D R' D R' B' D R2 U2 B' U2 R' B2 R' B2 L B2 L' B' D L'",
+                    "U B D L B2 R' F' U' L2 B2 D B' D2 B' L2 F' U2 B2 L' D B'",
+                    "L2 U' F2 U F2 L2 D U' R2 U R' B U2 B' U' R' F D' F'"
                 ],
                 "solutions": [
                     "R U' R' U R U' R' U R' F R F'",
@@ -2079,9 +2079,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' L' D' R' U2 R F2 R F2 D2 L' D' R U2 B' U' B2 L R' B L'",
-                    "B' U R' L2 D2 R2 D2 F2 D F2 L2 U' B2 R' B2 L2 D' R D L2 B' U' y",
-                    "R F L' F R2 F R2 U2 R2 F2 L2 F L' F2 R2 U2 F U2 R' U' F U2"
+                    "U2 L2 R2 B2 R2 B' D2 L2 F U R U F2 L2 R' B' L R' L F'",
+                    "D' U2 F2 L2 U' L2 B2 F2 U F2 L D' B2 L F U2 B2 L2 U F R U' B",
+                    "U R2 D U F2 L2 F2 U F R' F D2 U R' D' R2 B2 L' D' L'"
                 ],
                 "solutions": [
                     "R U R' U R' F R F' R U R'"
@@ -2089,9 +2089,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' F' D U L2 D2 U B2 L2 F2 L2 U F R2 F' R2 U2 L2 U' R F' U2",
-                    "R' B' R' B2 R2 D B2 D' R2 U' B2 R B2 F' U2 B' F R' U'",
-                    "F U B F' B' U' F R' F' R L' U L' U' F2 U F2 U L2 U2 F2"
+                    "B2 D2 L2 U2 R2 B F2 D2 U' B2 L D U B2 R D' F2 L F2 R D F",
+                    "F2 U' B2 F2 D2 B2 U' B2 F R F2 D2 F D' R D B2 F' U L",
+                    "U2 B R2 F2 D2 B D2 B L2 B' D R2 B2 L' U2 F U2 F2 U' L'"
                 ],
                 "solutions": [
                     "U F' U2 F U' R U R'"
@@ -2099,9 +2099,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L B' D L2 R2 D2 R2 F2 L2 F2 D' R2 B L' U2 R B' R' D2 L D2 U'",
-                    "B' D L D' U2 R2 U' B2 D2 U' L F2 D F' R D B D' F' D U'",
-                    "B' D R2 B' R2 U2 F' U2 F R' U F' U F R2 B R' D' B U"
+                    "D2 U2 L D2 U2 R' D2 L' U2 R B L2 U' L B' D B2 F2 U' B D L",
+                    "B' R' F' U2 R' D2 B U' L B' D2 R2 U2 B2 L2 B2 U B2 L2 F D B'",
+                    "B U2 B' U2 B L2 F U2 B D F L' F' R D' B2 F2 R' U R F L'"
                 ],
                 "solutions": [
                     "R' D' R U2 M' U r' D R2 U R'",
@@ -2112,9 +2112,9 @@ const algsets = {
         "13": [
             {
                 "scrambles": [
-                    "L' F U' B' U2 L2 B' L2 B L2 F' L2 U F U2 F' L R B' R' B y",
-                    "F' L R2 L' F2 B L2 D' F' D R2 L2 U2 B' U2 R2 F2 B' R2 F y2",
-                    "B R' F2 D' L2 D F2 L F' U' F U R U' L' B' U y"
+                    "B L2 F D2 F D2 B' L2 F U' F2 R' U F2 U' F2 U' R F'",
+                    "F U2 F2 U2 L2 B' F R2 B' D B' F' L B2 D' U F2 D F2 B U' L",
+                    "R2 U' B2 U2 B2 U2 F2 D' L2 D F U2 F U B U' B2 L R2 L' B' U'"
                 ],
                 "solutions": [
                     "U y' R' U R U' R' U' R",
@@ -2123,9 +2123,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D' R2 U2 L' R2 F2 L2 R2 B' D F L2 F' L D' U' R' F'",
-                    "L B F B2 U' B R F B2 U' F' U R B2 L' F2 R2 B2 L2 B2",
-                    "L' B' L' B2 D2 R2 U B2 R2 B2 D2 B2 U' B' D2 R' F U2 R D B D"
+                    "U' L2 F2 D' R2 F2 L2 U2 R U' R' B' R B U2 B L R2 L' B U",
+                    "L2 U2 L2 F2 U L2 U' F2 U' F' U R U' R' D F' D' U2 L2 U F",
+                    "U' R2 U2 B2 R2 D' R2 B2 L2 U' L' R2 F' U R F' R' U' L'"
                 ],
                 "solutions": [
                     "R' D' r U r' D R U R U' R'",
@@ -2134,9 +2134,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' U' L' D2 R2 F' D2 U2 L2 B F U2 F' L' U' R2 F2 L' B' F2 L2 R' y'",
-                    "F U L R2 F2 R2 D U' R2 B2 D' B2 U L' U2 L2 R D' L2 U F' U2",
-                    "B' L' B U2 L2 F' D2 B D2 U2 B F' L' D2 R' B F2 U F' D2 U F y"
+                    "R2 D2 B2 D' R2 U R2 B2 D' R' U2 R' D U B' U' R' U R B D'",
+                    "B' D B2 R' U L U R L2 F' D2 F' U2 F' U2 F D2 F L D' B",
+                    "F2 R2 D2 B2 L B2 D2 B2 F' D' F2 L F' L D B2 R2 F' U F'"
                 ],
                 "solutions": [
                     "R2 D R' U R D' R2 F' U' F",
@@ -2145,9 +2145,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' D B' D2 L2 F D2 R2 B U2 B2 D L' B L' U' B U L2 B D2",
-                    "F D' F L2 F2 U' L2 D F2 D' L2 F D F2 U2 L' U L U' F U",
-                    "L D' B D2 F' D2 B' D2 F L2 U2 F L' U2 L' F' L' F2 U F2 D' y'"
+                    "B2 R2 U2 F R2 D2 F2 U2 B L' F' L' D2 B2 F' R2 F'",
+                    "L2 D F2 U L2 U R2 F2 R2 D R F D2 B2 D B U2 B' D' L'",
+                    "U2 L' D2 B2 R D2 B2 R' B2 R2 B L2 R' D' F2 D F U2 L' R' B R"
                 ],
                 "solutions": [
                     "M' U' R U' r' U2 r U' r'"
@@ -2155,9 +2155,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R D' R L2 U R2 U' B2 D R2 B2 L2 F2 R D F D B R' B' D' F'",
-                    "L' U B R2 U2 B' L2 F D2 R2 F' L2 R' U' L B' R' B2 U' B' U2",
-                    "F L' U2 B' L2 D2 F' L2 U2 L2 R F L2 R' B L R2 U2 F'"
+                    "B2 D' F2 D B2 R2 D' F2 U2 R B2 F2 R F' R' B2 R' F' R' D",
+                    "F2 R2 U2 F2 U F2 U R2 F2 U B U2 R U' B2 R B2 R2 B' R' U R",
+                    "F' R2 F R2 U2 F D2 U2 B2 D2 R F2 R F' R2 D' F' U' L2 U' F D R'"
                 ],
                 "solutions": [
                     "M' U' R U R' U2 R U' r'",
@@ -2167,9 +2167,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B U F U2 L U F' R L B2 D B R' L2 U' F2 U' F2 D L2 D' y'",
-                    "L B R U2 B R2 F L2 F' D2 F2 R2 U2 R' B' L U2 F2 R2 F R2 F'",
-                    "F' L F L2 D' B2 D L2 D' F2 D U' L2 R' U B' U B L U R'"
+                    "B D2 U2 B' R2 U2 B D2 F' L' U2 L' U2 F D' U2 D B'",
+                    "R D2 L2 U2 L F2 L D2 R B' R' U' R2 D U2 B' D' U2 R2 U B",
+                    "F L' U' F2 L F D R2 L' U' L2 U' R2 U B2 R2 D R2 B2 L' F' D'"
                 ],
                 "solutions": [
                     "R' F R U2 r U' r' U2 F'",
@@ -2178,9 +2178,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' B' U R B2 R2 B U' F B R2 D2 F' U L' B2 L F2 D2 F2 B2 R'",
-                    "B L' D' R2 F2 L2 U' R2 B2 F2 U R U' L' U2 R' B' U y",
-                    "L F' L U R2 F2 U' R2 D2 U' B2 L2 U B R B2 R B2 R2 B D2 L2"
+                    "F U2 F L2 R2 B' D2 F L2 F U B2 U L2 B' F2 D2 B' L' F L' F",
+                    "U2 R2 B U2 B' F2 D2 B L F U B' U' F' D2 F2 R'",
+                    "B2 F' R2 B' U2 F U2 F' L2 U2 L B' U2 F2 L2 R' F' U R' U' R"
                 ],
                 "solutions": [
                     "R' F' r U R U2 r' F2"
@@ -2188,9 +2188,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B L D R2 D2 F' D2 B D2 F U2 L2 D L D2 R2 D' F D' L2 B' y",
-                    "L F D F2 R2 B2 L2 U' R2 F2 R2 U2 L' D2 B' D2 R' B L2 R'",
-                    "B' D B2 L2 F2 D2 R2 U2 B' R2 D2 L B2 F D2 F2 R F' D B"
+                    "U' F2 U F2 U' L2 F2 L2 U B' R' F U2 R U2 F' U2 B",
+                    "D' U' F2 U' R2 D B2 L' U' L B' F L F U2 L' F' U2 B' R U",
+                    "B2 D2 F L2 F' L2 F L2 F2 L' B D F R2 F R' F2 D F' B R' F'"
                 ],
                 "solutions": [
                     "U2 R U R D r' U r D' R' U R'"
@@ -2200,9 +2200,9 @@ const algsets = {
         "14": [
             {
                 "scrambles": [
-                    "B' U' B2 D2 L2 F' L2 D2 B' L2 D F' L' U' L F2 D' L2 U2",
-                    "R' B' R' B' L2 F' D2 B2 U2 B' R2 D2 B R' F2 U2 F' R' U2 F'",
-                    "R D' B F2 D R2 F2 D F2 D' L2 F2 U2 F' U F2 D B2 D' R U L2"
+                    "B2 R2 B2 R2 D B2 L2 U L2 D' R D' R2 F2 U F2 R' U2 R' D R",
+                    "D' B2 F2 R2 D F2 R2 B2 L2 F2 R' F2 R D F2 L' U2 L",
+                    "U R2 B2 D2 L2 U L2 U' F2 U L' B2 U F2 D' R2 D' U2 R U' R"
                 ],
                 "solutions": [
                     "U' R U' R' U R U R'"
@@ -2210,9 +2210,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F L F R' L' D2 B' D2 R F D2 B' U2 L2 U' B2 U2 D' R2 D' R2",
-                    "B' L U B R2 F D2 R2 B2 U2 R2 F L' B2 L D R' D2 L B' R' F2 y",
-                    "R B' L U2 B2 R2 D F2 D' L2 D2 U L' D F2 U R2 D L2 B' R' U2"
+                    "L2 R2 D' B2 D' L2 F2 U2 L2 B2 L' F L' B U' F' U B2 R2 F R' B",
+                    "U2 F2 L2 U L2 U' L2 U' F2 L U2 L' U L' B L B2 F' U' F U' B",
+                    "D2 B' U2 B' U2 B' U2 B' D2 L D2 B R U' B U' B' D2 F L F U"
                 ],
                 "solutions": [
                     "R U R' U' R' F R F' R U R'"
@@ -2220,9 +2220,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' F' L D2 F R2 B U2 B L2 B2 R2 F' D' L D' L F2 R' D2 R2 F'",
-                    "R B' D' R2 D2 F2 D R2 D2 B2 U L2 U2 L U2 L' B' R' U2",
-                    "B D' R' F2 U2 F U R2 D' B2 R' D' R' U2 D2 L2 U2 F' U2 F2 U2 B'"
+                    "B D2 L2 U2 B D2 B' F D2 F' D F L D B D' B2 R2 U' L' U L'",
+                    "U' L2 R2 B2 D F2 U' L2 B2 F2 L F L B U B' D' L U' B' U L'",
+                    "D' F2 D' U2 L2 U F2 D U' R' B U2 B' U R' D2 B2 D' R'"
                 ],
                 "solutions": [
                     "U' R' F R2 U R' U' R' F' R",
@@ -2232,9 +2232,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L F R2 L2 B2 R' B R' L2 F L U2 R2 B2 D B2 D' R2 U' L2 U2",
-                    "F' L D' R2 D' R2 D2 L2 U' B2 L' B L U2 B2 L F U'",
-                    "F' R' D F U2 D' R U' L' U B L' B2 U2 F R2 B R2 B' U2 B"
+                    "B' R2 D2 L2 F R2 U2 B2 R2 F' D' U L' F2 D' R B R2 D B L' D",
+                    "U' B R U2 B2 R' U2 B' D F' L U B2 R2 D' F2 D R2 B2 L F D'",
+                    "D' R2 F U2 R2 L B2 U L F U L' U2 B2 R' L' U2 R F' R D"
                 ],
                 "solutions": [
                     "R U R' U' F' U' F U R U R'",
@@ -2244,9 +2244,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' D B F' U2 L2 R2 B F D2 U2 R2 U' L U' L R2 U' F D' L2 B'",
-                    "B R D R2 D R2 B2 D' F2 R2 U' L B' D' U' L' F' U2 F D' F",
-                    "B' L' F' B L2 U2 L2 B' L2 D2 F U' R' F' U' B' D2 L' U2 B F U"
+                    "U2 B2 D F2 D' B2 U' F2 U2 R B L2 B' U2 R' F2 U2 F",
+                    "B2 D' U F2 R2 U R2 D' U' R' F2 D R' D R B2 U2 F' U F U' L'",
+                    "D2 U2 B' R2 B R2 D2 B' L2 F2 L F2 D2 R' F' D2 L B L B' L'"
                 ],
                 "solutions": [
                     "M' U' R U' R' U R U R' U' M"
@@ -2254,9 +2254,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B R' F L2 U2 R2 B2 R D2 L' B2 R' D2 F' R' D2 L F D2 R' U2",
-                    "F D L' B2 D' R2 D B2 L2 D' F2 D L' D' U' F L F L' U F y'",
-                    "F' R' B' L2 F' R2 F2 L2 R2 U2 F D2 U' R' U' B2 U2 L' F' R' B2 U"
+                    "U B2 U F2 L2 B2 L2 D2 F2 U' F D2 B' F' U2 R B U2 R' B'",
+                    "B U' L B U2 F' D F2 L' F' D2 B2 U B2 D' R2 F2 D' L2 R' D' F",
+                    "U' D' R' F U2 R D B U' L U B2 D B2 D' F2 D F2 U2 L' B' R"
                 ],
                 "solutions": [
                     "F' r U' r' F2 U' R U R'",
@@ -2265,9 +2265,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' D' L F2 R B2 F2 R B2 L' D' U' F' U F' D2 B F2",
-                    "B' U' R' D2 L2 F' U2 F' U2 F' D2 U2 B' D L B D F' D' L2 D' B2",
-                    "B' R' F D2 F L2 F' D2 B2 D2 F L2 D2 U B2 L' D2 L U' B2 F2 R'"
+                    "B2 F2 L' D2 L' B2 L2 F2 U2 R U' B' L' B' R B' D' B R D L",
+                    "B2 D L2 F2 U' F2 D F2 U R' D2 R D2 B' U L2 B' U R' F' U'",
+                    "B' R2 U2 L2 D2 F L2 B' L2 F' L D B D' B L U R' U R' B U'"
                 ],
                 "solutions": [
                     "U2 R U R' U R U2 R2 F R F'"
@@ -2275,9 +2275,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U' R B' D2 B D2 L2 B D2 F2 D2 F2 L B' U2 B2 R' U' L U2",
-                    "F L' U' D L2 D F2 R2 D R2 F2 U F2 R' D2 L' B2 F R2 U R' F y'",
-                    "F' D B' L' F2 U2 L R2 B2 L2 F2 R' D L F L' D R B' D' F2"
+                    "R F2 U2 L2 B2 R' B2 L' F2 R2 F' L2 U' R' U' L2 F2 R L' U",
+                    "L2 D2 B2 R2 B2 D' F2 D' L2 U' L F L2 U F' U L F2 L F' L",
+                    "D B2 U B2 U R2 D' F2 U B' L2 D' L' F L' F2 R' F' B R' U"
                 ],
                 "solutions": [
                     "U2 r U' r' U M' U2 R U r'",
@@ -2290,9 +2290,9 @@ const algsets = {
         "15": [
             {
                 "scrambles": [
-                    "B' L B' U2 B' L2 B U2 L2 U2 L2 B L' B2 F' L F U2 B' U' y",
-                    "L B U L2 U' L2 U L2 R2 D2 L2 D2 R' U' R' U2 B' L' U2 R U2 R'",
-                    "F D L U L2 F' R F R' L2 U' L' D' F L2 F2 U F2 L2 F2 U2"
+                    "F2 L2 R2 D' L2 D R2 D' U2 L D L' U2 B F2 B'",
+                    "R2 U R2 D2 U F2 L2 D2 F L' F2 L R' B D' R D' R' B' R F'",
+                    "D R2 D L2 D2 B2 D' L2 U' L B D B' L' U2 R2 B F' B' D F'"
                 ],
                 "solutions": [
                     "R' D' R U' R' D R U R U' R'",
@@ -2303,9 +2303,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' D B' L2 U2 L2 U' L2 U' L2 U B D' U L U' R U R'",
-                    "R D U' L2 D' R' U' F' U F U2 B2 R' D2 L U2 L D2 R U2",
-                    "R' B' U F D2 B' D2 F' D2 L2 U2 F U L2 D2 B2 R2 U B' U R' U2"
+                    "B D2 F' L2 F D2 F' U2 F L' B' L R' U' R' U2 L U' L' U",
+                    "D B2 D' B2 U B2 U' B2 U R U L' R' B' R' B L F' U F",
+                    "U2 R U2 R' B2 R' F B2 R D R2 D' B2 U' B2 U R2 F2 B2 F R U'"
                 ],
                 "solutions": [
                     "R U R' U2 R U' R2 F R F'"
@@ -2313,9 +2313,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U' R F2 R2 F2 U' F2 R2 U R2 U' F2 R' F' R' F L' R U' L U y'",
-                    "R F L B D2 U2 L2 B' U2 B2 F' R2 B2 D F R' F2 D' F L' R' F2",
-                    "F' R' U' D2 L2 F' D2 L2 B' D2 L2 D2 U' L2 U F D2 F' U R' F y"
+                    "F2 R2 U2 R' F2 R F2 U2 R2 F2 U F D R2 B' R' D' R' D B D' F'",
+                    "D2 R' D2 R' B2 F2 L F2 L' U B F2 R2 B D B' R' B2 F2 L' B' R",
+                    "F2 L2 U R2 U' B2 U B2 L2 F2 R U F2 U B' R B F2 R D"
                 ],
                 "solutions": [
                     "M U r U' r' U' M'",
@@ -2325,9 +2325,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U L' U2 L2 U2 B L2 B' U2 L' U F' L D' L D L2 F2",
-                    "F' D' B' L2 U B2 F2 D' R2 D F L B' F D U R' F2 R F U'",
-                    "R U' B F2 U R2 F2 D B2 D' F2 L2 B2 F D R2 B' L2 U' B2 U2 R' y'"
+                    "U2 F2 D' B2 D' F2 D2 U' L F' L2 D' R2 D' U2 R' D2 U' F L F",
+                    "B' R2 B2 D2 B R2 B' L2 F' R' F' D' R' F2 L F R2 B2 L U B",
+                    "U2 R U' R' F' L' U2 L U2 R F D' R2 D B2 U' B2 U2 F' R' F"
                 ],
                 "solutions": [
                     "R U2 R2 F R F' U' R U2 R'"
@@ -2335,9 +2335,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U' F2 L2 D2 B2 U2 B R2 U2 B D2 U L' U L F' L F2 U' F'",
-                    "R B' D' R D' F' D' L D L' F' D2 B R2 F U2 F R2 F2 R2 y'",
-                    "F' D' F B2 R2 U' B2 D U L2 B2 D L2 B' F2 R2 D' L2 U R' F' R"
+                    "U2 F R2 F' U2 F' U2 F R2 U' R' U2 B' R B U2 R",
+                    "U2 L2 F' D2 F' R2 F' D2 B' U2 R' D' B' D' R' B2 D' B R D' F'",
+                    "R2 U2 F2 R F2 L' U2 L U2 R' B' F R B R' F' D' U D R'"
                 ],
                 "solutions": [
                     "F' U F U2 R U R'",
@@ -2346,9 +2346,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L U F' L2 D' B2 D L2 D' L2 U' B2 U L' D L' F' L' R' F2 R U'",
-                    "L' D L' F U2 F2 L2 F' D2 B2 R' D B2 D F L F D' U L y'",
-                    "F L D' R2 F2 L2 U B2 L2 F2 D2 L' F' R U' L R' F' L' U2"
+                    "R2 F2 L2 D L2 F2 U R2 B' R2 U2 B' U R2 B2 R U B F R' F'",
+                    "R2 U2 F R' B' R2 F' U B U' F2 U' L2 D' L2 F2 D R2 B D' B'",
+                    "D' B2 D2 L2 D B2 U' B2 F2 U' B R' F D2 L U B L U' B U F"
                 ],
                 "solutions": [
                     "M U R U R' U' r U' R'"
@@ -2356,9 +2356,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' R U' R2 D2 F U2 B' R2 U2 B' D' U2 F' R2 D2 B R' B R F'",
-                    "F U F2 R2 U2 R2 F2 R2 U2 R2 F' U F U2 F2 U2 L' U L U' F",
-                    "L B R' U2 D2 L D2 L B' L' B D' R F' R2 U' D' L2 U D2 R2 B2"
+                    "D U B2 U2 F2 U L2 D' L2 F' D' L D2 B' R' F' U2 R2 F' B' R' F",
+                    "R2 D' F2 D L2 B2 L2 U2 L' U2 R' B U2 B U2 R2 U R' U L",
+                    "L2 U2 L2 D2 U2 B' R2 B2 R2 D L U' B L2 D' B D2 U F U' L"
                 ],
                 "solutions": [
                     "R' D' R U' R' D F R F'",
@@ -2368,9 +2368,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' B' U B2 F2 L2 F2 D' L2 R2 U' F U' F D L B2 L D' B R'",
-                    "L' R' L2 F' U2 L F R L2 U2 L2 U L2 D' B2 D y",
-                    "L F U' L F2 L B2 R' D2 F2 U2 B2 L' F U2 F D2 L2 F' U L' U'"
+                    "F2 U F2 U2 F2 U F2 U' F R2 B L' B D' L B2 R2 F'",
+                    "U F D B' R' B D2 L F' L2 F' U2 F' U2 F L2 F L' D F'",
+                    "R2 D2 B L2 B' D2 R2 F' U2 L' B' U' B U' R U2 R' L F'"
                 ],
                 "solutions": [
                     "l U r U' r2 F r U2 l'",
@@ -2383,9 +2383,9 @@ const algsets = {
         "16": [
             {
                 "scrambles": [
-                    "R' U' R F' U2 L2 B' L2 U2 F U2 B U B' L' B R2 B' R2 B2 L",
-                    "R' D R' B2 R D2 L U2 L2 U2 L2 U2 F2 D R U' L' U' L U y'",
-                    "L' D' F' U2 R2 D' F2 D' F2 U' L2 D' B' D U B D' B2 U L' R2"
+                    "F2 L2 F U2 B U2 F' D2 L2 U R B' D R2 B' L' D2 F L' D",
+                    "R2 U' R2 U' R2 U' R2 U' R2 B U' F' U2 B2 F B",
+                    "B' U2 L2 D2 F' R2 D2 B2 F R D R' B2 F' L U' L"
                 ],
                 "solutions": [
                     "r U r' U r U2 r' U' r U' r'",
@@ -2397,9 +2397,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' U R' B2 F2 U B2 D' R2 D L2 D B D' L2 R B' R2 B2 U' F2 U",
-                    "F U' B' R2 F' L2 B2 F' D2 B2 D2 L2 B2 D' L' F2 D2 B D' F' R2 U2 y",
-                    "F' R U D2 B2 D' F2 U' L2 U' B2 D U' L' U R U2 B2 U L F U2"
+                    "R B2 L U2 L' B2 R' U2 R B2 U' L2 R' F' L' U2 F L'",
+                    "U R2 B2 L2 D' R2 F2 D2 F L D' B2 L B' U2 B F R F'",
+                    "D R2 F2 U B2 U B2 U B2 U2 L' D L D2 F' D2 B R' F' B R D'"
                 ],
                 "solutions": [
                     "r U' r' U l' U2 R U' R' U2 l",
@@ -2408,9 +2408,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' D R' F D2 B R2 B' D2 F' L2 B U' F' U' B' F L2 R' D' B U",
-                    "L F' U D F2 D' L2 U L2 U' F2 U' L' U2 L U F2 U' F' L'",
-                    "F' U' B L2 B' L2 D2 F U2 F' D2 B U2 L' U L F U' L' B' L U' y"
+                    "R B U B' R2 L2 F L2 F R U2 F2 R2 L' B2 D2 L B2 R F R",
+                    "F2 L2 B2 U' L2 U2 B2 U' B2 D B' D B2 U B L F2 D2 B2 R' D'",
+                    "L2 B2 F2 U2 L D2 B2 D L' U' R2 B' L B' U F U F' D"
                 ],
                 "solutions": [
                     "R U R' U2 R U' R' U' F' U F"
@@ -2418,9 +2418,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' L U L2 U' R2 D L2 R2 D' F2 D' U F L' R' B2 R F2 U",
-                    "R' B' R' B' R2 B2 U L' B2 L B' R2 B' R2 U2 R2 U2 R2 B' R2",
-                    "U L' U R' L F R F2 L2 F U2 F' U2 F' L2 F2 y'"
+                    "U2 L2 B D2 B D2 B2 L2 U2 F2 L F' L' F' D B' R2 B D' F'",
+                    "B2 L' D2 B2 L2 R' U2 R F' R2 F' R2 F R' U' F' D R U' R' D' L'",
+                    "U2 B2 L' B2 L U2 R' B2 R B R2 F D' F' R U' F D R B R' F'"
                 ],
                 "solutions": [
                     "U2 R' D' r U' M U' R' D R",
@@ -2429,9 +2429,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F' R' D F2 D' U' L2 R2 U B2 F2 L2 F' D' B R' U2 B' D' B2 U'",
-                    "L U' R' U' B2 U B2 U2 L2 U L2 U F2 L D2 R B2 F L' F U' L'",
-                    "L U R' F2 U2 R2 F2 L2 B2 D2 L2 F2 L D' F' R' D' F' L2 B2 R2 U'"
+                    "D' B2 U L2 D2 R2 U R D' F L B R B F D2 R L B R",
+                    "U B2 U F2 L2 U' R2 F2 U' B2 L' D R' F R' U F' D' U' F' L' D'",
+                    "U2 L2 U' F L D' R' U2 B D2 F2 U2 R2 U2 R' F2 U2 L' F' L D'"
                 ],
                 "solutions": [
                     "R U' R' U2 F' U' F"
@@ -2439,9 +2439,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R D R U B2 R U2 B R2 D B' R' U R L' B2 U2 L2 U2 L U2 D2",
-                    "F' L' B R2 U2 L2 F' L2 D2 U2 F R2 B2 U' B' U' B U' L' U' F",
-                    "L' U L U2 L B2 R' D2 F2 D F D2 L D' L' R B2 L' U"
+                    "B R2 F2 L2 D2 L2 F2 U2 B U L' B D2 L' F L D' B D' L",
+                    "B2 L2 U F2 D' F2 L2 D' L2 U R B2 F' L2 U' R' U R D2 B U L",
+                    "F2 L2 F L2 U2 B F2 U2 F' L' B R2 B2 L F2 R2 F2 U'"
                 ],
                 "solutions": [
                     "F' U R U R' U' R' F2 R F'",
@@ -2450,9 +2450,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' D' F U L2 U F2 L2 D2 F2 U R' D B D2 R' B D B' L2 R2",
-                    "L' F' L F L' B U' L2 B L2 B2 L U' F2 D2 R2 D2 R2 F' R2 U2 F' y",
-                    "B U' L B2 U' L2 U' B2 U2 L2 B2 L2 D B D' L' D B' L D' L2 B' y"
+                    "U' B2 U B2 R2 D U' B' D' R2 D' R' D B2 U L U' L' B' R",
+                    "U' L2 D R U R' F' R' L2 U2 F U L2 D F2 U D' R2 U' R' F' D'",
+                    "R2 U R2 D' F2 L2 F2 R2 U' R' B' L' B R B D' B R2 F2 B L B'"
                 ],
                 "solutions": [
                     "U F U R U' R' F' R U R'",
@@ -2462,9 +2462,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D R D2 L2 F2 R2 U R2 B2 R2 U' L' U' F L' B2 U F2 R F' R",
-                    "F U' B' U2 F2 U' F2 U2 F2 U F2 D U' R' D' F2 U F U' B U2",
-                    "F' R L' U' L U2 R2 F R' U' R2 F2 D' L2 U2 L2 F2 D"
+                    "L' U' R U D B' U2 D B' U2 L2 D2 R2 L2 F L2 F' U2 L U R",
+                    "F2 U B2 L2 U' R2 F2 D' L2 B2 L B D L B L R F' R2 L' U R'",
+                    "F2 D B2 L2 D' F2 U B2 R2 U F' U' L' U' B' U' B U L F"
                 ],
                 "solutions": [
                     "U' r U' R' U' M U2 r U r'",
@@ -2476,9 +2476,9 @@ const algsets = {
         "17": [
             {
                 "scrambles": [
-                    "R' D F D2 B' D2 F' D2 F' D2 R2 B' R2 D' R U2 F' D2 B L' D2 F y",
-                    "B' D F' B2 D R2 B2 U B2 D' R2 B2 D' B' L2 D F D F2 D2 B2 y",
-                    "F' L D' B2 L2 R U2 R F2 R' U2 B L2 R2 F' R D L' U2 F"
+                    "D' L2 U' L2 D' R2 F2 D L2 U' R' B' D2 F2 L F2 D2 L' B' L' D",
+                    "F2 L2 U2 B' L2 B R2 B' D2 R2 U L' B' U2 L U' F U' L' B L",
+                    "F2 L2 D B2 D L2 U' L2 D2 L2 R' F2 R D U B' D' F2 D B R' D'"
                 ],
                 "solutions": [
                     "R U2 R' U' R U R'"
@@ -2486,9 +2486,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' R' U B2 R2 U2 B' R2 B' U2 B F R' B' R B2 F' U B U'",
-                    "B' D' F R2 U R2 U' R2 F2 R2 U2 R2 U' R' B U' B' R F R D B",
-                    "B' U B F2 U2 B2 R2 B2 U' L2 B2 D R' D B' D' F2 D2 L2 B' F2"
+                    "D2 B L B D F2 U L F L U2 F2 L' D2 L2 U2 R D2 R L F' D",
+                    "U R2 U' B2 U2 B2 U' B2 U' B' U B' U2 R' B L U2 L' U B' U R'",
+                    "B' F2 U2 R2 B' F2 R2 F D2 U' R2 U B U' B' R D2 B' L' B' L'"
                 ],
                 "solutions": [
                     "U R U2 R' U' R U R' U R' F R F'",
@@ -2499,9 +2499,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F L F L' U R2 F2 R2 B U2 B' L2 U F2 D' F2 B2 L2 F2 D",
-                    "R' F' U2 F2 R2 D R2 D' R2 F2 U2 F R' B' R' B F R' F' U'",
-                    "B' U R' L2 U' R2 U' R2 U L2 F2 U R U B U F2 L2 F' U L'"
+                    "U R2 F2 U2 R2 U' R2 U' F2 R F R F' U R B U' L U2 L' B' R'",
+                    "U' R2 U F2 D' L2 U' F2 L U' F2 U' L' D R' F D' L' F' D",
+                    "R2 B2 F L2 B2 F' R2 U2 F U' L' F L' U' L U L U F'"
                 ],
                 "solutions": [
                     "F' U' F U R U' R' U R U' R'",
@@ -2510,9 +2510,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L D B D2 B2 U2 L' D2 F2 U2 R' B' D' L' B' F' U F U' B U2",
-                    "R F' R B2 L2 U' F2 L2 U2 B2 D2 U' L' U F' L2 F' L' F' D U2",
-                    "R B' U' B2 U2 R2 D' F2 D2 L2 D' R2 U2 R B2 D2 L' D2 B' R' U R'"
+                    "B2 R B2 F2 L' D2 B2 R F' L2 U F R2 B R' U' R2 D B D L",
+                    "L F' D L2 F D' R F2 L' B2 U B2 R2 F2 U L2 F2 D2 B R' U' B' L D",
+                    "L2 D R2 D R2 D2 L2 R' U' F D' U F2 D L R L' U' F'"
                 ],
                 "solutions": [
                     "R U2 R' F U R U' R2 F' R"
@@ -2520,9 +2520,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' F' L D2 R2 F D2 F' D2 F' R2 F L D' L2 F2 L2 D L2 R",
-                    "R D' B' F2 L' R' D2 R U2 L F2 D2 F' U2 B' D' U2 R F U F' R y'",
-                    "B' D' F L2 D2 B2 D' R2 D' L2 U' F2 U F' D2 R' U R D' U' B U"
+                    "U' R2 D2 F2 D' B2 U2 L2 D' B D' F R F' R2 F R2 F R F D B",
+                    "D R2 U' L2 B2 R2 U' F2 D2 B' U2 R' B L B' R2 U' R U2 B U L'",
+                    "U2 F2 U2 F R2 B L2 B2 D2 F U B2 L2 B' F' R F R F2 B D B'"
                 ],
                 "solutions": [
                     "R U R' U' F R' F' R2 U R'"
@@ -2530,9 +2530,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' D' F' U' F2 L2 B2 F2 D' U2 F2 R2 D F U' F L' D2 B' U' B F R'",
-                    "L U R' D' R2 B2 D2 U' R2 U F2 U' F R F' L B2 U",
-                    "F D U2 R2 D2 F U2 F' D2 R2 F' U F D' U L F L' U F y'"
+                    "F2 D2 F' L2 F U2 B D2 F2 D U2 R' U R2 U B U' B' L' B' L D'",
+                    "R U2 R' U2 R U2 R' F' U B U' L' U' L U F B'",
+                    "L2 U' L2 F2 U' L2 U F2 U' L2 F L R' B D2 B' F R B F L B'"
                 ],
                 "solutions": [
                     "R U' R' r U' R' U' R U r'",
@@ -2541,9 +2541,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R U L F2 R2 L' U2 B U B L' D' L F2 B2 R2 U R2 F2 U' R2 U' y",
-                    "R' F R' L2 R2 F2 U2 F U2 F' U2 F U2 R' F L2 R2 U R' U' F'",
-                    "R' D' B R2 B2 D F2 U' L2 F2 D2 R2 D2 B F' U' R F D R' B U"
+                    "U' F2 U L2 U F2 D2 F2 U' L2 F' U2 L2 D' B2 R2 B' L B' L U",
+                    "F2 D L2 U' L2 R2 D F2 D B2 L D2 L' B2 R2 U B' F2 R' B D R'",
+                    "R2 U L2 B2 D' R2 F2 R2 B2 U' R' U2 R' B2 D B2 F' U2 F"
                 ],
                 "solutions": [
                     "F' U2 F R U R' U2 R U' R'",
@@ -2554,9 +2554,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L D' R' F R2 F U2 R2 D2 L2 U2 B L' B2 L' D' U2 L' R2 U R2",
-                    "B U B' F R2 F' R2 B' R2 U2 B2 U2 F R B F' L' R' B' L U' R",
-                    "B' R F R2 F2 D2 U' L2 D' B2 D U L F' L F D2 F U' B U2"
+                    "D R' F' U2 R2 F2 D2 F' L F B2 U D L2 U' D' L2 B L D",
+                    "F R2 F' R2 F R2 B2 F' R2 F R' F' R2 B2 U B' F R' F' R' B U",
+                    "F R2 B D2 B' U2 B' U2 F' D' B' D2 L D' B' F D2 B' R2 U F'"
                 ],
                 "solutions": [
                     "r' D' r U2 r' D r2 U' R' U2 R U r'",
@@ -2567,9 +2567,9 @@ const algsets = {
         "18": [
             {
                 "scrambles": [
-                    "R D U' L' B2 L' D L' F2 L D' L2 B2 U2 B2 D' R2 U' R2 U2 y",
-                    "B U' B L2 D2 R' B2 L' U2 R2 D2 F2 R' U' F' L' U' B U2 B U' F y",
-                    "L' F' U L2 F2 D R2 D R2 D2 F2 L2 U' F L U2 F' U2 F"
+                    "U' F2 R2 U2 R2 F2 U' R2 D B U' B U' B2 D' L D L R2 L' D' L'",
+                    "D' L2 U F2 U F2 L2 U2 L2 D' B' U2 L2 D2 F' R2",
+                    "R2 U2 B2 R2 D R2 D' L2 D L2 R U2 B' U2 R2 F' R B2 U R' F R'"
                 ],
                 "solutions": [
                     "y' R' U2 R U R' U' R",
@@ -2578,9 +2578,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F R B2 D L F' L' D F' L D2 B2 U F2 R2 B2 D' L2 B2 R2",
-                    "L F U L2 B2 D R2 D' B2 L2 U' R' F' R F L' U2 R U R' U'",
-                    "L' U' R L2 B2 U2 B' D2 B' U2 F L2 F2 D L' D F R' B2 D F' D'"
+                    "U B' L F' R2 D' F D' L2 F R2 B' R2 F D2 R2 U2 B2 F L' B",
+                    "L2 F2 R2 D2 B F D2 F R2 D L2 R2 F' R' B' D B L2 R' D' B",
+                    "F R U R U' R2 F' B' R2 U B U2 B2 R2 U B2 D B2 U' B' D' B'"
                 ],
                 "solutions": [
                     "r U R' U R U r' U M' U2 R U r'",
@@ -2592,9 +2592,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L D' F D L2 U R2 U' L2 R2 U' R2 U2 L' D U B' D' B2 R B2 R",
-                    "R' U' R F2 U F2 D L2 U2 L2 F2 U' R F L2 D' L' B2 L' F U2 y'",
-                    "R D R' B2 R2 B D2 F L2 F L2 F' U' F2 U F D F R' U2 R' F y"
+                    "B' R2 F2 D2 F' D2 R2 F2 R B2 U B' U' R' U' F",
+                    "D' F2 R2 D B2 U' B2 L2 B2 L' R2 U' R U L2 B' U2 B' U R' U L",
+                    "U2 F D2 R2 B R2 B D2 B' D R' D' R' F' U R U L' B2 L B"
                 ],
                 "solutions": [
                     "R U' R' F' U' F U R U' R'",
@@ -2603,9 +2603,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B D' L' U2 L2 B2 U' R2 F2 U' R2 B2 L D F2 D' F U' B' F U",
-                    "B L' B' U F2 U' F2 L2 U2 L2 F2 L2 U' L F2 L2 U2 F' U2 L' U F",
-                    "B R' U' F' U' R2 B R B' D2 L F2 D2 F D2 B' D2 R2 B U2"
+                    "R U2 R F2 U2 F2 R2 U2 L F U F' U2 R U F' L' R' D R' D' R",
+                    "L2 F R2 D2 R2 F' L2 D2 L F2 U' F' L' D2 B' D U D' B",
+                    "F2 L2 D' U2 B2 U' R2 U' R D2 F D' B U' B U F' L2 U' L' U' L"
                 ],
                 "solutions": [
                     "R U' R2 F R F' r U' r' U' r U r'",
@@ -2615,9 +2615,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' R' F' D F2 L2 D' B2 U B2 L2 U2 F' R F2 U R' U' R F' y",
-                    "B' L F' D R D' R2 L D2 B' L' F2 L' F' B' U2 F U2 R2 F2 B'",
-                    "R F D L B2 L' B2 R' B2 D2 R D2 R D' R2 D R' B2 R D' F' R'"
+                    "R2 U' R2 F2 D2 B2 U' L2 U L' B L B D2 F2 R U2 R2 U' R U' R",
+                    "U2 F R2 B' D2 B' D2 B2 D2 L B2 L' D2 R F' R",
+                    "R2 U R' U' R2 U2 F R D2 F U2 F B2 U2 F D2 B' U2 B' R U'"
                 ],
                 "solutions": [
                     "R U' R' F' U F U R U R'",
@@ -2627,9 +2627,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F R U F2 D B2 D U L2 D' B2 D R B L' B' R' D2 F R U y'",
-                    "R D R F' U' R L B2 L2 U F' R L' U B2 L2 D R2 U F2 R2 y'",
-                    "B' U' B D L2 U2 L2 B2 D' B2 U' B2 U2 B L' D U2 B2 D' B L U2 y'"
+                    "F R2 D2 B2 R2 F L2 F U2 R B L2 R' U' F D U D'",
+                    "F2 D2 L U2 R' B2 L D2 L2 F L2 R2 U R' F R U' L' R' F L' F'",
+                    "U' B2 D' F2 D' F2 L2 U' L D' L B2 D' F' U F2 R F' U'"
                 ],
                 "solutions": [
                     "R U R' d' r' F r2 U' r' F",
@@ -2640,9 +2640,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L F' L F' U2 L2 B D2 B R2 D2 B' F' L' F2 R' D2 R B' F'",
-                    "F L D' R2 U2 R2 D B2 U B2 U' L2 U' F' U L' F U L2 U2 F2 L'",
-                    "F U L R2 U2 R2 D' F2 D U L' U' R2 U2 R2 U' F' U y'"
+                    "D' R2 F2 U L2 U2 R2 B2 U B' F2 R' U' B' D2 B U2 F2 U B L F'",
+                    "U2 R2 F2 L2 B' D2 B L2 F2 L2 D' L B L' D L' R2 U F' U' L'",
+                    "B2 U2 R2 D' R2 D F2 L2 D' F L D' B D L B U' B U' B' U F"
                 ],
                 "solutions": [
                     "R' F R F' R U' R2 F R F'",
@@ -2651,9 +2651,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D L R B L2 B' R U L' U B R B2 D' R2 D' L2 U' D",
-                    "R' F' U' L2 D2 B2 R D2 L' D2 L' F2 U' L' U' B2 L R2 F' R U R y'",
-                    "F' U R D2 U2 L2 B' L2 D2 U2 R2 F' R F R' F R2 U R' U' F' U'"
+                    "D2 R2 D L2 B2 D' R2 F2 U2 F D' B U R' B2 D2 F' D U' B' R F' U'",
+                    "F2 U L2 U F2 U2 L2 D F R D2 U' B L U B' L2 B' D",
+                    "F2 D2 L2 D F2 L2 U R2 B2 L R' B U' B R' U2 F U' F2 L' D F"
                 ],
                 "solutions": [
                     "F R' F' R2 U' R' U R U2 R2 F R F'",
@@ -2664,9 +2664,9 @@ const algsets = {
         "19": [
             {
                 "scrambles": [
-                    "F' D B' D2 L F2 D2 R2 B2 R U2 B' D' U' B' R B L F2 L' F'",
-                    "L' B R' B F U2 L2 F L2 D2 U2 B D' B' D' R B R2 B2 F' L",
-                    "L' B R B2 D' R2 D' U2 L2 D F2 U' F U R' D' R' D2 R' U2 L' U' y"
+                    "F2 L' U2 L2 D2 F2 L D2 L' F U B2 U' B2 F D' U' D' L'",
+                    "L U2 L U2 L2 F2 L2 D' L U L2 F2 D2 F L' R F2 R' L F D",
+                    "U' R2 U2 F2 R2 F2 R2 D2 U L D2 F' D' U2 F2 L U2 L' D F'"
                 ],
                 "solutions": [
                     "U R U2 R' U R U' R'"
@@ -2674,9 +2674,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' B D' F L2 F2 R2 B R2 D2 F' R2 U B L2 U B2 R2 B' F' R U y'",
-                    "B U R D2 F' L2 U2 F D2 F' U2 B2 L' B2 L U2 B' U F2 R F'",
-                    "F R D R' B2 D2 B2 R' D2 R B2 D R D2 L B L' B' D2 R2 F'"
+                    "L2 B D2 B' D2 R2 B2 D2 L2 F L' B' U' R U' L2 D2 L2 B L",
+                    "L2 D2 R2 D2 B2 U F2 L2 F U' B2 L' U L F L2 U R U' R'",
+                    "L' D2 F2 L2 R' F2 U2 F' L' D' B D' B2 R2 D' U2 F' U F D B'"
                 ],
                 "solutions": [
                     "U' l R U' R' U x U' R' U2 R U R'",
@@ -2686,9 +2686,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' B R' B2 R2 U R2 D2 R2 U' L2 F' U' L R2 D2 B R B' L2",
-                    "B U' B' U2 L2 D2 R' B2 L2 U2 F2 R' F2 D F D2 F' R' D' F2 U' R'",
-                    "R U' F' L2 D' B2 D L2 U2 B2 D' B2 U' B' D B' L2 B2 F2 R' F'"
+                    "B2 R2 B R2 U2 B U2 F2 U B' R2 D R' D' R' U' F2 B",
+                    "B D2 L2 F D2 B' U2 B' R D' R' F2 R U F D R2 U2 R' U' B",
+                    "D2 F2 D2 R2 B D2 U2 L2 F L F2 D U2 R2 D F R' B' R' B' R F'"
                 ],
                 "solutions": [
                     "R' U R U' R2 F R2 U R' U' R F'",
@@ -2697,9 +2697,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' R' D B' D2 F' R2 U2 F R2 D2 B' R' U2 R U B' D' B U R'",
-                    "B U' F U' F2 L2 U L2 B2 D F' R F2 D' F2 R' D R B U'",
-                    "R' U F' B2 U2 F2 U R2 D2 U' B2 D' R2 B D' R2 F' R2 B U R' U2"
+                    "F' R' F' L' F2 D' L' D' L' B' D' B2 D2 L2 B2 R2 U' B2 L' F R'",
+                    "U2 F2 U2 F' U2 B' F' R2 U R' B2 U' B' D2 B' F' R' B' U R' B' L'",
+                    "L2 F2 U2 L2 B2 R2 B D2 F' R' B R' F R U' R'"
                 ],
                 "solutions": [
                     "U F R U R' U' F' R U R'"
@@ -2707,9 +2707,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' F' R F R2 D2 F U2 F D2 R2 F' L2 R' D2 B L' F2 U' R' U2 F' y'",
-                    "B R' U B U2 B' R2 B' U2 B' R2 F2 D' F' R D2 B D' R F2 U F",
-                    "F' D L' F L2 D2 F U2 B' L2 B2 R2 F R' D U' B U F' U' B F' y"
+                    "B2 L2 D' L2 U' L2 D' L2 U' L F U2 F' U' R F2 R2 U2 R2 L' U' R",
+                    "F2 L2 B2 U F2 U' B2 L2 U2 L' U B' U L' B L' B' L' F2 L' B L'",
+                    "F2 U F2 U2 F2 U' F2 L2 F2 U F' U2 R' F' R U' L F2 D F D' L"
                 ],
                 "solutions": [
                     "U R' F R F' R U' R' U2 R U' R'",
@@ -2719,9 +2719,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' U' F' U2 B R2 F2 L2 B D2 B L2 F' R' B U B U2 R' U'",
-                    "L' F R B U2 F U2 F' U2 B' L2 R2 F2 R D F' L' U L F' D' L'",
-                    "L' D' R D' L F' R D' F2 D' F' L B D2 B' R2 L2 D2 R2 L2 F R2 y"
+                    "R2 B2 R2 U2 F R2 D2 B D2 B R' B R2 F' R2 U' L R' L' U'",
+                    "U2 R2 F' U2 F U2 B2 R' B2 R F R2 F' U R B' U B U R'",
+                    "B R2 B2 R2 U2 B' U2 F' U2 F R' U2 B2 U' R' U B R' B U' R"
                 ],
                 "solutions": [
                     "U R U2 R2 F R F'"
@@ -2729,9 +2729,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F R F' U2 B2 U' R2 U' R2 U2 B' U' B2 R B U' B U B'",
-                    "B' R' F' B2 L2 B2 U F2 R2 U R2 D U' R D F' R' B U2 R' U",
-                    "F' U B L2 U' L2 U L2 U B' F R' F R F2 U2 F"
+                    "U2 F2 L2 D2 F D2 B' L2 B U L F D U2 F' U' F D' L'",
+                    "R2 F2 U' L2 B2 R2 D2 B2 R2 U2 B D B' F2 L2 F L F U2 L U' L",
+                    "L2 D U2 F2 D' L2 D R2 U R' D' L D R' F' D' F' U2 L U' L"
                 ],
                 "solutions": [
                     "F' U' F U2 R U' R' U R U' R'",
@@ -2741,9 +2741,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F L F L D2 B R2 D2 R' B2 R' B2 U F2 D' F2 R2 U' B2 R2 L2",
-                    "R' B' D2 B2 L' R' U2 B2 L' R' F' R2 F' R' B R' U' R' U2",
-                    "L F' D' U L2 B2 U' B2 U' B2 D2 F2 R D R B' R' B' D2 F' L' U2"
+                    "B F2 L2 F' D2 F2 L2 F' D2 F L' F' D' F' D' F D' B2 F2 R B U'",
+                    "U' L2 R2 B2 U B2 D2 F2 U' R' U B' U' L D2 F2 U' L2 F R' D' L'",
+                    "L2 R2 U2 F2 D' R2 U L2 U2 B2 R D2 B D' F2 D' L' F L2 F U' R'"
                 ],
                 "solutions": [
                     "U2 R U R2 r U' M U2 r U' r'",
@@ -2755,9 +2755,9 @@ const algsets = {
         "20": [
             {
                 "scrambles": [
-                    "L' D L' D2 F2 D' F2 D B2 L2 U2 R2 F2 L' D' R U R U' L U y",
-                    "B L F' U R2 U L2 B2 L2 U' R2 U' R' U2 R' F' L' B R U R U2 y",
-                    "D2 B' U' R2 U B' U D' B2 U' F2 R2 U2 D' R2 F2"
+                    "U2 F2 U' F2 U' F2 U' L R2 D2 B' D' B F' D' F R2 F L' F'",
+                    "F2 U2 R2 U' L2 U R2 U' L2 U' F' U R U' F' U' L R' D' F D L'",
+                    "L2 B U2 L2 B2 F U2 R2 D B2 U2 B2 L2 F' D2 R' F' L F' L F' R"
                 ],
                 "solutions": [
                     "y' U' R' U2 R U' R' U R y"
@@ -2765,9 +2765,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L B' U' L2 D B2 D' L2 U R2 D' R2 U F D F U' B F' L' R2 U2",
-                    "L' U R2 L F U' R' U R2 F' U' R U2 R2 B2 D2 L' D2 B2",
-                    "L' U F D2 B2 U' R2 U' R2 U' R2 U' B' U R2 D B D F' L' U2"
+                    "L2 U2 L2 U' B2 U F2 U' B2 U F L2 U2 L U2 B' U' B U L U F",
+                    "U' R2 F2 D' F2 U2 F2 L2 U' L' U L' D2 B2 D B' L D2 F2 U' R'",
+                    "U2 R2 D L2 U' B2 U' L2 D2 R2 F' R' B2 F U' F U B2 R F D"
                 ],
                 "solutions": [
                     "R' F2 R U' F U R' F2 R"
@@ -2775,9 +2775,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' F U F2 L' D2 B2 L F2 U2 B2 R U' L U L' U2 F' L F U' F' y'",
-                    "R' U' B D2 L2 F2 U' L2 U' B2 D B2 F' D' B2 D B R2 U F R U' y",
-                    "F' L D L' U2 F2 L2 D2 B2 R' B2 L' D L' F R' F' R F' U' F'"
+                    "B L2 B D2 F' U D R2 L2 F L' D2 L U2 F2 B2 L' B2 R2 L' B' D'",
+                    "B2 F2 D' F2 R2 U F2 D F2 L' R2 B' R' B2 L U R' B R U' B",
+                    "F2 U2 R2 U2 R2 U' F2 D R2 D B L' B' D2 L R2 F' L2 U2 L U' F"
                 ],
                 "solutions": [
                     "R' U' R' F R F' U R2 U' R'",
@@ -2788,9 +2788,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' U D2 B' L2 B D2 F' U' B' D' F' R F' R' D B2 U2",
-                    "R' B' R' B' L' D L' D2 R' F2 R2 F' R' U' F2 L2 D2 B2 L2 U' D L2",
-                    "F' D L F2 L2 U2 L2 R' F2 D2 L D2 F' R F L2 D' L2 U' L2 F U2"
+                    "D2 L2 U2 L D2 U2 F2 D2 R2 D L D' R' B' L R' D2 F R' F' R F",
+                    "R2 U F2 D L2 D U' R2 B2 D F' U' R F' R D2 U2 R2 U L' U' L'",
+                    "U2 R2 U2 F2 L2 B2 L2 U L2 D' L' U F L' B R2 B' L U' L' F U"
                 ],
                 "solutions": [
                     "r' D' r U r' D r2 U' r' U2 r U r'",
@@ -2800,9 +2800,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' D B' D2 F U2 L2 D2 U2 B L2 D2 U' B R2 U L' F L' R2 D' U' y",
-                    "F R' F' U' L2 B2 D L2 F2 U R2 U L D L' F U2 F R2 U' R' y",
-                    "B' L B L B2 L U2 L' U2 B2 U2 R B' R' B L' B' L' B R' U R y"
+                    "U2 R2 F2 R2 U2 R2 F2 R2 U F' U F' D R F R' F' D' F'",
+                    "B' U2 F R2 F' R2 B' R2 B R' F R' F' R' B D U D'",
+                    "F2 L2 U' F2 U2 F2 L2 F2 L2 U' L F2 L D R' F' L F2 R L' F' D'"
                 ],
                 "solutions": [
                     "U' R U' R' U R U' R' d R' U R",
@@ -2811,9 +2811,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' B' L' D2 R D2 L B2 R2 B2 R' B2 L B' R2 B L' U2 B' U R'",
-                    "F D' L D' R2 U B2 R2 B2 D' U' R2 F2 R' F' D B R' B D2 F2 L'",
-                    "B U L F U2 B L2 B' R2 B D2 B2 R2 U' B' U F L B' U' B U'"
+                    "R2 B2 U R2 F2 D L2 F2 U F' U L2 U L R' F R2 U2 R' F L F'",
+                    "R2 U2 R2 F2 R2 F2 U' R2 U R F2 U2 R' U2 B U B' U' R' F U' F",
+                    "R' L D B2 D2 L' F' U L U' R2 U R2 D' F2 B2 D2 F2 R F L'"
                 ],
                 "solutions": [
                     "U' F' U' r U' r' F2",
@@ -2822,9 +2822,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' R' B' F2 R D2 U2 B2 L D2 B2 U2 R' F R B R F2 R' F R2 U' y'",
-                    "L' U' L F' L2 B' R2 B2 L2 U2 F2 U2 F' L' B' L R2 F' U' F2 U F",
-                    "F' D' R' D2 L2 F2 D2 R2 B U2 B U2 B U' L U' R' U L' D F U2"
+                    "L U2 L' U2 R' F2 U2 R B2 D R2 D2 L' B' L' D B' L F L F'",
+                    "F2 R2 D' L2 D2 U' B2 U R2 F' U' R D2 U L' U B L2 B L B D",
+                    "L2 B' D2 U2 F D2 F' U2 F U2 R F D' R D F D R' F2 B U' R'"
                 ],
                 "solutions": [
                     "U' R U' R2 F R F' R U' R'"
@@ -2832,9 +2832,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F L' U L2 D2 L2 D F2 U B2 D B2 D2 R' F R' B2 R2 F' L' F U'",
-                    "F L' U D' B2 U B2 U' B2 L2 R2 B' R2 B L2 D L R' F R F2 U' y",
-                    "L U' B' F' R2 D2 F U2 B F2 R2 F' L' B2 R B2 U2 F2 L2 B' U B"
+                    "F U L' B2 R2 B U R' U' L2 F2 U2 L2 F U2 R2 B D2 L' U F'",
+                    "R2 D' R' L U R' F L D B2 R B2 U2 B2 R U2 F2 B2 U2 L' D L",
+                    "D' U' R2 D B2 U' B2 U2 B U' L U F' L' U2 L F L' B'"
                 ],
                 "solutions": [
                     "U' R U' R2 F R F' U' R' F R F'",
@@ -2845,9 +2845,9 @@ const algsets = {
         "21": [
             {
                 "scrambles": [
-                    "R D' R B2 U2 D B2 U R' L2 U2 D L2 D' F2 L2 D L2 F2",
-                    "F' D R F2 L2 B2 U' F2 D L2 D' F2 D2 B U R' D2 L2 F2 U2 R' D'",
-                    "B L' U' F2 U F2 U B2 D R2 D R' B' L B2 U2 R2 U R' U'"
+                    "B2 R2 U F2 D' L2 U L2 B2 D2 L D2 F2 D2 B L' D' F' D2 F L B'",
+                    "R2 F' R2 B' L2 B R2 B2 U2 F2 D L' F2 U2 B L2 R' F R B R",
+                    "U2 B' R2 F2 D2 F' D2 B R2 F2 L' U' L U' F U2 F' U' F"
                 ],
                 "solutions": [
                     "U2 R U R' U R U' R'"
@@ -2855,9 +2855,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F R' U' L2 B2 D2 U2 L2 D2 F2 D B2 L D F' D2 L' B2 R2 D2 F R'",
-                    "R' U' L U' R2 F2 D' L2 U2 B2 U' B L2 U2 L D R2 F L2 R' U'",
-                    "F' L D' L2 F' U2 B U2 F L2 D2 F2 D' F R' F' L' U2 F R U"
+                    "L2 F D2 B D2 F' L2 R2 B' R' F R2 B2 U2 F' B' R'",
+                    "F2 L2 R2 U' L2 D' B2 D L2 U L' U R2 U' F2 U L2 F' L' F U' L",
+                    "R B2 U2 R' B2 D2 L U2 L' F' R2 B2 R' U F U' B2 D R' B' D B'"
                 ],
                 "solutions": [
                     "r U' R' U2 R U r'"
@@ -2865,9 +2865,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U' L B2 U2 R F2 U2 B2 D2 R F2 R' U B' F L F L' B U F",
-                    "B' U' R' B2 L2 U2 L2 D' L2 R2 F2 L2 D B' R D' B R' D U R' B",
-                    "L' B R F D2 B L2 F U2 F' L2 D2 F' R B' L U2 R U' R' U'"
+                    "F2 L2 D2 B U2 R2 B R2 U2 B2 R' B R2 D2 L' D R2 D' F2 L' U F",
+                    "F L2 B' R2 D2 B L2 B2 D2 F L' D' L2 D2 F' D B2 F' R' U R'",
+                    "F' U2 L2 B' L2 F U2 R2 B' R' B2 U B' U L' B' R' B2 L"
                 ],
                 "solutions": [
                     "U R' F R F' U' R U2 R'",
@@ -2877,9 +2877,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L D' L D2 B' F2 R2 F' L2 R2 B F' U' L' D U2 B U B2 U' L B' y'",
-                    "B' U R' U' F2 R2 U L2 B2 D L B2 L U R' B",
-                    "B' L' B2 U2 R2 D2 L2 U' L' U' R' F2 L2 F' D2 L B' L U2"
+                    "U' R2 U R2 U R2 U2 R2 U' L U L' F' U' L' U' R B L B' R' F",
+                    "D2 F2 U L2 R2 D' B2 D2 U2 B D R' B2 L B U2 B2 L R' L' U' L",
+                    "F2 U' L2 U' F2 U2 F2 U R2 D' B' L' D L' R' B2 L' B' U' L B' R' F'"
                 ],
                 "solutions": [
                     "U2 F R U R' U' F' U' R U2 R'"
@@ -2887,9 +2887,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' L B' L2 D2 U2 R' U2 L D2 L' B2 R' F D2 L' B' F L2 F L'",
-                    "B' R' U' F2 D B2 D' B2 F2 U' R2 U2 B2 L U B R' B' U2 L B' L2 y'",
-                    "R' F' L D2 B U2 B' D2 B U2 B' L' F R F' L' U L U F U"
+                    "D F2 U2 L2 F2 D R2 U F2 R B' R' D2 L F2 L U2 B F' L' B",
+                    "U2 R2 D L2 F2 R2 U L2 B' L F2 U2 F' U' F U2 L' B'",
+                    "L2 F' R2 F' D2 F' L2 F R2 B2 U L R' D2 R U R U' R' L' U' F'"
                 ],
                 "solutions": [
                     "U2 R U R2 F R F'",
@@ -2898,9 +2898,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' U B U2 R2 U R2 B2 D2 F2 U' F2 R U2 R' D2 R U' R B R",
-                    "L' U F' U L2 U2 B2 D' B2 U2 L2 F2 U' R' F' R U' L U' B' R B",
-                    "R' U B' L2 F2 D' F2 L2 D' U' R D R' D' U R D B U2 R U'"
+                    "L2 U' R2 F2 R2 B2 U L2 B2 U R' D F' D2 F2 R2 B' U2 R' F' U'",
+                    "D2 B' L2 D2 F U2 F2 R2 U2 F U' L F' L' U2 R D' U' L2 D R'",
+                    "U2 B2 R2 B' U2 B D2 U2 F2 L2 D U2 R' F' U2 R F R' F R D R"
                 ],
                 "solutions": [
                     "U F R' F' R2 U' R' U R U R'",
@@ -2910,9 +2910,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D' F U2 L2 D2 B2 D' F2 D B2 U' F' D' F' R B' U B L2 U2",
-                    "F D B' L2 R2 D2 F' U2 B' R2 U2 R2 B R' U R' U' B L2 B' D F2 y'",
-                    "L' B R L R2 U2 L D2 R' F2 D' L2 R2 U B' L2 F L' U F"
+                    "U' R2 U' B2 R2 U' R2 B2 U L' B R' B R2 D L U L' D' L U' R",
+                    "U F2 R2 B2 U' F2 U' R2 B2 D2 F' U2 F' D2 R2 F2 D' B L' B' L D",
+                    "D R2 D' F2 R2 U2 R2 U F2 U B L' B L B2 R2"
                 ],
                 "solutions": [
                     "U R U' R' U2 R U' R2 F R F'",
@@ -2922,9 +2922,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' D' B' D2 L2 F U2 F' U2 F' L2 R2 D' L2 F U F L' U L F L'",
-                    "L B D R D2 L D2 R' D2 U2 L' U' L B2 D' U' F D2 B' L2 U2 L'",
-                    "R' F' R D2 R2 D2 L2 F2 D' L2 U B2 U' L' D F2 U2 L2 F U'"
+                    "R2 B' D2 B' L2 F R2 U2 B U' B2 L' U' R2 B D2 F R2 F B U' F'",
+                    "F2 U' F2 U B2 F2 R' D2 L B' R2 F U2 L D2 R2 L F' R'",
+                    "R2 B' R2 U2 B2 L2 F' L2 U2 L U' F L' R' B R B2 R U' B U' R"
                 ],
                 "solutions": [
                     "U2 F' r' F2 r2 U' r' F2",
@@ -2935,9 +2935,9 @@ const algsets = {
         "22": [
             {
                 "scrambles": [
-                    "F' D' L' D F2 U2 B' U F' U' B L2 U' L U L2 y'",
-                    "R' F' U D2 L2 D L2 D F2 U R2 U2 R2 F' U2 R B L' U' L B' U' y'",
-                    "R F U R2 U' R2 U' R2 F2 U2 R2 U2 L' F R' F' U2 L U' F' U"
+                    "F' U2 L2 F U2 F2 U2 F' L2 B D L F' L2 F2 L D' L2 F' B' U L'",
+                    "B' R2 F R2 B2 L2 F L2 F2 U2 R' F' R F U2 B' R U2 R'",
+                    "B2 D2 L2 U' L2 U' L2 F2 D' L2 B' U2 B' D' U2 R2"
                 ],
                 "solutions": [
                     "y' R' U R U2 R' U' R y",
@@ -2946,9 +2946,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L U' F' U2 F2 R2 U2 F2 R2 F2 U' L2 B' D B2 D B' L U' R2",
-                    "F L D F2 D2 F2 D' R2 U' B2 R2 U R' D2 R F' L' B L B' F2 U'",
-                    "L' F' D L2 U L2 D' U2 L2 U B2 F2 D F' U B2 U' R2 U2 L R2 U2"
+                    "D2 U2 B2 L2 B2 D2 U2 F' L2 F' R2 F L U2 L F",
+                    "B2 D2 U2 F D2 B R2 B' U2 F U F' D B R D' F D R B D' F",
+                    "L2 F' D2 B F2 R2 U2 B2 U2 F2 L U2 L F U2 R2 U2"
                 ],
                 "solutions": [
                     "r U' r' U2 r U r'",
@@ -2957,9 +2957,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' R F U' B' U' F' R' F U R2 B' L' B2 R2 L U2 L U2 F2 L'",
-                    "F U F U L2 U' F2 D' L2 D U F2 U' L U L F U' F U F U2",
-                    "B' L' U2 F L2 B' R2 B L2 F' L B2 U B2 R D' F2 R D B"
+                    "R2 D2 L2 U2 F' L2 B' L2 F R' U L U' F2 U L2 B2 R' D' L'",
+                    "F2 U R2 D' F2 D2 B2 L2 U B R D2 F2 D F2 R B R F' R F R",
+                    "B2 R2 B L2 R2 D2 L2 D2 R' F2 R2 U' L2 R' D' F L U2 F L B D B"
                 ],
                 "solutions": [
                     "U2 R U R' F' U' F",
@@ -2968,9 +2968,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' F2 B2 L D F' D' R F R B2 U2 R L B2 D2 R B2 R",
-                    "B L' D' U2 B2 L B2 L B2 L2 B2 L D L U2 L B' L' U L U y'",
-                    "F' L' B U R2 U' L2 D F2 R2 D2 L2 U B' U2 B U2 B2 L F' R2 F2"
+                    "U R2 U' F2 R2 U F2 R2 F U2 F L B F' R' D R' D' R2 B' L'",
+                    "F' L2 B2 L2 U2 B' U2 L2 B' F' L B' L2 F L' U L' U' L U F",
+                    "D' L B' R' U B R L' B D' L2 F2 U F2 U B2 R2 F2 D' B R' D"
                 ],
                 "solutions": [
                     "U2 R' F R F2 U' F R U R'"
@@ -2978,9 +2978,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B U L U2 B2 L2 U2 F' U2 F2 R2 U2 B D' R' D2 R2 B U2 F' R2",
-                    "F R' B U2 R2 D2 R2 F L2 U2 R2 F' U2 L D' F' D F' R B2 L'",
-                    "R' U' F R F2 U2 F2 R F' R' U2 R B' R B2 U' B'"
+                    "L2 U2 B2 R2 D R2 D R2 D B F2 R' U' B D' R2 D2 R2 U L' D L",
+                    "B U2 L2 F U2 B2 R2 D2 F' R2 D F' R D R F2 D' F R2 F D' B",
+                    "F2 D' L2 U' F2 D' U B2 D' U R' U2 R U2 R2 B L R' L' B D'"
                 ],
                 "solutions": [
                     "U2 F' r U' r' F2"
@@ -2988,9 +2988,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' U' L R' F2 D2 L' D2 L R F2 L2 B' U B U R F' U2 L F",
-                    "L F R' D2 F2 D F2 D R2 D' R2 F2 D2 F R' F' D' F' R2 F2 L' U",
-                    "F D' R' F2 L2 F2 D R2 D B2 D' R F' R D' U R D"
+                    "R' B2 R' U2 B2 U2 B2 U2 R2 U' L' D' B D2 L2 F2 L2 B' D' L",
+                    "U B2 L' B' L' U2 L2 D' B2 U' B2 U2 L2 B L2 D2 F D2 B' D B'",
+                    "F' U2 F R2 F2 U2 L2 D2 B D B2 D L2 U F' R F2 R F U"
                 ],
                 "solutions": [
                     "U2 R' F R F' R U R2 F R F'",
@@ -2999,9 +2999,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L F' D B2 D L2 D L2 D F2 U2 R2 U' B' R2 F' L2 B L2 B U L' y",
-                    "R' F' L F U B2 L2 B2 R U' L' B2 U2 L U2 D2 L2 D2 L B2 y",
-                    "L U L2 D2 F' R2 F D2 B' L2 B L U' L F' L2 B' L F L2 y"
+                    "U2 R' U2 R' D2 B2 U2 L U B' U B L' D' F' U B F R B D'",
+                    "D L2 R2 U' F2 U' L2 D F2 D2 R D' R' B2 L' F R B2 R' L' F U",
+                    "F2 R2 D2 B2 R2 U2 F2 R' U2 F D F' L' R B D R2 D' F2 B L' U"
                 ],
                 "solutions": [
                     "U R U' R' U' R U' R' y' R' U' R",
@@ -3010,9 +3010,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' R D B2 R' U2 B2 L U2 L' R2 B2 D L F' L2 B L B' D2 R2",
-                    "B U R' L2 D2 L2 D R2 B2 D B2 U' R' B2 R' U2 R F' U' L' B' F",
-                    "L' U L R2 D R2 D' F2 U R F' R U' B U' B' R2 F' y'"
+                    "U' F2 R2 F2 U' F2 R2 F2 U L' B' L2 F U' R' F' U R2 L' U B",
+                    "U2 L' U2 D2 F' U' F D2 B R2 U2 R' U2 R' F2 L D2 L' F2 B' U' L",
+                    "D' R' L' U L U' R L D2 F' R2 D2 L B2 U2 L2 D2 R F' R D'"
                 ],
                 "solutions": [
                     "U' R U2 r' U r U2 r' U' r U R'",
@@ -3024,9 +3024,9 @@ const algsets = {
         "23": [
             {
                 "scrambles": [
-                    "F' U R F2 R2 D' B2 R2 F2 R' U' L2 R' F' L D L' F2 R",
-                    "R B' L2 B2 U2 L U2 L U2 R' U2 R B L2 U R' U' R U' L' R'",
-                    "B U' L' F2 U2 L2 F' L2 F2 U2 F U' L U' F L' U2 L B' U"
+                    "U' F2 D B2 L2 U' L2 U B2 D2 L' U R' D2 R2 U2 R2 L' D' R",
+                    "B' R2 U2 B L2 B2 D2 B2 F L B2 R' D2 R B U' R U R' B L",
+                    "F' D2 R2 U2 F L2 F2 U2 L2 B D' R2 B L' F' L' B2 F' B' U'"
                 ],
                 "solutions": [
                     "U2 R2 U2 R' U' R U' R2",
@@ -3035,9 +3035,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' U' L D2 U2 R2 B' D2 L2 U2 F' R2 D' B R' D R B' R2 B' L y",
-                    "F' D R' B F L2 F R2 F' L2 F2 R' D L B' F U' L2 B U' L",
-                    "R B R D2 R2 D B2 U' L2 D' U' F2 D L B' D' R2 B2 L U2 B R"
+                    "U2 R U2 R2 F2 R U' B' L D R F' R F D' L' B",
+                    "U R2 U R2 U R2 U2 R2 U R U B U B' U' R'",
+                    "B2 R U2 R2 B2 R B2 R' U2 B2 D B' U R2 F D F' R' B2 R' D' B'"
                 ],
                 "solutions": [
                     "U F R' F' R U R U R'",
@@ -3046,9 +3046,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B L F' D F2 D' L2 U L2 U F2 U' F' L F L' F2 U2 F' L' B' U'",
-                    "L' D F' U2 F' D2 U2 F L2 F2 L2 F' D F' L U' L' U2 L' F U2 L",
-                    "R' D F L2 D L2 F2 D' F2 U2 B2 F2 R' U2 R F D F' L' F2 D2 U"
+                    "L2 R2 D2 L2 B2 D B2 R2 F2 D B' F2 D2 R' U' R' D2 R' U R' B D'",
+                    "D R2 D' F2 U2 R2 U' F2 U R' B D U L' U L D' U' B' R' U'",
+                    "L2 F2 U2 F' L2 R2 B D2 L' B' L' R2 F L' F' U' R' F' R U L'"
                 ],
                 "solutions": [
                     "U2 R U R' U' R U' R' U R' F R F'",
@@ -3057,9 +3057,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B U' F D2 B F2 L2 U2 F' D2 B' L2 D F' R' B' D2 R' B2 F2 L2 F",
-                    "B' U F' U B2 R2 U L2 U' F2 D2 F2 L' F' D F R2 B' U' F U'",
-                    "F' L' U2 F R2 B R2 F' R2 B2 R2 U R2 U B U' B L R2 F"
+                    "B U2 B' U R2 U R B2 D R2 D' F2 U F2 B2 U' R2 B' U B'",
+                    "U2 F L2 B D2 B' L2 U2 R F R' D' L2 U L F2 L U D F'",
+                    "F2 U2 R U2 R2 F2 R F2 L F' L U' B' U B L2 R F U2 F' R' F"
                 ],
                 "solutions": [
                     "R U2 R' U r U' R' U' R U r'",
@@ -3068,9 +3068,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R B' U B' L U' F R2 U2 F L U D L2 B2 U2 D R2 B2 R2",
-                    "R U' B U2 R2 F2 R2 U R2 F2 R2 U B' L R' F R' F L' R U2",
-                    "B R U' R D F R2 F U D' L2 B U L2 D L2 U2 B2 U D2 F2 D2"
+                    "F2 L2 F2 D' L2 B2 R2 U' B' D' L' D B' F2 R' U' B' D' R D B",
+                    "D R2 F2 D' L2 U L2 F2 U2 R U' R U R' U' R2 F' U2 F U'",
+                    "U2 L2 F2 D U F2 D' L2 U L' U2 F2 L F' D U R F U2 R' D' F"
                 ],
                 "solutions": [
                     "U R U' R' U' R U' R2 F R F'",
@@ -3080,9 +3080,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F L B D2 L' U2 L2 D2 U2 B2 L' B2 R' B F L' F' R D2 F' U' R'",
-                    "L' F' L F2 L2 F2 U F2 L2 U F2 U L F L2 F U2 F' U2 L",
-                    "R D' F U2 F L2 D2 B' R2 D B' D U' L2 F' D F' R U2"
+                    "L2 F2 D R2 D2 L2 U2 R2 B2 R U B2 L' R2 B' D' L2 U2 R2 F U' L'",
+                    "U' R2 D B2 D2 L2 B2 D R2 U' L' B' F2 U2 B F' L F U",
+                    "U R2 U R2 B2 R2 U' B2 U R2 B' L' B L B2 R' U' R B' R B R"
                 ],
                 "solutions": [
                     "M U2 R U R' U r U' R'",
@@ -3091,9 +3091,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B L' D' L2 D2 L2 D L2 F2 D' L' B2 R B F2 R U R' U2",
-                    "F D' L' U2 L2 U2 B L2 B' U2 F R' F' L' F R F' D F' U' y'",
-                    "L F' R' B2 U2 R2 U R2 F2 L2 B2 D' F2 R' B L2 B' F' L F' L2 U'"
+                    "F' R2 F' R2 F' U2 B F2 L2 F L' U2 F U2 F U' L' U2 F U B'",
+                    "B' R' F R F D' L D' R' L2 B L2 B D2 R2 F2 L2 B' R2 B L B",
+                    "R2 D' R2 D R2 U2 B2 D2 B2 R2 B' F D R F2 R F2 D' B D' F'"
                 ],
                 "solutions": [
                     "U R' F R F' R U R' U2 R U' R'",
@@ -3102,9 +3102,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' U B' R2 U2 B2 U B2 U B2 U2 B' U2 R2 U2 R' F' U' F",
-                    "R D' B F2 R U2 L' B2 U2 R' U2 R' F2 D F2 R2 D2 L B R' D U'",
-                    "R D' B D' B2 U L2 D' L2 D' R2 D2 R2 B D L U' L' B' U B2 R'"
+                    "L2 B U2 F' U2 B L2 F2 D R B' L2 R F' R' D L' B' L' F' U",
+                    "F2 B' L U D B2 R' U2 D2 F D F2 U B2 D F2 R2 D B' L D'",
+                    "L2 U B2 D B2 U B2 U' B2 L' F L' U F2 L' U L F2 L F' L' D'"
                 ],
                 "solutions": [
                     "U' R' F R F' U2 R U' R' U R' F R F'",
@@ -3116,9 +3116,9 @@ const algsets = {
         "24": [
             {
                 "scrambles": [
-                    "F L' F U L2 F2 D F2 D' L2 U L2 D' B' L2 U2 L' B D L2 U' F2",
-                    "B L F2 D R2 U' R2 F2 D' L2 R U' L2 U L' R' B' y'",
-                    "L F U' R2 D R2 D2 U' L2 U L2 U' F D2 U' R2 D' U' L' R2 U'"
+                    "U F2 U2 F2 L2 U' L2 D' F2 U2 F' U2 F2 L2 U' L2 D2 F' D' F",
+                    "F2 R2 U' F2 D B2 D L2 F2 U F D2 U B2 U2 R F' L F2 R' F L'",
+                    "F R2 F' R2 F R2 B2 R2 D2 F' R' F D2 R D' R D' B R F' R B"
                 ],
                 "solutions": [
                     "U' R U R2 F R F' R U' R'"
@@ -3126,9 +3126,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L F R B2 R2 D U2 B2 R2 F2 L2 U B L' B L2 D2 L F U y",
-                    "R' D' F' D R2 U R F2 B2 L' B' L' U2 F' R2 F2 B2 U2 F' U2 L2 D2",
-                    "R D' F' L2 F2 U' L2 D' B2 U2 L2 D F D2 R U R' B' R' D' R2 U' y"
+                    "F2 U2 F' U2 F U2 R2 F2 R2 U F U R D L' B L U2 D' R'",
+                    "F' U2 B R2 U2 F' L2 D2 U2 F U' B2 D L2 U' R' F' R U F' D' F",
+                    "L2 B' D2 R2 F' U2 L2 B' R2 U' R' F' L2 R D F' L2 U2 F' L' D F"
                 ],
                 "solutions": [
                     "U' R U' R' U r U' r' U2 r U r'",
@@ -3137,9 +3137,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' R B' L2 F2 U' B2 U R2 D2 L2 B2 L2 F' R' F' L' R2 B L2 B' L'",
-                    "R' F' D' F2 U2 B2 D F2 D' B2 D F2 U2 F R U2 R' F' R F' U2 F2",
-                    "B' U L2 F2 R B' D B' D2 R B R2 F2 U' L2 U L2 U B2 y'"
+                    "U2 L2 R2 D' L2 R2 U' L2 B2 R2 B' D' B L2 F2 R' U2 R'",
+                    "F2 U R2 U2 R2 U' R2 U' R2 U2 F L' U2 L U F U' F' U F",
+                    "B' R2 B' L2 F R2 F' L2 B2 R' F' D' R2 U' B2 R' U' L2 U' F'"
                 ],
                 "solutions": [
                     "R U' R' U r U' R' U R U r'"
@@ -3147,9 +3147,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R B' U' B' L2 F2 R2 D2 L2 B' D B' R B F2 L' D F2 D' B'",
-                    "F' U F L2 B2 L2 U2 F2 L D2 F2 L' F2 U F' R2 F R' F' U' F2 U y",
-                    "L F U' F2 U' R2 D' F2 D U2 R2 U2 F' R F' R' F R2 F2 U L' U2 y"
+                    "R U' R2 D F' D L U' R2 U' D' L2 F2 L' B2 L' B2 U2 L' F' D' R",
+                    "U' B2 U R2 B2 U B2 U2 R2 U' B U2 R2 B U R B' R' U R B R'",
+                    "F2 U2 L' R' U2 L F2 R2 U' F U' L2 B2 D2 B' L' D2 L2 B' L U"
                 ],
                 "solutions": [
                     "r U' r' U' r U r2 D' r U2 r' D r",
@@ -3159,9 +3159,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B U' R' F2 L2 U' R2 U' B2 R2 D' R2 B' L B L2 B' D' B2 R' y",
-                    "F U F R2 D R2 D' R2 D F2 L2 U L B' U' R B' R' B' L U2 y",
-                    "L F' U D2 F' L2 D2 F' U2 B2 F L2 B L' B2 R2 B F U' L' U2 F y"
+                    "U2 F2 U2 R F2 L' U2 L B2 D' B2 R2 D2 B R D L2 U L2 B D",
+                    "F2 L2 U2 L2 U L2 U L2 F2 U' B' L' R' F R F' L B U'",
+                    "B2 F2 R F2 D2 L R F2 L2 D' B2 L2 R B' D R D2 R2 D' B"
                 ],
                 "solutions": [
                     "R U R' d R' U R U' R' U R",
@@ -3171,9 +3171,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L F' U' F D2 L2 D2 F' D2 B' D2 U F L' U' R2 B' R B U2 R2 y",
-                    "F D' L' R2 U2 L B2 D2 U2 F2 L B' U' B' D2 U R' D R' F' U' y",
-                    "R B D' U2 R B2 L2 F2 L' D2 L' B2 U R' B2 U' R' D L2 B U2 R' y"
+                    "F2 L2 U2 F' L2 F2 U2 L2 F R' D R' B L' R' B' L R2 D' R",
+                    "L2 U2 L2 B2 F' R2 B' L2 D2 B' U L' B F2 D L B' F2 U L",
+                    "L2 U F2 D2 B2 U' B2 D L2 D L F' L2 D' B' U2 R B2 L2 R' B' D"
                 ],
                 "solutions": [
                     "y' M' U2 R' U' R U' r' U R",
@@ -3186,9 +3186,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' L B' U2 B U L' U B2 L B U B2 R2 B' U2 D2 R2 B' D2 L2 D2 y",
-                    "L' F' D U2 L2 U2 L' U2 L' R' F2 L' F2 D' F' D R D' F L U F2",
-                    "R' U B' U2 R2 U B2 U R2 U' B2 R2 B' U2 R' U B' R U' B U"
+                    "R2 B2 U' B2 U2 B2 U F2 R2 U2 B' U B R B2 L D2 U R' U L'",
+                    "U' F2 D B2 D' F2 D B2 D B F' D L' D' B' U2 F D2 L U L'",
+                    "U2 R2 F2 U R2 U R2 U2 F2 U R' U R U2 R2 U2 R' F R F'"
                 ],
                 "solutions": [
                     "F U R U' R' F' R U' R'"
@@ -3196,9 +3196,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U' R B U2 B R2 U2 B' R2 U2 R2 B2 R' B' U R2 B' R' B2 L U",
-                    "L F U F2 U' L2 B2 D' R2 B' D' L' D' L2 B2 R B U2",
-                    "F' R' F' D' L2 R2 B2 U R2 D' R2 U L2 B R B' D' L R2 F' L' U'"
+                    "B2 F L2 B' U2 F U2 F' U2 F2 L U2 L2 U' F2 D' U2 F' L2 F D B'",
+                    "R2 D R' U' F R2 B' R D2 F D2 F2 U2 L' B2 R L U2 B D' R",
+                    "U2 R2 B2 D' F2 R2 U' F2 D' F2 L' R' D' L2 B D2 F' U2 F' R' D L"
                 ],
                 "solutions": [
                     "R U' R2 D' r U M U R' D R",
@@ -3210,9 +3210,9 @@ const algsets = {
         "25": [
             {
                 "scrambles": [
-                    "R U F B2 F2 U2 B2 U' B2 U' B2 U' L' F R2 F' L F R U'",
-                    "R U' L F2 D' U2 L2 D' B2 L2 D2 U2 L' U' R U' R' U2 R U",
-                    "R' B D F2 D F2 D' L2 D' L2 B2 U2 B F' U' F R U B U' B' U' y"
+                    "B2 R2 D' B2 U' F2 U B2 D R' B' D' F' D' F' L F2 D' L' D' B'",
+                    "R2 U B2 U2 B2 L2 F2 L2 D' U' R' U' R' F2 U' B2 U2 F2 D'",
+                    "U B2 D2 B2 F2 U' F2 U' B2 D F D B F2 R F2 U F2 U' F' R' B U'"
                 ],
                 "solutions": [
                     "R' F' R U R U' R' F",
@@ -3222,9 +3222,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L F' D R2 B2 U' F2 U2 R2 D' F2 U' L2 R' U2 R' U2 F' L' B' U2 B",
-                    "B L U D2 R2 D' U' F2 U F2 R2 U B' R B D' F L' F U B' U'",
-                    "F' D L D' R U' B' U B2 R' F' D L' U2 L2 U' D' F2 U R2 B2 R2"
+                    "U' L2 B2 U F2 U' R2 D' L2 B' F' R' F' R' U2 L R2 F L' B' R",
+                    "U2 R2 U2 B' R2 B' L2 U2 B F2 R' F' R' B L' R' B' F2 U2 R' F L",
+                    "U2 F2 D' F2 R2 B2 U' L2 B2 R' U2 R U' L' U L2 R F R F' L' U"
                 ],
                 "solutions": [
                     "r U r' U2 r U R' U2 R U' r'",
@@ -3233,9 +3233,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U' L R2 D' L2 R2 U2 L2 F2 R2 D' R F2 L' F D' F2 D R",
-                    "B' L U' L2 F2 D2 U2 R U2 R' B2 R' D L B2 D L F U B F U'",
-                    "L D' L' R' L B' D B L D' B R U L2 U' B2 R2 D F2 B2 L2 U2"
+                    "F R2 B' R2 F' U2 B2 R2 F2 D' L2 F2 U F R' D F' R' B U R",
+                    "D B2 U2 B2 D2 U' F2 U F U F U' R B L U' L' U' B' R' D",
+                    "U' B2 U R2 D2 L2 F2 D U2 R D' L2 F' R U R' F D R D"
                 ],
                 "solutions": [
                     "U' M' U R U' r' R U R'",
@@ -3244,9 +3244,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L F D2 B2 U' R2 D' F2 D2 U' B2 L U L D F U2 L' U",
-                    "B D B F' D2 B F2 R2 U2 F2 R2 U2 B' R' D' B R U' R' B' D2 B2",
-                    "R B L' U B2 D F2 U F2 U' B' L' B D' R' B2 L2 B' U2 y'"
+                    "F2 U2 L2 B2 D2 U' B2 D' L2 F' R' F' R' U2 R' U' R' D'",
+                    "F2 R2 F L2 B L2 F2 U2 F L' B' L B' F2 R B",
+                    "B2 L D2 R D2 B2 L B2 L2 B2 D L F2 L' D' B L B'"
                 ],
                 "solutions": [
                     "U2 r U2 R' U R U' R' U2 R U' r'",
@@ -3255,9 +3255,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F R' F' U2 R2 U2 R2 B' U2 B R' B' R U R U B U'",
-                    "F D L R2 D R2 D' F2 U2 F2 U' F2 L2 B L B' U2 B' U' B D' F'",
-                    "R' D' L B2 L2 R2 F2 U B2 U' B2 R' U' L R' D R F' U2 F U2"
+                    "R2 D2 R2 D' R2 B2 D' R2 F2 D' F' D2 F' D2 F U L U2 L D F",
+                    "F2 U' L2 U F2 D F2 D' B2 D F' R' F' R D' B2 R D' B2 D R'",
+                    "B2 R2 D L2 F2 U R2 F2 D F2 L' F2 L2 F' U2 L D' U2 B' L B D"
                 ],
                 "solutions": [
                     "U' F' U F U R U' R'",
@@ -3266,9 +3266,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B R' U2 R2 B L2 R2 F D2 R' F' L2 B' U R U' R2 U2",
-                    "R B' U2 R B D' B' D2 R2 L2 F' B2 L2 F2 D' R2 F2 U2 B2 D' B2",
-                    "F' L B' U2 B2 U' B2 D L2 D' L2 B U' L F D2 B' R B D2 U2"
+                    "U F2 U' F2 U R2 U' F2 D2 F L D2 U2 R' B' D' F2 L2 D",
+                    "F2 R2 D R2 D' U2 F2 D U2 B R B U2 F' U2 F D B2 D2 L F L'",
+                    "D' L2 F2 U' B2 D R2 D' U2 B' L' B U2 B2 D F2"
                 ],
                 "solutions": [
                     "U2 r U' r' R U' R' U' r U' r'",
@@ -3278,9 +3278,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D B U' B2 U F2 D' F2 U F2 U' F D' U2 B D L2 F U' R' U'",
-                    "B D B' R2 F R2 B U2 R2 B2 L2 B D' B' L' D' L' B2 R2 D' U B' y'",
-                    "R' D R' F2 L2 D' R2 B2 R2 D B2 D2 B' D' B D' B2 L2 R F2 D' R y'"
+                    "D2 U' B2 U2 F2 U' R2 U' B2 D L F L2 D' U' L D L' U' B D' B'",
+                    "R2 B2 L2 D' F2 D L2 B2 R2 B U' F' L U' F' L' F2 U' B'",
+                    "U' R2 B2 D L2 D L2 D2 B2 R' U R' F' U' F U'"
                 ],
                 "solutions": [
                     "U' F' U' F U R U R'",
@@ -3289,9 +3289,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R U F L2 U R2 U' L2 F2 U B' F R' B U' R' F R' F' U'",
-                    "B D' B R D2 R' D2 L' B2 U2 L' R B' R' U B' D L' B' L' B' y",
-                    "L B' R' B2 F2 U' F2 D2 R2 U2 R2 F D2 B2 R2 D' U R' U' B L"
+                    "B2 D' L2 B2 U' B2 L2 B2 F2 D' L F L2 U2 L F D",
+                    "B2 D L2 D2 U B2 R2 D B' D2 F R D2 B2 L' D U2 F' D' B'",
+                    "U B2 D L2 D' L2 D2 L2 B2 R B' F R B U2 F R B' R' B R F"
                 ],
                 "solutions": [
                     "r U r' U2 r U R' U' R U2 r'",
@@ -3302,9 +3302,9 @@ const algsets = {
         "26": [
             {
                 "scrambles": [
-                    "B' R' B U2 F2 U2 L2 F U2 B' R2 U2 B2 U L U' L F D2 B2 R B",
-                    "L' U' B' L2 B D2 F' D2 R2 B2 L2 B2 R2 U F' L U' L' F U2 L U",
-                    "R' D' B' F2 U' R2 U' F2 D B2 D' R2 U2 F D2 L2 B' D2 B D R U"
+                    "U2 L2 D' B2 U L2 U' B2 U L2 B' D2 F' U' F D2 U B' D",
+                    "R2 D2 L2 B U2 L2 U2 B2 R2 D2 U' F2 U' L2 F' U",
+                    "U' R2 U2 R2 B2 U2 R2 B2 R2 U2 B' U' L F U' F' L' U' B' R' U R'"
                 ],
                 "solutions": [
                     "L E' L' U L E L'",
@@ -3315,9 +3315,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U F L2 R2 D2 R2 U F2 U' L2 U' R B2 L U' L' R' F' L U'",
-                    "F' U' B' U2 L F2 R2 D2 F2 L B2 L U B' L U' F R2 B U' y",
-                    "R B' L U B U B' L' B' U2 R B' D L2 U B2 U' B2 L2 B2 D' R2"
+                    "R2 F2 D2 L2 U B2 D L2 U2 R B2 F U2 B R F D2 L2 F L' B D'",
+                    "D' L2 U2 R2 F2 D2 F2 R2 D' U' F' U' F U' R B R' D2 L2 R' F R",
+                    "F2 D L2 B2 D R2 B2 L2 F2 U' R F' R' B' F R F R F B D' F'"
                 ],
                 "solutions": [
                     "r U R' U2 R U r' U2 r U' r'",
@@ -3326,9 +3326,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D' B U2 B' R2 F R2 F2 U2 F' U2 F2 D U R U R B' R' B U2",
-                    "L' U R' B2 L2 F2 D F2 L2 D U B' D' B U' B2 L F R F' U'",
-                    "R' B L' B2 F2 R2 B2 L' F2 U2 R' F2 R B' F' U' R' U' R' F' R"
+                    "B2 D U L2 U F2 L2 F2 U L2 F R' B2 L' D L R B2 R' F' D' F",
+                    "U2 L2 U B2 U' B2 L2 D' B2 R D F D' R' D B F' B",
+                    "D' L2 F2 U' L2 B2 D' L2 R2 D F L R F R B' R2 D' B F L D' B"
                 ],
                 "solutions": [
                     "U R U' R' F R' F' R",
@@ -3338,9 +3338,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F' U' L' U2 R B2 R' U2 L F2 R2 U2 F L2 D B L' F2 L' U' R",
-                    "B R U' B' R2 U2 R2 B' U2 B2 D2 U2 L' U L F2 U' F' D' L B D'",
-                    "L' D' R D2 B L2 F U2 L2 B D2 B2 D B L' F2 R' F2 L2 U B2"
+                    "U2 B2 U' B2 D L2 F2 U2 F D' U' F' L' F U L'",
+                    "B2 R2 B' U2 B' D2 F2 L2 F R U F R' D U R' U2 B' R2 D B",
+                    "U2 B L2 F' L2 D2 F D2 F' D' F2 L' F2 R' D2 R D' B'"
                 ],
                 "solutions": [
                     "r U r' U2 r U' R' U2 R U' r'",
@@ -3350,9 +3350,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B U' B L2 B2 U B2 D L2 F2 L2 B2 R2 F' R' U' R U R' F2 U R2",
-                    "R F' D' B2 R F2 L' F2 R' B2 D B' F U B U' B R' U2 y'",
-                    "F L B F D2 R2 D2 B2 L2 F' U2 B' U2 R' B U2 L' F U2 R' B"
+                    "U2 L' U2 L U2 F2 L F2 L' F2 U F2 R' F U' R F' R' F' U R",
+                    "U F2 D L2 D' B2 F2 R2 U' B R D U2 B2 U B' R' U R D' B",
+                    "U2 B2 L2 F2 L2 D' R2 D' F2 R2 B R D2 R' D2 B U2 L2 R' F R' F'"
                 ],
                 "solutions": [
                     "U R U' R' U' F' U F"
@@ -3360,9 +3360,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B R' U2 R2 B2 U R2 D2 F2 U' L2 U' F U2 L F2 L2 F' D2 U' R",
-                    "F' L B' U2 R2 F L2 R2 U2 L2 R2 F2 L2 D' L2 R2 B2 U' L' B' L2 F y'",
-                    "R' F' R' U2 L2 D' L2 U L2 D' F2 U2 R2 B' L2 B L D2 B2 F' R2"
+                    "U' B2 D L2 U L2 U F2 D2 U' B' U R2 D' F R U' F' D2 B U L'",
+                    "U' L2 U F2 D R2 D2 B2 U2 L' U L D2 R2 D' F U' L F2 L' F'",
+                    "B2 D F2 D' B2 D F2 D' L' D' L2 F2 U F' U' F2 L2 D L"
                 ],
                 "solutions": [
                     "r U2 f R f' U2 r'",
@@ -3374,9 +3374,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R U' F D' B2 U2 B2 D U' F2 L2 U2 L2 R' U2 R F2 U R' F' R' y",
-                    "B L F' D2 B2 F R2 B D2 R2 D2 B' R2 U' L' B2 U2 L U2 B L' y",
-                    "B' R U' R2 B2 D2 L U2 L F2 U2 L2 D2 U' B2 L' B L U2 R2 B R2 y"
+                    "L2 D F2 D' F2 U F2 L2 B2 R' D B U2 F U2 R' U' B U' F'",
+                    "L2 B2 D' R2 U' L2 B2 F2 R2 D' L F' L' D' F2 L F L F2 L D F'",
+                    "U R2 D' F2 D B2 D' F2 D2 B D' B R' U R' U"
                 ],
                 "solutions": [
                     "U R U R' U' y' R' U' R",
@@ -3385,9 +3385,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F L2 B2 D' B2 R2 U R' B' D B U' L2 F' R' U'",
-                    "B' L' D' L2 F2 U' L2 B2 L2 R2 U R2 F' U' F2 U R U2 R U2 L' B y",
-                    "F' D U2 B' L2 R2 F D2 U2 F' U' R D B L2 F' D' R D' U'"
+                    "U F2 D' B2 R2 F2 U' F2 R2 B' L B' F U2 B L' B' U2 F",
+                    "D B2 D2 R2 U' F2 L2 B2 U' B R2 B2 L' R2 U F' U' F2 U2 L' B' R",
+                    "L2 B2 L R2 D2 L F2 L' R' B' F' D2 U' B R U L D' U' B' D' B'"
                 ],
                 "solutions": [
                     "r U2 R' U R U' r' U2 r U' r'",
@@ -3398,9 +3398,9 @@ const algsets = {
         "27": [
             {
                 "scrambles": [
-                    "F L' D2 L F' B R2 B R' B2 D B2 D F2 L2 F2 D2 R2 U",
-                    "F R F2 U' F2 R2 U R2 U' R' F2 U' B U' F U' B' U' y",
-                    "R B' U L2 U' B2 U' L2 B2 U2 L2 B2 U2 R D' R D R' B R2 U'"
+                    "U2 R2 F2 D B2 D2 L2 U L2 U' R' F2 R F2 D2 U' B2 D' R'",
+                    "U R2 D B2 L2 U' L2 D F2 D' B R F2 R' F2 B R' D'",
+                    "L2 R2 D2 L2 D R2 D' F2 U F2 R U' R' U L2 D2 L2"
                 ],
                 "solutions": [
                     "R U' R' U R U' R'"
@@ -3408,9 +3408,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B D F' U2 F' U2 F R2 F2 U2 L2 R F' L2 B L2 U R D B R",
-                    "F' R' B' U' B2 L2 B2 L2 D' B2 D R2 U2 B R' F2 L B' D' R2 B' F'",
-                    "F R U' R2 U2 L2 F D2 F' R2 D2 B' L2 U' R2 U' F' U2 F' R2 U R'"
+                    "L2 D F2 U' F2 L2 D' B2 U B2 F D B' R' B D' F2 U F",
+                    "R2 B2 U R2 F2 D F2 U F2 U2 F R B2 L' B' U2 R B2 R' B' R' F",
+                    "L2 D B2 D' F2 R2 D' R2 U L B2 F D' L' R' U' B' R' F B' U L'"
                 ],
                 "solutions": [
                     "R U' R2 F R F'"
@@ -3418,9 +3418,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' F D' B D2 B2 L2 U2 F' U2 L2 B' D' F' L U2 B' R' B U' R2",
-                    "F R' F L2 D' L2 F2 L2 D B2 D B2 U' B' U B L2 U R F'",
-                    "L U' B' U2 L2 R2 U2 B D2 L2 D2 U2 B L' D F D' L2 U2 R' U2 R y"
+                    "D2 B2 L2 U2 L U2 L B2 D U' B D' L D B' F U' R' F' R D",
+                    "B' F2 U2 B L2 U2 L2 U' L2 U2 L' D F2 D' L U2 B' F' B U L'",
+                    "F' U2 B U2 B2 F' R2 B U2 R' U2 F2 R' U F U F' R'"
                 ],
                 "solutions": [
                     "R U' R2 F R2 U R' U' F'"
@@ -3428,9 +3428,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D R F2 L2 F2 U2 B2 U B2 U F2 D' L D2 B L B F2 R' B2 D'",
-                    "B' F2 B L F L' F' U F' U F2 U F2 U2 F2 U' F2 y'",
-                    "F' U' B' L2 U2 B2 L2 R2 B' L2 U2 F' L2 D F' R' F' D B R U'"
+                    "B2 U R2 U' R2 U' F2 D' B2 L' B2 F2 D R F' R B U' R' B U' F",
+                    "U L2 F2 R2 D' L2 R2 U' L2 R D2 R F' L D' B R2 B2 L B' U",
+                    "B2 L2 U2 L2 F' R2 B R2 F L' U' B' L2 B' D' F2 D R F2 R D"
                 ],
                 "solutions": [
                     "U2 r U' r' U r U r' R U2 R'",
@@ -3440,9 +3440,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' D' R B2 L2 U' F2 L2 U B' R U R U B' R2 B",
-                    "B' L B U2 B2 R2 U2 B D2 B D2 F U' B' U2 L' U R' D2 U B' R'",
-                    "L D' R F2 U F2 D' L2 D L2 U' L2 U R' U' L2 D F U F U' L'"
+                    "U2 F' U2 L2 D2 R2 F' U2 R2 B R D' F R F D B' D2 U L U' B'",
+                    "B2 F' L2 B L2 F' L2 F L2 D2 R' F2 R D2 B F",
+                    "U F2 U L2 F2 U' F2 D' L2 U2 L' D U2 L' F2 U F' L' U' R' F R"
                 ],
                 "solutions": [
                     "R' F2 r U' R U r' F2",
@@ -3452,9 +3452,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U' R' D' F2 U L2 U2 R2 U L2 U2 L' D' R' B2 U' F' L' F2 U2",
-                    "R' F' D' F2 U' F2 D' B2 D F2 D' B2 U B' L2 B D2 R U'",
-                    "R F D' L2 R2 B' D2 B L2 R2 D F' U2 F R' U R2 U' F' R'"
+                    "B2 U R2 U B2 D2 L2 U' L2 D' B D' L' D2 L' F R D2 L2 R B' U'",
+                    "B2 D L2 U' L2 U B2 U2 B2 U' B U' R' U R2 B R' D' R",
+                    "R2 U2 R2 F U2 F R2 U2 R2 F2 R U' F R' U' F' D' U2 F2 D F"
                 ],
                 "solutions": [
                     "R U' R2 U' F U R U' F'",
@@ -3463,9 +3463,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D' B F B' D R' B D R2 D F D' R2 D2 R2 F2 U' R2 D B2 R2",
-                    "R B D L2 D' R2 D' F2 D' F2 D' L2 D' L' R2 B L B R B R2",
-                    "F U F U F2 U' L D F' D' F' L' D' L2 D R2 D' L2 D R2 U2"
+                    "R U2 R' U2 L' B2 R' B2 L R' U' R' B' R2 B U' R B' R B U R",
+                    "F D2 B U2 B' U2 B D2 F D2 U' R2 U2 R' B' R2 B D B2 L' D L'",
+                    "U' L2 D R2 D B2 D' R2 D' F2 L' F R' F' R U2 L' F' R' F' R F'"
                 ],
                 "solutions": [
                     "R U' r' U R U' R' U' M'"
@@ -3473,9 +3473,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F R' F2 U2 R2 U' B2 D' L2 D B2 R F R2 F' U' F' U' R' U2",
-                    "R' D' L F U2 F L2 F2 L2 F D2 R2 D2 L D R F L' R' U2 L R' y",
-                    "L' F D2 F2 L2 F2 U2 F2 U2 F2 U2 F' L' B D2 F L F' R' D2 R' y"
+                    "R2 F2 L' B2 L F2 L' B2 L R' U' R2 F R F2 U' F U2 R U' R'",
+                    "L2 F2 B D2 L2 F D' F2 D' R' D2 R L2 F2 R' D2 L2 B2 U2 F' L' B",
+                    "B2 L F2 D2 L' U2 R' F2 U2 B U B' L' D U2 B' D U' R' L F' U"
                 ],
                 "solutions": [
                     "U' R U' R2 r U' M U2 r U' r'",
@@ -3486,9 +3486,9 @@ const algsets = {
         "28": [
             {
                 "scrambles": [
-                    "F D B' D L2 B2 F2 R2 U' L2 U' L2 U2 B U2 B' U F U2 B' R2",
-                    "R B' U' F2 R2 U2 L2 R2 B' L2 U2 B' F2 D R U' L2 D2 F L2 D U'",
-                    "B F' B2 U' B U' F U2 F' U2 F U2 B' U2 B U2"
+                    "R2 U2 F R2 D2 L2 D2 B F' R' D2 R' D B2 D' R2 B L B' L' B'",
+                    "U2 F2 D B2 D' F2 D' B2 R2 U B' D' F2 L D' B2 U F2 B' D' R",
+                    "U' B2 R2 D F2 R2 B2 U L' B F2 L' F' L F' L' F2 L B' L'"
                 ],
                 "solutions": [
                     "y' R' U R U' R' U R y"
@@ -3496,9 +3496,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' L F B' U2 B R2 F' U2 B L2 B2 U' F R B2 U2 F D2 B' F'",
-                    "F' R D' R2 D2 L2 F2 D' R2 U' B2 U' B2 F' D F D B2 D' R' F",
-                    "R' D' F' D F2 D2 U' F2 U' R2 D R' B L F2 L F' U2 B' U'"
+                    "D R2 U2 R2 D B2 U B2 D2 U2 F' U' L F' L' F U2 F U'",
+                    "R2 F2 R2 B2 F2 D L2 B2 R2 B' F U F' U' R B' D' B R' F' R' B",
+                    "D B2 L2 F2 U' R2 D R2 U L' D2 R F L2 D2 B2 R' U2 R2 L F' D'"
                 ],
                 "solutions": [
                     "F' U2 r U' r' F2",
@@ -3507,9 +3507,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' B' R' D2 R2 F D2 L2 B R2 D2 B' R2 U R U L2 B R' F' L' R y",
-                    "L' F U D2 U' B2 D2 F2 R2 F2 D' F' D' B' D2 L R F' U2 F R y",
-                    "F' D B2 R U2 R' U2 R B2 R' B2 D' U' F U2 R U' F' R F"
+                    "R2 F2 D2 R2 B' L2 B R2 D2 F2 R' U2 F' U' L' D U B D' L F R'",
+                    "R2 F2 D B2 D' F2 D B2 D' B U R U2 B' U' R B R2 U' B' R U",
+                    "U2 B' U2 F2 R2 F' R2 B2 F2 L' B' L U2 F U2 F' U' F2 U' F'"
                 ],
                 "solutions": [
                     "R U R' d R' U2 R",
@@ -3519,9 +3519,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L U R' L2 D2 B2 U2 R' F2 R2 U2 B2 R U' R' F' L' F R F' U F",
-                    "R U' R F2 L2 U' L2 D L2 U F2 R2 B' F' L2 U F L U' L' B'",
-                    "B R U L2 B' U2 B U2 L2 F' L2 D2 B R' D2 F2 L' F' U L' R' B'"
+                    "L2 U R2 D2 B2 D B2 D' F2 R2 F R2 U2 F2 D' L2 F D2 L' B' L F'",
+                    "F L2 B' R2 U2 F' R2 B L2 U' B D2 U R' U' L U L' R U' B'",
+                    "U' R2 F2 U' F2 L2 F2 L2 F2 L' F2 L' F' U F' R2 U' F' B L B'"
                 ],
                 "solutions": [
                     "R U2 R' U R2 D r' U r D' R2",
@@ -3530,9 +3530,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U R' U' R D F' U R B' R B' D2 L2 B2 D B2 D' L2 D' B2 U",
-                    "B' L' D' U' B2 R2 U' L2 F2 D L2 D R B' L D2 L U L2 F D2",
-                    "B' U F2 R2 F2 R2 D2 B U2 B' U2 B U B' D2 U2 B R' F2 R F2"
+                    "L2 U' R2 D' B2 D' B2 D2 R2 U L' F2 U F2 U' L' U' R' F R F'",
+                    "U2 L U2 L' U2 F2 L F2 L U' L' U F2 L2 F U' L' B' U B L F",
+                    "D2 R' B2 F2 L2 R' U F2 D' R F R F' L2 B2 D' L'"
                 ],
                 "solutions": [
                     "R U2 l U' R' U l'"
@@ -3540,9 +3540,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F' U B2 L2 U L2 D' B2 D B2 U' B2 F R' F' U L' U2 L F",
-                    "L' B' U' B' R2 D2 L2 F D2 B2 F R2 U' B' U' B U2 F2 L U F y'",
-                    "F L U R2 U2 F' R2 U2 R2 F R U2 F R' F' L' U R' F' U2 y2"
+                    "R2 B2 R U2 L' D2 L U2 R' F L' D' R2 B' L2 F U L' F2 L' B' L",
+                    "L2 U' F2 U L2 D U2 F2 D2 U' B D2 R U' F U' R' F R2 D' L",
+                    "R U2 L' U2 B2 L2 R D2 F' L D2 B2 L D B' D' F R2 F' L U"
                 ],
                 "solutions": [
                     "y L' U L U' F R U R' F'",
@@ -3552,9 +3552,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' F R' D2 F2 D2 B R2 B L2 R2 F2 U2 L' U' R D' U R U2 B2 D'",
-                    "R B' L U2 L' U2 L' B2 L U R' F' U' F U R B' U2 R'",
-                    "R' B L U2 L' F' U R B R' F2 B' R F D2 B2 R2 F2 L2 U2 B2 L2"
+                    "B2 D R2 D L2 U2 B2 U R2 U' L B' L' U' B2 F' R' D2 R' B D F'",
+                    "B' D2 F' L2 B R2 U2 B' L2 F R' B U' F R2 B U' B' U R' F' R'",
+                    "U L' D' R L B R' U2 B' L' B' L2 B' U2 L2 F' B' D2 R2 B' D' L"
                 ],
                 "solutions": [
                     "R U2 R' y' R' U2 R y",
@@ -3563,9 +3563,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U L U R2 U' F2 D B2 F2 D R2 U' R' B R2 U2 R' D2 L' U' L'",
-                    "F' R D' B2 D F2 L' D R' F' D' R' U2 R2 L2 U D R2 F2 D' L2",
-                    "R' B L' U2 L F2 R' F2 U2 R2 B' D' L F' L' D2 B2 D' B2 R"
+                    "F2 U2 R2 F U2 F2 R2 U2 F2 U2 R' F2 U2 F' R2 F' U2",
+                    "D2 B2 D' L2 B2 D' B2 U B2 L B2 U F L U' F2 D' B2 L'",
+                    "B U2 L F2 R2 L2 D' B D' F2 R F2 L F2 U2 L U2 R U2 L B U'"
                 ],
                 "solutions": [
                     "R U2 R2 F R F2 U2 F"
@@ -3575,9 +3575,9 @@ const algsets = {
         "29": [
             {
                 "scrambles": [
-                    "R B' U F2 U' F2 U' B2 U B2 F2 U' B' U' L2 D L' D2 L' F2 U' y",
-                    "F' R U2 R2 U2 R2 F2 U F2 U' F2 U R F2 R' F' U' R' U' R U' y",
-                    "B' R' F' R2 F2 L' D2 R D2 R' D2 L2 D R' D L' R2 F' R' B R' U' y"
+                    "R2 B L2 B D B2 R2 L' U L2 D2 R2 U B2 R2 D L2 D2 F D' L'",
+                    "F2 R2 U F2 U2 R2 F2 R2 U' R2 B L F2 L U F' U' L2 U' B' R' U' R",
+                    "B2 L R D2 B2 L B2 L D2 B' L2 U L' F' L2 F U' L B' R' U'"
                 ],
                 "solutions": [
                     "y' R' U' R U R' U' R",
@@ -3587,9 +3587,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' B R B2 D2 F' U2 L2 F' U2 B2 U2 F L' F' L2 F' D2 F' U' R' U'",
-                    "R' D L' F2 D2 F2 L' D2 L' B2 R' F' R F R' U' R2 B2 L2 F2 R y'",
-                    "L' U F' B F2 R2 B2 R2 F' U2 B L2 R' D F' D' L2 R B2 L U2 y"
+                    "U2 F2 L2 D2 B2 D' B2 F2 U R F D L' D L D R D' B2 D F'",
+                    "B2 L U2 F2 L D2 R F2 U2 L U F' U2 L' U B2 D2 B2 F L",
+                    "L2 D F2 D' L2 R2 U R2 U' R2 B' R U' L U2 L' F R2 F' R' U' B'"
                 ],
                 "solutions": [
                     "U R' F R F2 U' F"
@@ -3597,9 +3597,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U' F' L2 U2 B L2 F L2 D2 B R2 D' R D F' R' D' F2 D' B2 F'",
-                    "R U' F D' F2 U' F2 D' B2 R2 F2 U2 B' L B' F R' F' L U' F U",
-                    "B U' L D' B2 D F2 D' B2 D F2 U L' B' F' U' B U2 B' F U'"
+                    "L2 B2 R2 D2 B2 D R2 B2 R2 D' B D B' L' R' F' R2 F R' L' U' F'",
+                    "B2 R F2 U2 L F2 R2 B2 R' B' D' U2 F' R F2 D' L' F U F' L' F'",
+                    "F' L2 D' L U2 L' B2 U B2 R F U2 F U2 B' U2 B U2 F2 R' D F"
                 ],
                 "solutions": [
                     "U2 R U' R' F' U' F"
@@ -3607,9 +3607,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R B' L' U L2 U' B2 L2 U' L2 U2 B2 L2 B U B' L B L' U2 L R' U' y'",
-                    "L' U F R' F2 U2 B2 U2 L F2 R2 B2 R F L2 D2 F U B F U L",
-                    "R' D' F R D2 L' B2 L D2 R2 F2 R2 U' R' U2 F D U' F' U2 F R"
+                    "U R2 U2 L2 D' R2 F2 D' U2 L R2 D' B' L D' R2 B' U' B",
+                    "F2 D' L2 D L2 U' L2 U L2 B L F L' B' U F",
+                    "R2 D B2 D B2 L2 R2 U2 R2 B' D B' D L U' L U R2 F U F"
                 ],
                 "solutions": [
                     "U R2 D r' U' r D' R2 U' R U2 R'",
@@ -3618,9 +3618,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' B R' D2 L2 F' U2 B' U2 B D2 B' F R' D2 L' F L B' D2 R F'",
-                    "R' D F2 D2 L2 U2 L2 F' L2 U2 R2 B U' R B2 R2 F L F' L2 F2",
-                    "B' D' B' F' L2 R2 B U2 F' L2 B' L2 B2 D F2 D2 U L F2 L' B' U2"
+                    "D' U' F2 R2 U' F2 U B2 U' L2 R' B R' B U' L2 F2 L2 U' F' U' F",
+                    "D2 B2 R2 F' L2 F' U2 B2 L2 F R' B' L' F2 L F' D2 L' F' L B",
+                    "U' B2 F2 U2 B2 D' B2 U2 B' L2 B' U' B' U' R' B2 L' D2 L' D' B'"
                 ],
                 "solutions": [
                     "R' F R F' R' F R F'",
@@ -3629,9 +3629,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U' F' U2 R U2 R' F2 U2 R U2 L R' F' L' R' U L' U' L F' R",
-                    "L D F' R2 F2 R2 F2 D R2 D2 F2 R2 D' B' D' B' L' R D2 F' R F'",
-                    "B' D F' R2 F2 D' U2 B2 L2 D2 B' R' F' L2 D F2 L2 D' L2 R D'"
+                    "U F2 D' L2 U B2 R2 D U' B' L B' U2 L U F' U R' F2 R U'",
+                    "U2 R2 B' D2 B L2 B D2 B' R' D L2 D' B2 U B' U' B' R' F",
+                    "U2 B2 D' F2 D' L2 U' F2 D2 R2 F R' F D L2 D' F U' F U R"
                 ],
                 "solutions": [
                     "U' R U R' U' r U' r' U2 r U r'"
@@ -3639,9 +3639,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' D' L' D2 U2 R2 U2 B' D2 B' F2 U2 F' U B F' L D' B' D' R2 D'",
-                    "R F' R B2 F2 R2 U B2 U L2 U2 R2 D2 R F R' B F R B U2 F2",
-                    "L B D B R' B' D' F B' L' U' B' R F2 U2 B L2 F' L2 F'"
+                    "F2 R D2 U2 B2 R D2 F2 L D L F D' F' R' F2 R D F2 L' D' R'",
+                    "D2 U2 L2 B' R2 U2 B2 U2 F2 L2 R' B2 F' U2 F D2 F' L2 F' B L' F'",
+                    "D2 B2 R2 F' R2 B L2 B2 R2 F' D' L' F' D' R2 B L' D2 F' R'"
                 ],
                 "solutions": [
                     "R' F R F' U R U R' U2 R' F R F'",
@@ -3651,9 +3651,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R U F' D2 B L2 U2 B' D2 F R2 B2 L' B' L U' R' F R B' R' F'",
-                    "F L' F L2 U' L2 U F2 D B2 F2 U R U' B F R B D L' D2",
-                    "L' B D B2 D2 F2 R2 B2 D B2 U' B2 U' F' D2 L B' L2 F' R' F2 R"
+                    "B' U2 B U2 F' U2 B L2 F' L B' F2 D2 B2 R' B2 D2",
+                    "R2 D R2 D' L2 F2 L2 U' R2 B' R2 D U2 R F' U B F R' B D' B'",
+                    "B2 U B2 U2 R2 D L2 D B F' L D2 R2 U' F D U' D' B'"
                 ],
                 "solutions": [
                     "M' U' M U2 r U' R' U R U' r'"
@@ -3663,9 +3663,9 @@ const algsets = {
         "30": [
             {
                 "scrambles": [
-                    "F' L B' R B2 R2 U2 L2 U2 R2 B2 R' B L2 B' U B L U F U'",
-                    "F U B' D B2 D F2 L2 U' L2 F2 D2 B' U' B F U' B' U F2 U' y",
-                    "L F' D F D2 B U2 B2 U2 B U2 L2 D2 R F' D2 B2 L B' D F L'"
+                    "D2 U' L2 D2 U' R2 F2 D U' R' D L2 D' B2 R' B2 D' R",
+                    "U' R2 U2 F2 L2 B2 D' B2 L2 F2 R U2 R U2 R2 U2 R U' R' U R'",
+                    "D' L2 D' L2 D2 F2 U' R2 U' R' U' R' U2 L' U L2 B' F2 B L' U"
                 ],
                 "solutions": [
                     "R U R' U' R U R'"
@@ -3673,9 +3673,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D R' U R2 B2 U' B2 U' L2 U' R2 U2 L' B2 R2 F' L' D F D' F'",
-                    "R' F U D2 B D2 F2 R2 F2 U2 F' D2 U' L B D F2 U' L2 D R2",
-                    "F D R B2 U2 F D2 F' U2 F D2 B' F' U' B' U' R' D' U F' U y'"
+                    "B' R2 B2 U2 F R2 F' D2 F2 L F2 D' U' R B2 R' U2 B D' R' B' U",
+                    "U B2 U R2 B2 D R2 D2 F2 U' F' D' R2 D' B L2 R' D2 F2 L F R",
+                    "R' D2 R D2 R D2 L2 D2 U2 L' B' D2 B R F' L' F2 R F R'"
                 ],
                 "solutions": [
                     "U' F R' F' R2 U R'"
@@ -3683,9 +3683,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R U R' D' F2 U L2 U' L2 F2 U' F2 U' F U' F' D R' F R U2 F2",
-                    "L' D F' L' F2 D2 B2 R' D2 U2 R U F' D U' B2 D2 R' F L R",
-                    "L D B' F L2 B2 D2 L2 U2 F' L2 D2 R2 U F D' B2 R2 U' L' R2 U2"
+                    "U R2 U F2 U F2 U' L2 R' U R' U' F2 L2 B' U F' U' F U' B",
+                    "U2 L2 F2 U L2 B2 R2 D' L2 U' L D' L B2 D' F R' F' U R",
+                    "B2 U R2 F2 D R2 F2 U' F2 U F' R' F U' R' D' F2 R2 U' B' L B'"
                 ],
                 "solutions": [
                     "U2 F' U F R U R'",
@@ -3694,9 +3694,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U F' U2 L2 D' B2 U' F2 D B2 R2 B' U' B2 D R' B U2 R' U2",
-                    "R' U' R F' R2 D2 L2 F' L2 F L2 F' D2 R' B R' F L U L' B' U'",
-                    "B U B' R2 U' F2 U L2 D2 R2 B2 R D' R' B R2 D' L2 R2 U y'"
+                    "R2 U2 R2 U2 R2 U' R2 U R2 U L' B' U R' U' R' B R' D B' D' L",
+                    "L' U2 F2 L D2 R' D2 F2 R2 U R U' L' R2 B' U' B U L",
+                    "F2 D R2 U' R2 B2 L2 F2 U2 L F' D' B2 R2 B U2 F' L' B' D F"
                 ],
                 "solutions": [
                     "R U r' U' R U R2 r"
@@ -3704,9 +3704,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B U F B D2 B D2 L2 U2 R2 B2 F' L2 D F' D R2 U' L' U2 L F",
-                    "B' D' F' D' F R D B U B2 D' B2 U' R' F2 B2 D F2 L2 D B2 y'",
-                    "B L' B L' F2 R2 F2 L' F2 D2 R D2 L F L2 F R2 B2 U R' U"
+                    "F' U2 R2 F2 U2 F R2 F' U2 F R B' F R2 F' R F' R2 B R F'",
+                    "F2 R2 U' F2 U' F2 U2 R2 F2 R2 B' R2 U2 F' R B L2 B L2 B' R' F",
+                    "B2 D R2 F2 U L2 F2 U R2 U' R D' R D U' B' R2 F R2 B R' F'"
                 ],
                 "solutions": [
                     "x U R' U' R U R' U' l"
@@ -3714,9 +3714,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' R' B U2 F' U2 F U2 B2 R B' D2 L' D2 B2 U' F U",
-                    "F' L U' B2 U F2 U' B2 U F2 L' F R U2 B U' B' R' U'",
-                    "B R B2 U2 B' R' F R2 D' F D' L2 D2 F2 U B2 U' R2"
+                    "U2 B D2 R2 U2 F R2 B2 R2 F D' R2 B D R D' L2 R U2 F' R' B",
+                    "U2 B D2 L2 F' D2 L2 B F R B' D' L' F' D B D2 B2 F L F'",
+                    "L B2 L D2 L' F2 R' B2 L' F R' D' F' D F2 R F' U2 F2 B L B'"
                 ],
                 "solutions": [
                     "R U R' U r U' r' U' r U r'"
@@ -3724,9 +3724,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B R B2 U' B2 L2 D2 R' F R' D R2 D L2 R' B' U",
-                    "B' U R D2 L' F2 D2 L' D2 R U2 B2 F2 D' F2 D L R2 U2 B F2",
-                    "L' B L' D R2 F2 D R2 D' F2 R2 D F' D2 F L B' L' F2 L2 U2"
+                    "U' R2 F2 U' F2 R2 U' L' B2 R B F' U B U2 F U2 L U' F'",
+                    "L2 F2 R2 D' F2 D' L2 R2 D L2 R B' R B2 L R2 D2 L' F2 R' F' D",
+                    "B' R2 U2 L2 D2 F' D2 F D2 B2 R' F D F2 L2 F2 R' F2 R2 L' B' L"
                 ],
                 "solutions": [
                     "U2 R' F R F' R U' R' U2 R U R'"
@@ -3734,9 +3734,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R B U' F2 L' F2 L2 B2 R' D2 F2 R' F2 D R2 D' B R2 F2 U' F' R y'",
-                    "R B U' B2 D2 F2 D' B2 D F2 D' B2 D' R B R2 U' F' U F U2",
-                    "L U' B U2 L2 B2 U' B2 U2 B2 U' B U2 L' B' F R B R' U2 F' U' y'"
+                    "F2 D' R2 U F2 D R2 D2 B2 U' F' D2 B R' B U2 R2 U2 R F'",
+                    "R2 D L2 R2 D U2 B2 D' L B' L2 R2 D2 L' F2 L R' L' F' D",
+                    "L2 D R2 D U B2 D' R2 D' L' F L U2 L U L F U"
                 ],
                 "solutions": [
                     "R U R' U' R' D' r U r' D R2 U R'",
@@ -3749,9 +3749,9 @@ const algsets = {
         "31": [
             {
                 "scrambles": [
-                    "R F' U' B' U2 B' R2 B L2 U2 F' L2 B' D L' D2 B D' U2 F' L2 F' y",
-                    "L' D' B D F2 R2 D L2 R2 F2 L2 U L' F' U' B' F D L D' U'",
-                    "B R' F' L2 F2 L2 F2 D U' F2 D2 U F' L F D L F' L R B' U2 y'"
+                    "F D B' R2 D2 F2 L' U' F' U R B2 L B2 L U2 F2 D2 L B' D'",
+                    "F2 D2 U2 B L2 B D2 U2 F' D2 U' B D' R' D' R F2 D R2 B D' F",
+                    "F R2 D2 B' D2 F' D2 F L2 D R F' D R2 B R'"
                 ],
                 "solutions": [
                     "R U' R' U y' R' U R y"
@@ -3759,9 +3759,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' D L' U F2 D2 B2 U' B2 U R' B D2 F2 D' B R2 B R' U R'",
-                    "L' F D F' D2 B' L2 F L2 F' L2 F' U' B' U2 B2 L' D L' F2 L",
-                    "L D B R2 U2 R2 F R2 U2 B' R2 F' L B' L2 U' L D' L2 B L U' y"
+                    "F2 L2 R D2 R F2 L' R' B' U2 L2 R B2 U B' U' R U2 R B L'",
+                    "U B2 R2 D F2 D' R2 B2 U L2 R B' R' U2 F' U F R U2 B R' U'",
+                    "B2 R2 D' R D F' R2 D' R F2 U F2 R2 L2 U' L2 D' B2 D L' D F'"
                 ],
                 "solutions": [
                     "r U' r' U M' U R U r'"
@@ -3769,9 +3769,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' B' D U2 F U2 F' D2 U2 R2 F' R2 D R2 U' R' U B U2 R U",
-                    "R F R B2 R2 B2 U2 B2 R2 F2 D' L2 F' D B R B R F2 R' U2",
-                    "F U L' R2 B2 L2 F2 L D2 R D2 R' B' D2 F D B' F' L' R2 F L' y"
+                    "D R2 D R2 D L2 D U2 L2 U2 F' U' F' U L' U L F2 U'",
+                    "R B U L U' B L' B2 U' D' B' R' U2 R2 U2 B2 U2 R' U2 B' D R'",
+                    "D2 R2 B R2 D2 L2 F2 L2 U L U F R U R' F L'"
                 ],
                 "solutions": [
                     "U' R' F R F' R U' R'"
@@ -3779,9 +3779,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R B' R L2 D2 L2 F2 R2 F R2 D2 B2 R' D2 R D F D B' R2 y'",
-                    "R' F' U' F2 R2 D B2 D' R2 F2 U' F R F2 D2 B' D2 F2 y",
-                    "L' F' D' L2 U B2 U2 B2 L2 B2 U2 B2 F' L F L2 D F2 U2 F' L U"
+                    "F' U' B L2 B' U2 B L' F' L F2 D2 R' U2 R2 U2 R D2 B' U",
+                    "R2 U2 B2 F2 U2 L' F2 D2 L' B' R2 B' L2 B' U F R' U2 R L' B U'",
+                    "B L2 D2 F2 D2 B' L2 F U B' U F' U R' U R2 B U2 B' R' B"
                 ],
                 "solutions": [
                     "U' R' F R F' U' R' F R F'",
@@ -3790,9 +3790,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L U' L' U2 L2 B2 R F2 D2 R2 F2 R' B2 U L F' U' F L2 U'",
-                    "F' D' R' U F2 D B2 U B2 U2 R2 U' R2 F D' U R F2 D U F2",
-                    "R' B U' B2 D' B2 L2 U' F2 L2 U2 F' U F L U2 L' B' U R' U'"
+                    "F2 D L2 D' B2 U B2 U' F2 U' B' U' B F2 D' L D F2 U2 L U' L'",
+                    "F2 L2 D2 F L2 F U2 B' R' U' R2 B' R U B2 L B' R B L'",
+                    "D L2 R2 U' F2 D B2 L2 R2 F2 R B2 U' L' D2 B L2 B2 F2 B L' D"
                 ],
                 "solutions": [
                     "R U2 R' U' F R' F' R"
@@ -3800,9 +3800,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R F U R2 F2 U' R2 U R2 U F2 U2 F' R' F2 D' B L2 B' D F2",
-                    "L' F' D U' B2 D' F2 U B2 D' B2 R2 U' F' L' D2 R U2 R2 D2",
-                    "F' R' U F2 R2 B' R2 B U2 B2 D2 F' L B' U2 B D L D B2 F2"
+                    "D B2 F2 D L2 D' B2 F2 R' U B' R2 B R U' F' U' L' U2 L F D'",
+                    "F2 D L2 D' F2 U B2 U2 R2 B R D' R2 D B2 U' R' F' B' U' F",
+                    "U2 B2 D' U2 R2 U' R2 F2 U F2 R' F' R2 U R' F D2 B2 D'"
                 ],
                 "solutions": [
                     "R U2 R2 D' r U' r' D R"
@@ -3810,9 +3810,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' F' L D2 B2 L2 D' B2 F2 U' R2 D' F2 L' D' R' U R F2 D F' U2",
-                    "B L' F2 U' B2 U F2 U' B2 U L B' U' R U2 R' F' U' F",
-                    "L B' D' U R2 U B2 D U2 L2 U L2 B' L' U2 R U' R' B U2 B' U"
+                    "U' L2 D F2 L2 R2 U L2 D2 L2 R' B' R' U' L' B2 D2 R2 D' B L B",
+                    "U F2 D2 B2 D B2 D' R2 D' R' F2 R' U F' U F2 D2 U' D F'",
+                    "U' F2 L2 U' L2 U' L2 U2 L2 F U' F2 L R' F' R F L2 R' L F' R"
                 ],
                 "solutions": [
                     "F' U F R U2 R'",
@@ -3821,9 +3821,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' R' B2 L' U2 L2 D2 L D' R2 B' D F2 B2 R2 L' D2 R L' U2 y'",
-                    "R U F R2 B' R2 B R2 B' R2 B U2 F' L U' R' U F2 L' F' U2 F'",
-                    "B D' R F R' F' U' D R U2 B' U R F D2 R2 L2 F U2 F' L2 F'"
+                    "U2 L2 U2 F2 L2 U' L2 U' L2 R U' R2 F L R F U' L' F R' F R",
+                    "U R2 U B2 D' F2 D B2 U' R' U F2 U2 R' F R2 U2 F2 U' R' U' R",
+                    "U B2 D' F2 D' B2 U2 L2 B2 D' R' B R B' D' F2 R2 B R' B"
                 ],
                 "solutions": [
                     "r U' R' U' M U' r U r'"
@@ -3833,9 +3833,9 @@ const algsets = {
         "32": [
             {
                 "scrambles": [
-                    "R U L U' L2 B2 F2 U B2 U B2 U2 R' U' L D' U2 L D'",
-                    "L' U F U F2 D F2 U' F2 D R2 D2 L D R2 D' L' F U' L",
-                    "F' D F' B' F D2 B' L2 F L2 U2 B' U' F U B' F2 D F U' y"
+                    "B2 L2 U' L2 D2 F2 L2 F2 L2 U L U2 L' F2 D2 L2 U B2 L' U L",
+                    "D2 L2 D' R2 D L2 D' R2 D' R' D' R U R' D R",
+                    "B2 F2 D U2 B2 L2 U L2 D2 R2 F D U B' L2 F' D L2 B U' F'"
                 ],
                 "solutions": [
                     "U R U' R' U R U' R' U R U' R'"
@@ -3843,9 +3843,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' U' B L2 U2 B2 U B2 U2 B2 U' B2 U' F' L' F U' L' R B2 R' y2",
-                    "F' R B' D L2 U B2 U' L2 D2 B2 D' L' B2 D' B2 D2 R' F R B' R' y",
-                    "B' L' D U2 F2 L2 D2 B U' B2 D' R' F R2 U2 F L2 B D2 B' L2 D2 y"
+                    "B2 L' D2 B2 R' B2 D2 B' L B' U F' L' U L F",
+                    "F2 U2 F2 R F2 R2 D2 B2 U2 F' L2 D R' D R' U2 B2 R2 U B' R B'",
+                    "U F2 D' B2 F2 R2 D2 U F2 U2 L B' R' U2 B' R U2 L2 D2 F L' F"
                 ],
                 "solutions": [
                     "U R' F R F' d R' U' R",
@@ -3855,9 +3855,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U R L D2 F2 U2 L D2 L D2 R D2 B' L U F U2 B' U",
-                    "F D L R' B2 L2 F2 D2 F2 D2 R U2 L U R U' R' F U' F D F'",
-                    "L D L U' L' U' B' U B D' L U2 F2 U2 L2 U F2 L2 U F2 U"
+                    "F2 U R2 D B2 U' L2 D' L2 U B' U' B' R D B F' R2 U' B' R' F'",
+                    "U B2 D2 R2 B2 D' R2 U' R2 U' L' D B' L' F2 U' L' R' U' B U L'",
+                    "B L2 D2 B' F2 D2 F' L2 F' U2 R' U2 L2 B' L U2 B U R B U' L"
                 ],
                 "solutions": [
                     "U2 R U r' U R U R' U' r U' R'",
@@ -3867,9 +3867,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U' F' L2 F2 L2 F2 U' B2 R2 U' R2 U B R' B' F2 R' F2 R' B2 U2",
-                    "B' U B U2 L F2 U2 F2 U2 L' R2 B2 U L2 D L B' L U' B2 R2",
-                    "R D' F' U R2 U B2 U2 R2 F2 D' B2 L2 B' D' B2 L2 B' F' U2 R' U"
+                    "F2 U2 F R2 F2 U2 F R2 F' U2 R U R' F2 R2 F2 U' F' U",
+                    "U' F U D2 R' U2 R D R' L2 D' B2 R2 F2 R2 U B2 D R D F'",
+                    "D L2 U' L2 F2 U F2 D L2 D2 F' L' F U' R' B2 R U L2 B' L B"
                 ],
                 "solutions": [
                     "U2 R U' f R f' U R'",
@@ -3881,9 +3881,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' L' D L2 F2 U2 F2 U' F2 L2 U2 L2 R' F' R F D F2 D2 L' F y",
-                    "F' L' F' U2 F2 U2 F2 U' F2 U' F2 U2 L U' L' U' F U' L U F",
-                    "F U' R D' F2 U' F2 L2 F2 L2 U' R2 U' R' D R B2 U2 R F'"
+                    "B' R2 U2 F R2 F' U2 F R2 F2 L' U' L B L' U' L F U' L U' L'",
+                    "R2 F2 U2 F R2 F' U2 F2 R2 F' U L' U L F U2",
+                    "D' F2 U' L2 B2 R2 U R2 U' R U' F' R B2 L' U L' D B L' D B'"
                 ],
                 "solutions": [
                     "U R U' R' U R U' R2 F R F'"
@@ -3891,9 +3891,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' L B F R2 B R2 F D2 F' D2 B' D2 U R2 D L U B U2 L' D",
-                    "F D' L' D2 L2 D2 R2 U2 L D2 L D2 R F' L2 F R U2 L D F'",
-                    "F' D' B U' R2 U B2 U R2 B2 U2 R2 U' B' L' B' L U' B' D U F"
+                    "B2 D2 U L2 F2 U F2 U' L2 F2 R B' U2 B F2 D2 B L",
+                    "D' F2 U R2 U2 R2 F2 U R2 D B L' B2 L B R2",
+                    "R2 U2 R2 F' R2 F R2 U2 F D2 U' L D F2 L' F' U F' D2 R' D' R'"
                 ],
                 "solutions": [
                     "U2 F R' F' R2 U R' U R U' R'",
@@ -3904,9 +3904,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R B R B' U2 F' L2 F U2 B2 D2 R2 D2 U' B2 R B2 R2 U B' R2 U2 y'",
-                    "B' D' F U' R' U' F' B2 D L U L D2 B D2 F B2 L2 F' L2 U2 L2",
-                    "B' U' B D2 B2 F D2 B L2 B L2 F' U' F L2 F2 L U' L U' F"
+                    "B' U2 B2 U2 R2 B' R2 U2 B' D B L' B L2 B2 F L' D2 U2 R B' D",
+                    "U' B2 L2 D' U F2 U' R2 F2 U B' R2 D L2 R2 B U' L' U2 L' B' U",
+                    "U2 F' U2 L2 R2 B R2 U2 F L2 R' F' R2 B' U2 L U' R' U' F' U L"
                 ],
                 "solutions": [
                     "U' R U R' U' R U R2 F R F'"
@@ -3914,9 +3914,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B U' R' L2 R2 U2 B' L2 U2 B L2 U2 B R' B' L2 B L2 U L' B' L",
-                    "F U' L' U2 F' L2 F' L2 F U2 B2 F2 D' R D B2 R' F' L R U' F'",
-                    "F' R U B' U' L2 U2 R' F2 R2 D' L F B' L2 B D2 B' L2 F2 R2"
+                    "F2 L2 F2 L2 F2 U' F2 U B' U F2 U R' D2 F U2 F' D2 F' R B",
+                    "B' R2 B' F2 D2 F' L2 F2 L2 D2 L F' D' F D' L' B2 R F R U",
+                    "U2 R2 U2 L2 B2 D' B2 L2 F2 U' F' R' F' U2 R2 F' U2 F R' F R F'"
                 ],
                 "solutions": [
                     "U2 r U2 r' U2 r U' r' U2 r U2 r'",
@@ -3929,9 +3929,9 @@ const algsets = {
         "33": [
             {
                 "scrambles": [
-                    "R F' D' L2 U' L2 D2 R2 D R D2 L' F2 L F U R' U'",
-                    "R' U R' B2 L2 D R2 B2 U L2 R2 B2 U' L' D U L' D' L F2 R2",
-                    "B D' L D B2 R2 F2 U R2 U' R2 U' B R' F R2 U' R' U' F"
+                    "B2 U R2 D' R2 U' R2 U R2 U B U2 B' D U' B' D' F' R2 F D B'",
+                    "R2 U B2 U2 F2 L2 D' L2 F2 U B' R2 F' R' F R2 B' R2 F' R F",
+                    "U2 R2 B' F2 D2 F' R2 F D2 R2 D' B' F' D2 F' D B F2 D' B"
                 ],
                 "solutions": [
                     "U' R U' R' U2 R U' R'"
@@ -3939,9 +3939,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U F' U2 F' U2 B' R2 D2 L2 F' U R B' R' D2 U' R2 F2 L U",
-                    "B' R' D U2 B2 R2 U2 R B2 U2 R U2 R B' L U B U2 L' D' B' R'",
-                    "B U' F U L F' D' L2 D L2 F' L' B2 R2 B' R2 B U2 B L2 F2 L2"
+                    "U' F2 D B2 F2 D U B2 U B' D2 U' B2 R' F' U R' B U2 R' F D",
+                    "U2 L2 F L2 B L2 F' L B' U2 L U F U F2 R' F2 R U F'",
+                    "F2 R2 U2 F' U2 R2 F' R2 F' R2 U B U2 B' U2 R D L' B' L D' R'"
                 ],
                 "solutions": [
                     "U r U' r' U r U r' R U' R'",
@@ -3951,9 +3951,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R B U R2 B2 U2 B2 R2 B2 U R2 B2 L U2 L' B2 U B R' U' R2 U2",
-                    "L D' F' L2 B2 F2 U' L2 U2 F2 U' R2 F D' L2 B2 F' D U' B2 L",
-                    "F L F R' D2 B2 R2 F2 L U2 R' D2 L2 U' B2 U' R' U2 B2 F L' F'"
+                    "R2 D' R2 F2 D' U F2 D R2 U' R F' U F2 R2 D2 U2 F U2 F' D' R'",
+                    "D2 L D2 L' R2 D2 F2 U2 F2 D2 U' B' U L B U R2 U2 R' B R U",
+                    "F2 U2 L' R' F2 L2 R D2 U2 B' U2 R B2 D B' D L2 F U2 F' L U"
                 ],
                 "solutions": [
                     "R U M U' R' U r U' R'"
@@ -3961,9 +3961,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L U B U B2 D' B2 F2 D L2 R2 U' L' F L2 B R' D' U2 B' D' R'",
-                    "L B R L F2 R' D2 L B2 R' B2 F D2 B' L2 U2 F L' U R U' R'",
-                    "R' F' R2 U F2 R2 U' F2 U2 R2 U' B' R F' R' B R2 U2 R' U2"
+                    "D R2 B2 L2 D2 F2 D F2 U B2 R D' F D F2 R2 U R' U F'",
+                    "F2 U L2 F2 D F2 D U2 B2 D2 F L' D2 R' D2 F' U2 L U2 F' L F'",
+                    "U2 F2 U2 F2 R2 D R2 D B2 D' B' U2 L F U2 F' U2 L' B' D'"
                 ],
                 "solutions": [
                     "U' R U' R' U M' U R U' r'"
@@ -3971,9 +3971,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' R' U F2 D2 L2 F2 D R2 U F2 L2 D2 R' B2 U2 L' D' F2 R U2 F",
-                    "R U' F' B2 U2 B2 D' R2 U' B2 U' B2 R2 B U B2 D B U2 F R' U'",
-                    "L' F U2 R B2 R B2 R' U2 R2 F' L2 R U' R U L' R' U"
+                    "F2 R2 F' U2 R2 D2 R2 B' L2 B R' U' R B U B' D' F2 D' L' U' L",
+                    "L2 F U2 R2 B2 L2 B2 R2 F2 U2 L' F' R' F2 R F' U' R U' R' F L'",
+                    "L2 F2 D' L2 D U F2 D' U' L' D L2 F D' R B2 R' D U' L' U' F"
                 ],
                 "solutions": [
                     "U' R U' R' U2 R U R' U2 R' F R F'",
@@ -3983,9 +3983,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R U F' U2 F2 R F2 U2 L2 D2 L' D2 L' F R' F' U' F R U' R' y'",
-                    "F2 R D B R' U' B' R2 F2 L2 D' L2 F2 D' R2 F2 U' y'",
-                    "R U' L F U R' U L' U2 R' L2 F R F2 D2 R' F2 L' U2 L' B2 U2 y2"
+                    "D' L' B2 L' B D R' L2 D' F D' L2 B2 U' R2 U2 B2 D L2 F D R",
+                    "U F2 D R2 U' B2 D2 L2 U B D2 B D' R F' R D U2 F2 D' F",
+                    "L2 F2 L2 U B2 F2 D2 F2 R2 F2 R' B U' B2 F D2 B' F2 U2 F' U' L'"
                 ],
                 "solutions": [
                     "y U2 F R U2 R' U2 F'",
@@ -3995,9 +3995,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F R B' F2 D2 F2 R2 D R2 D2 R2 B2 U B' R F' R F' U2 F U' R' y",
-                    "B D U2 F2 D R' B2 R2 B2 R' U R2 F D2 L2 F' R2 F R2 F",
-                    "L B U' B' U D2 R' B' R2 B' L U2 L B2 U2 B2 R L D2 R"
+                    "U2 L2 B R2 F U2 F2 D2 U2 F' U' L' D2 F L' F L' R2 B2 L D'",
+                    "L2 U' F2 R2 D B2 D2 L2 D B2 F D F2 D' F' L2 R' B2 R' B' U B",
+                    "B L2 U2 B L2 B' R2 U2 L2 B' U' B D2 L' D2 R B2 L B2 R B' U"
                 ],
                 "solutions": [
                     "U R U' R2 F R F' R U R'"
@@ -4005,9 +4005,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' F' R' U' L2 D' B2 D L2 D U2 R2 U R' D' U' F' U F2 R F U",
-                    "F' D' L' B2 D2 F' R2 F D2 R D R' F' D R D' B2 D F2 U' y",
-                    "L' F U F2 L2 F2 L2 D' L2 F2 D2 R2 U' R F' R' D L B' R D2 R"
+                    "D' U' L2 D R2 D' R2 U R U' L' R2 F' L' D R2 U R'",
+                    "D L2 D' B2 L2 D2 U' B2 U2 L' B' U' F2 U L U L2 U2 B' D R'",
+                    "R2 D R2 D' F2 R2 U' L' B L' B' L2 R2 U F U2 L' U2 L U' F"
                 ],
                 "solutions": [
                     "U' F R' F' R2 U2 R2 F R F'",
@@ -4018,9 +4018,9 @@ const algsets = {
         "34": [
             {
                 "scrambles": [
-                    "R D B' R B2 R U2 B2 U2 R2 U2 L U L' B U' B2 U2 B' D' U2",
-                    "F' U B' F' U2 L2 D2 F L2 U2 R2 B2 L' U2 F' U2 F L U' F U",
-                    "B U B2 U F2 U' B U F' U2 F' B2 L2 B' L2 U2 B' y'"
+                    "U' F2 D' L2 U F2 U' L2 U F2 L' F R F' L2 F R' F' L D",
+                    "R2 D R2 D2 R2 U L2 F2 L2 R U' R' B2 D2 L2 U' F2 L' U L'",
+                    "R' B2 F2 L2 R' B2 D2 L' U2 L2 B L2 R D2 L' R U2 R' F R"
                 ],
                 "solutions": [
                     "U R' D' R U' R' D R",
@@ -4029,9 +4029,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U' B U' R2 D' L2 D B2 L2 D L2 F' D' F' L2 D R' B R' F U y'",
-                    "B' R' F' D' F2 D' U2 L2 F2 U F2 D2 R' U B2 D2 B' U L2 D2 B y2",
-                    "F' U R' U' F2 U' R2 U R2 U L2 R2 U2 R' F' U L F U L2 F' U' y'"
+                    "D2 L2 B2 L2 D L2 D B2 R' D2 R B2 F' U2 B' D2 L B2 L' F R B",
+                    "U R2 U2 R2 U' R2 U' R2 U2 R U2 B U2 B' U' B U2 B' U R'",
+                    "U2 F U2 F2 L2 F U2 F L2 U2 L B L D2 R' D2 B2 U2 F' L' B U'"
                 ],
                 "solutions": [
                     "y U L' U L U' L F' L' F",
@@ -4040,9 +4040,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' F R D' U' R2 U' F2 D' B2 L2 U L B U B2 F' D2 B F2 L U2",
-                    "B L U' R' F2 R F2 R U2 L' U2 R' D2 U' B' U' B D2 U' B' U'",
-                    "R' F L' D2 F2 R U2 R B2 R' F2 R U R' U' L2 F L F L' F"
+                    "U R2 U' R2 U R2 U2 R2 U L' B' U' L2 F' D' F' D' F' R2 F' L'",
+                    "R' L U' D' F' U D B D2 L' F L2 F2 D F2 D' F2 D2 L' B' R",
+                    "U2 B2 D2 F L2 D2 B' U2 L2 F L' U R2 B U2 F D' B2 U R F D'"
                 ],
                 "solutions": [
                     "r U r' U' R U M' U' r'",
@@ -4051,9 +4051,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R D' L' D' B2 L2 D F2 U' F2 L2 U2 L D U2 B U' B' U R' U2",
-                    "R F L F2 L2 U2 B R2 U2 B' U2 R2 U' B L' B2 L2 U F' U2 F2 R' y",
-                    "L D R' D F2 L2 U2 R2 U R2 U2 B2 L' B' D L U' L R D' F' D"
+                    "B2 U2 B2 D' F2 D R2 U' B2 D' R' F' D' L D R2 F2 D2 B L D' R",
+                    "U2 R2 D' R2 F2 L2 R2 D R2 U' F L U L B L2 D L' D' B' U' F",
+                    "D2 B D2 F' R2 F' L2 D2 L2 F' U' B' U2 R' U' R' B2 F' R' B U R"
                 ],
                 "solutions": [
                     "U R U M' U' r' U' r U r'",
@@ -4062,9 +4062,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' D' B U2 B D L F' D' B2 D L2 D2 R U2 B2 U2 D2 L U2 L",
-                    "B' L U F2 U2 B2 D' L2 D B2 U' F2 U' F R2 F' R2 F U' L' B y",
-                    "L B' L' B D L U F L B2 U' F' R2 F2 U B2 D' L2 F2 U' L2 U'"
+                    "R2 D R2 D' F2 R2 U' R2 U F R U B U' B' R' B' F B U",
+                    "R2 U' F2 D B2 D2 L2 U B2 U2 L' F' D2 F' R' B2 R' D' U' R' U' R'",
+                    "U2 B2 D' L2 B2 U' B2 L2 B2 U2 B' R2 U' R' D R' D' F' R F U B"
                 ],
                 "solutions": [
                     "U R U' R' F R' F' R2 U R'",
@@ -4075,9 +4075,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' L B' U2 B2 U' B2 U2 L2 D F2 U F' U F' L2 D2 B D L' F U y",
-                    "B F2 D2 F' L' B' L U' B' U' F B2 D2 F L2 F L2 B' y'",
-                    "R' F L' U2 L2 R2 B2 R2 U' B2 U R F' R D' B2 L' U R U' F"
+                    "U L D' L' U D F2 U' B' U' B2 U' L2 D' F2 D L2 F2 U L' D B'",
+                    "R2 D F2 R2 F2 U2 L2 F2 R2 D' F L' B2 F U R F2 D2 F2 R D'",
+                    "U B2 U2 R2 D2 U F2 U2 L2 B' L F' L' F' U' B D2 L' R2 L U B"
                 ],
                 "solutions": [
                     "R U R' U2 R' F R F' R U R'",
@@ -4086,9 +4086,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D' B R2 B2 R2 B' L' U L' D R U' R2 F2 R2 L' F2 R F2 U2 L2",
-                    "R B R' F2 L2 D' F2 U' R2 U' R2 U2 F D2 R' F' R' U2 B2 R2",
-                    "L' D' L2 B' D2 R2 B' D2 L2 B' L' B L F' U' B2 D L' U2"
+                    "L2 D R2 D R2 D2 L2 U' L2 F L' F U F2 R' F2 R U2 L'",
+                    "U F2 D R2 D' L2 D R2 D' L' F L2 B L' B' L2 U2 F U",
+                    "F2 D B2 D L2 D' L2 F2 U B2 R' F' R' B L2 B' R F2 R2 F' R'"
                 ],
                 "solutions": [
                     "U r U' R' U R U r' U' R U R'",
@@ -4098,9 +4098,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' F' D' R D2 L R2 F2 R' B2 D' U' F L F' L2 R B2 U L' F'",
-                    "L F D L2 F' L2 D2 B' D2 F R2 F' R' F2 D' L' U' B F U' B'",
-                    "B U' R' D L2 U' R2 D F2 L' D2 U2 R U' F' R F' U B'"
+                    "U2 L2 F2 L2 U L2 F2 D' B2 D' R' B U2 R B D2 L U2 F' L F U'",
+                    "R2 B2 U2 B2 D2 F2 U' B' L' B D2 F R U2 B F U B' U' R",
+                    "U' L D' F2 B2 R' F' R' B R2 F' U2 F2 R2 F' R2 U2 F' B D L'"
                 ],
                 "solutions": [
                     "U r U2 r' U2 r U r' U2 r U2 r'",
@@ -4111,9 +4111,9 @@ const algsets = {
         "35": [
             {
                 "scrambles": [
-                    "R U' L' B2 L2 R' U2 R D2 B2 L U2 R B D F' D B F' R2 U",
-                    "R' F R' F2 U2 R2 B2 D' F2 D B2 R2 U2 F R2 U2 R U R2 U' R U'",
-                    "L' U B L2 R2 D R2 F2 R2 F2 D2 F2 D2 L D' R D2 R B' L2 U' F'"
+                    "L2 F2 L2 U' L2 U F2 L2 U' L2 F' R' F2 L2 F' L U L U' R U F",
+                    "B L2 F D2 L2 B2 R2 F L2 D' B D L U' R2 U' L D' U F D B",
+                    "U F2 L2 U2 R2 U' B2 R2 D' L R2 B2 R2 U F' D' L' D U' F' L U"
                 ],
                 "solutions": [
                     "R' D' r U' r' D F R F'"
@@ -4121,9 +4121,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U L' B2 U2 L2 F' D2 F' R2 B D2 F L D2 R' B2 R D2 F U2 y'",
-                    "L' B L R2 B D2 B L2 D2 L2 B2 L2 R B2 F' R D2 L' D2 U' B' y",
-                    "R D R2 B U2 F' U2 F R U2 B' D' U R' F' R2 U F"
+                    "B2 F2 U' F2 R2 D B2 U L2 D' F R' D L2 B R2 U' R D' R' B R'",
+                    "B2 F2 R' U2 L' R' U2 R' D U R U' B' R' D' B' L F2 B' R' B'",
+                    "B2 D2 F2 U2 F2 L2 D' B2 R2 D' F U F R' F' U R B' F R' B R"
                 ],
                 "solutions": [
                     "R2 D r' U' r D' R2 U R U' R'",
@@ -4132,9 +4132,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L D F' L2 U2 B R2 F' L2 B' D2 B' R2 U' R' D' R' U F2 L' U2 y",
-                    "F' D' F' D' R' U R D F D F U F2 L2 D2 B D2 R2 L2 F R2 F2 y",
-                    "F L U F' U2 L B2 U L2 F U B L B' R2 B' U2 L2 D2 B2 U2 F y"
+                    "U2 F' R2 B F2 U2 B D2 L D' L2 D' B2 L' U' L D R2 D' R'",
+                    "F2 D' F2 U R2 B2 D' L2 U' L D L B2 U2 R' U R' F' U' R' F R",
+                    "F' D B2 R' D' R F2 D' F D' R2 D L2 D' R2 L2 B2 U' D' R' D' R"
                 ],
                 "solutions": [
                     "U' R U R' d R' U' R",
@@ -4145,9 +4145,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "U B2 L' B' U L U2 B' D2 B U2 L2 B L2 B2 D2 y'",
-                    "F' U' B R B2 L2 D2 R B L' F' L B2 D' R2 L2 F2 U F2 R2 B2 R2",
-                    "F R' D L D L' F' R' U2 D' F R' F' U2 B2 U' F2 L2 B2 D' F2 U2"
+                    "L2 F' D2 B F2 D2 B2 F' L U' R B R' B R U2 B' R' L U' B",
+                    "U' D R B R U2 B2 D' R' D' R2 B2 R2 U R2 B2 D R2 D2 B D' R",
+                    "R U2 R' U F' U2 F2 U' R' F U2 L' B2 R' U2 L2 F2 D2 L2 R' U L"
                 ],
                 "solutions": [
                     "U2 R U' R D r' U' r D' R2"
@@ -4155,9 +4155,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' U B L2 F2 D2 F D2 B' L2 F L F U F' U' L' F U",
-                    "B' D' F' D F2 U' R2 U R2 U' R2 U2 F U' R2 B U F L' U L F2",
-                    "R' U B' L2 B U2 B F2 R2 B' U2 F R B U' L F2 L B' F' U'"
+                    "L2 F U2 R2 B' U2 F U2 L2 B' U' F' L2 U B' D2 R F2 R F' U' F'",
+                    "U2 B2 U2 R B2 D2 F2 L' U F' L2 F L2 D U2 F2 D",
+                    "L D2 B2 L2 U2 R D2 F2 R U' B U' R2 B' R2 U2 R' F R F' U' B'"
                 ],
                 "solutions": [
                     "U2 R U' R' U' F' U' F",
@@ -4166,9 +4166,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L F' D U' R2 U R2 F2 D' F2 L2 U' L F U2 F' L F' L' F2 U2 y'",
-                    "R U R2 F2 D2 L2 F' D2 R2 F L F U F' L' B' F' R' F'",
-                    "F' L U R2 U2 L2 B2 D B2 D2 F2 D B2 R F R' B R' D2 U2 B'"
+                    "L2 F L2 R2 F2 R2 F R2 U2 F' R' U' B D' F' U B D2 F' B' D B'",
+                    "F2 U' L2 U L2 U L2 U2 L2 U' F D U L' B' U' B U' L D' F",
+                    "U R2 U' B2 D' F2 D2 U' L' B D L R' F' D2 B2 L' B'"
                 ],
                 "solutions": [
                     "R' D' r U' r' D R U R U' R'"
@@ -4176,9 +4176,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L D' F' D' F2 D2 L2 R2 U' R2 U B2 R F D B2 R' D' B' F' L R",
-                    "B D L U B2 D' R2 D B2 D L2 D' L' D' B2 R F' U' B F U2",
-                    "F D R2 F' L2 F2 D2 F' R2 F' L2 R' U R F D' U R' U' F' y"
+                    "R' F R F' R U' R' U2 B D R F2 R' B2 R F2 R' B2 D' B'",
+                    "U' L2 U' L2 D2 U' R2 U' R' U' R U' B' D' F D2 L2 B D F'",
+                    "B2 D2 B' U2 B D2 B' U2 B' U' F' U2 F U' R U' R' U2 R U R'"
                 ],
                 "solutions": [
                     "U2 R U R' F R' F' R",
@@ -4187,9 +4187,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' L B' R2 F2 D2 B R2 B' D' R D2 L' D' B F2 L' F U2 F' y",
-                    "B' L' D U B2 L2 D F2 U F2 L2 D2 B2 L R2 B R U' B U2 B' R'",
-                    "L D B' D2 F2 L2 U' L2 F2 D F2 D' L2 F' L U' L' B' L' D L2 F"
+                    "L2 U' L2 U' F2 D' L2 D U2 L F U2 F2 L B L2 B' F' U L' F L",
+                    "U2 R F U D2 L2 B' R L' B2 D2 F U2 F U2 B L2 B' U2 F' U' L",
+                    "B2 R' B2 R U2 R' B2 U2 B2 U L2 D2 L' F' L2 R' D R2 B2 R' D L"
                 ],
                 "solutions": [
                     "U R' D' r U r' D R2 U2 R'",
@@ -4200,9 +4200,9 @@ const algsets = {
         "36": [
             {
                 "scrambles": [
-                    "F D B R2 D B2 D' R2 U' B' D' U R' F' R F' U F",
-                    "F L D B F L2 B D2 F' D2 F' U F L2 B2 L' F' U2 R' U2 R2 U",
-                    "F' L D L2 U2 B2 R U2 R U2 L' B2 D R B' R2 D2 U' B U L2 U y"
+                    "B2 L2 R2 U2 B F2 D2 R2 F L U' L' F2 L2 U B F2 D2 B'",
+                    "U R2 U' R2 U' L2 R2 D2 R2 D' F' D' L2 R' B' U B U2 R2 U R",
+                    "F2 U2 D F' R' U2 D' F' L F B D2 R2 B' L2 U2 R2 B' L F'"
                 ],
                 "solutions": [
                     "U F' U' F U' R U R'"
@@ -4210,9 +4210,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' L' F R2 F2 U2 B2 U2 F2 L2 F2 L2 D' F2 D F L U' R U B R2 y",
-                    "F' D' F L2 B2 D R2 B2 L2 U' F2 R2 F' R' F' U2 F2 R2 F' D U' F",
-                    "F' L' D U2 R2 B2 D' B2 D' R2 U' L2 D' F' L' F2 U R B2 R2 B2 R"
+                    "B' D2 L2 U2 F2 D2 B D2 F D' B' R' B' U R' U2 R' D' F' R F",
+                    "D F2 R2 D' R2 U R2 U' R2 D' F U B U2 F' L B' D2 F2 R' D'",
+                    "F2 U L2 U' L2 U' L2 B2 U2 F2 R B R' F L2 F2 R' U2 R B U' F"
                 ],
                 "solutions": [
                     "R2 D r' U r D' R' U R'"
@@ -4220,9 +4220,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' L' B R2 B2 R' U2 R B2 R2 B' U' B' U' B L F2 R' F' R",
-                    "F D F D2 F2 U' B2 U B2 F2 L D L2 F L F U'",
-                    "R' B' R D B2 D2 F2 L2 F U2 F' D2 B' L2 U B L2 D' B2 F2 R' B"
+                    "D2 F' U2 L2 D2 U2 B2 D2 F L2 D' R2 F2 D2 B' R F2 D' R L D' L'",
+                    "B F2 U2 B' R2 D2 F' L2 U' B2 L2 F D F R' F2 D L R D L'",
+                    "U2 R F2 B2 R' L2 B2 R U' F2 L2 D' L2 U' B2 D2 F2 D' F U' F"
                 ],
                 "solutions": [
                     "U2 F' U' F U R U' R'",
@@ -4232,9 +4232,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F D' R B2 F2 U2 B2 F2 R2 U R2 U' R' F D2 L2 B L' D2 L' D' F2",
-                    "R B D L2 F2 U F2 D' L2 U B2 U B U2 B L' B R B2 L R2 U'",
-                    "B R D L2 U' L2 D F2 L2 B2 U2 L' D2 F2 R B' U' F' U F"
+                    "B2 L2 F2 U B2 U' F2 U' F' U2 B L B U' F L2 B2",
+                    "D L D F2 L2 U L' D' L B D2 F U2 F2 R2 D2 B U2 L' D'",
+                    "B2 L2 D' R2 D L2 R2 D2 U' R' B' L B' L D' R' F2 L' F2 R F' L'"
                 ],
                 "solutions": [
                     "U2 R' F R F' r U' r' U' r U r'"
@@ -4242,9 +4242,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' R B R2 U L2 B2 R2 B2 R2 D B2 D' L B' R2 F R B F' L",
-                    "F U' B' R2 F2 D' B2 F2 R2 F2 U' B2 L2 B U2 F' L F L' F U",
-                    "F' R B F U2 B2 F' R2 U2 B' D2 L2 F' L D2 R' B2 U F U2"
+                    "U2 R2 U2 F2 D' F2 D' L2 B' D2 R F D2 B D F' L2 D R",
+                    "D2 L2 D U2 L2 U' F2 L2 U' L F L U' F' D U F2 R U' F' R' F",
+                    "R' D2 R U2 R2 D2 L2 B2 L' B2 D B D2 F L F' L' D R2 B' U' B"
                 ],
                 "solutions": [
                     "U2 R' F R F' U2 R U R'",
@@ -4253,9 +4253,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L U F' D' R L B' R' L2 U L2 D R2 F' U2 F2 U2 F2 L2 F' R2 F y'",
-                    "F L' F' D L2 D' B2 D L2 D' L' D' L U B U2 L D2 R' D' F'",
-                    "R' B D' B2 L2 D2 F2 U' R2 U L2 B2 D B R U B' R2 B' R2 B2 U"
+                    "U F2 U F2 U' F2 U' F2 U F' U' F2 U L' R U' L R' F U' F'",
+                    "B2 L B2 L' B2 R2 B2 R' B U2 B' L R' U2 F' U B L2 F L B'",
+                    "F2 U R2 B2 L2 D' L2 B2 R F' R F2 U' R U2 R' B' D R' D' B"
                 ],
                 "solutions": [
                     "U2 R2 D r' U' r D' R2 U' R U R'",
@@ -4267,9 +4267,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' F' L' D F2 D R2 B2 U R2 D2 F2 L' U' R' F' R F U R y'",
-                    "B R L2 B' D2 F2 D2 L2 B2 D2 U' L2 B' L' B' L' D2 B2 U2 F'",
-                    "B' L D R2 F2 D' F2 D' R2 D' B2 U' L U B2 F2 L' F2 R2 B U2 R' y"
+                    "U R' U2 D L' B D' R' D L F D2 B' D2 F2 U2 B U2 B F D' R'",
+                    "B2 L2 B2 U' F2 R2 U B2 U' L D' F2 L' B L2 R2 B U' B' L' B",
+                    "F' U' F R' B U2 F2 L' B2 L F2 L2 F2 D' R2 D' F2 L2 B2 R' B' R"
                 ],
                 "solutions": [
                     "F' U' F R U R' U' R U R'",
@@ -4278,9 +4278,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' B U' B2 R2 B' L2 D2 F L2 B2 R B' U2 R2 B L U F2 R U F'",
-                    "F U' B U R2 D2 B2 D2 R2 U' B' D U B' R' B D' F2 U F U'",
-                    "B R' B F' L2 F' D2 F' D2 B D2 B2 D F L2 D L2 D' F' R B' F'"
+                    "B' D' F2 D R' D' L U D F' U F2 R2 U R2 F2 U2 D' L' D B",
+                    "B' U2 F U2 B' L2 B' U2 B L2 R' D R' D' F2 R' F2 D' F2 B R' B",
+                    "U2 R B2 U2 L U2 L' U2 B2 R B' R' U2 B U2 B L' U R' U' L"
                 ],
                 "solutions": [
                     "R U M' U2 f R f' U2 r'",
@@ -4294,9 +4294,9 @@ const algsets = {
         "37": [
             {
                 "scrambles": [
-                    "R U B' U2 B' U2 B2 U2 B' L' B' L U' R' U R U' R'",
-                    "B' L' B L2 D2 F U2 F' D2 U2 L2 B2 R' U R U' L U2 B2 U' B' y",
-                    "L' B' D B' R2 B R2 F' R2 F D2 B D2 R B D' B' R D2 B2 D L"
+                    "R2 D' F2 U L2 D' R2 D' R2 D' B D2 L2 F2 D R U R' U L' B' L",
+                    "F2 R2 F2 U F2 R2 U2 R2 F2 U' R' B R' U' B' F2 R' D' R2 D R'",
+                    "R2 U R2 F2 U F2 U F2 D' F L' F' L U' F' U' F' U D F'"
                 ],
                 "solutions": [
                     "U' R' F R F' R U' R' U R U' R' U2 R U' R'",
@@ -4307,9 +4307,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U B L2 D2 R' F2 R' U2 R F2 R2 D' F2 U F D' L' U2 B U2",
-                    "F R' B' R2 F2 D2 U' R2 U B2 U L' U' L' B' U2 F R2 F2 R' U'",
-                    "B' U B U2 R B' U' R F2 L2 D' B' D' B L2 F' D2 B' D2 F' R2 B2"
+                    "U2 R2 U2 R2 B' R2 B' L2 F' D' L2 B' L U F2 L' B' L F' L' U' R",
+                    "R U2 R B2 U2 R' U2 R B2 R' U' R' U2 L D' F U' B' F2 B D L'",
+                    "U' B2 U' B2 U B2 U R2 U2 R D B D' U2 L' R2 B L U' B'"
                 ],
                 "solutions": [
                     "U' r U' r' R U R' U r U' r' R U R'",
@@ -4322,9 +4322,9 @@ const algsets = {
         "38": [
             {
                 "scrambles": [
-                    "L F' U B L2 B' U2 F2 L2 D2 F' L2 F2 D' F2 L2 B R2 D2 B' L'",
-                    "R' B U' B R2 U2 B2 R2 U2 F R2 B' D B' F2 U L2 F U' R'",
-                    "R' F D' F U' F2 R2 U2 B' D' B U' R U R2 F2 D F2 U2 D' R2 D"
+                    "D2 U2 B U2 R2 D2 F' U2 L2 F D R2 D B U' B D2",
+                    "U2 F' D2 R2 F R2 F U2 F' D2 U L' U2 B' U B2 U B' U B L F",
+                    "F2 U L2 F2 D2 L2 U' B2 D2 F L2 D R2 B' U' F' R2 D2 B D F'"
                 ],
                 "solutions": [
                     "R2 U2 R' U' R U' R' U2 R'"
@@ -4332,9 +4332,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' D L' U2 L2 D U2 F2 D' L2 U' L2 R F' U' F L' R' D' F R",
-                    "F L F R' D2 F2 L' R2 B2 D2 U2 L R' B' F' L' B' F' U2 L' F",
-                    "R B L R2 D2 R2 U2 B2 L2 B' U2 R2 B' L F L2 B R U2 R B' R'"
+                    "B U2 R2 B2 U2 R2 B2 R2 U2 F R' B R' F' D R' U R2 B' R' B D'",
+                    "F2 R2 U2 F2 U F2 U R2 F2 D B R' F' U' F U R B' D'",
+                    "F2 U' R2 U R2 U F2 U2 R2 U2 L R F R' F' L' F R' F' R'"
                 ],
                 "solutions": [
                     "F R' F' R2 U2 R' U' R U R'"
@@ -4342,9 +4342,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F U' F U' F2 U2 F2 U' F2 U' F2 U2 R U2 R' F' U2 F' L' U' L U2",
-                    "L F' U F2 L2 D' L2 D F2 U' L2 U2 L U R' F2 R F' R' F2 R",
-                    "L' B R2 B2 R2 B2 U R2 U' R2 U2 R' B R U2 L F' U F R2"
+                    "F' R2 F2 R2 F' R2 F' R2 F2 U F2 R' U L U F' U' L' U2 F' U R",
+                    "U' B2 U L2 D F2 U' F2 U' L2 B U' R B2 R' B' D' B' U B",
+                    "F' U2 F U2 F L2 B' U2 B L U' F' L U2 F D R2 U2 R2 F D'"
                 ],
                 "solutions": [
                     "U R U' R' U' R U R' U R' F R F'",
@@ -4353,9 +4353,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' B' L R2 D' F2 U' R2 F2 U' F2 R2 F U' B' R' B U' F D R2",
-                    "R B' L' B U2 B' L2 F R2 F D2 R2 F2 U L' U' L' B' L B2 R' U'",
-                    "F L' U' B2 D2 B' D2 B' F' U2 F' U2 L F' U' L' U F' U L F' U2"
+                    "D R2 F2 D' R2 B D' L2 B' L U2 B' L2 U2 F' D B' D F",
+                    "L' U2 R2 U2 L' B2 L R2 U2 R' D R B' L2 R' U L2 B D' L",
+                    "F U2 L2 D2 L2 U' B' R B' R2 D B D2 R2 B' D2 F B L2 F D F"
                 ],
                 "solutions": [
                     "M' U R U' R' U' R U' r' U2 r U' r'",
@@ -4368,9 +4368,9 @@ const algsets = {
         "39": [
             {
                 "scrambles": [
-                    "F U' R B F' L2 U2 L2 B' U2 B L2 U' B' U' F R2 F R F' U F' y'",
-                    "F' U L R2 D' R2 D2 L2 R2 D' R2 D L' D L2 U' R F2 R' F",
-                    "R B' L' U' F2 U R2 U' R2 D' F2 U L' F2 D L B' L B2 F2 R"
+                    "B2 D' L2 D' L2 D2 F2 U' B2 F2 R' B' R U' B' U L' B D B' L B",
+                    "U2 F2 D' L2 D' L2 D' R2 D B' U2 L' B2 F2 D2 F R' U2 R2 F' R B'",
+                    "D' F2 D F2 L2 D L2 U2 F2 U' R B2 R' U' F2 L U' L'"
                 ],
                 "solutions": [
                     "R U2 R' U R U' R' U R U R'"
@@ -4378,9 +4378,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "R' U F' L2 F L2 F U2 L2 F2 L2 U2 F' U R2 F U' R2 F' U R' U2",
-                    "L B L' D U' L2 U' F2 D2 B2 F2 D B2 L' B' L' U2 R2 U R2 y",
-                    "B' R' F R F2 R D2 B2 U2 F2 L' B D' B D F D2 B U2 R2 U2"
+                    "L2 U2 F2 U L2 F2 U B2 D' B' D' F' D L' D B' L D' L' D F'",
+                    "U R2 F2 R2 D L2 F2 D R2 D2 B L B F U L2 D L F L D' F",
+                    "U' L2 U' B2 U' L2 U' F2 L2 B' L' R2 B' F2 U' L' U R2 B L'"
                 ],
                 "solutions": [
                     "R U' R' U R U2 R2 F R F'"
@@ -4388,9 +4388,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "F' L' D' U2 B L2 D2 F U2 R2 F U2 R2 D F2 L' D2 L F2 D2 U F'",
-                    "R B D' R2 D R2 U2 B2 R2 U2 R' U B2 U' B' R' U' R' U2",
-                    "B U' B F L2 B' U2 L2 F2 U2 F L2 U' B' U2 F L' U' L U2 F U'"
+                    "F' U2 B U2 F' U2 B L2 B2 L' D F U2 F U F2 D' B F' B' L' F'",
+                    "U F' R U B U' B L D L' D2 F2 L2 D2 L2 F2 D L2 B2 R' U' F",
+                    "U2 F2 R2 D2 L2 D L2 D R2 U' F U L' U' L F2 U' F' U2 F' U' F'"
                 ],
                 "solutions": [
                     "R U2 R' U R' F R2 U R' U' R' F' R"
@@ -4398,9 +4398,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' D B D F2 D' B2 D R2 D2 F2 D' B R' D2 B L' D F2 U L2",
-                    "R' U L B2 L2 F2 R2 F2 U' L2 D' F' L2 R U' L F' U' F'",
-                    "R F R B2 D2 L2 D' L2 D' B2 U2 R2 U' R U2 B U F' U B' R'"
+                    "R L' D B2 U2 B' D' L U' L' B2 L U2 L' U2 R' B2 U' L",
+                    "R2 B2 L2 D L2 B2 R2 U' L D' R' D F' D' L2 R U' L2 D L'",
+                    "B2 D B2 D U' F2 D' L' B' F R' B L' B D2 B' U' L F' L"
                 ],
                 "solutions": [
                     "R U2 R' r U' r' U M' U2 R U r'",
@@ -4412,9 +4412,9 @@ const algsets = {
         "40": [
             {
                 "scrambles": [
-                    "B' U' B D2 L2 F L2 U2 F' U2 F D2 F' R B2 D L2 D' B' R' U F",
-                    "F D' B D2 L D2 F2 L R2 U2 F2 L' F U B' U2 L B2 L' F2 U2 R2",
-                    "R' F' D' L' U2 L' F2 R B2 R F2 L2 B2 D F U B' U2 B U2 R B y"
+                    "U R2 F2 U R2 U' F2 R2 U F U2 F2 L' U' L2 F' L' F' U F'",
+                    "L2 R B2 L' B2 U2 L' U2 B2 L2 U' B U' B' U2 B2 R' L U'",
+                    "D' B2 F2 L2 U' L2 D F2 D' U' L U' F L' B2 D U F' U' F R U'"
                 ],
                 "solutions": [
                     "U R U' R' F R U R' U' F' R U' R'",
@@ -4423,9 +4423,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "L' U' B' U2 F R2 F' L2 F D2 R2 F' L2 U' R B L F R2 F' U' R'",
-                    "F U' L U' F2 U' L2 D R2 B2 D' L2 U B' R' B U L' U2 R' U2 F' y'",
-                    "B' L' F' B U L' U' L F' B' L D2 R' F' U2 B' L2 B U2 D2 B R2"
+                    "U' F2 U' L2 R2 D L2 U' L2 B L2 U L' R2 U L' D' L2 F B' R B",
+                    "U2 L2 D2 B2 R2 B D2 R2 D2 R2 D' B2 R2 D B2 R' D2 L' F' L' U' R",
+                    "F2 R B2 R F2 R' B2 R F2 R2 F U' F R' F R2 U R' U' F'"
                 ],
                 "solutions": [
                     "r U' r' U2 r U r' R U R'",
@@ -4436,9 +4436,9 @@ const algsets = {
         "41": [
             {
                 "scrambles": [
-                    "B' D' L D2 U2 R2 U2 F2 L' U2 F2 R' U' F D' F' D2 L2 B' U2 R2",
-                    "B' D B2 R2 B' D2 B D2 R2 B2 D2 R F R B' F' U R2 D U' y",
-                    "R D' R' F2 L2 D2 F' L2 F L2 D2 R D R2 F U' R F U F"
+                    "F2 L2 R2 U F2 D' B2 F2 L2 D R U2 R U2 R2 U' B U B' R' U",
+                    "U2 R2 U' R2 D' F2 D U R2 U' F' R2 F R F2 D' F' L' F2 L D R",
+                    "U2 R2 U R2 D' F2 D B2 D' R2 F R2 F' R2 D B2 R' D' F' D R"
                 ],
                 "solutions": [
                     "U' R U R' F U R U' R' F' R U R'",
@@ -4447,9 +4447,9 @@ const algsets = {
             },
             {
                 "scrambles": [
-                    "B' L U F2 U' L' B U2 F' R2 F2 U' R' U F2 R2 F2 U' F2 U2 y'",
-                    "B' U R' L' B2 D2 L' D2 L2 R U2 B2 R B R' B U B R' B U B'",
-                    "F U' B L2 F2 L2 U' F2 U B2 U F' D U2 R U R2 D' B U"
+                    "B U2 R2 U2 B R2 B2 R2 B R2 U B F' D L D' B2 U' F R' B U'",
+                    "U' R2 U' R2 U R2 U' R2 U' R U R2 U F' U L' U2 L B F U' B'",
+                    "R2 D' L2 B2 D R2 U' L2 F2 R B2 L' B' L2 U2 L' U' B' U R'"
                 ],
                 "solutions": [
                     "R U' M' U' r' U2 r U r'"

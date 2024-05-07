@@ -12,6 +12,10 @@ body, html {
     position: fixed;
 }
 
+body, button, input, textarea {
+    -webkit-touch-callout: none; /* iOS Safari */
+}
+
 .select-text {
     user-select: text; /* Allows text selection */
 }

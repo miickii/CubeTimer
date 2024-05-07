@@ -159,7 +159,7 @@ const App = () => {
             </button>
             <AnimatePresence>
               {menuOpen && (
-                <div className='fixed inset-0 bg-black bg-opacity-25' onTouchEnd={() => setMenuOpen(!menuOpen)}>
+                <div className='fixed inset-0 bg-black bg-opacity-25 z-40' onTouchEnd={() => setMenuOpen(!menuOpen)}>
                   <motion.div
                     className="absolute top-[54px] left-4 bg-white rounded shadow-lg"
                     initial="hiddenLeft"

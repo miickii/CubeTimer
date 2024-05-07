@@ -801,8 +801,11 @@ export const SettingsProvider = ({ children }) => {
         showPrevSolutions: true,
         algset: "3x3x3",
         subsets: [],
-        algsetData: algsets
+        algsetData: algsets,
+        algsInOrder: false,
     });
+
+    const [currCaseIndex, setCurrCaseIndex] = useState(null);
 
     const aufChange = {"U U": "U2", "U U'": "", "U U2": "U'", "U' U": "", "U' U'": "U2", "U' U2": "U", "U2 U": "U'", "U2 U'": "U", "U2 U2": ""};
 
@@ -838,7 +841,7 @@ export const SettingsProvider = ({ children }) => {
             algset,
             subsets: []
         }));
-        setScramble(getRandomScramble(algset, []))
+        setScramble(getRandomScramble(algset, [], true));
     };
 
     const toggleSubset = (subset) => {
@@ -852,8 +855,7 @@ export const SettingsProvider = ({ children }) => {
                 subsets: newSubsets
             };
         });
-
-        setScramble(getRandomScramble(settings.algset, newSubsets))
+        setScramble(getRandomScramble(settings.algset, newSubsets, true));
     };
 
     function generateScramble() {
@@ -917,7 +919,7 @@ export const SettingsProvider = ({ children }) => {
         return newSolutions;
     }
 
-    const getRandomScramble = (algset = settings.algset, selectedSubsets = settings.subsets) => {
+    const getRandomScramble = (algset = settings.algset, selectedSubsets = settings.subsets, resetOrder = false) => {
         if (!algset) return { scramble: "", solutions: [] };
     
         if (algset === "3x3x3") {
@@ -927,14 +929,43 @@ export const SettingsProvider = ({ children }) => {
         if (selectedSubsets.length === 0) {
             selectedSubsets = Object.keys(settings.algsetData[algset]); // Use all subsets if none selected
         }
+
+        let subsetIndex = 0;
+        let caseIndex = 0;
+
+        if (settings.algsInOrder) {
+            if (currCaseIndex && !resetOrder) {
+                subsetIndex = currCaseIndex[0];
+                const currSubset = selectedSubsets[currCaseIndex[0]]
+                caseIndex = (currCaseIndex[1]+1) % settings.algsetData[algset][currSubset].length;
+
+                if (caseIndex === 0) subsetIndex = (currCaseIndex[0]+1) % selectedSubsets.length;
+
+                setCurrCaseIndex([subsetIndex, caseIndex]);
+            } else {
+                setCurrCaseIndex([0, 0]);
+            }
+        } else {
+            // Select next alg from random subset and case
+            subsetIndex = Math.floor(Math.random() * selectedSubsets.length);
+            const num_cases = settings.algsetData[algset][selectedSubsets[subsetIndex]].length;
+            caseIndex = Math.floor(Math.random() * num_cases);
+        }
+
+        const subset = selectedSubsets[subsetIndex];
+        const nextCase = settings.algsetData[algset][subset][caseIndex];
     
-        const randomSubset = selectedSubsets[Math.floor(Math.random() * selectedSubsets.length)];
-        const num_cases = settings.algsetData[algset][randomSubset].length;
-        const randomCase = settings.algsetData[algset][randomSubset][Math.floor(Math.random() * num_cases)];
-    
-        let scramble = randomCase.scrambles[Math.floor(Math.random() * randomCase.scrambles.length)];
-        let solutions = randomCase.solutions;
+        let scramble = nextCase.scrambles[Math.floor(Math.random() * nextCase.scrambles.length)];
+        let solutions = nextCase.solutions;
         const aufIndex = Math.floor(Math.random() * 4);
+
+        // const randomSubset = selectedSubsets[Math.floor(Math.random() * selectedSubsets.length)];
+        // const num_cases = settings.algsetData[algset][randomSubset].length;
+        // const randomCase = settings.algsetData[algset][randomSubset][Math.floor(Math.random() * num_cases)];
+    
+        // let scramble = randomCase.scrambles[Math.floor(Math.random() * randomCase.scrambles.length)];
+        // let solutions = randomCase.solutions;
+        // const aufIndex = Math.floor(Math.random() * 4);
 
         if (aufIndex < 3) {
             scramble = addAufScramble(scramble, aufIndex);

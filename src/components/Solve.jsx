@@ -128,7 +128,7 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
             onTouchEnd={handleTouchEnd}
             className="w-full h-full"
         >
-            <div className='h-2/5'>
+            <div className='min-h-80' onTouchStart={(e) => e.stopPropagation()}>
                 <AnimatePresence>
                     {!isActive && <motion.div variants={scrambleVariants} initial="hidden" animate="visible" exit="exit" className='flex flex-col items-center'>
                         <div className="text-xl mt-6 mb-5 px-8 h-12">{settings.scramble}</div>
@@ -165,7 +165,7 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
                 </AnimatePresence>
             </div>
             
-            <div className={`text-4xl font-mono ${timerDown ? 'text-green-500' : 'text-black'} select-none h-3/5 flex flex-col items-center`}>
+            <div className={`text-4xl font-mono ${timerDown ? 'text-green-500' : 'text-black'} select-none flex flex-col items-center`}>
                 <div className='mb-10'>
                     {settings.displayMilliseconds ? timer : Math.floor(parseFloat(timer))}s
                 </div>

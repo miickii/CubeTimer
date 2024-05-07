@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useSettings } from '../SettingsContext';
 
 const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
-    const { settings, setAlgset, toggleSubset } = useSettings();
+    const { settings, setAlgset, toggleSubset, toggleSetting } = useSettings();
     const [subsetMenuOpen, setSubsetMenuOpen] = useState(false);
 
     const handleAlgsetChange = (algsetKey) => {
@@ -30,7 +30,7 @@ const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
     return (
         <AnimatePresence>
             {algsetMenuOpen && (
-                <div className='fixed inset-0 bg-black bg-opacity-25' onTouchEnd={onClose}>
+                <div className='fixed inset-0 bg-black bg-opacity-25 z-40' onTouchEnd={onClose}>
                     <motion.div
                         className="absolute top-[50px] right-4 px-4 py-2 bg-white rounded-lg shadow-lg"
                         initial="hiddenRight"
@@ -79,7 +79,11 @@ const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
                                         </label>
                                     ))}
                                 </div>
-                                <button className='w-full text-center mt-6' onTouchEnd={() => setAlgset(settings.algset)}>RESET</button>
+                                <label className="my-6 flex justify-center">
+                                    <span className='mr-4'>In order</span>
+                                    <input type="checkbox" checked={settings.algsInOrder} onChange={() => toggleSetting('algsInOrder')} />
+                                </label>
+                                <button className='w-full text-center' onTouchEnd={() => setAlgset(settings.algset)}>RESET</button>
                             </motion.div>
                         </div>
                     )}

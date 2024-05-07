@@ -153,10 +153,6 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
                             }}
                             whileTap={{ scale: 0.97 }}
                             onTouchStart={(e) => e.stopPropagation()}
-                            onTouchEnd={(e) => {
-                                e.stopPropagation();
-                                handleUpdateScramble();
-                            }}
                             className="mt-4 px-4 py-2 bg-accent1 text-black rounded shadow"
                         >
                             New Scramble

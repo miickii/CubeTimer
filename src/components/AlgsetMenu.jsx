@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useSettings } from '../SettingsContext';
 
 const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
-    const { settings, setAlgset, toggleSubset, toggleSetting } = useSettings();
+    const { settings, setAlgset, toggleSubset, toggleSetting, resetSubsets } = useSettings();
     const [subsetMenuOpen, setSubsetMenuOpen] = useState(false);
 
     const handleAlgsetChange = (algsetKey) => {
@@ -75,7 +75,7 @@ const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
                                     {Object.keys(settings.algsetData[settings.algset]).map(subset => (
                                         <label key={subset} className="flex items-center justify-between mx-5 text-xl">
                                             <span>{subset}</span>
-                                            <input type="checkbox" checked={settings.subsets.includes(subset)} onChange={() => toggleSubset(subset)} />
+                                            <input type="checkbox" checked={settings.subsets[settings.algset].includes(subset)} onChange={() => toggleSubset(subset)} />
                                         </label>
                                     ))}
                                 </div>
@@ -83,7 +83,7 @@ const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
                                     <span className='mr-4'>In order</span>
                                     <input type="checkbox" checked={settings.algsInOrder} onChange={() => toggleSetting('algsInOrder')} />
                                 </label>
-                                <button className='w-full text-center' onTouchEnd={() => setAlgset(settings.algset)}>RESET</button>
+                                <button className='w-full text-center' onTouchEnd={() => resetSubsets()}>RESET</button>
                             </motion.div>
                         </div>
                     )}

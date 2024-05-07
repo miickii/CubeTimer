@@ -3,6 +3,7 @@ import { useSettings } from '../SettingsContext';
 
 const Stats = ({ solves }) => {
     const { settings } = useSettings();
+    
     function removeMinMax(times) {
         let newTimes = [...times]
         const min = Math.min(...newTimes);

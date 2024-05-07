@@ -1,4 +1,4 @@
-import React, { useContext, useState, createContext } from 'react';
+import React, { useContext, useState, useEffect, createContext } from 'react';
 import algsets from './data/algsets.js';
 
 const zblsScrambles = [
@@ -783,27 +783,52 @@ const zbllScrambles = [
 // Create context
 const SettingsContext = createContext();
 
+const loadSettings = () => {
+    const settings = localStorage.getItem('appSettings');
+    return settings ? JSON.parse(settings) : null;
+};
+
+const saveSettings = (settings) => {
+    localStorage.setItem('appSettings', JSON.stringify(settings));
+};
+
+const initializeSubsets = () => {
+    const subsets = {};
+    Object.keys(algsets).forEach(algset => {
+        subsets[algset] = [];
+    });
+    return subsets;
+};
+
 export const useSettings = () => useContext(SettingsContext);
 
 export const SettingsProvider = ({ children }) => {
-    const [settings, setSettings] = useState({
-        useInspection: true,
-        displayMilliseconds: true,
-        soundEnabled: true,
-        averages: {
-            avg25: false,
-            avg50: false,
-            avg100: false
-        },
-        scramble: "D U' B' U' F' U B2 F2 U2 L' R D2 R' L R D2 U2 F2",
-        currSolutions: null,
-        prevSolutions: null,
-        showPrevSolutions: true,
-        algset: "3x3x3",
-        subsets: [],
-        algsetData: algsets,
-        algsInOrder: false,
+    const [settings, setSettings] = useState(() => {
+        const savedSettings = loadSettings();
+        return savedSettings || {
+            useInspection: true,
+            displayMilliseconds: true,
+            soundEnabled: true,
+            averages: {
+                avg25: false,
+                avg50: false,
+                avg100: false
+            },
+            scramble: "D U' B' U' F' U B2 F2 U2 L' R D2 R' L R D2 U2 F2",
+            currSolutions: null,
+            prevSolutions: null,
+            showPrevSolutions: true,
+            algset: "3x3x3",
+            subsets: initializeSubsets(),
+            algsetData: algsets,
+            algsInOrder: false,
+        }
     });
+
+    useEffect(() => {
+        saveSettings(settings);
+        //console.log("Saved settings");
+    }, [settings]);
 
     const [currCaseIndex, setCurrCaseIndex] = useState(null);
 
@@ -838,25 +863,55 @@ export const SettingsProvider = ({ children }) => {
     const setAlgset = (algset) => {
         setSettings(prevSettings => ({
             ...prevSettings,
-            algset,
-            subsets: []
+            algset
         }));
-        setScramble(getRandomScramble(algset, [], true));
+        setScramble(getRandomScramble(algset, settings.subsets[algset], true));
     };
 
+    // const toggleSubset = (subset) => {
+    //     const newSubsets = settings.subsets.includes(subset) 
+    //             ? settings.subsets.filter(s => s !== subset)
+    //             : [...settings.subsets, subset];
+
+    //     setSettings(prevSettings => {
+    //         return {
+    //             ...prevSettings,
+    //             subsets: newSubsets
+    //         };
+    //     });
+    //     setScramble(getRandomScramble(settings.algset, newSubsets, true));
+    // };
+
     const toggleSubset = (subset) => {
-        const newSubsets = settings.subsets.includes(subset) 
-                ? settings.subsets.filter(s => s !== subset)
-                : [...settings.subsets, subset];
+        const currentSubsets = settings.subsets[settings.algset] || [];
+        const newSubsets = currentSubsets.includes(subset) 
+            ? currentSubsets.filter(s => s !== subset)
+            : [...currentSubsets, subset];
 
         setSettings(prevSettings => {
             return {
                 ...prevSettings,
-                subsets: newSubsets
+                subsets: {
+                    ...prevSettings.subsets,
+                    [settings.algset]: newSubsets
+                }
             };
         });
         setScramble(getRandomScramble(settings.algset, newSubsets, true));
     };
+
+    const resetSubsets = () => {
+        setSettings(prevSettings => {
+            return {
+                ...prevSettings,
+                subsets: {
+                    ...prevSettings.subsets,
+                    [settings.algset]: []
+                }
+            };
+        });
+        setScramble(getRandomScramble(settings.algset, [], true));
+    }
 
     function generateScramble() {
         const moves = ['U', 'D', 'L', 'R', 'F', 'B'];
@@ -919,7 +974,7 @@ export const SettingsProvider = ({ children }) => {
         return newSolutions;
     }
 
-    const getRandomScramble = (algset = settings.algset, selectedSubsets = settings.subsets, resetOrder = false) => {
+    const getRandomScramble = (algset = settings.algset, selectedSubsets = settings.subsets[settings.algset], resetOrder = false) => {
         if (!algset) return { scramble: "", solutions: [] };
     
         if (algset === "3x3x3") {
@@ -966,7 +1021,7 @@ export const SettingsProvider = ({ children }) => {
         // let scramble = randomCase.scrambles[Math.floor(Math.random() * randomCase.scrambles.length)];
         // let solutions = randomCase.solutions;
         // const aufIndex = Math.floor(Math.random() * 4);
-
+        console.log("Subset: " + subsetIndex + ", Case: " + caseIndex);
         if (aufIndex < 3) {
             scramble = addAufScramble(scramble, aufIndex);
             solutions = addAufSolutions(solutions, aufIndex);
@@ -989,7 +1044,8 @@ export const SettingsProvider = ({ children }) => {
             toggleAverage,
             updateScramble,
             setAlgset,
-            toggleSubset
+            toggleSubset,
+            resetSubsets
         }}>
             {children}
         </SettingsContext.Provider>

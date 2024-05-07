@@ -5,9 +5,7 @@ import './index.css'
 import { SettingsProvider } from './SettingsContext';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <SettingsProvider>
-        <App />
-    </SettingsProvider>,
-  </React.StrictMode>,
+  <SettingsProvider>
+      <App />
+  </SettingsProvider>,
 )

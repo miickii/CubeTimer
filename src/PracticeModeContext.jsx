@@ -14,7 +14,7 @@ const initialState = {
     cases: [] // Dynamic queue that updates based on score of each case
 };
 
-function calculateRecencyWeightedAverage(times, recencyFactor = 2) {
+function calculateRecencyWeightedAverage(times, recencyFactor) {
     let weightedSum = 0;
     let weightSum = 0;
     let currentWeight = 1;
@@ -42,7 +42,7 @@ function reducer(state, action) {
                 //const newAverage = existingCase.times.reduce((a, b) => a + b, 0) / existingCase.times.length;
                 // existingCase.average = newAverage;
 
-                const newAverage = calculateRecencyWeightedAverage(existingCase.times, 2);
+                const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor);
 
                 const deviation = newAverage / existingCase.average;
                 const newScore = existingCase.score * deviation;
@@ -52,14 +52,13 @@ function reducer(state, action) {
                 existingCase.score = newScore
                 cases[caseIndex] = existingCase;
             } else {
-                const initialScore = Math.max(10, solveTime);
                 cases.push({
                     algset: currCase.algset, 
                     subset: currCase.subset, 
                     caseIndex: currCase.caseIndex, 
                     times: [solveTime], 
                     average: solveTime, 
-                    score: initialScore // Start with a base score, why not just solveTime? This can introduce immediate bias towards cases that inherently might take longer on the first try, which might not be a true representation of the solver's ability with more practice
+                    score: state.initialScore // Start with a base score, why not just solveTime? This can introduce immediate bias towards cases that inherently might take longer on the first try, which might not be a true representation of the solver's ability with more practice
                 });
             }
 

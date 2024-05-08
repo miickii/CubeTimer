@@ -112,8 +112,8 @@ export const PracticeModeProvider = ({ children }) => {
         //console.log(currCase);
         dispatch({ type: 'update_case', payload: { solveTime, currCase } });
         
-        const epsilon = Math.random();
-        if (epsilon > 0.5 && state.cases.length > 0) {
+        const epsilon = Math.random() + state.cases.length / 100;
+        if (epsilon > 1) { // Hvis lavet 10 solves så 10% chance, 30 solves så 30% osv
             updateNextCase();
         } else {
             updateScramble();

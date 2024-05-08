@@ -815,6 +815,7 @@ export const SettingsProvider = ({ children }) => {
                 avg100: false
             },
             scramble: "D U' B' U' F' U B2 F2 U2 L' R D2 R' L R D2 U2 F2",
+            currCase: null,
             currSolutions: null,
             prevSolutions: null,
             showPrevSolutions: true,
@@ -822,6 +823,7 @@ export const SettingsProvider = ({ children }) => {
             subsets: initializeSubsets(),
             algsetData: algsets,
             algsInOrder: false,
+            practiceModeActive: false
         }
     });
 
@@ -854,6 +856,7 @@ export const SettingsProvider = ({ children }) => {
     const setScramble = (scrambleData) => {
         setSettings(prevSettings => ({
             ...prevSettings,
+            currCase: scrambleData.currCase,
             scramble: scrambleData.scramble,
             currSolutions: scrambleData.solutions,
             prevSolutions: prevSettings.currSolutions
@@ -863,7 +866,8 @@ export const SettingsProvider = ({ children }) => {
     const setAlgset = (algset) => {
         setSettings(prevSettings => ({
             ...prevSettings,
-            algset
+            algset,
+            practiceModeActive: false
         }));
         setScramble(getRandomScramble(algset, settings.subsets[algset], true));
     };
@@ -1014,20 +1018,14 @@ export const SettingsProvider = ({ children }) => {
         let solutions = nextCase.solutions;
         const aufIndex = Math.floor(Math.random() * 4);
 
-        // const randomSubset = selectedSubsets[Math.floor(Math.random() * selectedSubsets.length)];
-        // const num_cases = settings.algsetData[algset][randomSubset].length;
-        // const randomCase = settings.algsetData[algset][randomSubset][Math.floor(Math.random() * num_cases)];
-    
-        // let scramble = randomCase.scrambles[Math.floor(Math.random() * randomCase.scrambles.length)];
-        // let solutions = randomCase.solutions;
-        // const aufIndex = Math.floor(Math.random() * 4);
-        console.log("Subset: " + subsetIndex + ", Case: " + caseIndex);
+        //console.log("Subset: " + subsetIndex + ", Case: " + caseIndex);
         if (aufIndex < 3) {
             scramble = addAufScramble(scramble, aufIndex);
             solutions = addAufSolutions(solutions, aufIndex);
         }
 
         return {
+            currCase: {algset: algset, subset: subset, caseIndex: caseIndex},
             scramble: scramble,
             solutions: solutions
         };
@@ -1045,7 +1043,8 @@ export const SettingsProvider = ({ children }) => {
             updateScramble,
             setAlgset,
             toggleSubset,
-            resetSubsets
+            resetSubsets,
+            setScramble
         }}>
             {children}
         </SettingsContext.Provider>

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { useStopwatch } from "react-use-precision-timer";
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSettings } from '../SettingsContext';
-
+import { usePracticeMode } from '../PracticeModeContext';
 
 const buttonVariants = {
     hidden: { y: 200, opacity: 0 },
@@ -25,6 +25,7 @@ const scrambleVariants = {
 
 const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
     const { settings, updateScramble } = useSettings();
+    const { state, updatePracticeMode } = usePracticeMode();
     const [isActive, setIsActive] = useState(false);
     const [timerDown, setTimerDown] = useState(false);
     const [touchStartPos, setTouchStartPos] = useState({ x: null, y: null });
@@ -58,9 +59,13 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
         }
     };
 
-    const handleUpdateScramble = () => {
+    const handleUpdateScramble = ( solveFinished=true ) => {
         setShowSolutions(false);
-        updateScramble();
+        if (solveFinished && state.active) {
+            updatePracticeMode(parseFloat(timer))
+        } else {
+            updateScramble();
+        }
     }
 
     const stopTimer = () => {
@@ -149,7 +154,7 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
                         <motion.button
                             onClick={(e) => {
                                 e.stopPropagation();
-                                handleUpdateScramble();
+                                handleUpdateScramble(false);
                             }}
                             whileTap={{ scale: 0.97 }}
                             onTouchStart={(e) => e.stopPropagation()}

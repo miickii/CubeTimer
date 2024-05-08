@@ -87,6 +87,9 @@ const App = () => {
 
   const handleSwipe = useSwipeable({
     onSwipedLeft: (eventData) => {
+      if (eventData.event.target.closest('.menu')) {
+        return; // Do nothing if the swipe starts within a menu
+      }
       if (eventData.deltaX < -60) { // Check that the swipe length exceeds 60 pixels
         const currentIndex = tabs.indexOf(activeTab);
         if (currentIndex < tabs.length - 1) {
@@ -96,6 +99,9 @@ const App = () => {
       }
     },
     onSwipedRight: (eventData) => {
+      if (eventData.event.target.closest('.menu')) {
+        return; // Do nothing if the swipe starts within a menu
+      }
       if (eventData.deltaX > 60) { // Check that the swipe length exceeds 60 pixels
         const currentIndex = tabs.indexOf(activeTab);
         if (currentIndex > 0) {

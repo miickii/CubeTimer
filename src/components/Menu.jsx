@@ -10,11 +10,11 @@ const Menu = ({ menuOpen, onClose, deleteLastTime, resetTimes }) => {
     const [practiceModeOpen, setPracticeModeOpen] = useState(false);
     const { state, startPracticeMode, stopPracticeMode } = usePracticeMode();
 
-    const handleStartPracticeMode = () => {
+    const handleStartPracticeMode = (settings) => {
         if (state.active) {
             stopPracticeMode();
         } else {
-            startPracticeMode();
+            startPracticeMode(settings);
         }
         setPracticeModeOpen(false);
     };
@@ -54,7 +54,7 @@ const Menu = ({ menuOpen, onClose, deleteLastTime, resetTimes }) => {
     return (
         <AnimatePresence>
               {menuOpen && (
-                <div className='fixed inset-0 bg-black bg-opacity-25 z-40' onTouchEnd={onClose}>
+                <div className='fixed inset-0 bg-black bg-opacity-25 z-40 menu' onTouchEnd={onClose}>
                   <motion.div
                     className="absolute top-[54px] left-4 bg-white rounded-lg shadow-md p-4"
                     initial="hiddenLeft"

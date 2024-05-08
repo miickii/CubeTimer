@@ -7,8 +7,25 @@ const initialState = {
     active: false,
     numSolves: 0,
     totalTime: 0,
+    epsilon: 1,
+    epsilonDecay: 0.01,
+    initialScore: 10,
+    recencyFactor: 2,
     cases: [] // Dynamic queue that updates based on score of each case
 };
+
+function calculateRecencyWeightedAverage(times, recencyFactor = 2) {
+    let weightedSum = 0;
+    let weightSum = 0;
+    let currentWeight = 1;
+    // Loop over the times array from the newest to the oldest
+    for (let i = 0; i < times.length; i++) {
+        weightedSum += times[i] * currentWeight;
+        weightSum += currentWeight;
+        currentWeight *= recencyFactor;  // Increase the weight for the next newer time
+    }
+    return weightedSum / weightSum;
+}
 
 function reducer(state, action) {
     switch (action.type) {
@@ -20,35 +37,43 @@ function reducer(state, action) {
             if (caseIndex !== -1) {
                 let existingCase = {...cases[caseIndex]};
                 existingCase.times.push(solveTime);
-                if (existingCase.times.length > 5) existingCase.times.shift();
+                if (existingCase.times.length > 3) existingCase.times.shift();
+
+                //const newAverage = existingCase.times.reduce((a, b) => a + b, 0) / existingCase.times.length;
+                // existingCase.average = newAverage;
+
+                const newAverage = calculateRecencyWeightedAverage(existingCase.times, 2);
+
+                const deviation = newAverage / existingCase.average;
+                const newScore = existingCase.score * deviation;
                 
-                const newAverage = existingCase.times.reduce((a, b) => a + b, 0) / existingCase.times.length;
+                console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
                 existingCase.average = newAverage;
-
-                // Adjusting scores using EMA
-                const alpha = 0.1; // Learning rate
-                existingCase.score = alpha * newAverage + (1 - alpha) * existingCase.score;
-
+                existingCase.score = newScore
                 cases[caseIndex] = existingCase;
             } else {
+                const initialScore = Math.max(10, solveTime);
                 cases.push({
                     algset: currCase.algset, 
                     subset: currCase.subset, 
                     caseIndex: currCase.caseIndex, 
                     times: [solveTime], 
                     average: solveTime, 
-                    score: 1 // Start with a base score
+                    score: initialScore // Start with a base score, why not just solveTime? This can introduce immediate bias towards cases that inherently might take longer on the first try, which might not be a true representation of the solver's ability with more practice
                 });
             }
 
             // Optionally sort cases here if needed
             return { ...state, cases };
         case 'start_practice_mode':
-            return { ...initialState, active: true };
+            const { initialScore, epsilonDecay, recencyFactor } = action.payload;
+            return { ...initialState, active: true, initialScore, epsilonDecay, recencyFactor };
         case 'stop_practice_mode':
             return { ...state, active: false };
         case 'reset_practice_mode':
             return initialState;
+        case 'decrement_epsilon':
+            return { ...state, epsilon: Math.max(state.epsilon - state.epsilonDecay, 0.1) }; // Ensures epsilon doesn't go below 0.1
         default:
             throw new Error('Unhandled action type: ' + action.type);
     }
@@ -58,8 +83,8 @@ export const PracticeModeProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { settings, updateScramble, setScramble } = useSettings();
 
-    const startPracticeMode = () => {
-        dispatch({ type: 'start_practice_mode' });
+    const startPracticeMode = (settings) => {
+        dispatch({ type: 'start_practice_mode', payload: settings });
         updateScramble();
     };
 
@@ -111,14 +136,15 @@ export const PracticeModeProvider = ({ children }) => {
         const currCase = settings.currCase;
         //console.log(currCase);
         dispatch({ type: 'update_case', payload: { solveTime, currCase } });
+        console.log(state)
         
-        const epsilon = Math.random() + state.cases.length / 100;
-        if (epsilon > 1) { // Hvis lavet 10 solves så 10% chance, 30 solves så 30% osv
+        if (Math.random() > state.epsilon) {
             updateNextCase();
         } else {
             updateScramble();
         }
-        //console.log(state.cases);
+        
+        dispatch({ type: 'decrement_epsilon' });
     };
     
     const stopPracticeMode = () => {

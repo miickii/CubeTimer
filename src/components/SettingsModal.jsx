@@ -19,7 +19,7 @@ const SettingsModal = ({ onClose }) => {
     };
 
     return (
-        <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-end' onTouchEnd={onClose}>
+        <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-end menu' onTouchEnd={onClose}>
             <motion.div
                 className="w-full h-[90%] bg-white text-black rounded-t-lg p-4"
                 initial={{ y: "100%" }}

@@ -822,8 +822,7 @@ export const SettingsProvider = ({ children }) => {
             algset: "3x3x3",
             subsets: initializeSubsets(),
             algsetData: algsets,
-            algsInOrder: false,
-            practiceModeActive: false
+            algsInOrder: false
         }
     });
 

@@ -43,39 +43,35 @@ function reducer(state, action) {
                 existingCase.times.push(solveTime);
                 if (existingCase.times.length > 3) existingCase.times.shift();
 
-                //const newAverage = existingCase.times.reduce((a, b) => a + b, 0) / existingCase.times.length;
-                // existingCase.average = newAverage;
+                if (existingCase.times.length === 1) {
+                    // If this is first time seeing case then don't update score and set average to solveTime
+                    existingCase.average = solveTime;
+                } else {
+                    const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor);
 
-                const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor);
+                    const overallAverage = newTotalTime / newNumSolves;
+                    const overallDeviation = newAverage / overallAverage;
+                    const caseSpecificDeviation = newAverage / existingCase.average;
+    
+                    const combinedDeviation = (state.learningRate * overallDeviation + (1 - state.learningRate) * caseSpecificDeviation);
+    
+                    const newScore = existingCase.score * combinedDeviation;
+                    
+                    //console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
+                    existingCase.average = newAverage;
+                    existingCase.score = newScore
+                }
 
-                const overallAverage = newTotalTime / newNumSolves;
-                const overallDeviation = newAverage / overallAverage;
-                const caseSpecificDeviation = newAverage / existingCase.average;
-
-                const combinedDeviation = (state.learningRate * overallDeviation + (1 - state.learningRate) * caseSpecificDeviation);
-
-                const newScore = existingCase.score * combinedDeviation;
-                
-                console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
-                existingCase.average = newAverage;
-                existingCase.score = newScore
                 cases[caseIndex] = existingCase;
             } else {
-                cases.push({
-                    algset: currCase.algset, 
-                    subset: currCase.subset, 
-                    caseIndex: currCase.caseIndex, 
-                    times: [solveTime], 
-                    average: solveTime, 
-                    score: state.initialScore // Start with a base score, why not just solveTime? This can introduce immediate bias towards cases that inherently might take longer on the first try, which might not be a true representation of the solver's ability with more practice
-                });
+                console.log("Couldn't find case, cases not initialized correctly");
             }
 
             // Optionally sort cases here if needed
             return { ...state, cases, totalTime: newTotalTime, numSolves: newNumSolves };
         case 'start_practice_mode':
-            const { initialScore, epsilonDecay, recencyFactor, learningRate } = action.payload;
-            return { ...initialState, active: true, initialScore, epsilonDecay, recencyFactor, learningRate };
+            const { initialScore, epsilonDecay, recencyFactor, learningRate, initialCases } = action.payload;
+            return { ...initialState, active: true, cases: initialCases, initialScore, epsilonDecay, recencyFactor, learningRate };
         case 'stop_practice_mode':
             return { ...state, active: false };
         case 'reset_practice_mode':
@@ -91,8 +87,28 @@ export const PracticeModeProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { settings, updateScramble, setScramble } = useSettings();
 
-    const startPracticeMode = (settings) => {
-        dispatch({ type: 'start_practice_mode', payload: settings });
+    const startPracticeMode = (practiceModeSettings) => {
+        const initialCases = [];
+
+        let selectedSubsets = settings.subsets[settings.algset];
+        if (selectedSubsets.length === 0) {
+            selectedSubsets = Object.keys(settings.algsetData[settings.algset]); // Use all subsets if none selected
+        }
+
+        for (let subset of selectedSubsets) {
+            settings.algsetData[settings.algset][subset].forEach((caseData, index) => {
+                initialCases.push({
+                    algset: settings.algset, 
+                    subset: subset, 
+                    caseIndex: index, 
+                    times: [], 
+                    average: 0, 
+                    score: practiceModeSettings.initialScore
+                })
+            });
+        }
+        
+        dispatch({ type: 'start_practice_mode', payload: {...practiceModeSettings, initialCases} });
         updateScramble();
     };
 
@@ -142,7 +158,7 @@ export const PracticeModeProvider = ({ children }) => {
 
     const updatePracticeMode = (solveTime) => {
         const currCase = settings.currCase;
-        //console.log(currCase);
+
         dispatch({ type: 'update_case', payload: { solveTime, currCase } });
         
         if (Math.random() > state.epsilon) {

@@ -6,6 +6,7 @@ const PracticeModeContext = createContext();
 const initialState = {
     active: false,
     numSolves: 0,
+    times: [],
     totalTime: 0,
     overallAverage: 0,
     epsilon: 1,
@@ -60,9 +61,13 @@ function reducer(state, action) {
     switch (action.type) {
         case 'update_case':
             const { solveTime, currCase } = action.payload;
-            const newTotalTime = state.totalTime + solveTime;
+            
+            const adjustedSolveTime = Math.min(15, solveTime); // HARDCODED
+            const newTotalTime = state.totalTime + adjustedSolveTime;
             const newNumSolves = state.numSolves + 1;
-            const overallAverage = newTotalTime / newNumSolves;
+            let times = [...state.times, adjustedSolveTime];
+            const overallAverage = calculateRecencyWeightedAverage(times, state.recencyFactor);
+
             let totalScore = state.totalScore;
             let numCasesSeen = state.numCasesSeen;
 
@@ -73,12 +78,12 @@ function reducer(state, action) {
             if (caseIndex !== -1) {
                 let existingCase = {...cases[caseIndex]};
                 
-                existingCase.times.push(solveTime);
+                existingCase.times.push(adjustedSolveTime);
                 if (existingCase.times.length > 3) existingCase.times.shift();
 
                 if (existingCase.times.length === 1) {
                     // If this is first time seeing case then don't update score and set average to solveTime
-                    existingCase.average = solveTime;
+                    existingCase.average = adjustedSolveTime;
                     existingCase.seen = true;
                     numCasesSeen += 1;
                 }
@@ -103,7 +108,7 @@ function reducer(state, action) {
             }
 
             // Optionally sort cases here if needed
-            return { ...state, cases, prevCase, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: overallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
+            return { ...state, cases, prevCase, times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: overallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
         case 'start_practice_mode':
             const { initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, initialCases } = action.payload;
             return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, totalScore: initialScore*initialCases.length };
@@ -149,7 +154,7 @@ export const PracticeModeProvider = ({ children }) => {
         updateScramble();
     };
 
-    const updateNextCase = () => {
+    const getNextCase = () => {
         // Selecting next case using Softmax
 
         // 1. Calculate Exponentials of Scores: Each score is turned into an exponential. This is commonly used in methods like the Softmax function because it makes the function output more "selective."
@@ -184,7 +189,18 @@ export const PracticeModeProvider = ({ children }) => {
             }
         }
 
-        const nextCase = state.cases[nextCaseIndex]
+        return state.cases[nextCaseIndex];
+    }
+
+    const updateNextCase = () => {
+        let nextCase = getNextCase();
+
+        // Don't allow next case to be the same as previous case
+        while (nextCase === state.prevCase) {
+            nextCase = getNextCase();
+            console.log("Same case from before, generate again");
+        }
+
         const nextCaseScrambleData = settings.algsetData[nextCase.algset][nextCase.subset][nextCase.caseIndex];
         setScramble({
             currCase: {algset: nextCase.algset, subset: nextCase.subset, caseIndex: nextCase.caseIndex},
@@ -201,7 +217,8 @@ export const PracticeModeProvider = ({ children }) => {
         if (Math.random() > state.epsilon) {
             updateNextCase();
         } else {
-            updateScramble();
+            updateScramble(); // Choose random case
+            console.log("random case selected");
         }
         
         dispatch({ type: 'decrement_epsilon' });

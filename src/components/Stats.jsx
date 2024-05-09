@@ -43,7 +43,7 @@ const Stats = ({ solves }) => {
                     <p>Total session solves: {practiceState.numSolves}</p>
                     {practiceState.displayStats && (
                         <div>
-                            <p>Session average: {practiceState.overallAverage.toFixed(2)}</p>
+                            <p>Session weighted average: {practiceState.overallAverage.toFixed(2)}</p>
                             <p>Cases encountered: {practiceState.numCasesSeen} / {practiceState.numCases}</p>
                             <p>Average score: {(practiceState.totalScore / practiceState.numCases).toFixed(2)}</p>
                             <div className='p-2'>

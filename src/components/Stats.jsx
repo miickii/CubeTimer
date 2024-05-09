@@ -1,8 +1,10 @@
 import React from 'react';
 import { useSettings } from '../SettingsContext';
+import { usePracticeMode } from '../PracticeModeContext';
 
 const Stats = ({ solves }) => {
     const { settings } = useSettings();
+    const { state: practiceState } = usePracticeMode();
     
     function removeMinMax(times) {
         let newTimes = [...times]
@@ -35,6 +37,13 @@ const Stats = ({ solves }) => {
 
     return (
         <div className="flex flex-col items-center justify-center w-full">
+            {practiceState.active && (
+                <div className="bg-blue-100 p-4 rounded-lg mt-4">
+                    <h3 className="text-lg font-semibold">Practice Mode Active</h3>
+                    <p>Total Practice Solves: {practiceState.numSolves}</p>
+                    {/* <p>Current Focus Score: {practiceState.currentFocusScore.toFixed(2)}</p>  Assuming you track a focus score */}
+                </div>
+            )}
             <div className="text-xl font-semibold mt-4 mb-8">
                 <p>Total Solves: {times.length}</p>
                 <p>Best Time: {bestTime}</p>

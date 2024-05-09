@@ -11,6 +11,7 @@ const initialState = {
     epsilonDecay: 0.01,
     initialScore: 10,
     recencyFactor: 2,
+    learningRate: 0.5,
     cases: [] // Dynamic queue that updates based on score of each case
 };
 
@@ -31,6 +32,9 @@ function reducer(state, action) {
     switch (action.type) {
         case 'update_case':
             const { solveTime, currCase } = action.payload;
+            const newTotalTime = state.totalTime + solveTime;
+            const newNumSolves = state.numSolves + 1;
+
             let cases = [...state.cases];
             let caseIndex = cases.findIndex(c => c.algset === currCase.algset && c.subset === currCase.subset && c.caseIndex === currCase.caseIndex);
             
@@ -44,8 +48,13 @@ function reducer(state, action) {
 
                 const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor);
 
-                const deviation = newAverage / existingCase.average;
-                const newScore = existingCase.score * deviation;
+                const overallAverage = newTotalTime / newNumSolves;
+                const overallDeviation = newAverage / overallAverage;
+                const caseSpecificDeviation = newAverage / existingCase.average;
+
+                const combinedDeviation = (state.learningRate * overallDeviation + (1 - state.learningRate) * caseSpecificDeviation);
+
+                const newScore = existingCase.score * combinedDeviation;
                 
                 console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
                 existingCase.average = newAverage;
@@ -63,10 +72,10 @@ function reducer(state, action) {
             }
 
             // Optionally sort cases here if needed
-            return { ...state, cases };
+            return { ...state, cases, totalTime: newTotalTime, numSolves: newNumSolves };
         case 'start_practice_mode':
-            const { initialScore, epsilonDecay, recencyFactor } = action.payload;
-            return { ...initialState, active: true, initialScore, epsilonDecay, recencyFactor };
+            const { initialScore, epsilonDecay, recencyFactor, learningRate } = action.payload;
+            return { ...initialState, active: true, initialScore, epsilonDecay, recencyFactor, learningRate };
         case 'stop_practice_mode':
             return { ...state, active: false };
         case 'reset_practice_mode':
@@ -135,7 +144,6 @@ export const PracticeModeProvider = ({ children }) => {
         const currCase = settings.currCase;
         //console.log(currCase);
         dispatch({ type: 'update_case', payload: { solveTime, currCase } });
-        console.log(state)
         
         if (Math.random() > state.epsilon) {
             updateNextCase();

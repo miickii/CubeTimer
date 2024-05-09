@@ -6,6 +6,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
     const [initialScore, setInitialScore] = useState("8");
     const [epsilonDecay, setEpsilonDecay] = useState("0.02");
     const [recencyFactor, setRecencyFactor] = useState("2");
+    const [learningRate, setLearningRate] = useState("0.5");
     const [currInfoPopup, setCurrInfoPopup] = useState(null);
 
     const handleShowPopup = (id) => {
@@ -56,8 +57,19 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                                 {currInfoPopup === 3 && <InfoPopup text="Adjusts how much more recent solves influence the scoring of each case." />}
                             </div>
                         </div>
+                        <div className="flex items-center justify-between">
+                            <label className="block w-1/3">
+                                Learning rate:
+                            </label>
+                            <div className="flex items-center w-2/3 justify-end relative">
+                                <span className="text-gray-700 text-sm font-medium mr-2">{learningRate}</span>
+                                <input type="range" min="0" max="1" step="0.1" value={learningRate} onChange={e => setLearningRate(e.target.value)} className="mx-2" />
+                                <button className="relative" onClick={() => handleShowPopup(4)}>?</button>
+                                {currInfoPopup === 4 && <InfoPopup text="Controls how rapidly scores adjust to recent performance changes. A higher rate causes scores to respond more quickly to recent solves, while a lower rate results in slower adjustments, giving more weight to historical performance." />}
+                            </div>
+                        </div>
                     </div>
-                    <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded" onClick={() => onStart( {initialScore: parseFloat(initialScore), epsilonDecay: parseFloat(epsilonDecay), recencyFactor: parseFloat(recencyFactor)} )}>{practiceModeActive ? "Stop" : "Start"}</button>
+                    <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded" onClick={() => onStart( {initialScore: parseFloat(initialScore), epsilonDecay: parseFloat(epsilonDecay), recencyFactor: parseFloat(recencyFactor), learningRate: parseFloat(learningRate)} )}>{practiceModeActive ? "Stop" : "Start"}</button>
                 </div>
             </div>
         </div>

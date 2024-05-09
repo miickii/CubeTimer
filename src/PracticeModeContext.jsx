@@ -34,6 +34,28 @@ function calculateRecencyWeightedAverage(times, recencyFactor) {
     return weightedSum / weightSum;
 }
 
+function calculateScore(score, prevAverage, newAverage, overallAverage, learningRate, maxIncreaseFactor = 1.5, decayRate = 0.95) {
+    // Calculate deviations
+    const overallDeviation = newAverage / overallAverage;
+    const caseSpecificDeviation = newAverage / prevAverage;
+
+    // Combine deviations weighted by learning rate
+    const combinedDeviation = (learningRate * overallDeviation) + ((1 - learningRate) * caseSpecificDeviation);
+
+    // Calculate potential new score
+    let newScore = score * combinedDeviation;
+
+    // Soften score increases: prevent the score from increasing beyond a certain factor in one update
+    if (newScore > score * maxIncreaseFactor) {
+        newScore = score * maxIncreaseFactor;
+    }
+
+    // Apply decay to the score to gradually reduce it over time
+    newScore *= decayRate;
+
+    return newScore;
+}
+
 function reducer(state, action) {
     switch (action.type) {
         case 'update_case':
@@ -59,23 +81,21 @@ function reducer(state, action) {
                     existingCase.average = solveTime;
                     existingCase.seen = true;
                     numCasesSeen += 1;
-                } else {
-                    const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor);
+                }
 
-                    const overallDeviation = newAverage / overallAverage;
-                    const caseSpecificDeviation = newAverage / existingCase.average;
-    
-                    const combinedDeviation = (state.learningRate * overallDeviation + (1 - state.learningRate) * caseSpecificDeviation);
-    
-                    const newScore = existingCase.score * combinedDeviation;
-                    totalScore = totalScore - existingCase.score + newScore;
+                const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor);
+
+                // If case has 3 solves then update score
+                if (existingCase.times.length === 3) {
+                    const newScore = calculateScore(existingCase.score, existingCase.average, newAverage, overallAverage, state.learningRate);
                     
+                    totalScore = totalScore - existingCase.score + newScore;
                     //console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
-                    existingCase.average = newAverage;
                     existingCase.prevScore = existingCase.score;
                     existingCase.score = newScore;
                 }
-
+                
+                existingCase.average = newAverage;
                 prevCase = existingCase;
                 cases[caseIndex] = existingCase;
             } else {

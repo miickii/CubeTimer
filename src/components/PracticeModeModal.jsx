@@ -53,7 +53,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                             </label>
                             <div className="flex items-center w-2/3 justify-end relative">
                                 <span className="text-gray-700 text-sm font-medium mr-2">{recencyFactor}</span>
-                                <input type="range" min="1" max="5" value={recencyFactor} onChange={e => setRecencyFactor(e.target.value)} className="mx-2" />
+                                <input type="range" min="1" max="5" step="0.5" value={recencyFactor} onChange={e => setRecencyFactor(e.target.value)} className="mx-2" />
                                 <button className="relative" onClick={() => handleShowPopup(3)}>?</button>
                                 {currInfoPopup === 3 && <InfoPopup text="Adjusts how much more recent solves influence the scoring of each case." />}
                             </div>

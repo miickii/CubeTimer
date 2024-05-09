@@ -5,16 +5,16 @@ import { FiSettings } from 'react-icons/fi';
 import PracticeModeModal from './PracticeModeModal';
 import { usePracticeMode } from '../PracticeModeContext';
 
-const Menu = ({ menuOpen, onClose, deleteLastTime, resetTimes }) => {
+const Menu = ({ menuOpen, onClose, deleteLastTime, resetTimes, settings }) => {
     const [settingsOpen, setSettingsOpen] = useState(false);
     const [practiceModeOpen, setPracticeModeOpen] = useState(false);
     const { state, startPracticeMode, stopPracticeMode } = usePracticeMode();
 
-    const handleStartPracticeMode = (settings) => {
+    const handleStartPracticeMode = (practiceSettings) => {
         if (state.active) {
             stopPracticeMode();
         } else {
-            startPracticeMode(settings);
+            startPracticeMode(practiceSettings);
         }
         setPracticeModeOpen(false);
     };
@@ -69,9 +69,11 @@ const Menu = ({ menuOpen, onClose, deleteLastTime, resetTimes }) => {
                         <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={resetTimes}>
                             Reset Times
                         </button>
-                        <button className="w-full text-left p-2 text-lg font-semibold border-b text-gray-700" onTouchEnd={() => setPracticeModeOpen(true)}>
-                            Practice Mode
-                        </button>
+                        {!(settings.algset === "3x3x3") && (
+                          <button className="w-full p-2 text-lg font-semibold border-b text-[#D6700A]" onTouchEnd={() => setPracticeModeOpen(true)}>
+                              Practice Mode
+                          </button>
+                        )}
                         <button className="flex items-center justify-center py-2 text-lg font-semibold text-gray-800" onTouchEnd={() => setSettingsOpen(true)}>
                             <FiSettings className="mr-1" size={20} /> Settings
                         </button>

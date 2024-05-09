@@ -7,12 +7,18 @@ const initialState = {
     active: false,
     numSolves: 0,
     totalTime: 0,
+    overallAverage: 0,
     epsilon: 1,
     epsilonDecay: 0.01,
     initialScore: 10,
     recencyFactor: 2,
     learningRate: 0.5,
-    cases: [] // Dynamic queue that updates based on score of each case
+    displayStats: false,
+    totalScore: null,
+    prevCase: null,
+    numCasesSeen: 0,
+    cases: [], // Dynamic queue that updates based on score of each case
+    numCases: null
 };
 
 function calculateRecencyWeightedAverage(times, recencyFactor) {
@@ -34,44 +40,53 @@ function reducer(state, action) {
             const { solveTime, currCase } = action.payload;
             const newTotalTime = state.totalTime + solveTime;
             const newNumSolves = state.numSolves + 1;
+            const overallAverage = newTotalTime / newNumSolves;
+            let totalScore = state.totalScore;
+            let numCasesSeen = state.numCasesSeen;
 
             let cases = [...state.cases];
             let caseIndex = cases.findIndex(c => c.algset === currCase.algset && c.subset === currCase.subset && c.caseIndex === currCase.caseIndex);
-            
+            let prevCase = null;
+
             if (caseIndex !== -1) {
                 let existingCase = {...cases[caseIndex]};
+                
                 existingCase.times.push(solveTime);
                 if (existingCase.times.length > 3) existingCase.times.shift();
 
                 if (existingCase.times.length === 1) {
                     // If this is first time seeing case then don't update score and set average to solveTime
                     existingCase.average = solveTime;
+                    existingCase.seen = true;
+                    numCasesSeen += 1;
                 } else {
                     const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor);
 
-                    const overallAverage = newTotalTime / newNumSolves;
                     const overallDeviation = newAverage / overallAverage;
                     const caseSpecificDeviation = newAverage / existingCase.average;
     
                     const combinedDeviation = (state.learningRate * overallDeviation + (1 - state.learningRate) * caseSpecificDeviation);
     
                     const newScore = existingCase.score * combinedDeviation;
+                    totalScore = totalScore - existingCase.score + newScore;
                     
                     //console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
                     existingCase.average = newAverage;
-                    existingCase.score = newScore
+                    existingCase.prevScore = existingCase.score;
+                    existingCase.score = newScore;
                 }
 
+                prevCase = existingCase;
                 cases[caseIndex] = existingCase;
             } else {
                 console.log("Couldn't find case, cases not initialized correctly");
             }
 
             // Optionally sort cases here if needed
-            return { ...state, cases, totalTime: newTotalTime, numSolves: newNumSolves };
+            return { ...state, cases, prevCase, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: overallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
         case 'start_practice_mode':
-            const { initialScore, epsilonDecay, recencyFactor, learningRate, initialCases } = action.payload;
-            return { ...initialState, active: true, cases: initialCases, initialScore, epsilonDecay, recencyFactor, learningRate };
+            const { initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, initialCases } = action.payload;
+            return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, totalScore: initialScore*initialCases.length };
         case 'stop_practice_mode':
             return { ...state, active: false };
         case 'reset_practice_mode':
@@ -101,9 +116,11 @@ export const PracticeModeProvider = ({ children }) => {
                     algset: settings.algset, 
                     subset: subset, 
                     caseIndex: index, 
+                    seen: false, // If it has showed up at least once
                     times: [], 
                     average: 0, 
-                    score: practiceModeSettings.initialScore
+                    score: practiceModeSettings.initialScore,
+                    prevScore: practiceModeSettings.initialScore,
                 })
             });
         }

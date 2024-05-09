@@ -40,7 +40,25 @@ const Stats = ({ solves }) => {
             {practiceState.active && (
                 <div className="bg-blue-100 p-4 rounded-lg mt-4">
                     <h3 className="text-lg font-semibold">Practice Mode Active</h3>
-                    <p>Total Practice Solves: {practiceState.numSolves}</p>
+                    <p>Total session solves: {practiceState.numSolves}</p>
+                    {practiceState.displayStats && (
+                        <div>
+                            <p>Session average: {practiceState.overallAverage.toFixed(2)}</p>
+                            <p>Cases encountered: {practiceState.numCasesSeen} / {practiceState.numCases}</p>
+                            <p>Average score: {(practiceState.totalScore / practiceState.numCases).toFixed(2)}</p>
+                            <div className='p-2'>
+                                <p className='w-full text-center'>Most recent case:</p>
+                                {practiceState.prevCase && <>
+                                    <p>Subset: {practiceState.prevCase.subset}</p>
+                                    <p>Case index: {practiceState.prevCase.caseIndex}</p>
+                                    <p>Times: {practiceState.prevCase.times.join(', ')}</p>
+                                    <p>Weighted average: {practiceState.prevCase.average.toFixed(2)}</p>
+                                    <p>Previous score: {practiceState.prevCase.prevScore.toFixed(2)}</p>
+                                    <p>Updated score: {practiceState.prevCase.score.toFixed(2)}</p>
+                                </>}
+                            </div>
+                        </div>
+                    )}
                     {/* <p>Current Focus Score: {practiceState.currentFocusScore.toFixed(2)}</p>  Assuming you track a focus score */}
                 </div>
             )}

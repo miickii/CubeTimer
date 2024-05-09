@@ -7,6 +7,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
     const [epsilonDecay, setEpsilonDecay] = useState("0.02");
     const [recencyFactor, setRecencyFactor] = useState("2");
     const [learningRate, setLearningRate] = useState("0.5");
+    const [displayStats, setDisplayStats] = useState(false);
     const [currInfoPopup, setCurrInfoPopup] = useState(null);
 
     const handleShowPopup = (id) => {
@@ -68,8 +69,18 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                                 {currInfoPopup === 4 && <InfoPopup text="Controls how rapidly scores adjust to recent performance changes. A higher rate causes scores to respond more quickly to recent solves, while a lower rate results in slower adjustments, giving more weight to historical performance." />}
                             </div>
                         </div>
+                        <div className="flex items-center justify-between">
+                            <label className="block w-1/3">
+                                Show session stats
+                            </label>
+                            <div className="flex items-center w-2/3 justify-end relative">
+                                <input type="checkbox" checked={displayStats} onChange={() => setDisplayStats(!displayStats)} />
+                                <button className="relative" onClick={() => handleShowPopup(5)}>?</button>
+                                {currInfoPopup === 5 && <InfoPopup text="Shows stats and information about the practice mode session" />}
+                            </div>
+                        </div>
                     </div>
-                    <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded" onClick={() => onStart( {initialScore: parseFloat(initialScore), epsilonDecay: parseFloat(epsilonDecay), recencyFactor: parseFloat(recencyFactor), learningRate: parseFloat(learningRate)} )}>{practiceModeActive ? "Stop" : "Start"}</button>
+                    <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded" onClick={() => onStart( {initialScore: parseFloat(initialScore), epsilonDecay: parseFloat(epsilonDecay), recencyFactor: parseFloat(recencyFactor), learningRate: parseFloat(learningRate), displayStats: displayStats} )}>{practiceModeActive ? "Stop" : "Start"}</button>
                 </div>
             </div>
         </div>

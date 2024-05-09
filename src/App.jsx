@@ -11,7 +11,7 @@ import AlgsetMenu from './components/AlgsetMenu';
 import Menu from './components/Menu';
 
 const App = () => {
-  const { settings, setAlgset } = useSettings();
+  const { settings } = useSettings();
   const [menuOpen, setMenuOpen] = useState(false);
   const [algsetMenuOpen, setAlgsetMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('solve');
@@ -131,7 +131,7 @@ const App = () => {
             </button>
   
             {/* Main Menu */}
-            <Menu menuOpen={menuOpen} onClose={() => setMenuOpen(!menuOpen)} deleteLastTime={deleteLastTime} resetTimes={resetTimes} />
+            <Menu menuOpen={menuOpen} onClose={() => setMenuOpen(!menuOpen)} deleteLastTime={deleteLastTime} resetTimes={resetTimes} settings={settings} />
 
             {/* Algset Menu */}
             <button className="absolute top-[18px] right-4 text-black text-lg" onTouchEnd={() => {

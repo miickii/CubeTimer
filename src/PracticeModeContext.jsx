@@ -85,9 +85,10 @@ function reducer(state, action) {
             let cases = [...state.cases];
             let caseIndex = cases.findIndex(c => c.algset === currCase.algset && c.subset === currCase.subset && c.caseIndex === currCase.caseIndex);
             const prevCases = [...state.prevCases, caseIndex];
+            let existingCase = null;
 
             if (caseIndex !== -1) {
-                let existingCase = {...cases[caseIndex]};
+                existingCase = {...cases[caseIndex]};
                 
                 existingCase.times.push(adjustedSolveTime);
 
@@ -97,7 +98,6 @@ function reducer(state, action) {
                 }
 
                 const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor, 3);
-
                 // If case has 3 solves then update score
                 if (existingCase.times.length > 2) {
                     const newScore = calculateScore(existingCase.score, existingCase.average, newAverage, weightedOverallAverage, state.learningRate);
@@ -115,7 +115,7 @@ function reducer(state, action) {
             }
 
             // Optionally sort cases here if needed
-            return { ...state, cases, prevCase: state.cases[caseIndex], times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: weightedOverallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
+            return { ...state, cases, prevCase: existingCase, times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: weightedOverallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
         case 'start_practice_mode':
             const { initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, initialCases } = action.payload;
             return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, totalScore: initialScore*initialCases.length };

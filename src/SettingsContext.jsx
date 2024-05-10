@@ -805,32 +805,36 @@ export const useSettings = () => useContext(SettingsContext);
 export const SettingsProvider = ({ children }) => {
     const [settings, setSettings] = useState(() => {
         const savedSettings = loadSettings();
-        return {
-            ...savedSettings,
-            solves: savedSettings?.solves || [],
-            timer: 0,
-            timerRunning: false
-        } || {
-            useInspection: true,
-            displayMilliseconds: true,
-            soundEnabled: true,
-            averages: {
-                avg25: false,
-                avg50: false,
-                avg100: false
-            },
-            scramble: "D U' B' U' F' U B2 F2 U2 L' R D2 R' L R D2 U2 F2",
-            currCase: null,
-            currSolutions: null,
-            prevSolutions: null,
-            showPrevSolutions: true,
-            algset: "3x3x3",
-            subsets: initializeSubsets(),
-            algsetData: algsets,
-            algsInOrder: false,
-            solves: [],
-            timer: 0,
-            timerRunning: false
+        if (savedSettings) {
+            return {
+                ...savedSettings,
+                solves: savedSettings.solves || [],
+                timer: 0,
+                timerRunning: false
+            }
+        } else {
+            return {
+                useInspection: true,
+                displayMilliseconds: true,
+                soundEnabled: true,
+                averages: {
+                    avg25: false,
+                    avg50: false,
+                    avg100: false
+                },
+                scramble: "D U' B' U' F' U B2 F2 U2 L' R D2 R' L R D2 U2 F2",
+                currCase: null,
+                currSolutions: null,
+                prevSolutions: null,
+                showPrevSolutions: true,
+                algset: "3x3x3",
+                subsets: initializeSubsets(),
+                algsetData: algsets,
+                algsInOrder: false,
+                solves: [],
+                timer: 0,
+                timerRunning: false
+            }
         }
     });
 

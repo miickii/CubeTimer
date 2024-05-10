@@ -785,6 +785,7 @@ const SettingsContext = createContext();
 
 const loadSettings = () => {
     const settings = localStorage.getItem('appSettings');
+    console.log("calling loadSettings() settings: ", settings);
     return settings ? JSON.parse(settings) : null;
 };
 
@@ -806,6 +807,7 @@ export const SettingsProvider = ({ children }) => {
     const [settings, setSettings] = useState(() => {
         const savedSettings = loadSettings();
         if (savedSettings) {
+            console.log("returning saved settings")
             return {
                 ...savedSettings,
                 solves: savedSettings.solves || [],
@@ -840,7 +842,7 @@ export const SettingsProvider = ({ children }) => {
 
     useEffect(() => {
         saveSettings(settings);
-        //console.log("Saved settings");
+        console.log("Saved settings");
     }, [settings]);
 
     const [currCaseIndex, setCurrCaseIndex] = useState(null);

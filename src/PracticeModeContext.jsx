@@ -66,7 +66,7 @@ function calculateScore(score, prevAverage, newAverage, overallAverage, learning
 function reducer(state, action) {
     switch (action.type) {
         case 'update_case':
-            const { solveTime, currCase } = action.payload;
+            const { solveTime, caseIndex } = action.payload;
             
             const adjustedSolveTime = Math.min(15, solveTime); // HARDCODED
             const newTotalTime = state.totalTime + adjustedSolveTime;
@@ -83,7 +83,6 @@ function reducer(state, action) {
             let numCasesSeen = state.numCasesSeen;
 
             let cases = [...state.cases];
-            let caseIndex = cases.findIndex(c => c.algset === currCase.algset && c.subset === currCase.subset && c.caseIndex === currCase.caseIndex);
             const prevCases = [...state.prevCases, caseIndex];
             let existingCase = null;
 
@@ -115,7 +114,7 @@ function reducer(state, action) {
             }
 
             // Optionally sort cases here if needed
-            return { ...state, cases, prevCase: existingCase, times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: weightedOverallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
+            return { ...state, cases, prevCase: existingCase, prevCases, times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: weightedOverallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
         case 'start_practice_mode':
             const { initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, initialCases } = action.payload;
             return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, totalScore: initialScore*initialCases.length };
@@ -161,7 +160,7 @@ export const PracticeModeProvider = ({ children }) => {
         updateScramble();
     };
 
-    const getNextCase = () => {
+    const getNextCase = (prevCaseIndex) => {
         // Selecting next case using Softmax
 
         // 1. Calculate Exponentials of Scores: Each score is turned into an exponential. This is commonly used in methods like the Softmax function because it makes the function output more "selective."
@@ -179,7 +178,15 @@ export const PracticeModeProvider = ({ children }) => {
         // - Bias Toward Better Scores: By using exponentials, this method inherently biases the selection toward cases with higher scores, which can be useful in practice modes where you want to focus more on cases that need more practice (assuming higher scores indicate cases that need more attention).
         
         // First create probabilities
-        const scores = state.cases.map(c => Math.exp(c.score));
+        let scores = state.cases.map(c => Math.exp(c.score));
+
+        // if case appeared in last three solves set score to 0
+        if (state.numCases > 3) {
+            //console.log(state.prevCases.slice(-3))
+            for (const index of state.prevCases.slice(-2)) scores[index] = 0;
+            scores[prevCaseIndex] = 0; // We have to do this because prevCases doesn't currently include the newest added
+        }
+
         const scoreSum = scores.reduce((a, b) => a + b, 0);
         const probabilities = scores.map(s => s / scoreSum);
 
@@ -199,13 +206,32 @@ export const PracticeModeProvider = ({ children }) => {
         return state.cases[nextCaseIndex];
     }
 
-    const updateNextCase = () => {
-        let nextCase = getNextCase();
+    const getRandomCase = () => {
+        const numAppearances = state.cases.map(c => c.times.length);
 
-        // Don't allow next case to be the same as previous case
-        while (nextCase === state.prevCase) {
+        let possibleCases = []
+
+        for (let i = 0; i < numAppearances.length; i++) {
+            if (numAppearances[i] < 3) possibleCases.push(i);
+        }
+
+        const nextCaseIndex = possibleCases.length > 0 ? possibleCases[Math.floor(Math.random()*possibleCases.length)] : Math.floor(Math.random()*state.numCases)
+        return state.cases[nextCaseIndex];
+    }
+
+    const updatePracticeMode = () => {
+        const currCase = settings.currCase;
+        const caseIndex = state.cases.findIndex(c => c.algset === currCase.algset && c.subset === currCase.subset && c.caseIndex === currCase.caseIndex);
+        const solveTime = settings.timer;
+
+        dispatch({ type: 'update_case', payload: { solveTime, caseIndex } });
+        
+        let nextCase = null;
+
+        if (Math.random() > state.epsilon) {
             nextCase = getNextCase();
-            console.log("Same case from before, generate again");
+        } else {
+            nextCase = getRandomCase();
         }
 
         const nextCaseScrambleData = settings.algsetData[nextCase.algset][nextCase.subset][nextCase.caseIndex];
@@ -214,20 +240,6 @@ export const PracticeModeProvider = ({ children }) => {
             scramble: nextCaseScrambleData.scrambles[Math.floor(Math.random() * nextCaseScrambleData.scrambles.length)],
             solutions: nextCaseScrambleData.solutions
         })
-    }
-
-    const updatePracticeMode = () => {
-        const currCase = settings.currCase;
-        const solveTime = settings.timer;
-
-        dispatch({ type: 'update_case', payload: { solveTime, currCase } });
-        
-        if (Math.random() > state.epsilon) {
-            updateNextCase();
-        } else {
-            updateScramble(); // Choose random case
-            console.log("random case selected");
-        }
         
         dispatch({ type: 'decrement_epsilon' });
     };

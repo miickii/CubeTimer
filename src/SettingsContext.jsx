@@ -822,7 +822,7 @@ export const SettingsProvider = ({ children }) => {
                     avg50: false,
                     avg100: false
                 },
-                scramble: "D U' B' U' F' U B2 F2 U2 L' R D2 R' L R D2 U2 F2",
+                scramble: "D U' B' U' F' U B2 F2 U2 L' R D2 R' L R D2 U2 F",
                 currCase: null,
                 currSolutions: null,
                 prevSolutions: null,

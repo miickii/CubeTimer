@@ -51,7 +51,7 @@ const Stats = () => {
                                 {practiceState.prevCase && <>
                                     <p>Subset: {practiceState.prevCase.subset}</p>
                                     <p>Case index: {practiceState.prevCase.caseIndex}</p>
-                                    <p>Times: {practiceState.prevCase.times.join(', ')}</p>
+                                    <p>Times: {practiceState.prevCase.times.slice(-3).join(', ')}</p>
                                     <p>Weighted average: {practiceState.prevCase.average.toFixed(2)}</p>
                                     <p>Previous score: {practiceState.prevCase.prevScore.toFixed(2)}</p>
                                     <p>Updated score: {practiceState.prevCase.score.toFixed(2)}</p>

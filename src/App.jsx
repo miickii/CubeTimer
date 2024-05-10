@@ -19,10 +19,6 @@ const App = () => {
   const [title, setTitle] = useState('CubeTimer');
   const [timerRunning, setTimerRunning] = useState(false);
 
-  const handleTimerStart = () => {
-    setTimerRunning(true);
-  }
-
   const changeTab = (tab) => {
     if (!timerRunning) {
       setLastTab(activeTab);

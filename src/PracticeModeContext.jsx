@@ -17,18 +17,24 @@ const initialState = {
     displayStats: false,
     totalScore: null,
     prevCase: null,
+    prevCases: [], // Stored by their indicies in cases array
     numCasesSeen: 0,
     cases: [], // Dynamic queue that updates based on score of each case
     numCases: null
 };
 
-function calculateRecencyWeightedAverage(times, recencyFactor) {
+function calculateRecencyWeightedAverage(times, recencyFactor, maxSolves) {
     let weightedSum = 0;
     let weightSum = 0;
     let currentWeight = 1;
+
+    // only calculate for last x solves, where x is `maxSolves`
+    const start = Math.max(0, times.length - maxSolves);
+    const relevantTimes = times.slice(start);
+
     // Loop over the times array from the newest to the oldest
-    for (let i = 0; i < times.length; i++) {
-        weightedSum += times[i] * currentWeight;
+    for (let i = 0; i < relevantTimes.length; i++) {
+        weightedSum += relevantTimes[i] * currentWeight;
         weightSum += currentWeight;
         currentWeight *= recencyFactor;  // Increase the weight for the next newer time
     }
@@ -66,33 +72,35 @@ function reducer(state, action) {
             const newTotalTime = state.totalTime + adjustedSolveTime;
             const newNumSolves = state.numSolves + 1;
             let times = [...state.times, adjustedSolveTime];
-            const overallAverage = calculateRecencyWeightedAverage(times, state.recencyFactor);
+            //if (times.length > 30) times.shift();
+            
+            // Adjust the recency factor for a longer list
+            // The adjustment formula reduces the exponential growth over more items
+            const adjustedFactor = Math.pow(state.recencyFactor, 1 / (Math.min(times.length, 30) / 2));
+            const weightedOverallAverage = calculateRecencyWeightedAverage(times, adjustedFactor, 30);
 
             let totalScore = state.totalScore;
             let numCasesSeen = state.numCasesSeen;
 
             let cases = [...state.cases];
             let caseIndex = cases.findIndex(c => c.algset === currCase.algset && c.subset === currCase.subset && c.caseIndex === currCase.caseIndex);
-            let prevCase = null;
+            const prevCases = [...state.prevCases, caseIndex];
 
             if (caseIndex !== -1) {
                 let existingCase = {...cases[caseIndex]};
                 
                 existingCase.times.push(adjustedSolveTime);
-                if (existingCase.times.length > 3) existingCase.times.shift();
 
                 if (existingCase.times.length === 1) {
-                    // If this is first time seeing case then don't update score and set average to solveTime
-                    existingCase.average = adjustedSolveTime;
                     existingCase.seen = true;
                     numCasesSeen += 1;
                 }
 
-                const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor);
+                const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor, 3);
 
                 // If case has 3 solves then update score
-                if (existingCase.times.length === 3) {
-                    const newScore = calculateScore(existingCase.score, existingCase.average, newAverage, overallAverage, state.learningRate);
+                if (existingCase.times.length > 2) {
+                    const newScore = calculateScore(existingCase.score, existingCase.average, newAverage, weightedOverallAverage, state.learningRate);
                     
                     totalScore = totalScore - existingCase.score + newScore;
                     //console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
@@ -101,14 +109,13 @@ function reducer(state, action) {
                 }
                 
                 existingCase.average = newAverage;
-                prevCase = existingCase;
                 cases[caseIndex] = existingCase;
             } else {
                 console.log("Couldn't find case, cases not initialized correctly");
             }
 
             // Optionally sort cases here if needed
-            return { ...state, cases, prevCase, times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: overallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
+            return { ...state, cases, prevCase: state.cases[caseIndex], times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: weightedOverallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
         case 'start_practice_mode':
             const { initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, initialCases } = action.payload;
             return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, totalScore: initialScore*initialCases.length };
@@ -209,8 +216,9 @@ export const PracticeModeProvider = ({ children }) => {
         })
     }
 
-    const updatePracticeMode = (solveTime) => {
+    const updatePracticeMode = () => {
         const currCase = settings.currCase;
+        const solveTime = settings.timer;
 
         dispatch({ type: 'update_case', payload: { solveTime, currCase } });
         

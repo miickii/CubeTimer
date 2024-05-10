@@ -2,7 +2,7 @@ import React from 'react';
 import { useSettings } from '../SettingsContext';
 import { usePracticeMode } from '../PracticeModeContext';
 
-const Stats = ({ solves }) => {
+const Stats = () => {
     const { settings } = useSettings();
     const { state: practiceState } = usePracticeMode();
     
@@ -25,7 +25,7 @@ const Stats = ({ solves }) => {
         return (sum / newTimes.length).toFixed(3);
     };
 
-    const times = solves.map(solve => solve.time);
+    const times = settings.solves.map(solve => solve.time);
 
     const bestTime = times.length > 0 ? Math.min(...times).toFixed(3) : "N/A";
     const worstTime = times.length > 0 ? Math.max(...times).toFixed(3) : "N/A";
@@ -63,7 +63,7 @@ const Stats = ({ solves }) => {
                 </div>
             )}
             <div className="text-xl font-semibold mt-4 mb-8">
-                <p>Total Solves: {times.length}</p>
+                <p>Total Solves: {settings.solves.length}</p>
                 <p>Best Time: {bestTime}</p>
                 <p>Worst Time: {worstTime}</p>
                 <p>Average of 5: {average5}</p>

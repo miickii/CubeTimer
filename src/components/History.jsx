@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
+import { useSettings } from '../SettingsContext';
 
 const containerVariants = {
     closed: {
@@ -39,20 +40,21 @@ const scrambleVariants = {
     }
 };
 
-const History = ({ solves }) => {
+const History = () => {
+    const { settings } = useSettings();
     const [showScramble, setShowScramble] = useState(null);
     const [bestIndex, setBestIndex] = useState(null);
     const [worstIndex, setWorstIndex] = useState(null);
     const [touchStartPos, setTouchStartPos] = useState({ x: null, y: null });
 
     useEffect(() => {
-        const times = solves.map(solve => solve.time);
+        const times = settings.solves.map(solve => solve.time);
         const min = Math.min(...times);
         const max = Math.max(...times);
 
         setBestIndex(times.indexOf(min));
         setWorstIndex(times.indexOf(max));
-    }, [solves]); 
+    }, [settings.solves]); 
 
     const handleTouchStart = (e) => {
         const touchLocation = e.touches[0];
@@ -81,7 +83,7 @@ const History = ({ solves }) => {
     return (
         <div className="flex flex-col bg-gray-50">
             <div className="w-full flex flex-col items-start">
-                {solves.map((solve, index) => (
+                {settings.solves.map((solve, index) => (
                     <div key={index} className='w-full' onTouchStart={handleTouchStart} onTouchEnd={(e) => handleShowScramble(e, index)}>
                         <div className={`flex items-center w-full p-4 ${bestIndex === index ? "bg-accent1" : worstIndex === index ? "bg-[#F71735]" : "bg-lightPrimary"}`}>
                             <div className="mr-2 text-gray-800 text-lg font-medium">

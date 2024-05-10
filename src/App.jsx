@@ -17,32 +17,7 @@ const App = () => {
   const [activeTab, setActiveTab] = useState('solve');
   const [lastTab, setLastTab] = useState(null);
   const [title, setTitle] = useState('CubeTimer');
-  const [times, setTimes] = useState([]);
-  const [timer, setTimer] = useState(0); // Timer state is now here
   const [timerRunning, setTimerRunning] = useState(false);
-
-  const resetTimer = () => setTimer(0); // Reset timer function
-
-  const deleteLastTime = () => {
-    if (times.length > 0) {
-      setTimes(times.slice(0, -1));
-    }
-    resetTimer();
-    setMenuOpen(false);
-  };
-
-  const resetTimes = () => {
-    setTimes([]);
-    resetTimer(); 
-    setMenuOpen(false);
-  };
-
-  const handleTimerStop = (time, scramble) => {
-    setTimerRunning(false);
-    if (time !== null) {
-      setTimes(prev => [...prev, {time: time, scramble: scramble}]);
-    }
-  }
 
   const handleTimerStart = () => {
     setTimerRunning(true);
@@ -131,7 +106,7 @@ const App = () => {
             </button>
   
             {/* Main Menu */}
-            <Menu menuOpen={menuOpen} onClose={() => setMenuOpen(!menuOpen)} deleteLastTime={deleteLastTime} resetTimes={resetTimes} settings={settings} />
+            <Menu menuOpen={menuOpen} onClose={() => setMenuOpen(!menuOpen)} />
 
             {/* Algset Menu */}
             <button className="absolute top-[18px] right-4 text-black text-lg" onTouchEnd={() => {
@@ -155,7 +130,7 @@ const App = () => {
               transition={{ duration: 0.3 }}
               className='h-full'
             >
-              <History solves={times} />
+              <History />
             </motion.div>
           )}
           {activeTab === 'solve' && (
@@ -166,7 +141,7 @@ const App = () => {
               transition={{ duration: 0.3 }}
               className='h-full'
             >
-              <Solve onTimerStop={handleTimerStop} onTimerStart={handleTimerStart} timer={timer} setTimer={setTimer} />
+              <Solve onTimerStop={() => setTimerRunning(false)} onTimerStart={() => setTimerRunning(true)} />
             </motion.div>
           )}
           {activeTab === 'stats' && (
@@ -177,7 +152,7 @@ const App = () => {
               transition={{ duration: 0.3 }}
               className='w-full h-full'
             >
-              <Stats solves={times} />
+              <Stats />
             </motion.div>
           )}
         </AnimatePresence>

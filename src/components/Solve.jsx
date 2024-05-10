@@ -23,8 +23,8 @@ const scrambleVariants = {
     exit: { opacity: 0, transition: { duration: 0.4 } }
 };
 
-const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
-    const { settings, updateScramble } = useSettings();
+const Solve = ({ onTimerStop, onTimerStart }) => {
+    const { settings, updateScramble, updateTimer, addSolve } = useSettings();
     const { state, updatePracticeMode } = usePracticeMode();
     const [isActive, setIsActive] = useState(false);
     const [timerDown, setTimerDown] = useState(false);
@@ -42,8 +42,8 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
 
         timerRef.current = setInterval(() => {
             const milliseconds = stopwatch.getElapsedStartedTime();
-            const time = inspection ? 15-Math.round(milliseconds / 1000) : (milliseconds / 1000).toFixed(2);
-            setTimer(time);
+            const time = inspection ? 15-Math.round(milliseconds / 1000) : (milliseconds / 1000);
+            updateTimer(time);
         }, 1);
     };
 
@@ -60,9 +60,8 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
     };
 
     const handleUpdateScramble = ( solveFinished=true ) => {
-        setShowSolutions(false);
         if (solveFinished && state.active) {
-            updatePracticeMode(parseFloat(timer))
+            updatePracticeMode()
         } else {
             updateScramble();
         }
@@ -71,14 +70,23 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
     const stopTimer = () => {
         stopwatch.stop();
         setIsActive(false);
-        if (isInspecting) {
-            onTimerStop(null, null);
+        onTimerStop();
+        setShowSolutions(false);
+
+        if (isInspecting) { // stop inspection
             setIsInspecting(false);
-            setTimer(0);
+            updateTimer(0);
             setTimerDown(false);
-        } else {
-            onTimerStop(parseFloat(timer), settings.scramble);
-            handleUpdateScramble();
+        } else { // solve finished
+            onTimerStop(parseFloat(settings.timer), settings.scramble);
+
+            if (state.active) {
+                updatePracticeMode();
+            } else {
+                updateScramble();
+            }
+
+            addSolve(settings.timer, settings.scramble);
         }
         clearInterval(timerRef.current);
     }
@@ -114,10 +122,10 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
     }, [settings.subset]); 
 
     useEffect(() => {
-        if (timer < 0) {
+        if (settings.timer < 0) {
             stopTimer();
         }
-    }, [timer])
+    }, [settings.timer])
 
     useEffect(() => {
         if (settings.showPrevSolutions) {
@@ -154,7 +162,8 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
                         <motion.button
                             onClick={(e) => {
                                 e.stopPropagation();
-                                handleUpdateScramble(false);
+                                setShowSolutions(false);
+                                updateScramble();
                             }}
                             whileTap={{ scale: 0.97 }}
                             onTouchStart={(e) => e.stopPropagation()}
@@ -168,7 +177,7 @@ const Solve = ({ onTimerStop, onTimerStart, timer, setTimer }) => {
             
             <div className={`text-4xl font-mono ${timerDown ? 'text-green-500' : 'text-black'} select-none flex flex-col items-center`}>
                 <div className='mb-10'>
-                    {settings.displayMilliseconds ? timer : Math.floor(parseFloat(timer))}s
+                    {(settings.displayMilliseconds && !isInspecting) ? settings.timer.toFixed(2) : Math.floor(settings.timer)}s
                 </div>
                 <AnimatePresence>
                     {isInspecting && (

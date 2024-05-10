@@ -805,7 +805,12 @@ export const useSettings = () => useContext(SettingsContext);
 export const SettingsProvider = ({ children }) => {
     const [settings, setSettings] = useState(() => {
         const savedSettings = loadSettings();
-        return savedSettings || {
+        return {
+            ...savedSettings,
+            solves: savedSettings?.solves || [],
+            timer: 0,
+            timerRunning: false
+        } || {
             useInspection: true,
             displayMilliseconds: true,
             soundEnabled: true,
@@ -822,7 +827,10 @@ export const SettingsProvider = ({ children }) => {
             algset: "3x3x3",
             subsets: initializeSubsets(),
             algsetData: algsets,
-            algsInOrder: false
+            algsInOrder: false,
+            solves: [],
+            timer: 0,
+            timerRunning: false
         }
     });
 
@@ -834,6 +842,21 @@ export const SettingsProvider = ({ children }) => {
     const [currCaseIndex, setCurrCaseIndex] = useState(null);
 
     const aufChange = {"U U": "U2", "U U'": "", "U U2": "U'", "U' U": "", "U' U'": "U2", "U' U2": "U", "U2 U": "U'", "U2 U'": "U", "U2 U2": ""};
+
+    const updateTimer = (time) => {
+        setSettings(prev => ({...prev, timer: time}));
+    }
+    const addSolve = (time, scramble) => {
+        setSettings(prev => ({...prev, solves: [...prev.solves, {time: time, scramble: scramble}]}));
+    };
+
+    const deleteLastTime = () => {
+        setSettings(prev => ({...prev, solves: prev.solves.slice(0, -1), timer: 0}));
+    };
+
+    const resetSolves = () => {
+        setSettings(prev => ({...prev, solves: [], timer: 0}));
+    };
 
     const toggleSetting = (setting) => {
         setSettings(prevSettings => ({
@@ -1043,7 +1066,11 @@ export const SettingsProvider = ({ children }) => {
             setAlgset,
             toggleSubset,
             resetSubsets,
-            setScramble
+            setScramble,
+            addSolve,
+            deleteLastTime,
+            resetSolves,
+            updateTimer
         }}>
             {children}
         </SettingsContext.Provider>

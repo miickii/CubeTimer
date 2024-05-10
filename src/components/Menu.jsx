@@ -4,11 +4,23 @@ import SettingsModal from './SettingsModal';
 import { FiSettings } from 'react-icons/fi';
 import PracticeModeModal from './PracticeModeModal';
 import { usePracticeMode } from '../PracticeModeContext';
+import { useSettings } from '../SettingsContext';
 
-const Menu = ({ menuOpen, onClose, deleteLastTime, resetTimes, settings }) => {
+const Menu = ({ menuOpen, onClose }) => {
+    const { settings, deleteLastTime, resetSolves } = useSettings();
     const [settingsOpen, setSettingsOpen] = useState(false);
     const [practiceModeOpen, setPracticeModeOpen] = useState(false);
     const { state, startPracticeMode, stopPracticeMode } = usePracticeMode();
+
+    const onDeleteLastTime = () => {
+      deleteLastTime();
+      onClose();
+    };
+  
+    const onResetTimes = () => {
+      resetSolves();
+      onClose();
+    };
 
     const handleStartPracticeMode = (practiceSettings) => {
         if (state.active) {
@@ -63,12 +75,15 @@ const Menu = ({ menuOpen, onClose, deleteLastTime, resetTimes, settings }) => {
                     variants={menuVariants}
                   >
                     <div className='flex flex-col '>
-                        <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={deleteLastTime}>
+                        {!state.active && <>
+                          <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={onDeleteLastTime}>
                             Delete Last Time
-                        </button>
-                        <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={resetTimes}>
-                            Reset Times
-                        </button>
+                          </button>
+                          <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={onResetTimes}>
+                              Reset Times
+                          </button>
+                        </>}
+                    
                         {!(settings.algset === "3x3x3") && (
                           <button className="w-full p-2 text-lg font-semibold border-b text-[#D6700A]" onTouchEnd={() => setPracticeModeOpen(true)}>
                               Practice Mode

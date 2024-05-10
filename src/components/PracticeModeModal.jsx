@@ -7,7 +7,7 @@ const mapToOriginal = (displayValue, min, max) => ((displayValue / 6) * (max - m
 
 const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
     const [initialScore, setInitialScore] = useState(7.669);
-    const [epsilonDecay, setEpsilonDecay] = useState(0.0333);
+    const [epsilonDecay, setEpsilonDecay] = useState(0.01);
     const [recencyFactor, setRecencyFactor] = useState(2.33);
     const [learningRate, setLearningRate] = useState(0.5);
     const [displayStats, setDisplayStats] = useState(false);
@@ -15,7 +15,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
 
     // Display values
     const [displayInitialScore, setDisplayInitialScore] = useState(mapToDisplay(initialScore, 3, 10));
-    const [displayEpsilonDecay, setDisplayEpsilonDecay] = useState(mapToDisplay(epsilonDecay, 0.003, 0.05));
+    const [displayEpsilonDecay, setDisplayEpsilonDecay] = useState(mapToDisplay(epsilonDecay, 0.002, 0.05));
     const [displayRecencyFactor, setDisplayRecencyFactor] = useState(mapToDisplay(recencyFactor, 1, 5));
     const [displayLearningRate, setDisplayLearningRate] = useState(mapToDisplay(learningRate, 0, 1));
 
@@ -27,7 +27,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
     };
 
     const handleEpsilonDecayChange = (value) => {
-        const originalValue = mapToOriginal(value, 0, 0.2);
+        const originalValue = mapToOriginal(value, 0.002, 0.05);
         console.log(originalValue)
         setEpsilonDecay(originalValue);
         setDisplayEpsilonDecay(value);

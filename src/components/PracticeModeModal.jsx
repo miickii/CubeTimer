@@ -11,11 +11,11 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
     const [recencyFactor, setRecencyFactor] = useState(2.33);
     const [learningRate, setLearningRate] = useState(0.5);
     const [displayStats, setDisplayStats] = useState(false);
-    const [currInfoPopup, setCurrInfoPopup] = useState(null);
+    const [currInfoPopup, setCurrInfoPopup] = useState(null);0.004
 
     // Display values
     const [displayInitialScore, setDisplayInitialScore] = useState(mapToDisplay(initialScore, 3, 10));
-    const [displayEpsilonDecay, setDisplayEpsilonDecay] = useState(mapToDisplay(epsilonDecay, 0, 0.2));
+    const [displayEpsilonDecay, setDisplayEpsilonDecay] = useState(mapToDisplay(epsilonDecay, 0.003, 0.05));
     const [displayRecencyFactor, setDisplayRecencyFactor] = useState(mapToDisplay(recencyFactor, 1, 5));
     const [displayLearningRate, setDisplayLearningRate] = useState(mapToDisplay(learningRate, 0, 1));
 
@@ -78,7 +78,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                                 Focus Speed:
                             </label>
                             <div className="flex items-center w-2/3 justify-end relative">
-                                <span className="text-gray-700 text-sm font-medium mr-2">{displayEpsilonDecay.toFixed(2)}</span>
+                                <span className="text-gray-700 text-sm font-medium mr-2">{epsilonDecay.toFixed(2)}</span>
                                 <input type="range" min="0" max="6" value={displayEpsilonDecay} onChange={e => handleEpsilonDecayChange(parseFloat(e.target.value))} className="mx-2" />
                                 <button className="relative" onClick={() => handleShowPopup(2)}>?</button>
                                 {currInfoPopup === 2 && <InfoPopup text="Epsilon decay controls how quickly the case selection focuses on weaker areas." />}

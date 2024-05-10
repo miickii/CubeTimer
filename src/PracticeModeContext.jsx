@@ -90,7 +90,7 @@ function reducer(state, action) {
             if (caseIndex !== -1) {
                 existingCase = {...cases[caseIndex]};
                 
-                existingCase.times.push(adjustedSolveTime);
+                existingCase.times.push(parseFloat(adjustedSolveTime.toFixed(2)));
 
                 if (existingCase.times.length === 1) {
                     existingCase.seen = true;

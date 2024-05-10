@@ -91,7 +91,7 @@ const History = () => {
                             </div>
                             -
                             <div className="ml-2 text-black text-xl font-semibold">
-                                {solve.time} s
+                                {solve.time.toFixed(2)} s
                             </div> 
                         </div>
                         <AnimatePresence>

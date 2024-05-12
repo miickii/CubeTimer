@@ -15,7 +15,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
 
     // Display values
     const [displayInitialScore, setDisplayInitialScore] = useState(mapToDisplay(initialScore, 3, 10));
-    const [displayEpsilonDecay, setDisplayEpsilonDecay] = useState(mapToDisplay(epsilonDecay, 0.002, 0.05));
+    const [displayEpsilonDecay, setDisplayEpsilonDecay] = useState(mapToDisplay(epsilonDecay, 0, 0.2)); // Add slider either turn epsilon complete off or have decrease the same way each time
     const [displayRecencyFactor, setDisplayRecencyFactor] = useState(mapToDisplay(recencyFactor, 1, 5));
     const [displayLearningRate, setDisplayLearningRate] = useState(mapToDisplay(learningRate, 0, 1));
 
@@ -27,10 +27,10 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
     };
 
     const handleEpsilonDecayChange = (value) => {
-        const originalValue = mapToOriginal(value, 0.002, 0.05);
-        console.log(originalValue)
-        setEpsilonDecay(originalValue);
-        setDisplayEpsilonDecay(value);
+        setEpsilonDecay(value);
+        //const originalValue = mapToOriginal(value, 0.002, 0.05);
+        //setEpsilonDecay(originalValue);
+        //setDisplayEpsilonDecay(value);
     };
 
     const handleRecencyFactorChange = (value) => {
@@ -79,7 +79,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                             </label>
                             <div className="flex items-center w-2/3 justify-end relative">
                                 <span className="text-gray-700 text-sm font-medium mr-2">{epsilonDecay.toFixed(2)}</span>
-                                <input type="range" min="0" max="6" value={displayEpsilonDecay} onChange={e => handleEpsilonDecayChange(parseFloat(e.target.value))} className="mx-2" />
+                                <input type="range" min="0" max="0.05" step="0.002" value={epsilonDecay} onChange={e => handleEpsilonDecayChange(parseFloat(e.target.value))} className="mx-2" />
                                 <button className="relative" onClick={() => handleShowPopup(2)}>?</button>
                                 {currInfoPopup === 2 && <InfoPopup text="Epsilon decay controls how quickly the case selection focuses on weaker areas." />}
                             </div>

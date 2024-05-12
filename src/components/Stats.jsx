@@ -6,7 +6,7 @@ import { useTimerScrambleContext } from '../TimerScrambleContext';
 const Stats = () => {
     const { settings } = useSettings();
     const { state: practiceState } = usePracticeMode();
-    const { solves } = useTimerScrambleContext(); 
+    const { solves, randomAlg } = useTimerScrambleContext(); 
     
     function removeMinMax(times) {
         let newTimes = [...times]
@@ -48,6 +48,8 @@ const Stats = () => {
                             <p>Session weighted average: {practiceState.overallAverage.toFixed(2)}</p>
                             <p>Cases encountered: {practiceState.numCasesSeen} / {practiceState.numCases}</p>
                             <p>Average score: {(practiceState.totalScore / practiceState.numCases).toFixed(2)}</p>
+                            <p>Epsilon: {practiceState.epsilon}</p>
+                            <p>{randomAlg ? "Random alg" : "Not random alg"}</p>
                             <div className='p-2'>
                                 <p className='w-full text-center'>Most recent case:</p>
                                 {practiceState.prevCase && <>

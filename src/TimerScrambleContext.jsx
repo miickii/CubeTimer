@@ -31,6 +31,7 @@ export const TimerScrambleProvider = ({ children }) => {
         }
     });
     const [nextAlgIndex, setNextAlgIndex] = useState(null); // If user toggles algs in order, then this gets set to and array keeping track of the next case index
+    const [randomAlg, setRandomAlg] = useState(false);
     
     const setAlgset = (algset) => {
         setSelectedAlgset(algset);
@@ -113,7 +114,9 @@ export const TimerScrambleProvider = ({ children }) => {
             nextAlgIndex,
             toggleAlgInOrder,
             algsetData,
-            currAlg
+            currAlg,
+            randomAlg,
+            setRandomAlg
         }}>
             {children}
         </TimerScrambleContext.Provider>

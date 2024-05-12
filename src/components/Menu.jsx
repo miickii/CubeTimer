@@ -4,10 +4,10 @@ import SettingsModal from './SettingsModal';
 import { FiSettings } from 'react-icons/fi';
 import PracticeModeModal from './PracticeModeModal';
 import { usePracticeMode } from '../PracticeModeContext';
-import { useSettings } from '../SettingsContext';
+import { useTimerScrambleContext } from '../TimerScrambleContext';
 
 const Menu = ({ menuOpen, onClose }) => {
-    const { settings, deleteLastTime, resetSolves } = useSettings();
+    const { deleteLastTime, resetSolves, selectedAlgset } = useTimerScrambleContext(); 
     const [settingsOpen, setSettingsOpen] = useState(false);
     const [practiceModeOpen, setPracticeModeOpen] = useState(false);
     const { state, startPracticeMode, stopPracticeMode } = usePracticeMode();
@@ -84,7 +84,7 @@ const Menu = ({ menuOpen, onClose }) => {
                           </button>
                         </>}
                     
-                        {!(settings.algset === "3x3x3") && (
+                        {!(selectedAlgset === "3x3x3") && (
                           <button className="w-full p-2 text-lg font-semibold border-b text-[#D6700A]" onTouchEnd={() => setPracticeModeOpen(true)}>
                               Practice Mode
                           </button>

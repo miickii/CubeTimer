@@ -1,6 +1,6 @@
 import React, { createContext, useReducer, useContext } from 'react';
 import { useSettings } from './SettingsContext';
-
+import { useTimerScrambleContext } from './TimerScrambleContext';
 const PracticeModeContext = createContext();
 
 const initialState = {
@@ -132,20 +132,21 @@ function reducer(state, action) {
 export const PracticeModeProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
     const { settings, updateScramble, setScramble } = useSettings();
+    const { updateAlg, selectedAlgset, selectedSubsets, algsetData, currAlg } = useTimerScrambleContext(); 
 
     const startPracticeMode = (practiceModeSettings) => {
         const initialCases = [];
 
-        let selectedSubsets = settings.subsets[settings.algset];
-        if (selectedSubsets.length === 0) {
-            selectedSubsets = Object.keys(settings.algsetData[settings.algset]); // Use all subsets if none selected
+        let subsets = selectedSubsets[selectedAlgset];
+        if (subsets.length === 0) {
+            subsets = Object.keys(algsetData[selectedAlgset]); // Use all subsets if none selected
         }
-
-        for (let subset of selectedSubsets) {
-            settings.algsetData[settings.algset][subset].forEach((caseData, index) => {
+        for (let i = 0; i < subsets.length; i++) {
+            algsetData[selectedAlgset][subsets[i]].forEach((caseData, index) => {
                 initialCases.push({
-                    algset: settings.algset, 
-                    subset: subset, 
+                    algset: selectedAlgset, 
+                    subset: subsets[i],
+                    subsetIndex: i, 
                     caseIndex: index, 
                     seen: false, // If it has showed up at least once
                     times: [], 
@@ -157,7 +158,7 @@ export const PracticeModeProvider = ({ children }) => {
         }
         
         dispatch({ type: 'start_practice_mode', payload: {...practiceModeSettings, initialCases} });
-        updateScramble();
+        updateAlg();
     };
 
     const getNextCase = (prevCaseIndex) => {
@@ -202,7 +203,7 @@ export const PracticeModeProvider = ({ children }) => {
                 break;
             }
         }
-
+        console.log(nextCaseIndex)
         return state.cases[nextCaseIndex];
     }
 
@@ -219,27 +220,20 @@ export const PracticeModeProvider = ({ children }) => {
         return state.cases[nextCaseIndex];
     }
 
-    const updatePracticeMode = () => {
-        const currCase = settings.currCase;
-        const caseIndex = state.cases.findIndex(c => c.algset === currCase.algset && c.subset === currCase.subset && c.caseIndex === currCase.caseIndex);
-        const solveTime = settings.timer;
+    const updatePracticeMode = (solveTime) => {
+        const caseIndex = state.cases.findIndex(c => c.algset === currAlg.index.algset && c.subsetIndex === currAlg.index.subsetIndex && c.caseIndex === currAlg.index.caseIndex);
 
         dispatch({ type: 'update_case', payload: { solveTime, caseIndex } });
         
         let nextCase = null;
 
         if (Math.random() > state.epsilon) {
-            nextCase = getNextCase();
+            nextCase = getNextCase(caseIndex);
         } else {
             nextCase = getRandomCase();
         }
 
-        const nextCaseScrambleData = settings.algsetData[nextCase.algset][nextCase.subset][nextCase.caseIndex];
-        setScramble({
-            currCase: {algset: nextCase.algset, subset: nextCase.subset, caseIndex: nextCase.caseIndex},
-            scramble: nextCaseScrambleData.scrambles[Math.floor(Math.random() * nextCaseScrambleData.scrambles.length)],
-            solutions: nextCaseScrambleData.solutions
-        })
+        updateAlg(undefined, undefined, [nextCase.subsetIndex, nextCase.caseIndex], false)
         
         dispatch({ type: 'decrement_epsilon' });
     };

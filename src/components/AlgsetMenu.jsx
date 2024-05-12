@@ -1,11 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import React, { useState } from 'react';
-import { useSettings } from '../SettingsContext';
 import { usePracticeMode } from '../PracticeModeContext';
+import { useTimerScrambleContext } from '../TimerScrambleContext';
 import WarningModal from './WarningModal';
 
 const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
-    const { settings, setAlgset, toggleSubset, toggleSetting, resetSubsets } = useSettings();
+    const { setAlgset, toggleSubset, resetSubsets, selectedAlgset, selectedSubsets, algsetData, nextAlgIndex, toggleAlgsInOrder } = useTimerScrambleContext(); 
     const [subsetMenuOpen, setSubsetMenuOpen] = useState(false);
     const { state, stopPracticeMode } = usePracticeMode();
     const [actionAfterWarning, setActionAfterWarning] = useState(null); // Array containing two values [subset or algset, which], also works as indicator if warning modal should show or not
@@ -60,7 +60,7 @@ const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
                         variants={menuVariants}
                     >
                         <div className='flex flex-col'>
-                            {Object.keys(settings.algsetData).map((algset) => (
+                            {Object.keys(algsetData).map((algset) => (
                                 <button
                                     key={algset}
                                     className="p-2 text-lg font-semibold border-b border-gray-200 last:border-b-0 text-[#D6700A]"
@@ -72,7 +72,7 @@ const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
                                     {algset}
                                 </button>
                             ))}
-                            {settings.algset != "3x3x3" && (
+                            {selectedAlgset != "3x3x3" && (
                                 <button
                                     className='text-black'
                                     onTouchEnd={(e) => {
@@ -96,16 +96,16 @@ const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
                                 onTouchEnd={(e) => e.stopPropagation()}
                             >
                                 <div className="grid grid-cols-3 space-y-2">
-                                    {Object.keys(settings.algsetData[settings.algset]).map(subset => (
+                                    {Object.keys(algsetData[selectedAlgset]).map(subset => (
                                         <label key={subset} className="flex items-center justify-between mx-5 text-xl">
                                             <span>{subset}</span>
-                                            <input type="checkbox" checked={settings.subsets[settings.algset].includes(subset)} onChange={() => handleSubsetMenuChange(subset)} />
+                                            <input type="checkbox" checked={selectedSubsets[selectedAlgset].includes(subset)} onChange={() => handleSubsetMenuChange(subset)} />
                                         </label>
                                     ))}
                                 </div>
                                 <label className="my-6 flex justify-center">
                                     <span className='mr-4'>In order</span>
-                                    <input type="checkbox" checked={settings.algsInOrder} onChange={() => toggleSetting('algsInOrder')} />
+                                    <input type="checkbox" checked={nextAlgIndex} onChange={toggleAlgsInOrder} />
                                 </label>
                                 <button className='w-full text-center' onTouchEnd={() => handleSubsetMenuChange(null)}>RESET</button>
                             </motion.div>

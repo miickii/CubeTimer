@@ -6,18 +6,17 @@ import Stats from './components/Stats';
 import { FaHistory, FaPlayCircle, FaChartBar } from 'react-icons/fa';
 import { MdMenu, MdClose } from 'react-icons/md';
 import { useSwipeable } from 'react-swipeable';
-import { useSettings } from './SettingsContext';
 import AlgsetMenu from './components/AlgsetMenu';
 import Menu from './components/Menu';
+import { useTimerScrambleContext } from './TimerScrambleContext';
 
 const App = () => {
-  const { settings } = useSettings();
+  const { selectedAlgset, timerRunning } = useTimerScrambleContext(); 
   const [menuOpen, setMenuOpen] = useState(false);
   const [algsetMenuOpen, setAlgsetMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState('solve');
   const [lastTab, setLastTab] = useState(null);
   const [title, setTitle] = useState('CubeTimer');
-  const [timerRunning, setTimerRunning] = useState(false);
 
   const changeTab = (tab) => {
     if (!timerRunning) {
@@ -110,7 +109,7 @@ const App = () => {
                 setAlgsetMenuOpen(!algsetMenuOpen);
               }
             }}>
-              {settings.algset}
+              {selectedAlgset}
             </button>
             <AlgsetMenu algsetMenuOpen={algsetMenuOpen} onClose={() => setAlgsetMenuOpen(!algsetMenuOpen)} />
           </>}
@@ -137,7 +136,7 @@ const App = () => {
               transition={{ duration: 0.3 }}
               className='h-full'
             >
-              <Solve onTimerStop={() => setTimerRunning(false)} onTimerStart={() => setTimerRunning(true)} />
+              <Solve />
             </motion.div>
           )}
           {activeTab === 'stats' && (

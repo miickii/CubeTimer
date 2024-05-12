@@ -1,10 +1,12 @@
 import React from 'react';
 import { useSettings } from '../SettingsContext';
 import { usePracticeMode } from '../PracticeModeContext';
+import { useTimerScrambleContext } from '../TimerScrambleContext';
 
 const Stats = () => {
     const { settings } = useSettings();
     const { state: practiceState } = usePracticeMode();
+    const { solves } = useTimerScrambleContext(); 
     
     function removeMinMax(times) {
         let newTimes = [...times]
@@ -25,7 +27,7 @@ const Stats = () => {
         return (sum / newTimes.length).toFixed(3);
     };
 
-    const times = settings.solves.map(solve => solve.time);
+    const times = solves.map(solve => solve.time);
 
     const bestTime = times.length > 0 ? Math.min(...times).toFixed(3) : "N/A";
     const worstTime = times.length > 0 ? Math.max(...times).toFixed(3) : "N/A";
@@ -63,7 +65,7 @@ const Stats = () => {
                 </div>
             )}
             <div className="text-xl font-semibold mt-4 mb-8">
-                <p>Total Solves: {settings.solves.length}</p>
+                <p>Total Solves: {solves.length}</p>
                 <p>Best Time: {bestTime}</p>
                 <p>Worst Time: {worstTime}</p>
                 <p>Average of 5: {average5}</p>

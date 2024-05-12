@@ -3,6 +3,7 @@ import { useStopwatch } from "react-use-precision-timer";
 import { AnimatePresence, motion } from 'framer-motion';
 import { useSettings } from '../SettingsContext';
 import { usePracticeMode } from '../PracticeModeContext';
+import { useTimerScrambleContext } from '../TimerScrambleContext';
 
 const buttonVariants = {
     hidden: { y: 200, opacity: 0 },
@@ -23,8 +24,9 @@ const scrambleVariants = {
     exit: { opacity: 0, transition: { duration: 0.4 } }
 };
 
-const Solve = ({ onTimerStop, onTimerStart }) => {
-    const { settings, updateScramble, updateTimer, addSolve } = useSettings();
+const Solve = () => {
+    const { settings } = useSettings();
+    const { setTimerRunning, updateAlg, addSolve, selectedSubsets, currAlg, solves } = useTimerScrambleContext(); 
     const { state, updatePracticeMode } = usePracticeMode();
     const [isActive, setIsActive] = useState(false);
     const [timerDown, setTimerDown] = useState(false);
@@ -32,18 +34,20 @@ const Solve = ({ onTimerStop, onTimerStart }) => {
     const [isInspecting, setIsInspecting] = useState(false);
     const [showSolutions, setShowSolutions] = useState(false);
     const [localSolutions, setLocalSolutions] = useState([]);
+    const [timer, setTimer] = useState(0);
+    const numSolves = useRef(solves.length);
     const timerRef = useRef(null);
     const stopwatch = useStopwatch();
 
     const startTimer = (inspection) => {
-        onTimerStart();
+        setTimerRunning(true);
         stopwatch.start();
         setIsActive(true);
 
         timerRef.current = setInterval(() => {
             const milliseconds = stopwatch.getElapsedStartedTime();
             const time = inspection ? 15-Math.round(milliseconds / 1000) : (milliseconds / 1000);
-            updateTimer(time);
+            setTimer(time);
         }, 1);
     };
 
@@ -70,23 +74,22 @@ const Solve = ({ onTimerStop, onTimerStart }) => {
     const stopTimer = () => {
         stopwatch.stop();
         setIsActive(false);
-        onTimerStop();
+        setTimerRunning(false);
         setShowSolutions(false);
 
         if (isInspecting) { // stop inspection
             setIsInspecting(false);
-            updateTimer(0);
+            setTimer(0);
             setTimerDown(false);
         } else { // solve finished
-            onTimerStop(parseFloat(settings.timer), settings.scramble);
 
             if (state.active) {
-                updatePracticeMode();
+                updatePracticeMode(timer);
             } else {
-                updateScramble();
+                updateAlg();
             }
 
-            addSolve(settings.timer, settings.scramble);
+            addSolve(timer, currAlg.scramble);
         }
         clearInterval(timerRef.current);
     }
@@ -118,22 +121,27 @@ const Solve = ({ onTimerStop, onTimerStart }) => {
     };
 
     useEffect(() => {
-        return () => clearInterval(timerRef.current);
-    }, [settings.subset]); 
-
-    useEffect(() => {
-        if (settings.timer < 0) {
+        if (timer < 0) {
             stopTimer();
         }
-    }, [settings.timer])
+    }, [timer])
 
     useEffect(() => {
         if (settings.showPrevSolutions) {
-            setLocalSolutions(settings.prevSolutions || []);
+            setLocalSolutions(currAlg.prevSolutions || []);
         } else {
-            setLocalSolutions(settings.currSolutions || []);
+            setLocalSolutions(currAlg.solutions || []);
         }
-    }, [settings.currSolutions]);
+    }, [currAlg]);
+
+    useEffect(() => {
+        const currentLength = solves.length;
+        if (currentLength < numSolves.current) {
+            setTimer(0);  // Reset timer only if the length of solves decreases
+        }
+        // Update the ref to the current length after comparing
+        numSolves.current = currentLength;
+    }, [solves.length]);
 
     return (
         <div 
@@ -144,7 +152,7 @@ const Solve = ({ onTimerStop, onTimerStart }) => {
             <div className='min-h-80' onTouchStart={(e) => e.stopPropagation()}>
                 <AnimatePresence>
                     {!isActive && <motion.div variants={scrambleVariants} initial="hidden" animate="visible" exit="exit" className='flex flex-col items-center'>
-                        <div className="text-xl mt-6 mb-5 px-8 h-12">{settings.scramble}</div>
+                        <div className="text-xl mt-6 mb-5 px-8 h-12">{currAlg.scramble}</div>
                         {localSolutions.length > 0 && <>
                             <button
                                 onTouchStart={(e) => e.stopPropagation()}
@@ -163,7 +171,7 @@ const Solve = ({ onTimerStop, onTimerStart }) => {
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setShowSolutions(false);
-                                updateScramble();
+                                updateAlg();
                             }}
                             whileTap={{ scale: 0.97 }}
                             onTouchStart={(e) => e.stopPropagation()}
@@ -177,7 +185,7 @@ const Solve = ({ onTimerStop, onTimerStart }) => {
             
             <div className={`text-4xl font-mono ${timerDown ? 'text-green-500' : 'text-black'} select-none flex flex-col items-center`}>
                 <div className='mb-10'>
-                    {(settings.displayMilliseconds && !isInspecting) ? settings.timer.toFixed(2) : Math.floor(settings.timer)}s
+                    {(settings.displayMilliseconds && !isInspecting) ? timer.toFixed(2) : Math.floor(timer)}s
                 </div>
                 <AnimatePresence>
                     {isInspecting && (

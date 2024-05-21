@@ -20,25 +20,42 @@ const initialState = {
     prevCases: [], // Stored by their indicies in cases array
     numCasesSeen: 0,
     cases: [], // Dynamic queue that updates based on score of each case
-    numCases: null
+    numCases: null,
+    fastCalcScore: false
 };
 
-function calculateRecencyWeightedAverage(times, recencyFactor, maxSolves) {
+function calculateRecencyWeightedStats(times, recencyFactor, maxSolves) {
     let weightedSum = 0;
     let weightSum = 0;
     let currentWeight = 1;
 
-    // only calculate for last x solves, where x is `maxSolves`
     const start = Math.max(0, times.length - maxSolves);
     const relevantTimes = times.slice(start);
 
-    // Loop over the times array from the newest to the oldest
+    // Calculate weighted average
     for (let i = 0; i < relevantTimes.length; i++) {
         weightedSum += relevantTimes[i] * currentWeight;
         weightSum += currentWeight;
         currentWeight *= recencyFactor;  // Increase the weight for the next newer time
     }
-    return weightedSum / weightSum;
+    const weightedAverage = weightedSum / weightSum;
+
+    // Reset variables for standard deviation calculation
+    weightedSum = 0;
+    weightSum = 0;
+    currentWeight = 1;
+
+    // Calculate weighted sum of squared deviations from the mean
+    for (let i = 0; i < relevantTimes.length; i++) {
+        const deviation = relevantTimes[i] - weightedAverage;
+        weightedSum += deviation * deviation * currentWeight;
+        weightSum += currentWeight;
+        currentWeight *= recencyFactor;  // Increase the weight for the next newer time
+    }
+    const weightedVariance = weightedSum / weightSum;
+    const weightedStdDev = Math.sqrt(weightedVariance);
+
+    return { average: weightedAverage, stdDev: weightedStdDev };
 }
 
 function calculateScore(score, prevAverage, newAverage, overallAverage, learningRate, maxIncreaseFactor = 1.5, decayRate = 0.95) {
@@ -71,11 +88,6 @@ function calculateNormalizedScore(score, prevAverage, newAverage, overallAverage
     // Combine deviations weighted by learning rate
     let newScore = score + learningRate * overallZScore;
 
-    // Soften score increases: prevent the score from increasing beyond a certain factor in one update
-    if (learningRate * overallZScore > maxIncreaseFactor) {
-        console.log(learningRate * overallZScore)
-    }
-
     // Apply decay to the score to gradually reduce it over time
     newScore *= decayRate;
 
@@ -102,9 +114,8 @@ function reducer(state, action) {
             // Adjust the recency factor for a longer list
             // The adjustment formula reduces the exponential growth over more items
             const adjustedFactor = Math.pow(state.recencyFactor, 1 / (Math.min(times.length, 30) / 2));
-            const weightedOverallAverage = calculateRecencyWeightedAverage(times, adjustedFactor, 30);
-            const overallStdDev = calculateStandardDeviation(times, weightedOverallAverage);
-
+            const { average: overallAverage, stdDev: overallStdDev } = calculateRecencyWeightedStats(times, adjustedFactor, 30);
+            
             let totalScore = state.totalScore;
             let numCasesSeen = state.numCasesSeen;
 
@@ -122,10 +133,10 @@ function reducer(state, action) {
                     numCasesSeen += 1;
                 }
 
-                const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor, 3);
+                const { average: newAverage } = calculateRecencyWeightedStats(existingCase.times, state.recencyFactor, 3);
                 // If case has 3 solves then update score
-                if (existingCase.times.length > 2) {
-                    const newScore = calculateNormalizedScore(existingCase.score, existingCase.average, newAverage, weightedOverallAverage, overallStdDev, state.learningRate);
+                if (existingCase.times.length > (state.fastCalcScore ? 1 : 2)) {
+                    const newScore = calculateNormalizedScore(existingCase.score, existingCase.average, newAverage, overallAverage, overallStdDev, state.learningRate);
 
                     totalScore = totalScore - existingCase.score + newScore;
                     //console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
@@ -140,10 +151,10 @@ function reducer(state, action) {
             }
 
             // Optionally sort cases here if needed
-            return { ...state, cases, prevCase: existingCase, prevCases, times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: weightedOverallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
+            return { ...state, cases, prevCase: existingCase, prevCases, times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: overallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
         case 'start_practice_mode':
-            const { initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, initialCases } = action.payload;
-            return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, totalScore: initialScore*initialCases.length };
+            const { initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, calcScore, initialCases } = action.payload;
+            return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, totalScore: initialScore*initialCases.length, fastCalcScore: calcScore };
         case 'stop_practice_mode':
             return { ...state, active: false };
         case 'reset_practice_mode':

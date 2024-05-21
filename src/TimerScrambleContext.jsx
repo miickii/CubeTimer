@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 import { addAUF, getRandomAlg } from './utils/scrambleUtils';
 import { useSettings } from './SettingsContext';
 import algsets from './data/algsets';

@@ -6,11 +6,12 @@ const mapToDisplay = (value, min, max) => ((value - min) / (max - min)) * 6;
 const mapToOriginal = (displayValue, min, max) => ((displayValue / 6) * (max - min)) + min;
 
 const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
-    const [initialScore, setInitialScore] = useState(7.669);
+    const [initialScore, setInitialScore] = useState(0);
     const [epsilonDecay, setEpsilonDecay] = useState(0.01);
     const [recencyFactor, setRecencyFactor] = useState(2.33);
     const [learningRate, setLearningRate] = useState(0.5);
     const [displayStats, setDisplayStats] = useState(false);
+    const [calcScore, setCalcScore] = useState(false);
     const [currInfoPopup, setCurrInfoPopup] = useState(null);0.004
 
     // Display values
@@ -64,28 +65,6 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                     <div className="space-y-4">
                         <div className="flex items-center justify-between">
                             <label className="block w-1/3">
-                                Challenge Level:
-                            </label>
-                            <div className="flex items-center w-2/3 justify-end relative">
-                                <span className="text-gray-700 text-sm font-medium mr-2">{displayInitialScore.toFixed(2)}</span>
-                                <input type="range" min="0" max="6" value={displayInitialScore} onChange={e => handleInitialScoreChange(parseFloat(e.target.value))} className="mx-2" />
-                                <button className="relative" onClick={() => handleShowPopup(1)}>?</button>
-                                {currInfoPopup === 1 && <InfoPopup text="Initial score determines the starting difficulty for each new case." />}
-                            </div>
-                        </div>
-                        <div className="flex items-center justify-between">
-                            <label className="block w-1/3">
-                                Focus Speed:
-                            </label>
-                            <div className="flex items-center w-2/3 justify-end relative">
-                                <span className="text-gray-700 text-sm font-medium mr-2">{epsilonDecay.toFixed(2)}</span>
-                                <input type="range" min="0" max="0.05" step="0.002" value={epsilonDecay} onChange={e => handleEpsilonDecayChange(parseFloat(e.target.value))} className="mx-2" />
-                                <button className="relative" onClick={() => handleShowPopup(2)}>?</button>
-                                {currInfoPopup === 2 && <InfoPopup text="Epsilon decay controls how quickly the case selection focuses on weaker areas." />}
-                            </div>
-                        </div>
-                        <div className="flex items-center justify-between">
-                            <label className="block w-1/3">
                                 Adaptiveness:
                             </label>
                             <div className="flex items-center w-2/3 justify-end relative">
@@ -97,7 +76,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                         </div>
                         <div className="flex items-center justify-between">
                             <label className="block w-1/3">
-                                Sensitivity:
+                                Learning Rate:
                             </label>
                             <div className="flex items-center w-2/3 justify-end relative">
                                 <span className="text-gray-700 text-sm font-medium mr-2">{displayLearningRate.toFixed(2)}</span>
@@ -116,8 +95,18 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                                 {currInfoPopup === 5 && <InfoPopup text="Shows stats and information about the practice mode session" />}
                             </div>
                         </div>
+                        <div className="flex items-center justify-between">
+                            <label className="block w-1/3">
+                                Calculate score at 2
+                            </label>
+                            <div className="flex items-center w-2/3 justify-end relative">
+                                <input type="checkbox" checked={calcScore} onChange={() => setCalcScore(!calcScore)} />
+                                <button className="relative" onClick={() => handleShowPopup(5)}>?</button>
+                                {currInfoPopup === 5 && <InfoPopup text="Shows stats and information about the practice mode session" />}
+                            </div>
+                        </div>
                     </div>
-                    <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded" onClick={() => onStart( {initialScore: parseFloat(initialScore), epsilonDecay: parseFloat(epsilonDecay), recencyFactor: parseFloat(recencyFactor), learningRate: parseFloat(learningRate), displayStats: displayStats} )}>{practiceModeActive ? "Stop" : "Start"}</button>
+                    <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded" onClick={() => onStart( {initialScore: parseFloat(initialScore), epsilonDecay: parseFloat(epsilonDecay), recencyFactor: parseFloat(recencyFactor), learningRate: parseFloat(learningRate), displayStats: displayStats, calcScore: calcScore} )}>{practiceModeActive ? "Stop" : "Start"}</button>
                 </div>
             </div>
         </div>

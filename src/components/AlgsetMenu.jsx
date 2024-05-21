@@ -5,7 +5,7 @@ import { useTimerScrambleContext } from '../TimerScrambleContext';
 import WarningModal from './WarningModal';
 
 const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
-    const { setAlgset, toggleSubset, resetSubsets, selectedAlgset, selectedSubsets, algsetData, nextAlgIndex, toggleAlgsInOrder } = useTimerScrambleContext(); 
+    const { setAlgset, toggleSubset, resetSubsets, selectedAlgset, selectedSubsets, algsetData, algsInOrder, toggleAlgsInOrder } = useTimerScrambleContext(); 
     const [subsetMenuOpen, setSubsetMenuOpen] = useState(false);
     const { state, stopPracticeMode } = usePracticeMode();
     const [actionAfterWarning, setActionAfterWarning] = useState(null); // Array containing two values [subset or algset, which], also works as indicator if warning modal should show or not
@@ -103,11 +103,14 @@ const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
                                         </label>
                                     ))}
                                 </div>
-                                <label className="my-6 flex justify-center">
-                                    <span className='mr-4'>In order</span>
-                                    <input type="checkbox" checked={nextAlgIndex} onChange={toggleAlgsInOrder} />
-                                </label>
-                                <button className='w-full text-center' onTouchEnd={() => handleSubsetMenuChange(null)}>RESET</button>
+                                {!state.active && (
+                                    <label className="mt-6 flex justify-center">
+                                        <span className='mr-4'>In order</span>
+                                        <input type="checkbox" checked={algsInOrder} onChange={toggleAlgsInOrder} />
+                                    </label>
+                                )}
+                                
+                                <button className='mt-6 w-full text-center' onTouchEnd={() => handleSubsetMenuChange(null)}>RESET</button>
                             </motion.div>
                         </div>
                     )}

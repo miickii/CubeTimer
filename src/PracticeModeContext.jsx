@@ -168,7 +168,7 @@ function reducer(state, action) {
 
 export const PracticeModeProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState);
-    const { updateAlg, selectedAlgset, selectedSubsets, algsetData, currAlg, setRandomAlg } = useTimerScrambleContext(); 
+    const { updateAlg, selectedAlgset, selectedSubsets, algsetData, currAlg, setRandomAlg, algsInOrder, toggleAlgsInOrder } = useTimerScrambleContext(); 
 
     const startPracticeMode = (practiceModeSettings) => {
         const initialCases = [];
@@ -191,6 +191,10 @@ export const PracticeModeProvider = ({ children }) => {
                     prevScore: 0,
                 })
             });
+        }
+
+        if (algsInOrder) {
+            toggleAlgsInOrder();
         }
         
         dispatch({ type: 'start_practice_mode', payload: {...practiceModeSettings, initialCases} });
@@ -273,7 +277,7 @@ export const PracticeModeProvider = ({ children }) => {
         // }
 
 
-        updateAlg(undefined, undefined, [nextCase.subsetIndex, nextCase.caseIndex], false)
+        updateAlg(undefined, undefined, [nextCase.subsetIndex, nextCase.caseIndex]);
         
         dispatch({ type: 'decrement_epsilon' });
     };

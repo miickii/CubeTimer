@@ -38,7 +38,8 @@ export const TimerScrambleProvider = ({ children }) => {
         solutions: null,
         prevSolutions: null,
     });
-    const [nextAlgIndex, setNextAlgIndex] = useState(initialData ? initialData.nextAlgIndex : null);
+    const [algsInOrder, setAlgsInOrder] = useState(initialData ? initialData.algsInOrder : false);
+    const [nextAlgIndex, setNextAlgIndex] = useState(initialData ? initialData.nextAlgIndex : [0, 0]);
     const [randomAlg, setRandomAlg] = useState(false);
 
     // Save data to localStorage whenever the relevant state variables change
@@ -49,13 +50,14 @@ export const TimerScrambleProvider = ({ children }) => {
             selectedSubsets,
             currAlg,
             nextAlgIndex,
+            algsInOrder
         };
         saveData(dataToSave);
-    }, [solves, selectedAlgset, selectedSubsets, currAlg, nextAlgIndex]);
+    }, [solves, selectedAlgset, selectedSubsets, currAlg, nextAlgIndex, algsInOrder]);
     
     const setAlgset = (algset) => {
         setSelectedAlgset(algset);
-        updateAlg(algset, selectedSubsets[algset], nextAlgIndex ? [0, 0] : null);
+        updateAlg(algset, selectedSubsets[algset], algsInOrder ? [0, 0] : null);
     };
 
     const toggleSubset = (subset) => {
@@ -70,7 +72,7 @@ export const TimerScrambleProvider = ({ children }) => {
                 [selectedAlgset]: newSubsets
             }
         })
-        updateAlg(selectedAlgset, newSubsets, nextAlgIndex ? [0, 0] : null);
+        updateAlg(selectedAlgset, newSubsets, algsInOrder ? [0, 0] : null);
     };
 
     const resetSubsets = () => {
@@ -80,12 +82,13 @@ export const TimerScrambleProvider = ({ children }) => {
                 [selectedAlgset]: []
             }
         })
-        updateAlg(selectedAlgset, [], nextAlgIndex ? [0, 0] : null);
+        updateAlg(selectedAlgset, [], algsInOrder ? [0, 0] : null);
     }
 
     
-    const toggleAlgInOrder = () => {
-        setNextAlgIndex(prevAlgIndex => prevAlgIndex ? null : [0, 0]);
+    const toggleAlgsInOrder = () => {
+        setNextAlgIndex([0, 0]);
+        setAlgsInOrder(prev => !prev);
     }
 
     const addSolve = (time, scramble) => {
@@ -100,12 +103,17 @@ export const TimerScrambleProvider = ({ children }) => {
         setSolves([]);
     };
 
-    const updateAlg = (algset=selectedAlgset, subsets=selectedSubsets[selectedAlgset], algIndex=nextAlgIndex, getNewAlgIndex=true) => {
+    const updateAlg = (algset=selectedAlgset, subsets=selectedSubsets[selectedAlgset], algIndex=null) => {
         if (subsets.length === 0) {
             subsets = Object.keys(algsets[algset]); // Use all subsets if none selected
         }
 
-        const [newAlg, newNextAlgIndex] = getRandomAlg(algset, subsets, algIndex, algsetData, getNewAlgIndex);
+        // If no specific alg is specified we will set it to the next alg in order
+        if (!algIndex && algsInOrder) {
+            algIndex = nextAlgIndex;
+        }
+
+        const [newAlg, newNextAlgIndex] = getRandomAlg(algset, subsets, algIndex, algsetData, algsInOrder);
 
         setCurrAlg(prevAlg => ({
             index: newAlg.index,
@@ -131,8 +139,8 @@ export const TimerScrambleProvider = ({ children }) => {
             resetSubsets,
             selectedAlgset,
             selectedSubsets,
-            nextAlgIndex,
-            toggleAlgInOrder,
+            algsInOrder,
+            toggleAlgsInOrder,
             algsetData,
             currAlg,
             randomAlg,

@@ -62,7 +62,7 @@ export const addAUF = (aufIndex, scramble, solutions=null) => {
     return [newScramble, newSolutions]
 }
 
-export const getRandomAlg = (algset, selectedSubsets, algIndex, algsetData, getNewAlgIndex) => {
+export const getRandomAlg = (algset, selectedSubsets, algIndex, algsetData, getNewAlgIndex=false) => {
     if (!algset) return [{index: null, scramble: generateScramble(), solutions: null}, null];
 
     if (algset === "3x3x3") {
@@ -85,7 +85,7 @@ export const getRandomAlg = (algset, selectedSubsets, algIndex, algsetData, getN
     }
 
     let newAlgIndex = null;
-    if (algIndex && getNewAlgIndex) { // Means that algs in order is toggled, and we want to update new caseIndex
+    if (getNewAlgIndex) { // Means that algs in order is toggled, and we want to update new caseIndex
         const newCaseIndex = (algIndex[1]+1) % algsetData[algset][subset].length;
         const newSubsetIndex = newCaseIndex === 0 ? (algIndex[0]+1) % selectedSubsets.length : algIndex[0];
 

@@ -11,7 +11,7 @@ const initialState = {
     overallAverage: 0,
     epsilon: 1,
     epsilonDecay: 0.01,
-    initialScore: 10,
+    initialScore: 0,
     recencyFactor: 2,
     learningRate: 0.5,
     displayStats: false,
@@ -63,6 +63,31 @@ function calculateScore(score, prevAverage, newAverage, overallAverage, learning
     return newScore;
 }
 
+function calculateNormalizedScore(score, prevAverage, newAverage, overallAverage, overallStdDev, learningRate, maxIncreaseFactor = 1.5, decayRate = 0.95) {
+    // Calculate z-scores
+    const std = overallStdDev ? overallStdDev : 1
+    const overallZScore = (newAverage - overallAverage) / std;
+
+    // Combine deviations weighted by learning rate
+    let newScore = score + learningRate * overallZScore;
+
+    // Soften score increases: prevent the score from increasing beyond a certain factor in one update
+    if (learningRate * overallZScore > maxIncreaseFactor) {
+        console.log(learningRate * overallZScore)
+    }
+
+    // Apply decay to the score to gradually reduce it over time
+    newScore *= decayRate;
+
+    return newScore;
+}
+
+function calculateStandardDeviation(times, mean) {
+    const squaredDiffs = times.map(time => Math.pow(time - mean, 2));
+    const avgSquareDiff = squaredDiffs.reduce((sum, diff) => sum + diff, 0) / times.length;
+    return Math.sqrt(avgSquareDiff);
+}
+
 function reducer(state, action) {
     switch (action.type) {
         case 'update_case':
@@ -78,6 +103,7 @@ function reducer(state, action) {
             // The adjustment formula reduces the exponential growth over more items
             const adjustedFactor = Math.pow(state.recencyFactor, 1 / (Math.min(times.length, 30) / 2));
             const weightedOverallAverage = calculateRecencyWeightedAverage(times, adjustedFactor, 30);
+            const overallStdDev = calculateStandardDeviation(times, weightedOverallAverage);
 
             let totalScore = state.totalScore;
             let numCasesSeen = state.numCasesSeen;
@@ -99,8 +125,8 @@ function reducer(state, action) {
                 const newAverage = calculateRecencyWeightedAverage(existingCase.times, state.recencyFactor, 3);
                 // If case has 3 solves then update score
                 if (existingCase.times.length > 2) {
-                    const newScore = calculateScore(existingCase.score, existingCase.average, newAverage, weightedOverallAverage, state.learningRate);
-                    
+                    const newScore = calculateNormalizedScore(existingCase.score, existingCase.average, newAverage, weightedOverallAverage, overallStdDev, state.learningRate);
+
                     totalScore = totalScore - existingCase.score + newScore;
                     //console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
                     existingCase.prevScore = existingCase.score;
@@ -150,8 +176,8 @@ export const PracticeModeProvider = ({ children }) => {
                     seen: false, // If it has showed up at least once
                     times: [], 
                     average: 0, 
-                    score: practiceModeSettings.initialScore,
-                    prevScore: practiceModeSettings.initialScore,
+                    score: 0,
+                    prevScore: 0,
                 })
             });
         }
@@ -224,15 +250,17 @@ export const PracticeModeProvider = ({ children }) => {
 
         dispatch({ type: 'update_case', payload: { solveTime, caseIndex } });
         
-        let nextCase = null;
+        let nextCase = getNextCase(caseIndex);
+        setRandomAlg(false);
 
-        if (Math.random() > state.epsilon) {
-            nextCase = getNextCase(caseIndex);
-            setRandomAlg(false);
-        } else {
-            nextCase = getRandomCase();
-            setRandomAlg(true);
-        }
+        // if (Math.random() > state.epsilon) {
+        //     nextCase = getNextCase(caseIndex);
+        //     setRandomAlg(false);
+        // } else {
+        //     nextCase = getRandomCase();
+        //     setRandomAlg(true);
+        // }
+
 
         updateAlg(undefined, undefined, [nextCase.subsetIndex, nextCase.caseIndex], false)
         

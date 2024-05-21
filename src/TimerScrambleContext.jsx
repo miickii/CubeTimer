@@ -13,25 +13,45 @@ const initializeSubsets = () => {
     return subsets;
 };
 
+const loadData = () => {
+    const data = localStorage.getItem('casesSolvesData');
+    return data ? JSON.parse(data) : null;
+};
+
+const saveData = (data) => {
+    localStorage.setItem('casesSolvesData', JSON.stringify(data));
+};
+
 export const useTimerScrambleContext = () => useContext(TimerScrambleContext);
 
 export const TimerScrambleProvider = ({ children }) => {
+    const initialData = loadData();
+    
     const [timerRunning, setTimerRunning] = useState(false);
-    // save following in localStorage:
-    const [solves, setSolves] = useState([]);
+    const [solves, setSolves] = useState(initialData ? initialData.solves : []);
     const algsetData = algsets;
-    const [selectedAlgset, setSelectedAlgset] = useState("3x3x3");
-    const [selectedSubsets, setSelectedSubsets] = useState(initializeSubsets());
-    const [currAlg, setCurrAlg] = useState(() => {
-        return {
-            index: null,
-            scramble: '',
-            solutions: null,
-            prevSolutions: null,
-        }
+    const [selectedAlgset, setSelectedAlgset] = useState(initialData ? initialData.selectedAlgset : "3x3x3");
+    const [selectedSubsets, setSelectedSubsets] = useState(initialData ? initialData.selectedSubsets : initializeSubsets());
+    const [currAlg, setCurrAlg] = useState(initialData ? initialData.currAlg : {
+        index: null,
+        scramble: '',
+        solutions: null,
+        prevSolutions: null,
     });
-    const [nextAlgIndex, setNextAlgIndex] = useState(null); // If user toggles algs in order, then this gets set to and array keeping track of the next case index
+    const [nextAlgIndex, setNextAlgIndex] = useState(initialData ? initialData.nextAlgIndex : null);
     const [randomAlg, setRandomAlg] = useState(false);
+
+    // Save data to localStorage whenever the relevant state variables change
+    useEffect(() => {
+        const dataToSave = {
+            solves,
+            selectedAlgset,
+            selectedSubsets,
+            currAlg,
+            nextAlgIndex,
+        };
+        saveData(dataToSave);
+    }, [solves, selectedAlgset, selectedSubsets, currAlg, nextAlgIndex]);
     
     const setAlgset = (algset) => {
         setSelectedAlgset(algset);

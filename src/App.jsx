@@ -9,6 +9,7 @@ import { useSwipeable } from 'react-swipeable';
 import AlgsetMenu from './components/AlgsetMenu';
 import Menu from './components/Menu';
 import { useTimerScrambleContext } from './TimerScrambleContext';
+import Test from './components/Test';
 
 const App = () => {
   const { selectedAlgset, timerRunning } = useTimerScrambleContext(); 
@@ -24,7 +25,7 @@ const App = () => {
       setActiveTab(tab); // Change the tab immediately
     }
   }
-  
+
   useEffect(() => {
     switch (activeTab) {
       case 'solve':
@@ -36,12 +37,15 @@ const App = () => {
       case 'stats':
         setTitle('Statistics');
         break; // Ensures execution stops here
+      case 'test':
+        setTitle('TEST');
+        break;
     }
   }, [activeTab]); 
 
   const getDirection = (tab) => {
     if (lastTab === null) return 0;
-    const order = ['history', 'solve', 'stats'];
+    const order = ['history', 'solve', 'stats', 'test'];
     const currentIndex = order.indexOf(activeTab);
     const lastIndex = order.indexOf(lastTab);
 
@@ -53,7 +57,7 @@ const App = () => {
     normal: { rotate: 0 }
   };
 
-  const tabs = ['history', 'solve', 'stats'];
+  const tabs = ['history', 'solve', 'stats', 'test'];
 
   const handleSwipe = useSwipeable({
     onSwipedLeft: (eventData) => {
@@ -84,7 +88,7 @@ const App = () => {
   });
 
   return (
-    <div className="relative bg-[#f69435] flex flex-col h-dvh" {...handleSwipe}>
+    <div className="relative bg-[#f69435] flex flex-col h-svh" {...handleSwipe}>
       <div className="relative bg-[#f69435] text-white h-16 flex-shrink-0 flex justify-center items-center">
           {activeTab === 'solve' && <>
             <button className="absolute top-[14px] left-4 bg-white text-black p-2 rounded-full shadow flex items-center justify-center" onTouchEnd={() => {
@@ -148,6 +152,19 @@ const App = () => {
               className='w-full h-full'
             >
               <Stats />
+            </motion.div>
+          )}
+          {activeTab === 'test' && (
+            <motion.div
+              key="test"
+              initial={{ x: getDirection('test'), opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className='relative w-full h-full'
+            >
+              <div className='bg-black'>
+
+              </div>
             </motion.div>
           )}
         </AnimatePresence>

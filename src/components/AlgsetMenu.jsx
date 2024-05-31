@@ -53,7 +53,7 @@ const AlgsetMenu = ({ algsetMenuOpen, onClose }) => {
             {algsetMenuOpen && (
                 <div className='fixed inset-0 bg-black bg-opacity-25 z-30 menu' onTouchEnd={onClose}>
                     <motion.div
-                        className="absolute top-[50px] right-4 px-4 py-2 bg-white rounded-lg shadow-lg"
+                        className="absolute algset-menu-content px-4 py-2 bg-white rounded-lg shadow-lg"
                         initial="hiddenRight"
                         animate="visible"
                         exit="hiddenRight"

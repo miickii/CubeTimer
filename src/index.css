@@ -2,18 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/*
 body {
-    background-color: #f69435;
+    margin: 0;
+    
+    background-color: #f69435; /* Your background color 
+    height: 100vh; /* Ensure the body takes full viewport height 
 }
+
 body, html {
+    
+}
+*/
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     user-select: none;
     touch-action: manipulation; /* This can help improve touch responsiveness and prevent default touch behaviors like scrolling and zooming */
     overflow: hidden; /* Prevents scrolling in all directions */
-    position: fixed;
+    background-color: #f69435;
+}
+body {
+    width: 100%;
+    height: 100vh;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 body, button, input, textarea {
     -webkit-touch-callout: none; /* iOS Safari */
+}
+
+.app-container {
+    position: fixed;
+    height: 100dvh;
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.standalone .tab-select-pb {
+    padding-bottom: 2rem;
+}
+
+.browser .tab-select-pb {
+    padding-bottom: 1rem;
 }
 
 .select-text {
@@ -22,6 +53,16 @@ body, button, input, textarea {
 
 .top-shadow {
     box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1), 0 -2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.menu-content {
+    top: calc(54px + var(--safe-area-inset-top));
+    left: calc(16px + var(--safe-area-inset-left));
+}
+
+.algset-menu-content {
+    top: calc(50px + var(--safe-area-inset-top));
+    right: calc(16px + var(--safe-area-inset-left)); 
 }
 
 input[type=checkbox] {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { useTimerScrambleContext } from '../TimerScrambleContext';
 
@@ -41,11 +41,12 @@ const scrambleVariants = {
 };
 
 const History = () => {
-    const { solves } = useTimerScrambleContext(); 
+    const { solves, solvesSortOrder } = useTimerScrambleContext(); 
     const [showScramble, setShowScramble] = useState(null);
     const [bestIndex, setBestIndex] = useState(null);
     const [worstIndex, setWorstIndex] = useState(null);
     const [touchStartPos, setTouchStartPos] = useState({ x: null, y: null });
+    const scrambleRefs = useRef([]);
 
     useEffect(() => {
         const times = solves.map(solve => solve.time);
@@ -72,6 +73,11 @@ const History = () => {
                 setShowScramble(null);
             } else {
                 setShowScramble(index);
+                setTimeout(() => {
+                    if (scrambleRefs.current[index]) {
+                        scrambleRefs.current[index].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                }, 200);
             }
         }
     };
@@ -79,15 +85,21 @@ const History = () => {
     const handleScrambleTouchEnd = (e) => {
         e.stopPropagation();  // Prevents the event from bubbling up to the onTouchEnd on the parent
     };
+    
+    // Include original index in each solve
+    const solvesWithIndex = solves.map((solve, index) => ({ ...solve, originalIndex: index + 1 }));
+
+    // Conditionally sort solves based on sortOrder
+    const sortedSolves = solvesSortOrder === 'asc' ? solvesWithIndex : [...solvesWithIndex].reverse();
 
     return (
         <div className="flex flex-col bg-gray-50">
             <div className="w-full flex flex-col items-start">
-                {solves.map((solve, index) => (
-                    <div key={index} className='w-full' onTouchStart={handleTouchStart} onTouchEnd={(e) => handleShowScramble(e, index)}>
-                        <div className={`flex items-center w-full p-4 ${bestIndex === index ? "bg-accent1" : worstIndex === index ? "bg-[#F71735]" : "bg-lightPrimary"}`}>
+                {sortedSolves.map((solve) => (
+                    <div key={solve.originalIndex} className='w-full' onTouchStart={handleTouchStart} onTouchEnd={(e) => handleShowScramble(e, solve.originalIndex)}>
+                        <div className={`flex items-center w-full p-4 ${bestIndex === solve.originalIndex-1 ? "bg-accent1" : worstIndex === solve.originalIndex-1 ? "bg-[#F71735]" : "bg-lightPrimary"}`}>
                             <div className="mr-2 text-gray-800 text-lg font-medium">
-                                # {index + 1}
+                                # {solve.originalIndex}
                             </div>
                             -
                             <div className="ml-2 text-black text-xl font-semibold">
@@ -96,17 +108,18 @@ const History = () => {
                         </div>
                         <AnimatePresence>
                             <motion.div
+                                ref={el => scrambleRefs.current[solve.originalIndex] = el}
                                 variants={containerVariants}
                                 initial="closed"
-                                animate={showScramble === index ? "open" : "closed"}
+                                animate={showScramble === solve.originalIndex ? "open" : "closed"}
                                 className='bg-white flex items-center'
                             >
                                 <motion.div 
                                     variants={scrambleVariants}
                                     initial="closed"
-                                    animate={showScramble === index ? "open" : "closed"}
+                                    animate={showScramble === solve.originalIndex ? "open" : "closed"}
                                     exit="exit"
-                                    className='text-black texl-lg m-4 select-text'
+                                    className={`text-black texl-lg m-4 select-text ${showScramble !== solve.originalIndex && "hidden"}`}
                                 >
                                     {solve.scramble}
                                 </motion.div>

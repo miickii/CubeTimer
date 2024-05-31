@@ -1,23 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Solve from './components/Solve';
 import History from './components/History';
 import Stats from './components/Stats';
 import { FaHistory, FaPlayCircle, FaChartBar } from 'react-icons/fa';
-import { MdMenu, MdClose } from 'react-icons/md';
 import { useSwipeable } from 'react-swipeable';
-import AlgsetMenu from './components/AlgsetMenu';
-import Menu from './components/Menu';
 import { useTimerScrambleContext } from './TimerScrambleContext';
 import Test from './components/Test';
+import Header from './components/Header';
 
 const App = () => {
-  const { selectedAlgset, timerRunning } = useTimerScrambleContext(); 
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [algsetMenuOpen, setAlgsetMenuOpen] = useState(false);
+  const { timerRunning } = useTimerScrambleContext(); 
   const [activeTab, setActiveTab] = useState('solve');
   const [lastTab, setLastTab] = useState(null);
-  const [title, setTitle] = useState('CubeTimer');
 
   const changeTab = (tab) => {
     if (!timerRunning) {
@@ -26,23 +21,6 @@ const App = () => {
     }
   }
 
-  useEffect(() => {
-    switch (activeTab) {
-      case 'solve':
-        setTitle('CubeTimer');
-        break; // Prevents fall-through
-      case 'history':
-        setTitle('Solve Time History');
-        break; // Prevents fall-through
-      case 'stats':
-        setTitle('Statistics');
-        break; // Ensures execution stops here
-      case 'test':
-        setTitle('TEST');
-        break;
-    }
-  }, [activeTab]); 
-
   const getDirection = (tab) => {
     if (lastTab === null) return 0;
     const order = ['history', 'solve', 'stats', 'test'];
@@ -50,11 +28,6 @@ const App = () => {
     const lastIndex = order.indexOf(lastTab);
 
     return currentIndex > lastIndex ? 300 : -300;
-  };
-
-  const iconVariants = {
-    rotated: { rotate: 180 },
-    normal: { rotate: 0 }
   };
 
   const tabs = ['history', 'solve', 'stats', 'test'];
@@ -88,37 +61,9 @@ const App = () => {
   });
 
   return (
-    <div className="relative bg-[#f69435] flex flex-col h-svh" {...handleSwipe}>
-      <div className="relative bg-[#f69435] text-white h-16 flex-shrink-0 flex justify-center items-center">
-          {activeTab === 'solve' && <>
-            <button className="absolute top-[14px] left-4 bg-white text-black p-2 rounded-full shadow flex items-center justify-center" onTouchEnd={() => {
-                if (!timerRunning) {
-                  setMenuOpen(!menuOpen);
-                }
-            }}>
-              <motion.div
-                variants={iconVariants}
-                animate={menuOpen ? "rotated" : "normal"}
-              >
-                {menuOpen ? <MdClose size={20} /> : <MdMenu size={20} />}
-              </motion.div>
-            </button>
-  
-            {/* Main Menu */}
-            <Menu menuOpen={menuOpen} onClose={() => setMenuOpen(!menuOpen)} />
+    <div className="relative bg-[#f69435] flex flex-col h-full" {...handleSwipe}>
+      <Header activeTab={activeTab} /> {/* Controls title and menus */}
 
-            {/* Algset Menu */}
-            <button className="absolute top-[18px] right-4 text-black text-lg" onTouchEnd={() => {
-              if (!timerRunning) {
-                setAlgsetMenuOpen(!algsetMenuOpen);
-              }
-            }}>
-              {selectedAlgset}
-            </button>
-            <AlgsetMenu algsetMenuOpen={algsetMenuOpen} onClose={() => setAlgsetMenuOpen(!algsetMenuOpen)} />
-          </>}
-          <h1 className="text-2xl text-black font-bold">{title}</h1>
-      </div>
       <div className="flex-grow w-screen overflow-auto bg-lightPrimary">
         <AnimatePresence>
           {activeTab === 'history' && (
@@ -162,14 +107,12 @@ const App = () => {
               transition={{ duration: 0.3 }}
               className='relative w-full h-full'
             >
-              <div className='bg-black'>
-
-              </div>
+              <Test />
             </motion.div>
           )}
         </AnimatePresence>
       </div>
-      <div className="flex justify-around items-center bg-[#f69435] top-shadow py-4 pb-4 text-white">
+      <div className="flex justify-around items-center top-shadow pt-4 tab-select-pb text-white">
         <button onTouchEnd={() => changeTab('history')} className={`flex flex-col items-center justify-center text-sm ${activeTab === 'history' ? 'text-black' : 'text-gray-100'}`}>
           <FaHistory size={24} className="mb-1" />
           History

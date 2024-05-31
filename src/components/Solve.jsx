@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useSettings } from '../SettingsContext';
 import { usePracticeMode } from '../PracticeModeContext';
 import { useTimerScrambleContext } from '../TimerScrambleContext';
+import ScoreIndicator from './ScoreIndicator';
 
 const buttonVariants = {
     hidden: { y: 200, opacity: 0 },
@@ -35,6 +36,7 @@ const Solve = () => {
     const [showSolutions, setShowSolutions] = useState(false);
     const [localSolutions, setLocalSolutions] = useState([]);
     const [timer, setTimer] = useState(0);
+    const [scoreChange, setScoreChange] = useState(null);
     const numSolves = useRef(solves.length);
     const timerRef = useRef(null);
     const stopwatch = useStopwatch();
@@ -52,6 +54,8 @@ const Solve = () => {
     };
 
     const toggleInspection = () => {
+        if (scoreChange) setScoreChange(null);
+
         if (settings.useInspection && !isInspecting) {
             setIsInspecting(true);
             startTimer(true); // Start the inspection timer
@@ -143,6 +147,15 @@ const Solve = () => {
         numSolves.current = currentLength;
     }, [solves.length]);
 
+    // Handles change of score in order to trigger score indicator animation
+    useEffect(() => {
+        if (state.scoreChange > 0) {
+            setScoreChange('up');
+        } else if (state.scoreChange < 0) {
+            setScoreChange('down');
+        }
+    }, [state.scoreChange]);
+
     return (
         <div 
             onTouchStart={handleTouchStart}
@@ -187,6 +200,9 @@ const Solve = () => {
                 <div className='mb-10'>
                     {(settings.displayMilliseconds && !isInspecting) ? timer.toFixed(2) : Math.floor(timer)}s
                 </div>
+                
+                {state.active && <ScoreIndicator scoreChange={scoreChange} />}
+
                 <AnimatePresence>
                     {isInspecting && (
                         <motion.button

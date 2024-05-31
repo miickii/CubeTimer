@@ -796,25 +796,11 @@ export const useSettings = () => useContext(SettingsContext);
 
 export const SettingsProvider = ({ children }) => {
     const [settings, setSettings] = useState(() => {
-        //const savedSettings = loadSettings();
+        const savedSettings = loadSettings();
 
-        return {
-            useInspection: true,
-            displayMilliseconds: true,
-            soundEnabled: true,
-            averages: {
-                avg25: false,
-                avg50: false,
-                avg100: false
-            },
-            showPrevSolutions: true,
-        }
         if (savedSettings) {
             return {
-                ...savedSettings,
-                solves: savedSettings.solves || [],
-                timer: 0,
-                timerRunning: false
+                ...savedSettings
             }
         } else {
             return {
@@ -826,25 +812,14 @@ export const SettingsProvider = ({ children }) => {
                     avg50: false,
                     avg100: false
                 },
-                scramble: "D U' B' U' F' U B2 F2 U2 L' R D2 R' L R D2 U2 F",
-                currCase: null,
-                currSolutions: null,
-                prevSolutions: null,
                 showPrevSolutions: true,
-                algset: "3x3x3",
-                subsets: initializeSubsets(),
-                algsetData: algsets,
-                algsInOrder: false,
-                solves: [],
-                timer: 0,
-                timerRunning: false
             }
         }
     });
 
-    // useEffect(() => {
-    //     saveSettings(settings);
-    // }, [settings]);
+    useEffect(() => {
+        saveSettings(settings);
+    }, [settings]);
 
     const toggleSetting = (setting) => {
         setSettings(prevSettings => ({

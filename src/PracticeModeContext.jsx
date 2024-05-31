@@ -1,4 +1,4 @@
-import React, { createContext, useReducer, useContext } from 'react';
+import React, { createContext, useReducer, useContext, useEffect } from 'react';
 import { useSettings } from './SettingsContext';
 import { useTimerScrambleContext } from './TimerScrambleContext';
 const PracticeModeContext = createContext();
@@ -17,11 +17,21 @@ const initialState = {
     displayStats: false,
     totalScore: null,
     prevCase: null,
+    scoreChange: 0,
     prevCases: [], // Stored by their indicies in cases array
     numCasesSeen: 0,
     cases: [], // Dynamic queue that updates based on score of each case
     numCases: null,
     fastCalcScore: false
+};
+
+const loadData = () => {
+    const data = localStorage.getItem('practiceModeData');
+    return data ? JSON.parse(data) : null;
+};
+
+const saveData = (data) => {
+    localStorage.setItem('practiceModeData', JSON.stringify(data));
 };
 
 function calculateRecencyWeightedStats(times, recencyFactor, maxSolves) {
@@ -122,6 +132,7 @@ function reducer(state, action) {
             let cases = [...state.cases];
             const prevCases = [...state.prevCases, caseIndex];
             let existingCase = null;
+            let scoreChange = 0
 
             if (caseIndex !== -1) {
                 existingCase = {...cases[caseIndex]};
@@ -137,7 +148,8 @@ function reducer(state, action) {
                 // If case has 3 solves then update score
                 if (existingCase.times.length > (state.fastCalcScore ? 1 : 2)) {
                     const newScore = calculateNormalizedScore(existingCase.score, existingCase.average, newAverage, overallAverage, overallStdDev, state.learningRate);
-
+                    scoreChange = existingCase.score - newScore
+                    
                     totalScore = totalScore - existingCase.score + newScore;
                     //console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
                     existingCase.prevScore = existingCase.score;
@@ -151,7 +163,7 @@ function reducer(state, action) {
             }
 
             // Optionally sort cases here if needed
-            return { ...state, cases, prevCase: existingCase, prevCases, times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: overallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
+            return { ...state, cases, prevCase: existingCase, scoreChange, prevCases, times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: overallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
         case 'start_practice_mode':
             const { initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, calcScore, initialCases } = action.payload;
             return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, totalScore: initialScore*initialCases.length, fastCalcScore: calcScore };
@@ -167,8 +179,31 @@ function reducer(state, action) {
 }
 
 export const PracticeModeProvider = ({ children }) => {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const practiceModeData = loadData();
+    const [state, dispatch] = useReducer(reducer, practiceModeData ? practiceModeData : initialState);
     const { updateAlg, selectedAlgset, selectedSubsets, algsetData, currAlg, setRandomAlg, algsInOrder, toggleAlgsInOrder } = useTimerScrambleContext(); 
+
+    // Save state on important events
+    useEffect(() => {
+        const handleBeforeUnload = () => {
+            saveData(state);
+        };
+
+        const handleVisibilityChange = () => {
+            if (document.visibilityState === 'hidden') {
+                saveData(state);
+            }
+        };
+
+        window.addEventListener('beforeunload', handleBeforeUnload);
+        document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        return () => {
+            window.removeEventListener('beforeunload', handleBeforeUnload);
+            document.removeEventListener('visibilitychange', handleVisibilityChange);
+            saveData(state); // Save state on component unmount
+        };
+    }, []);
 
     const startPracticeMode = (practiceModeSettings) => {
         const initialCases = [];
@@ -283,7 +318,7 @@ export const PracticeModeProvider = ({ children }) => {
     };
     
     const stopPracticeMode = () => {
-        dispatch({ type: 'stop_practice_mode' });
+        dispatch({ type: 'reset_practice_mode' });
     };
     
     const resetPracticeMode = () => {

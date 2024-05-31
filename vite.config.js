@@ -4,6 +4,9 @@ import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
   base: '/CubeTimer/',
+  server: {
+    host: '0.0.0.0', // Allow access from local network
+  },
   plugins: [
     react(),
     VitePWA({

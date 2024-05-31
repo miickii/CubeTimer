@@ -29,6 +29,7 @@ export const TimerScrambleProvider = ({ children }) => {
     
     const [timerRunning, setTimerRunning] = useState(false);
     const [solves, setSolves] = useState(initialData ? initialData.solves : []);
+    const [solvesSortOrder, setSolvesSortOrder] = useState('asc'); // State for sorting order of solves in history tab
     const algsetData = algsets;
     const [selectedAlgset, setSelectedAlgset] = useState(initialData ? initialData.selectedAlgset : "3x3x3");
     const [selectedSubsets, setSelectedSubsets] = useState(initialData ? initialData.selectedSubsets : initializeSubsets());
@@ -103,6 +104,10 @@ export const TimerScrambleProvider = ({ children }) => {
         setSolves([]);
     };
 
+    const toggleSortOrder = () => {
+        setSolvesSortOrder(solvesSortOrder === 'asc' ? 'desc' : 'asc');
+    };
+
     const updateAlg = (algset=selectedAlgset, subsets=selectedSubsets[selectedAlgset], algIndex=null) => {
         if (subsets.length === 0) {
             subsets = Object.keys(algsets[algset]); // Use all subsets if none selected
@@ -144,7 +149,9 @@ export const TimerScrambleProvider = ({ children }) => {
             algsetData,
             currAlg,
             randomAlg,
-            setRandomAlg
+            setRandomAlg,
+            solvesSortOrder,
+            toggleSortOrder
         }}>
             {children}
         </TimerScrambleContext.Provider>

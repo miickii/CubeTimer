@@ -65,40 +65,40 @@ const Menu = ({ menuOpen, onClose }) => {
 
     return (
         <AnimatePresence>
-              {menuOpen && (
-                <div className='fixed inset-0 bg-black bg-opacity-25 z-40 menu' onTouchEnd={onClose}>
-                  <motion.div
-                    className="absolute top-[54px] left-4 bg-white rounded-lg shadow-md p-4"
-                    initial="hiddenLeft"
-                    animate="visible"
-                    exit="hiddenLeft"
-                    variants={menuVariants}
-                  >
-                    <div className='flex flex-col '>
-                        {!state.active && <>
-                          <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={onDeleteLastTime}>
-                            Delete Last Time
-                          </button>
-                          <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={onResetTimes}>
-                              Reset Times
-                          </button>
-                        </>}
-                    
-                        {!(selectedAlgset === "3x3x3") && (
-                          <button className="w-full p-2 text-lg font-semibold border-b text-[#D6700A]" onTouchEnd={() => setPracticeModeOpen(true)}>
-                              Practice Mode
-                          </button>
-                        )}
-                        <button className="flex items-center justify-center py-2 text-lg font-semibold text-gray-800" onTouchEnd={() => setSettingsOpen(true)}>
-                            <FiSettings className="mr-1" size={20} /> Settings
+            {menuOpen && (
+              <div className='fixed inset-0 bg-black bg-opacity-25 z-40 menu' onTouchEnd={onClose}>
+                <motion.div
+                  className="absolute bg-white rounded-lg shadow-md p-4 menu-content"
+                  initial="hiddenLeft"
+                  animate="visible"
+                  exit="hiddenLeft"
+                  variants={menuVariants}
+                >
+                  <div className='flex flex-col '>
+                      {!state.active && <>
+                        <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={onDeleteLastTime}>
+                          Delete Last Time
                         </button>
-                    </div>
-                  </motion.div>
-                </div>
-            )}
+                        <button className="p-2 text-lg font-semibold border-b border-gray-200 text-[#D6700A]" onTouchEnd={onResetTimes}>
+                            Reset Times
+                        </button>
+                      </>}
+                  
+                      {!(selectedAlgset === "3x3x3") && (
+                        <button className="w-full p-2 text-lg font-semibold border-b text-[#D6700A]" onTouchEnd={() => setPracticeModeOpen(true)}>
+                            Practice Mode
+                        </button>
+                      )}
+                      <button className="flex items-center justify-center py-2 text-lg font-semibold text-gray-800" onTouchEnd={() => setSettingsOpen(true)}>
+                          <FiSettings className="mr-1" size={20} /> Settings
+                      </button>
+                  </div>
+                </motion.div>
+              </div>
+          )}
 
-            {settingsOpen && <SettingsModal onClose={() => setSettingsOpen(false)}/>}
-            {practiceModeOpen && <PracticeModeModal practiceModeActive={state.active} onClose={() => setPracticeModeOpen(false)} onStart={handleStartPracticeMode} />}
+          {settingsOpen && <SettingsModal onClose={() => setSettingsOpen(false)}/>}
+          {practiceModeOpen && <PracticeModeModal practiceModeActive={state.active} onClose={() => setPracticeModeOpen(false)} onStart={handleStartPracticeMode} />}
         </AnimatePresence>
     );
 };

@@ -185,25 +185,28 @@ export const PracticeModeProvider = ({ children }) => {
 
     // Save state on important events
     useEffect(() => {
-        const handleBeforeUnload = () => {
+        // const handleBeforeUnload = () => {
+        //     saveData(state);
+        // };
+
+        // const handleVisibilityChange = () => {
+        //     if (document.visibilityState === 'hidden') {
+        //         saveData(state);
+        //     }
+        // };
+
+        // window.addEventListener('beforeunload', handleBeforeUnload);
+        // document.addEventListener('visibilitychange', handleVisibilityChange);
+
+        // return () => {
+        //     window.removeEventListener('beforeunload', handleBeforeUnload);
+        //     document.removeEventListener('visibilitychange', handleVisibilityChange);
+        //     saveData(state); // Save state on component unmount
+        // };
+        if (state.numSolves % 10 === 0) {
             saveData(state);
-        };
-
-        const handleVisibilityChange = () => {
-            if (document.visibilityState === 'hidden') {
-                saveData(state);
-            }
-        };
-
-        window.addEventListener('beforeunload', handleBeforeUnload);
-        document.addEventListener('visibilitychange', handleVisibilityChange);
-
-        return () => {
-            window.removeEventListener('beforeunload', handleBeforeUnload);
-            document.removeEventListener('visibilitychange', handleVisibilityChange);
-            saveData(state); // Save state on component unmount
-        };
-    }, []);
+        }
+    }, [state.numSolves]);
 
     const startPracticeMode = (practiceModeSettings) => {
         const initialCases = [];

@@ -21,7 +21,7 @@ const SettingsModal = ({ onClose }) => {
     return (
         <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-end z-30 menu' onTouchEnd={onClose}>
             <motion.div
-                className="w-full h-[90%] bg-white text-black rounded-t-lg p-4"
+                className="w-full h-[90%] bg-white text-black rounded-t-lg p-4 flex flex-col justify-between"
                 initial={{ y: "100%" }}
                 animate={{ y: "0" }}
                 exit={{ y: "100%" }}
@@ -61,6 +61,14 @@ const SettingsModal = ({ onClose }) => {
                 </div>
                 <div className='flex justify-center'>
                     <button className="mt-8 px-4 py-2 bg-primary text-white rounded hover:bg-primary transition duration-150" onClick={onClose}>Close</button>
+                </div>
+                <div className='flex flex-grow items-end justify-center'>
+                    <div className='flex flex-col text-lg'>
+                        <p className='text-xl'>App inspired by Tao Yu's Alg-Trainer, where the algs are also obtained from:</p>
+                        <a href="https://tao-yu.github.io/Alg-Trainer/" target="_blank" rel="noopener noreferrer" className='text-center mt-2'>
+                            https://tao-yu.github.io/Alg-Trainer/
+                        </a>
+                    </div>
                 </div>
             </motion.div>
         </div>

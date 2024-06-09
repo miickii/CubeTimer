@@ -25,9 +25,9 @@ const scrambleVariants = {
     exit: { opacity: 0, transition: { duration: 0.4 } }
 };
 
-const Solve = () => {
+const Solve = ({ solves }) => {
     const { settings } = useSettings();
-    const { setTimerRunning, updateAlg, addSolve, selectedSubsets, currAlg, solves } = useTimerScrambleContext(); 
+    const { setTimerRunning, updateAlg, addSolve, selectedSubsets, currAlg } = useTimerScrambleContext(); 
     const { state, updatePracticeMode } = usePracticeMode();
     const [isActive, setIsActive] = useState(false);
     const [timerDown, setTimerDown] = useState(false);
@@ -67,14 +67,6 @@ const Solve = () => {
         }
     };
 
-    const handleUpdateScramble = ( solveFinished=true ) => {
-        if (solveFinished && state.active) {
-            updatePracticeMode()
-        } else {
-            updateScramble();
-        }
-    }
-
     const stopTimer = () => {
         stopwatch.stop();
         setIsActive(false);
@@ -88,12 +80,11 @@ const Solve = () => {
         } else { // solve finished
 
             if (state.active) {
-                updatePracticeMode(timer);
+                updatePracticeMode(timer, currAlg.scramble);
             } else {
                 updateAlg();
+                addSolve(timer, currAlg.scramble);
             }
-
-            addSolve(timer, currAlg.scramble);
         }
         clearInterval(timerRef.current);
     }
@@ -162,9 +153,9 @@ const Solve = () => {
             onTouchEnd={handleTouchEnd}
             className="w-full h-full"
         >
-            <div className='min-h-80' onTouchStart={(e) => e.stopPropagation()}>
+            <div className='min-h-80'>
                 <AnimatePresence>
-                    {!isActive && <motion.div variants={scrambleVariants} initial="hidden" animate="visible" exit="exit" className='flex flex-col items-center'>
+                    {!isActive && <motion.div variants={scrambleVariants} initial="hidden" animate="visible" exit="exit" className='flex flex-col items-center' onTouchStart={(e) => e.stopPropagation()} onTouchEnd={(e) => e.stopPropagation()}>
                         <div className="text-xl mt-6 mb-5 px-8 h-12">{currAlg.scramble}</div>
                         {localSolutions.length > 0 && <>
                             <button
@@ -201,7 +192,7 @@ const Solve = () => {
                     {(settings.displayMilliseconds && !isInspecting) ? timer.toFixed(2) : Math.floor(timer)}s
                 </div>
                 
-                {state.active && <ScoreIndicator scoreChange={scoreChange} />}
+                {(state.active && state.scoreIndication) && <ScoreIndicator scoreChange={scoreChange} />}
 
                 <AnimatePresence>
                     {isInspecting && (

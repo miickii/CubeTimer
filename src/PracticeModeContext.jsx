@@ -6,23 +6,25 @@ const PracticeModeContext = createContext();
 const initialState = {
     active: false,
     numSolves: 0,
-    times: [],
+    solves: [],
     totalTime: 0,
     overallAverage: 0,
     epsilon: 1,
     epsilonDecay: 0.01,
-    initialScore: 0,
-    recencyFactor: 2,
+    recencyFactor: 2.33,
     learningRate: 0.5,
     displayStats: false,
-    totalScore: null,
+    totalScore: 0,
     prevCase: null,
     scoreChange: 0,
     prevCases: [], // Stored by their indicies in cases array
     numCasesSeen: 0,
     cases: [], // Dynamic queue that updates based on score of each case
     numCases: null,
-    fastCalcScore: false
+    fastCalcScore: true,
+    firstScoreUpdate: false,
+    scoreIndication: true,
+    scorePopupShown: false
 };
 
 const loadData = () => {
@@ -94,9 +96,16 @@ function calculateNormalizedScore(score, prevAverage, newAverage, overallAverage
     // Calculate z-scores
     const std = overallStdDev ? overallStdDev : 1
     const overallZScore = (newAverage - overallAverage) / std;
+    let scoreChange = learningRate * overallZScore;
+
+    if (prevAverage < newAverage) {
+        scoreChange += 0.05*Math.abs(scoreChange);
+    } else {
+        scoreChange -= 0.05*Math.abs(scoreChange);
+    }
 
     // Combine deviations weighted by learning rate
-    let newScore = score + learningRate * overallZScore;
+    let newScore = score + scoreChange;
 
     // Apply decay to the score to gradually reduce it over time
     newScore *= decayRate;
@@ -113,14 +122,18 @@ function calculateStandardDeviation(times, mean) {
 function reducer(state, action) {
     switch (action.type) {
         case 'update_case':
-            const { solveTime, caseIndex } = action.payload;
+            const { solveTime, scramble, caseIndex } = action.payload;
             
             const adjustedSolveTime = Math.min(15, solveTime); // HARDCODED
             const newTotalTime = state.totalTime + adjustedSolveTime;
             const newNumSolves = state.numSolves + 1;
-            let times = [...state.times, adjustedSolveTime];
-            //if (times.length > 30) times.shift();
-            
+             // Create a new solve object
+            const newSolve = { time: adjustedSolveTime, scramble };
+            const solves = [...state.solves, newSolve];
+
+            // Extract solve times for calculations
+            const times = solves.map(solve => solve.time);
+
             // Adjust the recency factor for a longer list
             // The adjustment formula reduces the exponential growth over more items
             const adjustedFactor = Math.pow(state.recencyFactor, 1 / (Math.min(times.length, 30) / 2));
@@ -133,6 +146,7 @@ function reducer(state, action) {
             const prevCases = [...state.prevCases, caseIndex];
             let existingCase = null;
             let scoreChange = 0
+            let firstScoreUpdate = state.firstScoreUpdate;
 
             if (caseIndex !== -1) {
                 existingCase = {...cases[caseIndex]};
@@ -154,6 +168,10 @@ function reducer(state, action) {
                     //console.log(newScore, existingCase.score, currCase.subset, currCase.caseIndex);
                     existingCase.prevScore = existingCase.score;
                     existingCase.score = newScore;
+
+                    if (!firstScoreUpdate) {
+                        firstScoreUpdate = true;
+                    }
                 }
                 
                 existingCase.average = newAverage;
@@ -163,16 +181,18 @@ function reducer(state, action) {
             }
 
             // Optionally sort cases here if needed
-            return { ...state, cases, prevCase: existingCase, scoreChange, prevCases, times, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: overallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen };
+            return { ...state, cases, prevCase: existingCase, scoreChange, prevCases, solves, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: overallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen, firstScoreUpdate: firstScoreUpdate };
         case 'start_practice_mode':
-            const { initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, calcScore, initialCases } = action.payload;
-            return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, initialScore, epsilonDecay, recencyFactor, learningRate, displayStats, totalScore: initialScore*initialCases.length, fastCalcScore: calcScore };
+            const { learningRate, displayStats, scoreIndication, initialCases } = action.payload;
+            return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, learningRate, displayStats, scoreIndication };
         case 'stop_practice_mode':
             return { ...state, active: false };
         case 'reset_practice_mode':
             return initialState;
         case 'decrement_epsilon':
             return { ...state, epsilon: Math.max(state.epsilon - state.epsilonDecay, 0.1) }; // Ensures epsilon doesn't go below 0.1
+        case 'SCORE_POPUP':
+            return { ...state, scorePopupShown: action.payload };
         default:
             throw new Error('Unhandled action type: ' + action.type);
     }
@@ -291,29 +311,28 @@ export const PracticeModeProvider = ({ children }) => {
         let possibleCases = []
 
         for (let i = 0; i < numAppearances.length; i++) {
-            if (numAppearances[i] < 3) possibleCases.push(i);
+            if (numAppearances[i] < 2) possibleCases.push(i);
         }
 
         const nextCaseIndex = possibleCases.length > 0 ? possibleCases[Math.floor(Math.random()*possibleCases.length)] : Math.floor(Math.random()*state.numCases)
         return state.cases[nextCaseIndex];
     }
 
-    const updatePracticeMode = (solveTime) => {
+    const updatePracticeMode = (solveTime, scramble) => {
         const caseIndex = state.cases.findIndex(c => c.algset === currAlg.index.algset && c.subsetIndex === currAlg.index.subsetIndex && c.caseIndex === currAlg.index.caseIndex);
 
-        dispatch({ type: 'update_case', payload: { solveTime, caseIndex } });
+        dispatch({ type: 'update_case', payload: { solveTime, scramble, caseIndex } });
         
         let nextCase = getNextCase(caseIndex);
         setRandomAlg(false);
 
-        // if (Math.random() > state.epsilon) {
-        //     nextCase = getNextCase(caseIndex);
-        //     setRandomAlg(false);
-        // } else {
-        //     nextCase = getRandomCase();
-        //     setRandomAlg(true);
-        // }
-
+        if (Math.random() > 0.1) {
+            nextCase = getNextCase(caseIndex);
+            setRandomAlg(false);
+        } else {
+            nextCase = getRandomCase();
+            setRandomAlg(true);
+        }
 
         updateAlg(undefined, undefined, [nextCase.subsetIndex, nextCase.caseIndex]);
         
@@ -328,8 +347,12 @@ export const PracticeModeProvider = ({ children }) => {
         dispatch({ type: 'reset_practice_mode' });
     };
 
+    const setScorePopupShown = (shown) => {
+        dispatch({ type: 'SCORE_POPUP', payload: shown })
+    }
+
     return (
-        <PracticeModeContext.Provider value={{ state, startPracticeMode, stopPracticeMode, resetPracticeMode, updatePracticeMode }}>
+        <PracticeModeContext.Provider value={{ state, startPracticeMode, stopPracticeMode, resetPracticeMode, updatePracticeMode, setScorePopupShown }}>
             {children}
         </PracticeModeContext.Provider>
     );

@@ -3,10 +3,10 @@ import { useSettings } from '../SettingsContext';
 import { usePracticeMode } from '../PracticeModeContext';
 import { useTimerScrambleContext } from '../TimerScrambleContext';
 
-const Stats = () => {
+const Stats = ({ solves }) => {
     const { settings } = useSettings();
     const { state: practiceState } = usePracticeMode();
-    const { solves, randomAlg } = useTimerScrambleContext(); 
+    const { randomAlg } = useTimerScrambleContext(); 
     
     function removeMinMax(times) {
         let newTimes = [...times]
@@ -47,7 +47,7 @@ const Stats = () => {
                         <div>
                             <p>Session weighted average: {practiceState.overallAverage.toFixed(2)}</p>
                             <p>Cases encountered: {practiceState.numCasesSeen} / {practiceState.numCases}</p>
-                            <p>Average score: {(practiceState.totalScore / practiceState.numCases).toFixed(2)}</p>
+                            <p>Average score: {(-practiceState.totalScore / practiceState.numCases).toFixed(2)}</p>
                             <p>Epsilon: {practiceState.epsilon}</p>
                             <p>{randomAlg ? "Random alg" : "Not random alg"}</p>
                             <div className='p-2'>
@@ -57,8 +57,8 @@ const Stats = () => {
                                     <p>Case index: {practiceState.prevCase.caseIndex}</p>
                                     <p>Times: {practiceState.prevCase.times.slice(-3).join(', ')}</p>
                                     <p>Weighted average: {practiceState.prevCase.average.toFixed(2)}</p>
-                                    <p>Previous score: {practiceState.prevCase.prevScore.toFixed(2)}</p>
-                                    <p>Updated score: {practiceState.prevCase.score.toFixed(2)}</p>
+                                    <p>Previous score: {-practiceState.prevCase.prevScore.toFixed(2)}</p>
+                                    <p>Updated score: {-practiceState.prevCase.score.toFixed(2)}</p>
                                 </>}
                             </div>
                         </div>

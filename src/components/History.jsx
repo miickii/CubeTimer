@@ -40,8 +40,8 @@ const scrambleVariants = {
     }
 };
 
-const History = () => {
-    const { solves, solvesSortOrder } = useTimerScrambleContext(); 
+const History = ({ solves }) => {
+    const { solvesSortOrder } = useTimerScrambleContext(); 
     const [showScramble, setShowScramble] = useState(null);
     const [bestIndex, setBestIndex] = useState(null);
     const [worstIndex, setWorstIndex] = useState(null);

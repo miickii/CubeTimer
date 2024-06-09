@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import Solve from './components/Solve';
 import History from './components/History';
@@ -6,13 +6,29 @@ import Stats from './components/Stats';
 import { FaHistory, FaPlayCircle, FaChartBar } from 'react-icons/fa';
 import { useSwipeable } from 'react-swipeable';
 import { useTimerScrambleContext } from './TimerScrambleContext';
+import { usePracticeMode } from './PracticeModeContext';
 import Test from './components/Test';
 import Header from './components/Header';
+import PopupManager from './components/PopupManager';
 
 const App = () => {
-  const { timerRunning } = useTimerScrambleContext(); 
+  const { timerRunning, solves: regularSolves } = useTimerScrambleContext(); 
+  const { state: practiceState } = usePracticeMode();
   const [activeTab, setActiveTab] = useState('solve');
   const [lastTab, setLastTab] = useState(null);
+  const [solves, setSolves] = useState([]);
+  const [showPopup, setShowPopup] = useState(false);
+
+  // Effect to update the solves based on practice mode
+  useEffect(() => {
+    if (practiceState.active) {
+      setSolves(practiceState.solves);
+
+    } else {
+      setSolves(regularSolves);
+    }
+  }, [practiceState.active, practiceState.solves, regularSolves]);
+
 
   const changeTab = (tab) => {
     if (!timerRunning) {
@@ -74,7 +90,7 @@ const App = () => {
               transition={{ duration: 0.3 }}
               className='h-full'
             >
-              <History />
+              <History solves={solves} />
             </motion.div>
           )}
           {activeTab === 'solve' && (
@@ -85,7 +101,7 @@ const App = () => {
               transition={{ duration: 0.3 }}
               className='h-full'
             >
-              <Solve />
+              <Solve solves={solves} />
             </motion.div>
           )}
           {activeTab === 'stats' && (
@@ -96,7 +112,7 @@ const App = () => {
               transition={{ duration: 0.3 }}
               className='w-full h-full'
             >
-              <Stats />
+              <Stats solves={solves} />
             </motion.div>
           )}
           {activeTab === 'test' && (
@@ -126,6 +142,9 @@ const App = () => {
           Stats
         </button>
       </div>
+
+      {/* Popup messages to explain practice mode and score indicator  */}
+      <PopupManager />
     </div>
   );
 };

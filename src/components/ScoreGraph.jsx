@@ -37,15 +37,11 @@ const ScoreGraph = ({ scores }) => {
       },
       scales: {
         y: {
-          min: Math.min(...scores) - 1, // Extend y-axis slightly below the minimum score
-          max: Math.max(...scores) + 1, // Extend y-axis slightly above the maximum score
           beginAtZero: true, // Ensures zero is always visible
           ticks: {
             // Include zero in the middle of the y-axis
             callback: function(value, index, ticks) {
-              if (value === 0) return 0;
-              if (index === 0 || index === ticks.length - 1) return ''; // Hide first and last tick labels
-              return value;
+              return value.toFixed(2);
             }
           }
         }

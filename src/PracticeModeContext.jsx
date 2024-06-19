@@ -162,6 +162,7 @@ function reducer(state, action) {
                 // If case has 3 solves then update score
                 if (existingCase.times.length > (state.fastCalcScore ? 1 : 2)) {
                     const newScore = calculateNormalizedScore(existingCase.score, existingCase.average, newAverage, overallAverage, overallStdDev, state.learningRate);
+                    existingCase.scores.push(newScore);
                     scoreChange = existingCase.score - newScore
                     
                     totalScore = totalScore - existingCase.score + newScore;
@@ -172,6 +173,8 @@ function reducer(state, action) {
                     if (!firstScoreUpdate) {
                         firstScoreUpdate = true;
                     }
+                } else {
+                    existingCase.scores.push(0);
                 }
                 
                 existingCase.average = newAverage;
@@ -244,6 +247,7 @@ export const PracticeModeProvider = ({ children }) => {
                     caseIndex: index, 
                     seen: false, // If it has showed up at least once
                     times: [], 
+                    scores: [],
                     average: 0, 
                     score: 0,
                     prevScore: 0,

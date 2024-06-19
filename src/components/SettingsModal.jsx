@@ -21,7 +21,7 @@ const SettingsModal = ({ onClose }) => {
     return (
         <div className='fixed inset-0 bg-black bg-opacity-50 flex justify-center items-end z-30 menu' onTouchEnd={onClose}>
             <motion.div
-                className="w-full h-[90%] bg-white text-black rounded-t-lg p-4 flex flex-col justify-between"
+                className="w-full h-[60%] bg-white text-black rounded-t-lg p-4 flex flex-col justify-between"
                 initial={{ y: "100%" }}
                 animate={{ y: "0" }}
                 exit={{ y: "100%" }}
@@ -39,12 +39,8 @@ const SettingsModal = ({ onClose }) => {
                         <input type="checkbox" checked={settings.displayMilliseconds} onChange={() => toggleSetting('displayMilliseconds')} />
                     </label>
                     <label className="flex items-center justify-between">
-                        <span>Show solutions to previous scramble</span>
+                        <span>Solutions should show for previous scramble</span>
                         <input type="checkbox" checked={settings.showPrevSolutions} onChange={() => toggleSetting('showPrevSolutions')} />
-                    </label>
-                    <label className="flex items-center justify-between">
-                        <span>Enable Sound</span>
-                        <input type="checkbox" checked={settings.soundEnabled} onChange={() => toggleSetting('soundEnabled')} />
                     </label>
                     <label className="flex items-center justify-between">
                         <span>Average of 25</span>

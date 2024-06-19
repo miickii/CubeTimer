@@ -7,7 +7,7 @@ const mapToOriginal = (displayValue, min, max) => ((displayValue / 6) * (max - m
 
 const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
     const [learningRate, setLearningRate] = useState(0.5);
-    const [displayStats, setDisplayStats] = useState(false);
+    const [displayStats, setDisplayStats] = useState(true);
     const [scoreIndication, setScoreIndication] = useState(true);
     const [currInfoPopup, setCurrInfoPopup] = useState(null);
 
@@ -15,7 +15,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
 
     const handleLearningRateChange = (value) => {
         const originalValue = mapToOriginal(value, 0, 1);
-        console.log(originalValue)
+        // console.log(originalValue)
         setLearningRate(originalValue);
         setDisplayLearningRate(value);
     };
@@ -31,10 +31,12 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
     return (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center menu z-40" onTouchEnd={onClose}>
             <div className="bg-white text-black rounded-lg shadow-lg w-4/5 relative" onTouchEnd={(e) => e.stopPropagation()}>
-                <button className="text-xl w-full text-end pt-2 pr-4" onClick={onClose}>✕</button>
+                <div className='w-full flex'>
+                    <h2 className="text-xl font-bold p-2 w-3/4 text-center">Practice Mode Settings</h2>
+                    <button className="text-xl w-1/4 text-end pt-2 pr-4" onClick={onClose}>✕</button>
+                </div>
                 <div className='p-4'>
                     {!practiceModeActive && <>
-                        <h2 className="text-xl font-bold my-2">Practice Mode Settings</h2>
                         <div className="space-y-4">
                             <div className="flex items-center justify-between">
                                 <label className="block w-1/3">
@@ -45,16 +47,6 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                                     <input type="range" min="0" max="6" value={displayLearningRate} onChange={e => handleLearningRateChange(parseFloat(e.target.value))} className="mx-2" />
                                     <button className="relative" onClick={() => handleShowPopup(1)}>?</button>
                                     {currInfoPopup === 1 && <InfoPopup text="Controls how much scores for each case should adjust to performance, low value makes scores change at a slow rate, while high values makes scores very volatile to change in performance" />}
-                                </div>
-                            </div>
-                            <div className="flex items-center justify-between">
-                                <label className="block w-1/3">
-                                    Show session stats
-                                </label>
-                                <div className="flex items-center w-2/3 justify-end relative">
-                                    <input type="checkbox" checked={displayStats} onChange={() => setDisplayStats(!displayStats)} />
-                                    <button className="relative" onClick={() => handleShowPopup(2)}>?</button>
-                                    {currInfoPopup === 2 && <InfoPopup text="Shows stats and information about the practice mode session" />}
                                 </div>
                             </div>
                             <div className="flex items-center justify-between">

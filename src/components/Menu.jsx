@@ -84,9 +84,14 @@ const Menu = ({ menuOpen, onClose }) => {
                         </button>
                       </>}
                   
-                      {!(selectedAlgset === "3x3x3") && (
+                      {!(selectedAlgset === "3x3x3" || state.active) && (
                         <button className="w-full p-2 text-lg font-semibold border-b text-[#D6700A]" onTouchEnd={() => setPracticeModeOpen(true)}>
                             Practice Mode
+                        </button>
+                      )}
+                      {state.active && (
+                        <button className="w-full p-2 text-lg font-semibold border-b text-[#D6700A]" onTouchEnd={handleStartPracticeMode}>
+                            End Practice Mode
                         </button>
                       )}
                       <button className="flex items-center justify-center py-2 text-lg font-semibold text-gray-800" onTouchEnd={() => setSettingsOpen(true)}>

@@ -39,14 +39,14 @@ const App = () => {
 
   const getDirection = (tab) => {
     if (lastTab === null) return 0;
-    const order = ['history', 'solve', 'stats', 'test'];
+    const order = ['history', 'solve', 'stats'];
     const currentIndex = order.indexOf(activeTab);
     const lastIndex = order.indexOf(lastTab);
 
     return currentIndex > lastIndex ? 300 : -300;
   };
 
-  const tabs = ['history', 'solve', 'stats', 'test'];
+  const tabs = ['history', 'solve', 'stats'];
 
   const handleSwipe = useSwipeable({
     onSwipedLeft: (eventData) => {
@@ -113,17 +113,6 @@ const App = () => {
               className='w-full h-full'
             >
               <Stats solves={solves} />
-            </motion.div>
-          )}
-          {activeTab === 'test' && (
-            <motion.div
-              key="test"
-              initial={{ x: getDirection('test'), opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              className='relative w-full h-full'
-            >
-              <Test />
             </motion.div>
           )}
         </AnimatePresence>

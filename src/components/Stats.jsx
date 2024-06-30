@@ -6,7 +6,7 @@ import ScoreGraph from './ScoreGraph';
 
 const Stats = ({ solves }) => {
     const { settings } = useSettings();
-    const { state: practiceState } = usePracticeMode();
+    const { state: practiceState, getSortedCases } = usePracticeMode();
     
     function removeMinMax(times) {
         let newTimes = [...times]
@@ -36,6 +36,17 @@ const Stats = ({ solves }) => {
     const average25 = calculateAverage(times, 25);
     const average50 = calculateAverage(times, 50);
     const average100 = calculateAverage(times, 100);
+
+    const exportSortedCases = () => {
+        const sortedCases = getSortedCases();
+        const formattedData = sortedCases.map(c => `Subset: ${c.subset} - Case: ${c.case} - Score: ${c.score}`).join('\n');
+        const blob = new Blob([formattedData], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'sorted_cases.txt';
+        a.click();
+    };
 
     return (
         <div className="flex flex-col items-center w-full p-4 h-full">
@@ -67,6 +78,7 @@ const Stats = ({ solves }) => {
                             <p className='mt-2'>Updated score: {-practiceState.prevCase.score.toFixed(2)}</p>
                         </div>
                     )}
+                    <button className="bg-green-500 text-white py-2 px-4 rounded shadow" onClick={exportSortedCases}>Export Sorted Cases</button>
                 </div>
             )}
         </div>

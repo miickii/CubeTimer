@@ -9,6 +9,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
     const [learningRate, setLearningRate] = useState(0.5);
     const [displayStats, setDisplayStats] = useState(true);
     const [scoreIndication, setScoreIndication] = useState(true);
+    const [inOrder, setInOrder] = useState(true);
     const [currInfoPopup, setCurrInfoPopup] = useState(null);
 
     const [displayLearningRate, setDisplayLearningRate] = useState(mapToDisplay(learningRate, 0, 1));
@@ -51,6 +52,16 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                             </div>
                             <div className="flex items-center justify-between">
                                 <label className="block w-1/3">
+                                    test order
+                                </label>
+                                <div className="flex items-center w-2/3 justify-end relative">
+                                    <input type="checkbox" checked={inOrder} onChange={() => setInOrder(!scoreIndication)} />
+                                    <button className="relative" onClick={() => handleShowPopup(2)}>?</button>
+                                    {currInfoPopup === 2 && <InfoPopup text="Show arrows indicating positive or negative score change for cases" />}
+                                </div>
+                            </div>
+                            <div className="flex items-center justify-between">
+                                <label className="block w-1/3">
                                     Display score updates 
                                 </label>
                                 <div className="flex items-center w-2/3 justify-end relative">
@@ -61,7 +72,7 @@ const PracticeModeModal = ({ practiceModeActive, onClose, onStart }) => {
                             </div>
                         </div>
                     </>}
-                    <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded" onClick={() => onStart( {learningRate: parseFloat(learningRate), displayStats: displayStats, scoreIndication: scoreIndication} )}>{practiceModeActive ? "Stop" : "Start"}</button>
+                    <button className="mt-6 w-full bg-orange-500 text-white py-2 rounded" onClick={() => onStart( {learningRate: parseFloat(learningRate), displayStats: displayStats, scoreIndication: scoreIndication, inOrder: inOrder} )}>{practiceModeActive ? "Stop" : "Start"}</button>
                 </div>
             </div>
         </div>

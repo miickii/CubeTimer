@@ -186,8 +186,8 @@ function reducer(state, action) {
             // Optionally sort cases here if needed
             return { ...state, cases, prevCase: existingCase, scoreChange, prevCases, solves, totalTime: newTotalTime, numSolves: newNumSolves, overallAverage: overallAverage, totalScore: totalScore, numCasesSeen: numCasesSeen, firstScoreUpdate: firstScoreUpdate };
         case 'start_practice_mode':
-            const { learningRate, displayStats, scoreIndication, initialCases } = action.payload;
-            return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, learningRate, displayStats, scoreIndication };
+            const { learningRate, displayStats, scoreIndication, inOrder, initialCases } = action.payload;
+            return { ...initialState, active: true, cases: initialCases, numCases: initialCases.length, inOrder: inOrder, learningRate, displayStats, scoreIndication };
         case 'stop_practice_mode':
             return { ...state, active: false };
         case 'reset_practice_mode':
@@ -330,7 +330,7 @@ export const PracticeModeProvider = ({ children }) => {
         let nextCase = getNextCase(caseIndex);
         setRandomAlg(false);
 
-        if (Math.random() > 0.1) {
+        if ((Math.random() > 0.1) || !state.inOrder) {
             nextCase = getNextCase(caseIndex);
             setRandomAlg(false);
         } else {
@@ -355,8 +355,18 @@ export const PracticeModeProvider = ({ children }) => {
         dispatch({ type: 'SCORE_POPUP', payload: shown })
     }
 
+    const getSortedCases = () => {
+        return [...state.cases]
+            .sort((a, b) => a.score - b.score)
+            .map(c => ({
+                subset: c.subset,
+                case: c.caseIndex,
+                score: c.score.toFixed(2)
+            }));
+    };
+
     return (
-        <PracticeModeContext.Provider value={{ state, startPracticeMode, stopPracticeMode, resetPracticeMode, updatePracticeMode, setScorePopupShown }}>
+        <PracticeModeContext.Provider value={{ state, startPracticeMode, stopPracticeMode, resetPracticeMode, updatePracticeMode, setScorePopupShown, getSortedCases }}>
             {children}
         </PracticeModeContext.Provider>
     );
